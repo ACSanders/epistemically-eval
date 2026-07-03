@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "epistemically"
+version = "0.1.0"
+description = "Practical LLM evaluation framework for model behavior under epistemic norms"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Adam Sanders" }]
+dependencies = [
+    "python-dotenv",
+    "pydantic>=2",
+    "pandas",
+    "numpy",
+    "scipy",
+    "streamlit",
+    "plotly",
+    "openai",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
