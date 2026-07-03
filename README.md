@@ -2,6 +2,8 @@
 
 **An epistemic AI lab for evaluating how language models track belief, truth, knowledge, inference, defeaters, and luck.**
 
+🌐 **Live demo:** [epistemically.com](https://epistemically.com)
+
 Epistemically is a work-in-progress LLM evaluation framework and Streamlit dashboard inspired by epistemology. It tests whether model outputs can correctly classify the epistemic status of agents in structured cases: what they believe, whether the target proposition is true, whether the belief is justified, whether the subject knows, whether an inference is valid, and whether new evidence should revise or defeat a belief.
 
 The project is designed as a practical AI evaluation lab, not a philosophy dissertation. The goal is to build a cutting-edge, inspectable, statistically grounded evaluation tool for model behavior under epistemic norms.
