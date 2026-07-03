@@ -16,6 +16,21 @@ SYSTEM_PROMPT = (
     "field's allowed values; never paraphrase, reword, or invent labels."
 )
 
+DEFEATER_TYPE_GUIDE = (
+    "defeater_type definitions — use these mainstream categories only, not "
+    "finer-grained or invented ones:\n"
+    '- "none_placebo": the new information is irrelevant to the target '
+    "proposition or its support.\n"
+    '- "rebutting_defeater": the new information directly supports not-p.\n'
+    '- "undercutting_defeater": the new information weakens or breaks the '
+    "support relation between the original reason/evidence and p, without "
+    "directly proving not-p.\n"
+    '- "higher_order_defeater": the new information undermines confidence in '
+    "the subject's own reasoning, reliability, judgment, or evidential "
+    "handling.\n"
+    '- "unclear": the category cannot be determined from the scenario.'
+)
+
 RESPONSE_RULES = (
     "Rules:\n"
     "- Output only the JSON object. No prose before or after it.\n"
@@ -49,6 +64,8 @@ def build_prompt(case: EpistemicCase) -> str:
     field_lines.append('  "brief_explanation": one sentence, at most 25 words')
     fields_block = ",\n".join(field_lines)
 
+    guide_block = f"{DEFEATER_TYPE_GUIDE}\n\n" if "defeater_type" in case.expected else ""
+
     return (
         f"Scenario:\n{case.scenario}\n\n"
         f"Target proposition: {json.dumps(case.target_proposition)}\n\n"
@@ -58,5 +75,6 @@ def build_prompt(case: EpistemicCase) -> str:
         "{\n"
         f"{fields_block}\n"
         "}\n\n"
+        f"{guide_block}"
         f"{RESPONSE_RULES}"
     )

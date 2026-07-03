@@ -49,19 +49,23 @@ ALLOWED_LABELS: Dict[str, List[str]] = {
     "contradiction_present": ["true", "false"],
     "consistency_status": ["consistent", "inconsistent"],
     "initial_status": ["justified_belief", "unjustified_belief", "no_belief"],
+    # Mainstream categories only; finer distinctions (source reliability,
+    # dependency) live in schema_family, and defeater_type is diagnostic
+    # rather than part of the primary score in v0.
     "defeater_type": [
-        "undercutting_defeater",
-        "rebutting_defeater",
-        "source_reliability_defeater",
-        "higher_order_defeater",
-        "dependency_defeater",
         "none_placebo",
+        "rebutting_defeater",
+        "undercutting_defeater",
+        "higher_order_defeater",
+        "unclear",
     ],
+    # v0 keeps belief-revision options coarse; finer retain/suspend
+    # distinctions can come later.
     "updated_status": [
         "retain_belief",
         "reduce_confidence",
-        "suspend_judgment",
         "believe_not_p",
+        "unclear",
     ],
     "retain_original_belief": ["yes", "no"],
     "confidence_direction": ["increase", "decrease", "unchanged"],
