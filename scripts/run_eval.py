@@ -3,6 +3,7 @@
 Usage:
     python scripts/run_eval.py
     python scripts/run_eval.py --model gpt-4o-mini --cases data/cases/sample_cases.jsonl
+    python scripts/run_eval.py --cases data/cases/user_cases_draft.jsonl --output data/results/user_cases_results.csv
 """
 
 import argparse
@@ -27,7 +28,13 @@ def main() -> None:
         help="Path to a JSONL case file",
     )
     parser.add_argument("--model", default=None, help="OpenAI model (default: OPENAI_MODEL from .env)")
-    parser.add_argument("--out", default=None, help="Output CSV path (default: auto under data/results/)")
+    parser.add_argument(
+        "--output",
+        "--out",
+        dest="output",
+        default=None,
+        help="Output CSV path (default: auto under data/results/)",
+    )
     parser.add_argument("--limit", type=int, default=None, help="Only run the first N cases")
     args = parser.parse_args()
 
@@ -39,8 +46,8 @@ def main() -> None:
     rows = run_cases(cases, model=args.model)
     df = pd.DataFrame(rows)
 
-    if args.out:
-        out_path = Path(args.out)
+    if args.output:
+        out_path = Path(args.output)
     else:
         model_slug = resolve_model(args.model).replace("/", "-").replace(":", "-")
         stamp = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M%S")
