@@ -1,0 +1,8 @@
+python-dotenv
+pydantic>=2
+pandas
+numpy
+scipy
+streamlit
+plotly
+openai

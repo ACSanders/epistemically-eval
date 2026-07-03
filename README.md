@@ -342,13 +342,22 @@ streamlit run app.py
 
 The app can be deployed as a Streamlit web service.
 
-Recommended Render start command:
+Render build command:
+
+```bash
+pip install -r requirements.txt
+```
+
+Render start command:
 
 ```bash
 streamlit run app.py --server.port $PORT --server.address 0.0.0.0
 ```
 
-The public dashboard can run from the committed CSV results and does not require an API key unless live API evaluation is added later.
+The dashboard runs from the committed CSV results in `data/results/` and makes
+no API calls, so no secrets are required to view it. `OPENAI_API_KEY` is only
+needed for future live evaluation runs (`scripts/run_eval.py`), not for
+viewing the current dashboard.
 
 ---
 
