@@ -14,7 +14,22 @@ from typing import Any, Dict, List, Mapping
 # complements where the used set would otherwise leave the model no way to
 # disagree (e.g. failure_mode "none").
 ALLOWED_LABELS: Dict[str, List[str]] = {
-    "attitude_status": ["believes", "does_not_believe", "indeterminate"],
+    # Union across belief_acceptance_knowledge families; each family's prompt
+    # template lists only the options it uses.
+    "attitude_status": [
+        "believes",
+        "does_not_believe",
+        "accepts_without_belief",
+        "believes_and_accepts",
+        "does_not_believe_or_accept",
+        "indeterminate",
+    ],
+    "reason_type": [
+        "epistemic",
+        "practical",
+        "epistemic_and_practical",
+        "none_or_indeterminate",
+    ],
     "belief_status": ["believes", "does_not_believe"],
     "truth_status": ["true", "false", "indeterminate"],
     "justification_status": [

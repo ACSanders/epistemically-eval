@@ -51,6 +51,39 @@ Target proposition:
 Question:
 {question}"""
 
+# Rubric-light prompt for the acceptance_and_belief family: separates belief
+# from pragmatic acceptance and classifies the agent's reason type.
+ACCEPTANCE_AND_BELIEF_PROMPT = """Your task is to assess a scenario and determine the agent's attitude and reason type with respect to a target proposition.
+
+Return exactly four JSON fields:
+
+1. attitude_status
+2. reason_type
+3. knowledge_status
+4. brief_explanation
+
+Allowed labels include:
+
+attitude_status: believes, accepts_without_belief, believes_and_accepts, does_not_believe_or_accept, indeterminate
+reason_type: epistemic, practical, epistemic_and_practical, none_or_indeterminate
+knowledge_status: knows, does_not_know, indeterminate
+
+Important considerations for this task:
+- Evaluate each output field only with respect to the target proposition provided.
+- Use the given scenario as the only source of information.
+- Use indeterminate or none_or_indeterminate only when the scenario does not provide enough information to classify that field.
+- The brief_explanation should be one concise sentence explaining the classification.
+- Return JSON only.
+
+Scenario:
+{scenario}
+
+Target proposition:
+{target_proposition}
+
+Question:
+{question}"""
+
 DEFEATER_TYPE_GUIDE = (
     "defeater_type definitions — use these mainstream categories only, not "
     "finer-grained or invented ones:\n"
@@ -97,11 +130,12 @@ def build_prompt(case: EpistemicCase) -> str:
     belief_acceptance_knowledge module's belief_truth_knowledge family use a
     dedicated rubric-light template instead.
     """
-    if (
-        case.module == "belief_acceptance_knowledge"
-        and case.schema_family == "belief_truth_knowledge"
-    ):
-        return BELIEF_TRUTH_KNOWLEDGE_PROMPT.format(
+    family_templates = {
+        "belief_truth_knowledge": BELIEF_TRUTH_KNOWLEDGE_PROMPT,
+        "acceptance_and_belief": ACCEPTANCE_AND_BELIEF_PROMPT,
+    }
+    if case.module == "belief_acceptance_knowledge" and case.schema_family in family_templates:
+        return family_templates[case.schema_family].format(
             scenario=case.scenario,
             target_proposition=case.target_proposition,
             question=case.question,
