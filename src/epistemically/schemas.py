@@ -1,11 +1,12 @@
 """Pydantic models for evaluation cases and scoring results."""
 
-from typing import Dict, Literal, Union
+from typing import Dict, Literal, Optional, Union
 
 from pydantic import BaseModel, Field, model_validator
 
 Module = Literal[
-    "belief_truth_knowledge",
+    "belief_acceptance_knowledge",
+    "belief_truth_knowledge",  # legacy module name, still used by sample cases
     "gettier_luck",
     "deduction_rationality",
     "defeaters",
@@ -28,17 +29,20 @@ class EpistemicCase(BaseModel):
     id: str
     module: Module
     schema_family: str
-    variant_id: int
     scenario: str
     target_proposition: str
     question: str
     expected: Dict[str, LabelValue]
+    # Optional metadata; lean cases omit these.
+    variant_id: Optional[int] = None
     scoring_weights: Dict[str, float] = Field(default_factory=dict)
-    difficulty: Literal["easy", "medium", "hard"]
+    difficulty: Optional[Literal["easy", "medium", "hard"]] = None
     notes: str = ""
 
     @model_validator(mode="after")
-    def _weights_refer_to_expected_labels(self) -> "EpistemicCase":
+    def _check_expected_and_weights(self) -> "EpistemicCase":
+        if not self.expected:
+            raise ValueError(f"case {self.id}: expected must be a non-empty object")
         unknown = set(self.scoring_weights) - set(self.expected)
         if unknown:
             raise ValueError(

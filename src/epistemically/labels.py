@@ -14,14 +14,15 @@ from typing import Any, Dict, List, Mapping
 # complements where the used set would otherwise leave the model no way to
 # disagree (e.g. failure_mode "none").
 ALLOWED_LABELS: Dict[str, List[str]] = {
+    "attitude_status": ["believes", "does_not_believe", "indeterminate"],
     "belief_status": ["believes", "does_not_believe"],
-    "truth_status": ["true", "false"],
+    "truth_status": ["true", "false", "indeterminate"],
     "justification_status": [
         "justified",
         "unjustified",
         "initially_supported_but_defective",
     ],
-    "knowledge_status": ["knows", "does_not_know"],
+    "knowledge_status": ["knows", "does_not_know", "indeterminate"],
     "epistemic_status": [
         "knowledge",
         "true_belief",

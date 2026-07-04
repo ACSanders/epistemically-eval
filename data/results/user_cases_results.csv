@@ -1,80 +1,152 @@
 case_id,module,schema_family,variant_id,difficulty,model,timestamp,expected_json,error,latency_s,raw_response,parsed_ok,predicted_json,brief_explanation,field_results_json,points,max_points,score
-btk_draft_001,belief_truth_knowledge,unjustified_false_belief,1,easy,gpt-4o-mini,2026-07-03T03:17:13.243134+00:00,"{""belief_status"": ""believes"", ""truth_status"": ""false"", ""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""epistemic_status"": ""false_belief""}",,2.712,"{
-  ""belief_status"": ""believes"",
+btk_001_false_belief,belief_acceptance_knowledge,belief_truth_knowledge,,,gpt-4o-mini,2026-07-04T21:04:03.025535+00:00,"{""attitude_status"": ""believes"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know""}",,1.761,"{
+  ""attitude_status"": ""believes"",
   ""truth_status"": ""false"",
-  ""justification_status"": ""unjustified"",
   ""knowledge_status"": ""does_not_know"",
-  ""epistemic_status"": ""false_belief"",
-  ""brief_explanation"": ""Maria's belief is based on outdated information and she has not verified the current schedule.""
-}",True,"{""belief_status"": ""believes"", ""truth_status"": ""false"", ""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""epistemic_status"": ""false_belief"", ""brief_explanation"": ""Maria's belief is based on outdated information and she has not verified the current schedule.""}",Maria's belief is based on outdated information and she has not verified the current schedule.,"{""belief_status"": true, ""truth_status"": true, ""justification_status"": true, ""knowledge_status"": true, ""epistemic_status"": true}",5.0,5.0,1.0
-btk_draft_002,belief_truth_knowledge,unjustified_true_belief,1,easy,gpt-4o-mini,2026-07-03T03:17:15.955487+00:00,"{""belief_status"": ""believes"", ""truth_status"": ""true"", ""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""epistemic_status"": ""true_belief""}",,2.227,"{
-  ""belief_status"": ""believes"",
+  ""brief_explanation"": ""Jack believes the proposition is true, but it is actually false, so he does not know it.""
+}",True,"{""attitude_status"": ""believes"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Jack believes the proposition is true, but it is actually false, so he does not know it.""}","Jack believes the proposition is true, but it is actually false, so he does not know it.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_002_true_without_belief,belief_acceptance_knowledge,belief_truth_knowledge,,,gpt-4o-mini,2026-07-04T21:04:04.786459+00:00,"{""attitude_status"": ""does_not_believe"", ""truth_status"": ""true"", ""knowledge_status"": ""does_not_know""}",,1.006,"{
+  ""attitude_status"": ""does_not_believe"",
   ""truth_status"": ""true"",
-  ""justification_status"": ""unjustified"",
   ""knowledge_status"": ""does_not_know"",
-  ""epistemic_status"": ""lucky_true_belief"",
-  ""brief_explanation"": ""Anupam's belief is true but lacks justification, so he does not know it.""
-}",True,"{""belief_status"": ""believes"", ""truth_status"": ""true"", ""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""epistemic_status"": ""lucky_true_belief"", ""brief_explanation"": ""Anupam's belief is true but lacks justification, so he does not know it.""}","Anupam's belief is true but lacks justification, so he does not know it.","{""belief_status"": true, ""truth_status"": true, ""justification_status"": true, ""knowledge_status"": true, ""epistemic_status"": false}",4.0,5.0,0.8
-btk_draft_003,belief_truth_knowledge,justified_false_belief,1,easy,gpt-4o-mini,2026-07-03T03:17:18.183086+00:00,"{""belief_status"": ""believes"", ""truth_status"": ""false"", ""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""epistemic_status"": ""false_belief""}",,1.36,"{
-  ""belief_status"": ""believes"",
-  ""truth_status"": ""false"",
-  ""justification_status"": ""initially_supported_but_defective"",
-  ""knowledge_status"": ""does_not_know"",
-  ""epistemic_status"": ""false_belief"",
-  ""brief_explanation"": ""Adam believes the train leaves from Platform 3 based on outdated information, which is incorrect.""
-}",True,"{""belief_status"": ""believes"", ""truth_status"": ""false"", ""justification_status"": ""initially_supported_but_defective"", ""knowledge_status"": ""does_not_know"", ""epistemic_status"": ""false_belief"", ""brief_explanation"": ""Adam believes the train leaves from Platform 3 based on outdated information, which is incorrect.""}","Adam believes the train leaves from Platform 3 based on outdated information, which is incorrect.","{""belief_status"": true, ""truth_status"": true, ""justification_status"": false, ""knowledge_status"": true, ""epistemic_status"": true}",4.0,5.0,0.8
-btk_draft_004,belief_truth_knowledge,ordinary_justified_true_belief,1,easy,gpt-4o-mini,2026-07-03T03:17:19.542751+00:00,"{""belief_status"": ""believes"", ""truth_status"": ""true"", ""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""epistemic_status"": ""knowledge""}",,1.371,"{
-  ""belief_status"": ""believes"",
+  ""brief_explanation"": ""Bill does not form a belief about the proposition, despite it being true.""
+}",True,"{""attitude_status"": ""does_not_believe"", ""truth_status"": ""true"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Bill does not form a belief about the proposition, despite it being true.""}","Bill does not form a belief about the proposition, despite it being true.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_003_knowledge_with_distractor,belief_acceptance_knowledge,belief_truth_knowledge,,,gpt-4o-mini,2026-07-04T21:04:05.793071+00:00,"{""attitude_status"": ""believes"", ""truth_status"": ""true"", ""knowledge_status"": ""knows""}",,1.361,"{
+  ""attitude_status"": ""believes"",
   ""truth_status"": ""true"",
-  ""justification_status"": ""justified"",
   ""knowledge_status"": ""knows"",
-  ""epistemic_status"": ""knowledge"",
-  ""brief_explanation"": ""Noah sees the pizza clearly and correctly believes it has pepperoni toppings.""
-}",True,"{""belief_status"": ""believes"", ""truth_status"": ""true"", ""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""epistemic_status"": ""knowledge"", ""brief_explanation"": ""Noah sees the pizza clearly and correctly believes it has pepperoni toppings.""}",Noah sees the pizza clearly and correctly believes it has pepperoni toppings.,"{""belief_status"": true, ""truth_status"": true, ""justification_status"": true, ""knowledge_status"": true, ""epistemic_status"": true}",5.0,5.0,1.0
-btk_draft_005,belief_truth_knowledge,unjustified_false_belief,2,easy,gpt-4o-mini,2026-07-03T03:17:20.913773+00:00,"{""belief_status"": ""believes"", ""truth_status"": ""false"", ""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""epistemic_status"": ""false_belief""}",,1.945,"{
-  ""belief_status"": ""believes"",
+  ""brief_explanation"": ""Brooke believes Mars is red, the proposition is true, and she has strong evidence supporting her belief.""
+}",True,"{""attitude_status"": ""believes"", ""truth_status"": ""true"", ""knowledge_status"": ""knows"", ""brief_explanation"": ""Brooke believes Mars is red, the proposition is true, and she has strong evidence supporting her belief.""}","Brooke believes Mars is red, the proposition is true, and she has strong evidence supporting her belief.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_004_justified_false_belief,belief_acceptance_knowledge,belief_truth_knowledge,,,gpt-4o-mini,2026-07-04T21:04:07.154042+00:00,"{""attitude_status"": ""believes"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know""}",,1.026,"{
+  ""attitude_status"": ""believes"",
   ""truth_status"": ""false"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Adam believes the proposition based on reliable testimony, but it is false, so he does not know it.""
+}",True,"{""attitude_status"": ""believes"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Adam believes the proposition based on reliable testimony, but it is false, so he does not know it.""}","Adam believes the proposition based on reliable testimony, but it is false, so he does not know it.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_005_justification_without_belief,belief_acceptance_knowledge,belief_truth_knowledge,,,gpt-4o-mini,2026-07-04T21:04:08.180483+00:00,"{""attitude_status"": ""does_not_believe"", ""truth_status"": ""true"", ""knowledge_status"": ""does_not_know""}",,1.073,"{
+  ""attitude_status"": ""does_not_believe"",
+  ""truth_status"": ""true"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Jill has reliable evidence that apples are fruit but does not believe it, so she does not know it.""
+}",True,"{""attitude_status"": ""does_not_believe"", ""truth_status"": ""true"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Jill has reliable evidence that apples are fruit but does not believe it, so she does not know it.""}","Jill has reliable evidence that apples are fruit but does not believe it, so she does not know it.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_006_unjustified_false_belief,belief_acceptance_knowledge,belief_truth_knowledge,,,gpt-4o-mini,2026-07-04T21:04:09.253909+00:00,"{""attitude_status"": ""believes"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know""}",,0.997,"{
+  ""attitude_status"": ""believes"",
+  ""truth_status"": ""false"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Veronica believes the proposition, but it is false, and she lacks knowledge of its truth.""
+}",True,"{""attitude_status"": ""believes"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Veronica believes the proposition, but it is false, and she lacks knowledge of its truth.""}","Veronica believes the proposition, but it is false, and she lacks knowledge of its truth.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_007_simple_knowledge,belief_acceptance_knowledge,belief_truth_knowledge,,,gpt-4o-mini,2026-07-04T21:04:10.250834+00:00,"{""attitude_status"": ""believes"", ""truth_status"": ""true"", ""knowledge_status"": ""knows""}",,1.15,"{
+  ""attitude_status"": ""believes"",
+  ""truth_status"": ""true"",
+  ""knowledge_status"": ""knows"",
+  ""brief_explanation"": ""Mark believes the park is open at noon on weekends, which is true, and he has reliable information to support this belief.""
+}",True,"{""attitude_status"": ""believes"", ""truth_status"": ""true"", ""knowledge_status"": ""knows"", ""brief_explanation"": ""Mark believes the park is open at noon on weekends, which is true, and he has reliable information to support this belief.""}","Mark believes the park is open at noon on weekends, which is true, and he has reliable information to support this belief.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_008_false_belief_with_irrelevant_evidence,belief_acceptance_knowledge,belief_truth_knowledge,,,gpt-4o-mini,2026-07-04T21:04:11.401035+00:00,"{""attitude_status"": ""believes"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know""}",,1.113,"{
+  ""attitude_status"": ""believes"",
+  ""truth_status"": ""false"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Jane believes the proposition, but it is false and she lacks evidence to know it.""
+}",True,"{""attitude_status"": ""believes"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Jane believes the proposition, but it is false and she lacks evidence to know it.""}","Jane believes the proposition, but it is false and she lacks evidence to know it.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_009_rejection_of_true_proposition,belief_acceptance_knowledge,belief_truth_knowledge,,,gpt-4o-mini,2026-07-04T21:04:12.514624+00:00,"{""attitude_status"": ""does_not_believe"", ""truth_status"": ""true"", ""knowledge_status"": ""does_not_know""}",,1.024,"{
+  ""attitude_status"": ""does_not_believe"",
+  ""truth_status"": ""true"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Noah does not believe the true proposition that Italy is in Europe, indicating he does not know it.""
+}",True,"{""attitude_status"": ""does_not_believe"", ""truth_status"": ""true"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Noah does not believe the true proposition that Italy is in Europe, indicating he does not know it.""}","Noah does not believe the true proposition that Italy is in Europe, indicating he does not know it.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_010_indeterminate_attitude_true_target,belief_acceptance_knowledge,belief_truth_knowledge,,,gpt-4o-mini,2026-07-04T21:04:13.538674+00:00,"{""attitude_status"": ""indeterminate"", ""truth_status"": ""true"", ""knowledge_status"": ""indeterminate""}",,0.976,"{
+  ""attitude_status"": ""indeterminate"",
+  ""truth_status"": ""true"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Liam's belief about tomorrow's weather does not provide information about his awareness of today's weather.""
+}",True,"{""attitude_status"": ""indeterminate"", ""truth_status"": ""true"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Liam's belief about tomorrow's weather does not provide information about his awareness of today's weather.""}",Liam's belief about tomorrow's weather does not provide information about his awareness of today's weather.,"{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": false}",2.0,3.0,0.6666666666666666
+btk_011_justified_false_belief_testimony,belief_acceptance_knowledge,belief_truth_knowledge,,,gpt-4o-mini,2026-07-04T21:04:14.514593+00:00,"{""attitude_status"": ""believes"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know""}",,1.287,"{
+  ""attitude_status"": ""believes"",
+  ""truth_status"": ""false"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Nora believes the community center is open on Sundays, but this belief is false, and she does not know the truth.""
+}",True,"{""attitude_status"": ""believes"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Nora believes the community center is open on Sundays, but this belief is false, and she does not know the truth.""}","Nora believes the community center is open on Sundays, but this belief is false, and she does not know the truth.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_012_unjustified_true_belief,belief_acceptance_knowledge,belief_truth_knowledge,,,gpt-4o-mini,2026-07-04T21:04:15.802190+00:00,"{""attitude_status"": ""believes"", ""truth_status"": ""true"", ""knowledge_status"": ""does_not_know""}",,0.973,"{
+  ""attitude_status"": ""believes"",
+  ""truth_status"": ""true"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Rachel believes the proposition is true, but she lacks good evidence to know it.""
+}",True,"{""attitude_status"": ""believes"", ""truth_status"": ""true"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Rachel believes the proposition is true, but she lacks good evidence to know it.""}","Rachel believes the proposition is true, but she lacks good evidence to know it.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_013_simple_knowledge_air_travel,belief_acceptance_knowledge,belief_truth_knowledge,,,gpt-4o-mini,2026-07-04T21:04:16.775763+00:00,"{""attitude_status"": ""believes"", ""truth_status"": ""true"", ""knowledge_status"": ""knows""}",,1.032,"{
+  ""attitude_status"": ""believes"",
+  ""truth_status"": ""true"",
+  ""knowledge_status"": ""knows"",
+  ""brief_explanation"": ""Mike believes the proposition is true and it is indeed true, so he knows it.""
+}",True,"{""attitude_status"": ""believes"", ""truth_status"": ""true"", ""knowledge_status"": ""knows"", ""brief_explanation"": ""Mike believes the proposition is true and it is indeed true, so he knows it.""}","Mike believes the proposition is true and it is indeed true, so he knows it.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_014_nonbelief_false_target_misleading_evidence,belief_acceptance_knowledge,belief_truth_knowledge,,,gpt-4o-mini,2026-07-04T21:04:17.807862+00:00,"{""attitude_status"": ""does_not_believe"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know""}",,1.076,"{
+  ""attitude_status"": ""does_not_believe"",
+  ""truth_status"": ""false"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Jose does not believe the proposition, which is false, and he lacks knowledge about it.""
+}",True,"{""attitude_status"": ""does_not_believe"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Jose does not believe the proposition, which is false, and he lacks knowledge about it.""}","Jose does not believe the proposition, which is false, and he lacks knowledge about it.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_015_nonbelief_false_target,belief_acceptance_knowledge,belief_truth_knowledge,,,gpt-4o-mini,2026-07-04T21:04:18.884410+00:00,"{""attitude_status"": ""does_not_believe"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know""}",,1.284,"{
+  ""attitude_status"": ""does_not_believe"",
+  ""truth_status"": ""false"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Layla does not believe the coffee shop has muffins, which is false since it only has coffee and donuts.""
+}",True,"{""attitude_status"": ""does_not_believe"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Layla does not believe the coffee shop has muffins, which is false since it only has coffee and donuts.""}","Layla does not believe the coffee shop has muffins, which is false since it only has coffee and donuts.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_016_indeterminate_attitude_false_target,belief_acceptance_knowledge,belief_truth_knowledge,,,gpt-4o-mini,2026-07-04T21:04:20.168474+00:00,"{""attitude_status"": ""indeterminate"", ""truth_status"": ""false"", ""knowledge_status"": ""indeterminate""}",,1.107,"{
+  ""attitude_status"": ""indeterminate"",
+  ""truth_status"": ""false"",
+  ""knowledge_status"": ""indeterminate"",
+  ""brief_explanation"": ""Owen's belief about the bakery's status is unknown, but the bakery is closed, making the proposition false.""
+}",True,"{""attitude_status"": ""indeterminate"", ""truth_status"": ""false"", ""knowledge_status"": ""indeterminate"", ""brief_explanation"": ""Owen's belief about the bakery's status is unknown, but the bakery is closed, making the proposition false.""}","Owen's belief about the bakery's status is unknown, but the bakery is closed, making the proposition false.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_017_belief_indeterminate_truth,belief_acceptance_knowledge,belief_truth_knowledge,,,gpt-4o-mini,2026-07-04T21:04:21.275477+00:00,"{""attitude_status"": ""believes"", ""truth_status"": ""indeterminate"", ""knowledge_status"": ""indeterminate""}",,1.175,"{
+  ""attitude_status"": ""believes"",
+  ""truth_status"": ""indeterminate"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Mina believes the proposition, but the truth of the proposition is unknown to her.""
+}",True,"{""attitude_status"": ""believes"", ""truth_status"": ""indeterminate"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Mina believes the proposition, but the truth of the proposition is unknown to her.""}","Mina believes the proposition, but the truth of the proposition is unknown to her.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": false}",2.0,3.0,0.6666666666666666
+btk_018_nonbelief_indeterminate_truth,belief_acceptance_knowledge,belief_truth_knowledge,,,gpt-4o-mini,2026-07-04T21:04:22.450728+00:00,"{""attitude_status"": ""does_not_believe"", ""truth_status"": ""indeterminate"", ""knowledge_status"": ""does_not_know""}",,1.883,"{
+  ""attitude_status"": ""does_not_believe"",
+  ""truth_status"": ""indeterminate"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Tara does not believe the side gate is unlocked, but we cannot determine the truth of the proposition or her knowledge of it.""
+}",True,"{""attitude_status"": ""does_not_believe"", ""truth_status"": ""indeterminate"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Tara does not believe the side gate is unlocked, but we cannot determine the truth of the proposition or her knowledge of it.""}","Tara does not believe the side gate is unlocked, but we cannot determine the truth of the proposition or her knowledge of it.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_019_false_belief_with_defined_variable,belief_acceptance_knowledge,belief_truth_knowledge,,,gpt-4o-mini,2026-07-04T21:04:24.333841+00:00,"{""attitude_status"": ""believes"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know""}",,1.197,"{
+  ""attitude_status"": ""believes"",
+  ""truth_status"": ""false"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Carlos believes the light is on, but it is actually off, so he does not know the truth.""
+}",True,"{""attitude_status"": ""believes"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Carlos believes the light is on, but it is actually off, so he does not know the truth.""}","Carlos believes the light is on, but it is actually off, so he does not know the truth.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_020_true_target_no_information_about_agent,belief_acceptance_knowledge,belief_truth_knowledge,,,gpt-4o-mini,2026-07-04T21:04:25.531320+00:00,"{""attitude_status"": ""indeterminate"", ""truth_status"": ""true"", ""knowledge_status"": ""indeterminate""}",,1.046,"{
+  ""attitude_status"": ""indeterminate"",
+  ""truth_status"": ""true"",
+  ""knowledge_status"": ""indeterminate"",
+  ""brief_explanation"": ""Harper's belief about the north entrance is unknown, but the proposition is true.""
+}",True,"{""attitude_status"": ""indeterminate"", ""truth_status"": ""true"", ""knowledge_status"": ""indeterminate"", ""brief_explanation"": ""Harper's belief about the north entrance is unknown, but the proposition is true.""}","Harper's belief about the north entrance is unknown, but the proposition is true.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+gettier_draft_001,gettier_luck,false_lemma_true_conclusion,1.0,medium,gpt-4o-mini,2026-07-04T21:04:26.577886+00:00,"{""belief_status"": ""believes"", ""truth_status"": ""true"", ""justification_status"": ""initially_supported_but_defective"", ""knowledge_status"": ""does_not_know"", ""epistemic_status"": ""lucky_true_belief"", ""failure_mode"": ""epistemic_luck""}",,2.114,"{
+  ""belief_status"": ""believes"",
+  ""truth_status"": ""true"",
+  ""justification_status"": ""initially_supported_but_defective"",
+  ""knowledge_status"": ""does_not_know"",
+  ""epistemic_status"": ""invalid_inference"",
+  ""failure_mode"": ""epistemic_luck"",
+  ""brief_explanation"": ""Liam believes the proposition based on a false assumption, leading to an invalid conclusion despite the proposition being true.""
+}",True,"{""belief_status"": ""believes"", ""truth_status"": ""true"", ""justification_status"": ""initially_supported_but_defective"", ""knowledge_status"": ""does_not_know"", ""epistemic_status"": ""invalid_inference"", ""failure_mode"": ""epistemic_luck"", ""brief_explanation"": ""Liam believes the proposition based on a false assumption, leading to an invalid conclusion despite the proposition being true.""}","Liam believes the proposition based on a false assumption, leading to an invalid conclusion despite the proposition being true.","{""belief_status"": true, ""truth_status"": true, ""justification_status"": true, ""knowledge_status"": true, ""epistemic_status"": false, ""failure_mode"": true}",5.0,6.0,0.8333333333333334
+gettier_draft_002,gettier_luck,fake_object_real_counterpart,1.0,medium,gpt-4o-mini,2026-07-04T21:04:28.692464+00:00,"{""belief_status"": ""believes"", ""truth_status"": ""true"", ""justification_status"": ""initially_supported_but_defective"", ""knowledge_status"": ""does_not_know"", ""epistemic_status"": ""lucky_true_belief"", ""failure_mode"": ""epistemic_luck""}",,2.692,"{
+  ""belief_status"": ""believes"",
+  ""truth_status"": ""true"",
   ""justification_status"": ""initially_supported_but_defective"",
   ""knowledge_status"": ""does_not_know"",
   ""epistemic_status"": ""false_belief"",
-  ""brief_explanation"": ""Brooke believes the restaurant serves Italian food despite strong evidence to the contrary.""
-}",True,"{""belief_status"": ""believes"", ""truth_status"": ""false"", ""justification_status"": ""initially_supported_but_defective"", ""knowledge_status"": ""does_not_know"", ""epistemic_status"": ""false_belief"", ""brief_explanation"": ""Brooke believes the restaurant serves Italian food despite strong evidence to the contrary.""}",Brooke believes the restaurant serves Italian food despite strong evidence to the contrary.,"{""belief_status"": true, ""truth_status"": true, ""justification_status"": false, ""knowledge_status"": true, ""epistemic_status"": true}",4.0,5.0,0.8
-btk_draft_006,belief_truth_knowledge,justified_true_proposition_without_belief,1,medium,gpt-4o-mini,2026-07-03T03:17:22.859295+00:00,"{""belief_status"": ""does_not_believe"", ""truth_status"": ""true"", ""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""epistemic_status"": ""no_belief""}",,2.17,"{
-  ""belief_status"": ""does_not_believe"",
-  ""truth_status"": ""true"",
-  ""justification_status"": ""unjustified"",
-  ""knowledge_status"": ""does_not_know"",
-  ""epistemic_status"": ""false_belief"",
-  ""brief_explanation"": ""Priya does not believe the accurate notice, leading to a false belief despite the truth of the proposition.""
-}",True,"{""belief_status"": ""does_not_believe"", ""truth_status"": ""true"", ""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""epistemic_status"": ""false_belief"", ""brief_explanation"": ""Priya does not believe the accurate notice, leading to a false belief despite the truth of the proposition.""}","Priya does not believe the accurate notice, leading to a false belief despite the truth of the proposition.","{""belief_status"": true, ""truth_status"": true, ""justification_status"": true, ""knowledge_status"": true, ""epistemic_status"": false}",4.0,5.0,0.8
-gettier_draft_001,gettier_luck,false_lemma_true_conclusion,1,medium,gpt-4o-mini,2026-07-03T03:17:25.029925+00:00,"{""belief_status"": ""believes"", ""truth_status"": ""true"", ""justification_status"": ""initially_supported_but_defective"", ""knowledge_status"": ""does_not_know"", ""epistemic_status"": ""lucky_true_belief"", ""failure_mode"": ""epistemic_luck""}",,2.412,"{
+  ""failure_mode"": ""epistemic_luck"",
+  ""brief_explanation"": ""Ava believes there is a deer, but her belief is based on a statue, not knowledge.""
+}",True,"{""belief_status"": ""believes"", ""truth_status"": ""true"", ""justification_status"": ""initially_supported_but_defective"", ""knowledge_status"": ""does_not_know"", ""epistemic_status"": ""false_belief"", ""failure_mode"": ""epistemic_luck"", ""brief_explanation"": ""Ava believes there is a deer, but her belief is based on a statue, not knowledge.""}","Ava believes there is a deer, but her belief is based on a statue, not knowledge.","{""belief_status"": true, ""truth_status"": true, ""justification_status"": true, ""knowledge_status"": true, ""epistemic_status"": false, ""failure_mode"": true}",5.0,6.0,0.8333333333333334
+gettier_draft_003,gettier_luck,false_lemma_true_conclusion,2.0,medium,gpt-4o-mini,2026-07-04T21:04:31.385072+00:00,"{""belief_status"": ""believes"", ""truth_status"": ""true"", ""justification_status"": ""initially_supported_but_defective"", ""knowledge_status"": ""does_not_know"", ""epistemic_status"": ""lucky_true_belief"", ""failure_mode"": ""epistemic_luck""}",,2.064,"{
   ""belief_status"": ""believes"",
   ""truth_status"": ""true"",
   ""justification_status"": ""initially_supported_but_defective"",
   ""knowledge_status"": ""does_not_know"",
   ""epistemic_status"": ""lucky_true_belief"",
   ""failure_mode"": ""epistemic_luck"",
-  ""brief_explanation"": ""Liam believes the proposition based on a false assumption, leading to a true conclusion by chance.""
-}",True,"{""belief_status"": ""believes"", ""truth_status"": ""true"", ""justification_status"": ""initially_supported_but_defective"", ""knowledge_status"": ""does_not_know"", ""epistemic_status"": ""lucky_true_belief"", ""failure_mode"": ""epistemic_luck"", ""brief_explanation"": ""Liam believes the proposition based on a false assumption, leading to a true conclusion by chance.""}","Liam believes the proposition based on a false assumption, leading to a true conclusion by chance.","{""belief_status"": true, ""truth_status"": true, ""justification_status"": true, ""knowledge_status"": true, ""epistemic_status"": true, ""failure_mode"": true}",6.0,6.0,1.0
-gettier_draft_002,gettier_luck,fake_object_real_counterpart,1,medium,gpt-4o-mini,2026-07-03T03:17:27.442222+00:00,"{""belief_status"": ""believes"", ""truth_status"": ""true"", ""justification_status"": ""initially_supported_but_defective"", ""knowledge_status"": ""does_not_know"", ""epistemic_status"": ""lucky_true_belief"", ""failure_mode"": ""epistemic_luck""}",,2.414,"{
-  ""belief_status"": ""believes"",
-  ""truth_status"": ""true"",
-  ""justification_status"": ""initially_supported_but_defective"",
-  ""knowledge_status"": ""does_not_know"",
-  ""epistemic_status"": ""lucky_true_belief"",
-  ""failure_mode"": ""epistemic_luck"",
-  ""brief_explanation"": ""Ava believes there is a deer, which is true, but her belief is based on a statue.""
-}",True,"{""belief_status"": ""believes"", ""truth_status"": ""true"", ""justification_status"": ""initially_supported_but_defective"", ""knowledge_status"": ""does_not_know"", ""epistemic_status"": ""lucky_true_belief"", ""failure_mode"": ""epistemic_luck"", ""brief_explanation"": ""Ava believes there is a deer, which is true, but her belief is based on a statue.""}","Ava believes there is a deer, which is true, but her belief is based on a statue.","{""belief_status"": true, ""truth_status"": true, ""justification_status"": true, ""knowledge_status"": true, ""epistemic_status"": true, ""failure_mode"": true}",6.0,6.0,1.0
-gettier_draft_003,gettier_luck,false_lemma_true_conclusion,2,medium,gpt-4o-mini,2026-07-03T03:17:29.856509+00:00,"{""belief_status"": ""believes"", ""truth_status"": ""true"", ""justification_status"": ""initially_supported_but_defective"", ""knowledge_status"": ""does_not_know"", ""epistemic_status"": ""lucky_true_belief"", ""failure_mode"": ""epistemic_luck""}",,1.742,"{
-  ""belief_status"": ""believes"",
-  ""truth_status"": ""true"",
-  ""justification_status"": ""initially_supported_but_defective"",
-  ""knowledge_status"": ""does_not_know"",
-  ""epistemic_status"": ""lucky_true_belief"",
-  ""failure_mode"": ""epistemic_luck"",
-  ""brief_explanation"": ""Julian believes the proposition is true, but his justification is flawed due to misidentifying the fruit.""
-}",True,"{""belief_status"": ""believes"", ""truth_status"": ""true"", ""justification_status"": ""initially_supported_but_defective"", ""knowledge_status"": ""does_not_know"", ""epistemic_status"": ""lucky_true_belief"", ""failure_mode"": ""epistemic_luck"", ""brief_explanation"": ""Julian believes the proposition is true, but his justification is flawed due to misidentifying the fruit.""}","Julian believes the proposition is true, but his justification is flawed due to misidentifying the fruit.","{""belief_status"": true, ""truth_status"": true, ""justification_status"": true, ""knowledge_status"": true, ""epistemic_status"": true, ""failure_mode"": true}",6.0,6.0,1.0
-gettier_draft_004,gettier_luck,fake_object_real_counterpart,2,medium,gpt-4o-mini,2026-07-03T03:17:31.598342+00:00,"{""belief_status"": ""believes"", ""truth_status"": ""true"", ""justification_status"": ""initially_supported_but_defective"", ""knowledge_status"": ""does_not_know"", ""epistemic_status"": ""lucky_true_belief"", ""failure_mode"": ""epistemic_luck""}",,2.201,"{
+  ""brief_explanation"": ""Julian believes the proposition, which is true, but his justification is flawed due to misidentifying the source.""
+}",True,"{""belief_status"": ""believes"", ""truth_status"": ""true"", ""justification_status"": ""initially_supported_but_defective"", ""knowledge_status"": ""does_not_know"", ""epistemic_status"": ""lucky_true_belief"", ""failure_mode"": ""epistemic_luck"", ""brief_explanation"": ""Julian believes the proposition, which is true, but his justification is flawed due to misidentifying the source.""}","Julian believes the proposition, which is true, but his justification is flawed due to misidentifying the source.","{""belief_status"": true, ""truth_status"": true, ""justification_status"": true, ""knowledge_status"": true, ""epistemic_status"": true, ""failure_mode"": true}",6.0,6.0,1.0
+gettier_draft_004,gettier_luck,fake_object_real_counterpart,2.0,medium,gpt-4o-mini,2026-07-04T21:04:33.449132+00:00,"{""belief_status"": ""believes"", ""truth_status"": ""true"", ""justification_status"": ""initially_supported_but_defective"", ""knowledge_status"": ""does_not_know"", ""epistemic_status"": ""lucky_true_belief"", ""failure_mode"": ""epistemic_luck""}",,1.534,"{
   ""belief_status"": ""believes"",
   ""truth_status"": ""false"",
   ""justification_status"": ""initially_supported_but_defective"",
@@ -83,16 +155,16 @@ gettier_draft_004,gettier_luck,fake_object_real_counterpart,2,medium,gpt-4o-mini
   ""failure_mode"": ""epistemic_luck"",
   ""brief_explanation"": ""Vicky believes there is a police officer, but her belief is based on a misidentification.""
 }",True,"{""belief_status"": ""believes"", ""truth_status"": ""false"", ""justification_status"": ""initially_supported_but_defective"", ""knowledge_status"": ""does_not_know"", ""epistemic_status"": ""false_belief"", ""failure_mode"": ""epistemic_luck"", ""brief_explanation"": ""Vicky believes there is a police officer, but her belief is based on a misidentification.""}","Vicky believes there is a police officer, but her belief is based on a misidentification.","{""belief_status"": true, ""truth_status"": false, ""justification_status"": true, ""knowledge_status"": true, ""epistemic_status"": false, ""failure_mode"": true}",4.0,6.0,0.6666666666666666
-gettier_draft_005,gettier_luck,false_lemma_true_conclusion,3,medium,gpt-4o-mini,2026-07-03T03:17:33.799477+00:00,"{""belief_status"": ""believes"", ""truth_status"": ""true"", ""justification_status"": ""initially_supported_but_defective"", ""knowledge_status"": ""does_not_know"", ""epistemic_status"": ""lucky_true_belief"", ""failure_mode"": ""epistemic_luck""}",,2.128,"{
+gettier_draft_005,gettier_luck,false_lemma_true_conclusion,3.0,medium,gpt-4o-mini,2026-07-04T21:04:34.983198+00:00,"{""belief_status"": ""believes"", ""truth_status"": ""true"", ""justification_status"": ""initially_supported_but_defective"", ""knowledge_status"": ""does_not_know"", ""epistemic_status"": ""lucky_true_belief"", ""failure_mode"": ""epistemic_luck""}",,1.705,"{
   ""belief_status"": ""believes"",
   ""truth_status"": ""true"",
   ""justification_status"": ""initially_supported_but_defective"",
   ""knowledge_status"": ""does_not_know"",
   ""epistemic_status"": ""false_belief"",
   ""failure_mode"": ""epistemic_luck"",
-  ""brief_explanation"": ""Chris believes the manager owns a parrot based on a misinterpretation, but the belief is true due to luck.""
-}",True,"{""belief_status"": ""believes"", ""truth_status"": ""true"", ""justification_status"": ""initially_supported_but_defective"", ""knowledge_status"": ""does_not_know"", ""epistemic_status"": ""false_belief"", ""failure_mode"": ""epistemic_luck"", ""brief_explanation"": ""Chris believes the manager owns a parrot based on a misinterpretation, but the belief is true due to luck.""}","Chris believes the manager owns a parrot based on a misinterpretation, but the belief is true due to luck.","{""belief_status"": true, ""truth_status"": true, ""justification_status"": true, ""knowledge_status"": true, ""epistemic_status"": false, ""failure_mode"": true}",5.0,6.0,0.8333333333333334
-gettier_draft_006,gettier_luck,fake_object_real_counterpart,3,medium,gpt-4o-mini,2026-07-03T03:17:35.927779+00:00,"{""belief_status"": ""believes"", ""truth_status"": ""true"", ""justification_status"": ""initially_supported_but_defective"", ""knowledge_status"": ""does_not_know"", ""epistemic_status"": ""lucky_true_belief"", ""failure_mode"": ""epistemic_luck""}",,1.905,"{
+  ""brief_explanation"": ""Chris believes the manager owns a parrot based on a false perception, but the manager does own one.""
+}",True,"{""belief_status"": ""believes"", ""truth_status"": ""true"", ""justification_status"": ""initially_supported_but_defective"", ""knowledge_status"": ""does_not_know"", ""epistemic_status"": ""false_belief"", ""failure_mode"": ""epistemic_luck"", ""brief_explanation"": ""Chris believes the manager owns a parrot based on a false perception, but the manager does own one.""}","Chris believes the manager owns a parrot based on a false perception, but the manager does own one.","{""belief_status"": true, ""truth_status"": true, ""justification_status"": true, ""knowledge_status"": true, ""epistemic_status"": false, ""failure_mode"": true}",5.0,6.0,0.8333333333333334
+gettier_draft_006,gettier_luck,fake_object_real_counterpart,3.0,medium,gpt-4o-mini,2026-07-04T21:04:36.688285+00:00,"{""belief_status"": ""believes"", ""truth_status"": ""true"", ""justification_status"": ""initially_supported_but_defective"", ""knowledge_status"": ""does_not_know"", ""epistemic_status"": ""lucky_true_belief"", ""failure_mode"": ""epistemic_luck""}",,1.995,"{
   ""belief_status"": ""believes"",
   ""truth_status"": ""true"",
   ""justification_status"": ""initially_supported_but_defective"",
@@ -101,7 +173,7 @@ gettier_draft_006,gettier_luck,fake_object_real_counterpart,3,medium,gpt-4o-mini
   ""failure_mode"": ""epistemic_luck"",
   ""brief_explanation"": ""Kimmy believes there is a beaver, but her belief is based on a decoy, not knowledge.""
 }",True,"{""belief_status"": ""believes"", ""truth_status"": ""true"", ""justification_status"": ""initially_supported_but_defective"", ""knowledge_status"": ""does_not_know"", ""epistemic_status"": ""false_belief"", ""failure_mode"": ""epistemic_luck"", ""brief_explanation"": ""Kimmy believes there is a beaver, but her belief is based on a decoy, not knowledge.""}","Kimmy believes there is a beaver, but her belief is based on a decoy, not knowledge.","{""belief_status"": true, ""truth_status"": true, ""justification_status"": true, ""knowledge_status"": true, ""epistemic_status"": false, ""failure_mode"": true}",5.0,6.0,0.8333333333333334
-deduction_draft_001,deduction_rationality,modus_ponens_closure,1,easy,gpt-4o-mini,2026-07-03T03:17:37.833324+00:00,"{""inference_type"": ""modus_ponens"", ""validity"": ""valid"", ""conclusion_follows"": ""true"", ""rational_requirement"": ""accept_target_or_revise_prior_commitments"", ""incoherence_if_rejects_target"": ""true""}",,1.719,"{
+deduction_draft_001,deduction_rationality,modus_ponens_closure,1.0,easy,gpt-4o-mini,2026-07-04T21:04:38.683416+00:00,"{""inference_type"": ""modus_ponens"", ""validity"": ""valid"", ""conclusion_follows"": ""true"", ""rational_requirement"": ""accept_target_or_revise_prior_commitments"", ""incoherence_if_rejects_target"": ""true""}",,1.421,"{
   ""inference_type"": ""modus_ponens"",
   ""validity"": ""invalid"",
   ""conclusion_follows"": false,
@@ -109,45 +181,45 @@ deduction_draft_001,deduction_rationality,modus_ponens_closure,1,easy,gpt-4o-min
   ""incoherence_if_rejects_target"": true,
   ""brief_explanation"": ""S's beliefs are inconsistent since rejecting q contradicts the implication of p being true.""
 }",True,"{""inference_type"": ""modus_ponens"", ""validity"": ""invalid"", ""conclusion_follows"": false, ""rational_requirement"": ""accept_target_or_revise_prior_commitments"", ""incoherence_if_rejects_target"": true, ""brief_explanation"": ""S's beliefs are inconsistent since rejecting q contradicts the implication of p being true.""}",S's beliefs are inconsistent since rejecting q contradicts the implication of p being true.,"{""inference_type"": true, ""validity"": false, ""conclusion_follows"": false, ""rational_requirement"": true, ""incoherence_if_rejects_target"": true}",3.0,5.0,0.6
-deduction_draft_002,deduction_rationality,affirming_the_consequent,1,easy,gpt-4o-mini,2026-07-03T03:17:39.552358+00:00,"{""inference_type"": ""affirming_the_consequent"", ""validity"": ""invalid"", ""conclusion_follows"": ""false""}",,1.428,"{
+deduction_draft_002,deduction_rationality,affirming_the_consequent,1.0,easy,gpt-4o-mini,2026-07-04T21:04:40.104485+00:00,"{""inference_type"": ""affirming_the_consequent"", ""validity"": ""invalid"", ""conclusion_follows"": ""false""}",,1.61,"{
   ""inference_type"": ""affirming_the_consequent"",
   ""validity"": ""invalid"",
-  ""conclusion_follows"": false,
+  ""conclusion_follows"": ""false"",
   ""brief_explanation"": ""Jordan's conclusion does not necessarily follow from the premises provided.""
-}",True,"{""inference_type"": ""affirming_the_consequent"", ""validity"": ""invalid"", ""conclusion_follows"": false, ""brief_explanation"": ""Jordan's conclusion does not necessarily follow from the premises provided.""}",Jordan's conclusion does not necessarily follow from the premises provided.,"{""inference_type"": true, ""validity"": true, ""conclusion_follows"": true}",3.0,3.0,1.0
-deduction_draft_003,deduction_rationality,hypothetical_syllogism,1,easy,gpt-4o-mini,2026-07-03T03:17:40.980051+00:00,"{""inference_type"": ""hypothetical_syllogism"", ""validity"": ""valid"", ""conclusion_follows"": ""true""}",,1.219,"{
+}",True,"{""inference_type"": ""affirming_the_consequent"", ""validity"": ""invalid"", ""conclusion_follows"": ""false"", ""brief_explanation"": ""Jordan's conclusion does not necessarily follow from the premises provided.""}",Jordan's conclusion does not necessarily follow from the premises provided.,"{""inference_type"": true, ""validity"": true, ""conclusion_follows"": true}",3.0,3.0,1.0
+deduction_draft_003,deduction_rationality,hypothetical_syllogism,1.0,easy,gpt-4o-mini,2026-07-04T21:04:41.715052+00:00,"{""inference_type"": ""hypothetical_syllogism"", ""validity"": ""valid"", ""conclusion_follows"": ""true""}",,2.185,"{
   ""inference_type"": ""hypothetical_syllogism"",
   ""validity"": ""valid"",
   ""conclusion_follows"": true,
   ""brief_explanation"": ""Leah's conclusion logically follows from her premises using hypothetical syllogism.""
 }",True,"{""inference_type"": ""hypothetical_syllogism"", ""validity"": ""valid"", ""conclusion_follows"": true, ""brief_explanation"": ""Leah's conclusion logically follows from her premises using hypothetical syllogism.""}",Leah's conclusion logically follows from her premises using hypothetical syllogism.,"{""inference_type"": true, ""validity"": true, ""conclusion_follows"": true}",3.0,3.0,1.0
-deduction_draft_004,deduction_rationality,disjunctive_syllogism,1,easy,gpt-4o-mini,2026-07-03T03:17:42.199641+00:00,"{""inference_type"": ""disjunctive_syllogism"", ""validity"": ""valid"", ""conclusion_follows"": ""true""}",,1.626,"{
+deduction_draft_004,deduction_rationality,disjunctive_syllogism,1.0,easy,gpt-4o-mini,2026-07-04T21:04:43.900465+00:00,"{""inference_type"": ""disjunctive_syllogism"", ""validity"": ""valid"", ""conclusion_follows"": ""true""}",,1.74,"{
   ""inference_type"": ""disjunctive_syllogism"",
   ""validity"": ""valid"",
   ""conclusion_follows"": ""true"",
-  ""brief_explanation"": ""Maya correctly infers the package's location using the disjunctive syllogism from her beliefs.""
-}",True,"{""inference_type"": ""disjunctive_syllogism"", ""validity"": ""valid"", ""conclusion_follows"": ""true"", ""brief_explanation"": ""Maya correctly infers the package's location using the disjunctive syllogism from her beliefs.""}",Maya correctly infers the package's location using the disjunctive syllogism from her beliefs.,"{""inference_type"": true, ""validity"": true, ""conclusion_follows"": true}",3.0,3.0,1.0
-deduction_draft_005,deduction_rationality,contradiction_detection,1,easy,gpt-4o-mini,2026-07-03T03:17:43.825789+00:00,"{""inference_type"": ""contradiction_detection"", ""contradiction_present"": ""true"", ""consistency_status"": ""inconsistent""}",,1.374,"{
+  ""brief_explanation"": ""Maya correctly infers the package's location using the disjunctive syllogism.""
+}",True,"{""inference_type"": ""disjunctive_syllogism"", ""validity"": ""valid"", ""conclusion_follows"": ""true"", ""brief_explanation"": ""Maya correctly infers the package's location using the disjunctive syllogism.""}",Maya correctly infers the package's location using the disjunctive syllogism.,"{""inference_type"": true, ""validity"": true, ""conclusion_follows"": true}",3.0,3.0,1.0
+deduction_draft_005,deduction_rationality,contradiction_detection,1.0,easy,gpt-4o-mini,2026-07-04T21:04:45.640922+00:00,"{""inference_type"": ""contradiction_detection"", ""contradiction_present"": ""true"", ""consistency_status"": ""inconsistent""}",,2.478,"{
   ""inference_type"": ""contradiction_detection"",
   ""contradiction_present"": true,
   ""consistency_status"": ""inconsistent"",
   ""brief_explanation"": ""Taylor's beliefs about the lab door cannot both be true simultaneously.""
 }",True,"{""inference_type"": ""contradiction_detection"", ""contradiction_present"": true, ""consistency_status"": ""inconsistent"", ""brief_explanation"": ""Taylor's beliefs about the lab door cannot both be true simultaneously.""}",Taylor's beliefs about the lab door cannot both be true simultaneously.,"{""inference_type"": true, ""contradiction_present"": true, ""consistency_status"": true}",3.0,3.0,1.0
-deduction_draft_006,deduction_rationality,denying_the_antecedent,1,easy,gpt-4o-mini,2026-07-03T03:17:45.200331+00:00,"{""inference_type"": ""denying_the_antecedent"", ""validity"": ""invalid"", ""conclusion_follows"": ""false""}",,1.79,"{
+deduction_draft_006,deduction_rationality,denying_the_antecedent,1.0,easy,gpt-4o-mini,2026-07-04T21:04:48.118844+00:00,"{""inference_type"": ""denying_the_antecedent"", ""validity"": ""invalid"", ""conclusion_follows"": ""false""}",,1.819,"{
   ""inference_type"": ""denying_the_antecedent"",
   ""validity"": ""invalid"",
   ""conclusion_follows"": ""false"",
   ""brief_explanation"": ""The conclusion does not logically follow from the premises provided.""
 }",True,"{""inference_type"": ""denying_the_antecedent"", ""validity"": ""invalid"", ""conclusion_follows"": ""false"", ""brief_explanation"": ""The conclusion does not logically follow from the premises provided.""}",The conclusion does not logically follow from the premises provided.,"{""inference_type"": true, ""validity"": true, ""conclusion_follows"": true}",3.0,3.0,1.0
-defeater_draft_001,defeaters,undercutting_defeater,1,medium,gpt-4o-mini,2026-07-03T03:17:46.990051+00:00,"{""initial_status"": ""justified_belief"", ""defeater_type"": ""undercutting_defeater"", ""updated_status"": ""reduce_confidence"", ""retain_original_belief"": ""no"", ""confidence_direction"": ""decrease""}",,1.69,"{
+defeater_draft_001,defeaters,undercutting_defeater,1.0,medium,gpt-4o-mini,2026-07-04T21:04:49.937641+00:00,"{""initial_status"": ""justified_belief"", ""defeater_type"": ""undercutting_defeater"", ""updated_status"": ""reduce_confidence"", ""retain_original_belief"": ""no"", ""confidence_direction"": ""decrease""}",,2.068,"{
   ""initial_status"": ""justified_belief"",
   ""defeater_type"": ""undercutting_defeater"",
   ""updated_status"": ""reduce_confidence"",
   ""retain_original_belief"": ""no"",
   ""confidence_direction"": ""decrease"",
-  ""brief_explanation"": ""The malfunctioning tracking system undermines Ava's justification for believing the package arrived.""
-}",True,"{""initial_status"": ""justified_belief"", ""defeater_type"": ""undercutting_defeater"", ""updated_status"": ""reduce_confidence"", ""retain_original_belief"": ""no"", ""confidence_direction"": ""decrease"", ""brief_explanation"": ""The malfunctioning tracking system undermines Ava's justification for believing the package arrived.""}",The malfunctioning tracking system undermines Ava's justification for believing the package arrived.,"{""initial_status"": true, ""defeater_type"": true, ""updated_status"": true, ""retain_original_belief"": true, ""confidence_direction"": true}",4.0,4.0,1.0
-defeater_draft_002,defeaters,placebo_irrelevant_refuter,1,easy,gpt-4o-mini,2026-07-03T03:17:48.680340+00:00,"{""initial_status"": ""justified_belief"", ""defeater_type"": ""none_placebo"", ""updated_status"": ""retain_belief"", ""retain_original_belief"": ""yes"", ""confidence_direction"": ""unchanged""}",,1.939,"{
+  ""brief_explanation"": ""The malfunctioning tracking system undermines the reliability of Ava's belief in the package's arrival.""
+}",True,"{""initial_status"": ""justified_belief"", ""defeater_type"": ""undercutting_defeater"", ""updated_status"": ""reduce_confidence"", ""retain_original_belief"": ""no"", ""confidence_direction"": ""decrease"", ""brief_explanation"": ""The malfunctioning tracking system undermines the reliability of Ava's belief in the package's arrival.""}",The malfunctioning tracking system undermines the reliability of Ava's belief in the package's arrival.,"{""initial_status"": true, ""defeater_type"": true, ""updated_status"": true, ""retain_original_belief"": true, ""confidence_direction"": true}",4.0,4.0,1.0
+defeater_draft_002,defeaters,placebo_irrelevant_refuter,1.0,easy,gpt-4o-mini,2026-07-04T21:04:52.006199+00:00,"{""initial_status"": ""justified_belief"", ""defeater_type"": ""none_placebo"", ""updated_status"": ""retain_belief"", ""retain_original_belief"": ""yes"", ""confidence_direction"": ""unchanged""}",,2.879,"{
   ""initial_status"": ""justified_belief"",
   ""defeater_type"": ""none_placebo"",
   ""updated_status"": ""retain_belief"",
@@ -155,7 +227,7 @@ defeater_draft_002,defeaters,placebo_irrelevant_refuter,1,easy,gpt-4o-mini,2026-
   ""confidence_direction"": ""unchanged"",
   ""brief_explanation"": ""The new evidence about the library's exterior color is irrelevant to its closing time.""
 }",True,"{""initial_status"": ""justified_belief"", ""defeater_type"": ""none_placebo"", ""updated_status"": ""retain_belief"", ""retain_original_belief"": ""yes"", ""confidence_direction"": ""unchanged"", ""brief_explanation"": ""The new evidence about the library's exterior color is irrelevant to its closing time.""}",The new evidence about the library's exterior color is irrelevant to its closing time.,"{""initial_status"": true, ""defeater_type"": true, ""updated_status"": true, ""retain_original_belief"": true, ""confidence_direction"": true}",4.0,4.0,1.0
-defeater_draft_003,defeaters,rebutting_defeater,1,easy,gpt-4o-mini,2026-07-03T03:17:50.619250+00:00,"{""initial_status"": ""justified_belief"", ""defeater_type"": ""rebutting_defeater"", ""updated_status"": ""believe_not_p"", ""retain_original_belief"": ""no"", ""confidence_direction"": ""decrease""}",,1.808,"{
+defeater_draft_003,defeaters,rebutting_defeater,1.0,easy,gpt-4o-mini,2026-07-04T21:04:54.885792+00:00,"{""initial_status"": ""justified_belief"", ""defeater_type"": ""rebutting_defeater"", ""updated_status"": ""believe_not_p"", ""retain_original_belief"": ""no"", ""confidence_direction"": ""decrease""}",,2.816,"{
   ""initial_status"": ""justified_belief"",
   ""defeater_type"": ""rebutting_defeater"",
   ""updated_status"": ""believe_not_p"",
@@ -163,7 +235,7 @@ defeater_draft_003,defeaters,rebutting_defeater,1,easy,gpt-4o-mini,2026-07-03T03
   ""confidence_direction"": ""decrease"",
   ""brief_explanation"": ""The official alert cancels the concert, directly contradicting Elena's belief.""
 }",True,"{""initial_status"": ""justified_belief"", ""defeater_type"": ""rebutting_defeater"", ""updated_status"": ""believe_not_p"", ""retain_original_belief"": ""no"", ""confidence_direction"": ""decrease"", ""brief_explanation"": ""The official alert cancels the concert, directly contradicting Elena's belief.""}","The official alert cancels the concert, directly contradicting Elena's belief.","{""initial_status"": true, ""defeater_type"": true, ""updated_status"": true, ""retain_original_belief"": true, ""confidence_direction"": true}",4.0,4.0,1.0
-defeater_draft_004,defeaters,undercutting_defeater,1,medium,gpt-4o-mini,2026-07-03T03:17:52.426910+00:00,"{""initial_status"": ""justified_belief"", ""defeater_type"": ""undercutting_defeater"", ""updated_status"": ""reduce_confidence"", ""retain_original_belief"": ""no"", ""confidence_direction"": ""decrease""}",,1.603,"{
+defeater_draft_004,defeaters,undercutting_defeater,1.0,medium,gpt-4o-mini,2026-07-04T21:04:57.701845+00:00,"{""initial_status"": ""justified_belief"", ""defeater_type"": ""undercutting_defeater"", ""updated_status"": ""reduce_confidence"", ""retain_original_belief"": ""no"", ""confidence_direction"": ""decrease""}",,1.228,"{
   ""initial_status"": ""justified_belief"",
   ""defeater_type"": ""undercutting_defeater"",
   ""updated_status"": ""reduce_confidence"",
@@ -171,7 +243,7 @@ defeater_draft_004,defeaters,undercutting_defeater,1,medium,gpt-4o-mini,2026-07-
   ""confidence_direction"": ""decrease"",
   ""brief_explanation"": ""The thermometer's unreliability undermines Ravi's confidence in his belief about having a fever.""
 }",True,"{""initial_status"": ""justified_belief"", ""defeater_type"": ""undercutting_defeater"", ""updated_status"": ""reduce_confidence"", ""retain_original_belief"": ""no"", ""confidence_direction"": ""decrease"", ""brief_explanation"": ""The thermometer's unreliability undermines Ravi's confidence in his belief about having a fever.""}",The thermometer's unreliability undermines Ravi's confidence in his belief about having a fever.,"{""initial_status"": true, ""defeater_type"": true, ""updated_status"": true, ""retain_original_belief"": true, ""confidence_direction"": true}",4.0,4.0,1.0
-defeater_draft_005,defeaters,higher_order_defeater,1,medium,gpt-4o-mini,2026-07-03T03:17:54.030428+00:00,"{""initial_status"": ""justified_belief"", ""defeater_type"": ""higher_order_defeater"", ""updated_status"": ""reduce_confidence"", ""retain_original_belief"": ""no"", ""confidence_direction"": ""decrease""}",,1.677,"{
+defeater_draft_005,defeaters,higher_order_defeater,1.0,medium,gpt-4o-mini,2026-07-04T21:04:58.929818+00:00,"{""initial_status"": ""justified_belief"", ""defeater_type"": ""higher_order_defeater"", ""updated_status"": ""reduce_confidence"", ""retain_original_belief"": ""no"", ""confidence_direction"": ""decrease""}",,1.438,"{
   ""initial_status"": ""justified_belief"",
   ""defeater_type"": ""undercutting_defeater"",
   ""updated_status"": ""reduce_confidence"",
@@ -179,7 +251,7 @@ defeater_draft_005,defeaters,higher_order_defeater,1,medium,gpt-4o-mini,2026-07-
   ""confidence_direction"": ""decrease"",
   ""brief_explanation"": ""Mina's exhaustion and confirmed errors weaken her confidence in the correctness of her spreadsheet.""
 }",True,"{""initial_status"": ""justified_belief"", ""defeater_type"": ""undercutting_defeater"", ""updated_status"": ""reduce_confidence"", ""retain_original_belief"": ""no"", ""confidence_direction"": ""decrease"", ""brief_explanation"": ""Mina's exhaustion and confirmed errors weaken her confidence in the correctness of her spreadsheet.""}",Mina's exhaustion and confirmed errors weaken her confidence in the correctness of her spreadsheet.,"{""initial_status"": true, ""defeater_type"": false, ""updated_status"": true, ""retain_original_belief"": true, ""confidence_direction"": true}",4.0,4.0,1.0
-defeater_draft_006,defeaters,rebutting_defeater,1,medium,gpt-4o-mini,2026-07-03T03:17:55.707580+00:00,"{""initial_status"": ""justified_belief"", ""defeater_type"": ""rebutting_defeater"", ""updated_status"": ""believe_not_p"", ""retain_original_belief"": ""no"", ""confidence_direction"": ""decrease""}",,1.646,"{
+defeater_draft_006,defeaters,rebutting_defeater,1.0,medium,gpt-4o-mini,2026-07-04T21:05:00.368454+00:00,"{""initial_status"": ""justified_belief"", ""defeater_type"": ""rebutting_defeater"", ""updated_status"": ""believe_not_p"", ""retain_original_belief"": ""no"", ""confidence_direction"": ""decrease""}",,1.73,"{
   ""initial_status"": ""justified_belief"",
   ""defeater_type"": ""rebutting_defeater"",
   ""updated_status"": ""believe_not_p"",
