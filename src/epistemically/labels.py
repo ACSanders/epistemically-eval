@@ -32,10 +32,16 @@ ALLOWED_LABELS: Dict[str, List[str]] = {
     ],
     "belief_status": ["believes", "does_not_believe"],
     "truth_status": ["true", "false", "indeterminate"],
+    # Union across modules: the first three are legacy values still used by
+    # sample/gettier cases; the epistemically_* values belong to the
+    # justification family, whose prompt template lists only its own options.
     "justification_status": [
         "justified",
         "unjustified",
         "initially_supported_but_defective",
+        "epistemically_justified",
+        "not_epistemically_justified",
+        "indeterminate",
     ],
     "knowledge_status": ["knows", "does_not_know", "indeterminate"],
     "epistemic_status": [

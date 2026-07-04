@@ -84,6 +84,39 @@ Target proposition:
 Question:
 {question}"""
 
+# Rubric-light prompt for the justification family: classifies the agent's
+# reason type and epistemic justification status.
+JUSTIFICATION_PROMPT = """Your task is to assess a scenario and determine the reason type and epistemic justification status of an agent's belief with respect to a target proposition.
+
+Return exactly four JSON fields:
+
+1. reason_type
+2. justification_status
+3. knowledge_status
+4. brief_explanation
+
+Allowed labels include:
+
+reason_type: epistemic, practical, epistemic_and_practical, none_or_indeterminate
+justification_status: epistemically_justified, not_epistemically_justified, indeterminate
+knowledge_status: knows, does_not_know, indeterminate
+
+Important considerations for this task:
+- Evaluate each output field only with respect to the target proposition provided.
+- Use the given scenario as the only source of information.
+- Use indeterminate or none_or_indeterminate only when the scenario does not provide enough information to classify that field.
+- The brief_explanation should be one concise sentence explaining the classification.
+- Return JSON only.
+
+Scenario:
+{scenario}
+
+Target proposition:
+{target_proposition}
+
+Question:
+{question}"""
+
 DEFEATER_TYPE_GUIDE = (
     "defeater_type definitions — use these mainstream categories only, not "
     "finer-grained or invented ones:\n"
@@ -133,6 +166,7 @@ def build_prompt(case: EpistemicCase) -> str:
     family_templates = {
         "belief_truth_knowledge": BELIEF_TRUTH_KNOWLEDGE_PROMPT,
         "acceptance_and_belief": ACCEPTANCE_AND_BELIEF_PROMPT,
+        "justification": JUSTIFICATION_PROMPT,
     }
     if case.module == "belief_acceptance_knowledge" and case.schema_family in family_templates:
         return family_templates[case.schema_family].format(
