@@ -16,6 +16,41 @@ SYSTEM_PROMPT = (
     "field's allowed values; never paraphrase, reword, or invent labels."
 )
 
+# Rubric-light primary prompt for the belief_acceptance_knowledge module's
+# belief_truth_knowledge family. Deliberately contains no operational theory
+# of belief, truth, justification, or knowledge — that lives in the
+# methodology docs, not in the tested model's prompt.
+BELIEF_TRUTH_KNOWLEDGE_PROMPT = """Your task is to assess a scenario and determine the epistemic position of an agent with respect to a target proposition.
+
+Return exactly four JSON fields:
+
+1. attitude_status
+2. truth_status
+3. knowledge_status
+4. brief_explanation
+
+Allowed labels include:
+
+attitude_status: believes, does_not_believe, indeterminate
+truth_status: true, false, indeterminate
+knowledge_status: knows, does_not_know, indeterminate
+
+Important considerations for this task:
+- Evaluate only the target proposition provided.
+- Use the given scenario as the only source of information.
+- Use indeterminate as an answer only when the scenario does not provide enough information to classify that field.
+- The brief_explanation should be one concise sentence explaining the classification.
+- Return JSON only.
+
+Scenario:
+{scenario}
+
+Target proposition:
+{target_proposition}
+
+Question:
+{question}"""
+
 DEFEATER_TYPE_GUIDE = (
     "defeater_type definitions — use these mainstream categories only, not "
     "finer-grained or invented ones:\n"
@@ -58,8 +93,20 @@ def build_prompt(case: EpistemicCase) -> str:
 
     Asks for a JSON object whose keys mirror the case's expected labels,
     each constrained to its allowed vocabulary where one is defined, plus a
-    brief_explanation field (not scored in v0).
+    brief_explanation field (not scored in v0). Cases in the
+    belief_acceptance_knowledge module's belief_truth_knowledge family use a
+    dedicated rubric-light template instead.
     """
+    if (
+        case.module == "belief_acceptance_knowledge"
+        and case.schema_family == "belief_truth_knowledge"
+    ):
+        return BELIEF_TRUTH_KNOWLEDGE_PROMPT.format(
+            scenario=case.scenario,
+            target_proposition=case.target_proposition,
+            question=case.question,
+        )
+
     field_lines = [_field_spec(label, value) for label, value in case.expected.items()]
     field_lines.append('  "brief_explanation": one sentence, at most 25 words')
     fields_block = ",\n".join(field_lines)

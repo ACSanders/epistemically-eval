@@ -320,10 +320,12 @@ with tab_explorer:
 
             if case is not None:
                 st.subheader(f"{case.id}")
-                st.markdown(
-                    f"`{case.module}` · `{case.schema_family}` · variant {case.variant_id} "
-                    f"· difficulty **{case.difficulty}**"
-                )
+                meta = [f"`{case.module}`", f"`{case.schema_family}`"]
+                if case.variant_id is not None:
+                    meta.append(f"variant {case.variant_id}")
+                if case.difficulty:
+                    meta.append(f"difficulty **{case.difficulty}**")
+                st.markdown(" · ".join(meta))
                 st.markdown(f"**Scenario:** {case.scenario}")
                 st.markdown(f"**Target proposition:** {case.target_proposition}")
                 st.markdown(f"**Question:** {case.question}")
