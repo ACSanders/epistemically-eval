@@ -56,17 +56,21 @@ def run_case(
         "expected_json": json.dumps(case.expected),
     }
 
+    request: Dict[str, Any] = {
+        "model": model,
+        "response_format": {"type": "json_object"},
+        "messages": [
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": build_prompt(case)},
+        ],
+    }
+    # GPT-5 and o-series reasoning models only accept the default temperature.
+    if not model.startswith(("gpt-5", "o1", "o3", "o4")):
+        request["temperature"] = temperature
+
     started = time.perf_counter()
     try:
-        response = client.chat.completions.create(
-            model=model,
-            temperature=temperature,
-            response_format={"type": "json_object"},
-            messages=[
-                {"role": "system", "content": SYSTEM_PROMPT},
-                {"role": "user", "content": build_prompt(case)},
-            ],
-        )
+        response = client.chat.completions.create(**request)
         raw = response.choices[0].message.content or ""
         row["error"] = ""
     except Exception as exc:  # keep the sweep going; record the failure

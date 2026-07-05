@@ -9,6 +9,8 @@ import json
 from pathlib import Path
 from typing import Any, Dict, List, Mapping, Optional, Tuple
 
+import pandas as pd
+
 from epistemically.dataset import check_cases
 from epistemically.schemas import EpistemicCase
 
@@ -105,6 +107,58 @@ def style_fig(fig, title: Optional[str] = None, height: Optional[int] = None):
     if height:
         fig.update_layout(height=height)
     return fig
+
+
+def load_all_results(results_dir: Path) -> Tuple[pd.DataFrame, List[str]]:
+    """Combine every results CSV in the directory for cross-model views.
+
+    When the same (model, case_id) appears in several files, the row with the
+    latest timestamp wins, so stale combined files coexist safely with fresh
+    per-model files. Returns (combined_frame, loaded_file_names).
+    """
+    files = [
+        p for p in sorted(results_dir.glob("*.csv"))
+        if not p.name.endswith("_test_results.csv")
+    ]
+    frames: List[pd.DataFrame] = []
+    loaded: List[str] = []
+    for path in files:
+        try:
+            frame = pd.read_csv(path)
+        except Exception:
+            continue
+        if "case_id" not in frame.columns or "model" not in frame.columns:
+            continue
+        frame["source_file"] = path.name
+        frames.append(frame)
+        loaded.append(path.name)
+    if not frames:
+        return pd.DataFrame(), []
+    combined = pd.concat(frames, ignore_index=True)
+    if "schema_family" in combined.columns:
+        combined["schema_family"] = combined["schema_family"].fillna("(none)")
+    combined = (
+        combined.sort_values("timestamp")
+        .drop_duplicates(subset=["model", "case_id"], keep="last")
+        .reset_index(drop=True)
+    )
+    return combined, loaded
+
+
+def field_accuracy(df: pd.DataFrame) -> pd.DataFrame:
+    """Per-(model, field) exact-label accuracy from field_results_json."""
+    records = []
+    for _, row in df.iterrows():
+        for field, ok in json_or_empty(row.get("field_results_json")).items():
+            records.append({"model": row["model"], "field": field, "correct": bool(ok)})
+    if not records:
+        return pd.DataFrame(columns=["model", "field", "accuracy", "n"])
+    long = pd.DataFrame(records)
+    return (
+        long.groupby(["model", "field"])
+        .agg(accuracy=("correct", "mean"), n=("correct", "size"))
+        .reset_index()
+    )
 
 
 def json_or_empty(value: Any) -> Dict[str, Any]:

@@ -1,5 +1,6 @@
 """Epistemically dashboard: dark-theme evaluation explorer for eval results."""
 
+import json
 import sys
 from pathlib import Path
 
@@ -13,14 +14,20 @@ sys.path.insert(0, str(REPO_ROOT / "src"))
 
 from epistemically.analysis import summarize_by_model_module  # noqa: E402
 from epistemically.app_utils import (  # noqa: E402
+    ACCENT,
     APP_CSS,
+    BAD,
     CARD_BG,
     CORAL,
     CORAL_FILL,
+    GOOD,
     HEATMAP_SCALE,
+    MUTED,
     failure_card,
+    field_accuracy,
     field_rows,
     json_or_empty,
+    load_all_results,
     load_case_lookup,
     metric_card,
     style_fig,
@@ -116,8 +123,15 @@ cases_by_id, case_file_problems = load_case_lookup(CASES_DIR)
 for problem in case_file_problems:
     st.warning(f"Case file issue — {problem}")
 
-tab_overview, tab_profile, tab_failures, tab_explorer, tab_method = st.tabs(
-    ["Overview", "Module Profile", "Failure Gallery", "Case Explorer", "Methodology"]
+tab_overview, tab_profile, tab_failures, tab_explorer, tab_compare, tab_method = st.tabs(
+    [
+        "Overview",
+        "Module Profile",
+        "Failure Gallery",
+        "Case Explorer",
+        "Model Comparison",
+        "Methodology",
+    ]
 )
 
 # --- Overview -----------------------------------------------------------------
@@ -386,6 +400,233 @@ with tab_explorer:
                 if isinstance(raw, str) and raw.strip():
                     with st.expander("Raw model response"):
                         st.code(raw, language="json")
+
+# --- Model Comparison ------------------------------------------------------------------
+with tab_compare:
+    combined, loaded_files = load_all_results(RESULTS_DIR)
+    n_models = combined["model"].nunique() if not combined.empty else 0
+    if n_models < 2:
+        st.info(
+            "Model comparison needs results from at least two models in "
+            "data/results/. Run the eval with different --model values."
+        )
+    else:
+        st.caption(
+            f"Combined from {len(loaded_files)} file(s): {', '.join(loaded_files)}. "
+            "Latest run kept per model/case. This tab ignores the filter panel above."
+        )
+        all_models = sorted(combined["model"].astype(str).unique())
+        col_a, col_b = st.columns(2)
+        with col_a:
+            index_a = all_models.index("gpt-4o-mini") if "gpt-4o-mini" in all_models else 0
+            model_a = st.selectbox("Baseline model (A)", all_models, index=index_a)
+        with col_b:
+            index_b = (
+                all_models.index("gpt-5-mini")
+                if "gpt-5-mini" in all_models
+                else min(1, len(all_models) - 1)
+            )
+            model_b = st.selectbox("Comparison model (B)", all_models, index=index_b)
+
+        if model_a == model_b:
+            st.warning("Pick two different models to compare.")
+        else:
+            cdf = combined[combined["model"].isin([model_a, model_b])].copy()
+            shared_ids = set(cdf[cdf["model"] == model_a]["case_id"]) & set(
+                cdf[cdf["model"] == model_b]["case_id"]
+            )
+            cdf = cdf[cdf["case_id"].isin(shared_ids)]
+            adf = cdf[cdf["model"] == model_a]
+            bdf = cdf[cdf["model"] == model_b]
+            mean_a, mean_b = adf["score"].mean(), bdf["score"].mean()
+            color_map = {model_a: MUTED, model_b: ACCENT}
+
+            cards = st.columns(4)
+            cards[0].markdown(metric_card(f"A · {model_a}", f"{mean_a:.3f}"), unsafe_allow_html=True)
+            cards[1].markdown(
+                metric_card(f"B · {model_b}", f"{mean_b:.3f}", accent=True), unsafe_allow_html=True
+            )
+            cards[2].markdown(
+                metric_card("Δ overall (B − A)", f"{mean_b - mean_a:+.3f}"), unsafe_allow_html=True
+            )
+            cards[3].markdown(
+                metric_card("Shared cases", str(len(shared_ids)), sub="latest run per model"),
+                unsafe_allow_html=True,
+            )
+
+            # Module-level scores: grouped bars with CI, plus a fingerprint radar
+            summary = summarize_by_model_module(cdf)
+            bars = px.bar(
+                summary,
+                x="module",
+                y="mean_score",
+                color="model",
+                barmode="group",
+                error_y=summary["ci_high"] - summary["mean_score"],
+                error_y_minus=summary["mean_score"] - summary["ci_low"],
+                range_y=[0, 1.02],
+                color_discrete_map=color_map,
+            )
+            bars.update_traces(marker_line_width=0)
+            st.plotly_chart(
+                style_fig(bars, "Module score by model (bootstrap 95% CI)", height=380),
+                width="stretch",
+            )
+
+            module_means = cdf.pivot_table(index="module", columns="model", values="score")
+            if len(module_means) >= 3:
+                radar = go.Figure()
+                for model_name, line_color, fill in [
+                    (model_a, MUTED, "rgba(139, 150, 165, 0.15)"),
+                    (model_b, CORAL, CORAL_FILL),
+                ]:
+                    values = module_means[model_name].tolist()
+                    radar.add_trace(
+                        go.Scatterpolar(
+                            r=values + values[:1],
+                            theta=list(module_means.index) + [module_means.index[0]],
+                            fill="toself",
+                            name=model_name,
+                            line=dict(color=line_color, width=2),
+                            fillcolor=fill,
+                        )
+                    )
+                radar.update_layout(
+                    polar=dict(
+                        bgcolor=CARD_BG,
+                        radialaxis=dict(range=[0, 1], gridcolor="#232a35", tickfont=dict(size=10)),
+                        angularaxis=dict(gridcolor="#232a35"),
+                    ),
+                )
+                radar_fig = style_fig(radar, "Epistemic fingerprint", height=460)
+                radar_fig.update_layout(margin=dict(l=90, r=90, t=60, b=70))
+                st.plotly_chart(radar_fig, width="stretch")
+
+            # Schema-family heatmap per model
+            family_pivot = cdf.pivot_table(
+                index="model", columns="schema_family", values="score", aggfunc="mean"
+            )
+            heat = px.imshow(
+                family_pivot,
+                zmin=0,
+                zmax=1,
+                text_auto=".2f",
+                color_continuous_scale=HEATMAP_SCALE,
+                aspect="auto",
+            )
+            heat.update_layout(coloraxis_colorbar=dict(title="score"))
+            st.plotly_chart(
+                style_fig(heat, "Schema-family score by model", height=300), width="stretch"
+            )
+
+            # Delta charts: B − A by module and by schema family
+            def delta_chart(group_col: str, title: str):
+                pivot = cdf.pivot_table(index=group_col, columns="model", values="score")
+                delta = (pivot[model_b] - pivot[model_a]).sort_values()
+                fig = go.Figure(
+                    go.Bar(
+                        x=delta.values,
+                        y=delta.index,
+                        orientation="h",
+                        marker_color=[GOOD if v >= 0 else BAD for v in delta.values],
+                    )
+                )
+                fig.update_xaxes(title=f"Δ mean score ({model_b} − {model_a})")
+                return style_fig(fig, title, height=max(260, 40 * len(delta) + 120))
+
+            col_dm, col_df = st.columns(2)
+            with col_dm:
+                st.plotly_chart(delta_chart("module", "Δ by module"), width="stretch")
+            with col_df:
+                st.plotly_chart(delta_chart("schema_family", "Δ by schema family"), width="stretch")
+
+            # Field-level accuracy
+            acc = field_accuracy(cdf)
+            if not acc.empty:
+                acc_fig = px.bar(
+                    acc,
+                    x="field",
+                    y="accuracy",
+                    color="model",
+                    barmode="group",
+                    range_y=[0, 1.02],
+                    color_discrete_map=color_map,
+                    hover_data=["n"],
+                )
+                acc_fig.update_traces(marker_line_width=0)
+                st.plotly_chart(
+                    style_fig(acc_fig, "Field-level accuracy by model", height=380),
+                    width="stretch",
+                )
+
+            # Disagreement explorer (case counts as correct when score == 1.0)
+            st.subheader("Disagreement explorer")
+            case_scores = cdf.pivot_table(index="case_id", columns="model", values="score")
+            b_only = case_scores[(case_scores[model_b] >= 1.0) & (case_scores[model_a] < 1.0)]
+            a_only = case_scores[(case_scores[model_a] >= 1.0) & (case_scores[model_b] < 1.0)]
+            both_missed = case_scores[(case_scores[model_a] < 1.0) & (case_scores[model_b] < 1.0)]
+            categories = {
+                f"B correct, A missed ({len(b_only)})": b_only,
+                f"A correct, B missed ({len(a_only)})": a_only,
+                f"Both missed ({len(both_missed)})": both_missed,
+            }
+            picked = st.radio(
+                "Category", list(categories), horizontal=True, label_visibility="collapsed"
+            )
+            bucket = categories[picked]
+            if bucket.empty:
+                st.success("No cases in this category.")
+            else:
+                meta = (
+                    cdf[cdf["case_id"].isin(bucket.index)][["case_id", "module", "schema_family"]]
+                    .drop_duplicates("case_id")
+                    .set_index("case_id")
+                )
+                listing = bucket.join(meta).reset_index()
+                listing = listing[["case_id", "module", "schema_family", model_a, model_b]]
+                st.dataframe(
+                    listing.sort_values(model_b),
+                    width="stretch",
+                    hide_index=True,
+                    column_config={
+                        model_a: st.column_config.NumberColumn(f"A · {model_a}", format="%.2f"),
+                        model_b: st.column_config.NumberColumn(f"B · {model_b}", format="%.2f"),
+                    },
+                )
+
+                detail_id = st.selectbox("Inspect case", sorted(bucket.index))
+                detail_case = cases_by_id.get(detail_id)
+                if detail_case is not None:
+                    st.markdown(f"**Scenario:** {detail_case.scenario}")
+                    st.markdown(f"**Target proposition:** {detail_case.target_proposition}")
+                row_a = adf[adf["case_id"] == detail_id].iloc[0]
+                row_b = bdf[bdf["case_id"] == detail_id].iloc[0]
+                expected = json_or_empty(row_a["expected_json"])
+                pred_a = json_or_empty(row_a.get("predicted_json"))
+                pred_b = json_or_empty(row_b.get("predicted_json"))
+                res_a = json_or_empty(row_a.get("field_results_json"))
+                res_b = json_or_empty(row_b.get("field_results_json"))
+                st.dataframe(
+                    pd.DataFrame(
+                        [
+                            {
+                                "field": field,
+                                "expected": json.dumps(value),
+                                f"A · {model_a}": json.dumps(pred_a.get(field, "—")),
+                                "A ✓": "✓" if res_a.get(field) else "✗",
+                                f"B · {model_b}": json.dumps(pred_b.get(field, "—")),
+                                "B ✓": "✓" if res_b.get(field) else "✗",
+                            }
+                            for field, value in expected.items()
+                        ]
+                    ),
+                    width="stretch",
+                    hide_index=True,
+                )
+                for label, row in ((f"A · {model_a}", row_a), (f"B · {model_b}", row_b)):
+                    explanation = row.get("brief_explanation")
+                    if isinstance(explanation, str) and explanation.strip():
+                        st.caption(f"{label}: {explanation}")
 
 # --- Methodology ---------------------------------------------------------------------
 with tab_method:
