@@ -46,9 +46,12 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
+cases_by_id, case_file_problems = load_case_lookup(CASES_DIR)
+
 # All result CSVs are combined into one dataset; the latest run wins per
-# model/case, so stale or superseded files never surface as extra models.
-combined, loaded_files = load_all_results(RESULTS_DIR)
+# model/case, and rows are restricted to the current case universe so stale
+# results for retired or renamed cases never surface in summaries.
+combined, loaded_files = load_all_results(RESULTS_DIR, valid_case_ids=set(cases_by_id))
 if combined.empty:
     st.warning("No results found in data/results/. Run `python scripts/run_eval.py` first.")
     st.stop()
@@ -70,7 +73,6 @@ if api_errors.any() or parse_failures.any():
         "responses. Affected fields score 0; interpret aggregates with care."
     )
 
-cases_by_id, case_file_problems = load_case_lookup(CASES_DIR)
 for problem in case_file_problems:
     st.warning(f"Case file issue: {problem}")
 

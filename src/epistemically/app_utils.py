@@ -7,7 +7,7 @@ No scoring, runner, or schema logic lives here.
 import html
 import json
 from pathlib import Path
-from typing import Any, Dict, List, Mapping, Optional, Tuple
+from typing import Any, Dict, List, Mapping, Optional, Set, Tuple
 
 import pandas as pd
 
@@ -109,12 +109,17 @@ def style_fig(fig, title: Optional[str] = None, height: Optional[int] = None):
     return fig
 
 
-def load_all_results(results_dir: Path) -> Tuple[pd.DataFrame, List[str]]:
+def load_all_results(
+    results_dir: Path, valid_case_ids: Optional[Set[str]] = None
+) -> Tuple[pd.DataFrame, List[str]]:
     """Combine every results CSV in the directory for cross-model views.
 
     When the same (model, case_id) appears in several files, the row with the
     latest timestamp wins, so stale combined files coexist safely with fresh
-    per-model files. Returns (combined_frame, loaded_file_names).
+    per-model files. When ``valid_case_ids`` is given, rows whose case id is
+    not in the set are dropped: results for retired or renamed cases never
+    reach the dashboard even though old CSVs stay on disk untouched.
+    Returns (combined_frame, loaded_file_names).
     """
     files = [
         p for p in sorted(results_dir.glob("*.csv"))
@@ -142,6 +147,10 @@ def load_all_results(results_dir: Path) -> Tuple[pd.DataFrame, List[str]]:
         .drop_duplicates(subset=["model", "case_id"], keep="last")
         .reset_index(drop=True)
     )
+    if valid_case_ids is not None:
+        combined = combined[
+            combined["case_id"].astype(str).isin(valid_case_ids)
+        ].reset_index(drop=True)
     return combined, loaded
 
 
