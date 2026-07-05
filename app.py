@@ -187,7 +187,7 @@ with tab_overview:
     )
     heat_modules.update_layout(coloraxis_colorbar=dict(title="score"))
     st.plotly_chart(
-        style_fig(heat_modules, "Module performance by model", height=280),
+        style_fig(heat_modules, "Model performance by module", height=280),
         width="stretch",
     )
 
