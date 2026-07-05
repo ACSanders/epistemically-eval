@@ -7,7 +7,8 @@ from pydantic import BaseModel, Field, model_validator
 Module = Literal[
     "belief_acceptance_knowledge",
     "belief_truth_knowledge",  # legacy module name, still used by sample cases
-    "gettier_luck",
+    "epistemic_luck",
+    "gettier_luck",  # legacy module name, still used by sample cases
     "rational_reasoning",
     "deduction_rationality",  # legacy module name, still used by sample cases
     "defeaters",

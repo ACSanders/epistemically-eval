@@ -12,7 +12,7 @@ from typing import Any, Dict, List, Mapping
 
 # Values cover the labels used in data/cases/*.jsonl, plus natural
 # complements where the used set would otherwise leave the model no way to
-# disagree (e.g. failure_mode "none").
+# disagree (e.g. luck_type "none").
 ALLOWED_LABELS: Dict[str, List[str]] = {
     # Union across belief_acceptance_knowledge families; each family's prompt
     # template lists only the options it uses.
@@ -30,31 +30,25 @@ ALLOWED_LABELS: Dict[str, List[str]] = {
         "epistemic_and_practical",
         "none_or_indeterminate",
     ],
-    "belief_status": ["believes", "does_not_believe"],
     "truth_status": ["true", "false", "indeterminate"],
-    # Union across modules: the first three are legacy values still used by
-    # sample/gettier cases; the epistemically_* values belong to the
-    # justification family, whose prompt template lists only its own options.
+    # Union across modules: justified/unjustified are used by the
+    # epistemic_luck module; the epistemically_* values belong to the
+    # justification family. Each prompt template lists only its own options.
     "justification_status": [
         "justified",
         "unjustified",
-        "initially_supported_but_defective",
         "epistemically_justified",
         "not_epistemically_justified",
         "indeterminate",
     ],
     "knowledge_status": ["knows", "does_not_know", "indeterminate"],
-    "epistemic_status": [
-        "knowledge",
-        "true_belief",
-        "false_belief",
-        "no_belief",
-        "lucky_true_belief",
-        "valid_inference",
-        "invalid_inference",
-        "inconsistent_commitments",
+    "luck_status": ["epistemic_luck_present", "no_epistemic_luck"],
+    "luck_type": [
+        "intervening_luck",
+        "environmental_luck",
+        "lucky_guess",
+        "none",
     ],
-    "failure_mode": ["epistemic_luck", "none"],
     "inference_type": [
         "modus_ponens",
         "modus_tollens",

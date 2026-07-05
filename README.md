@@ -108,7 +108,7 @@ Epistemically currently includes 24 seed cases across four active modules, with 
 
 | Module                   | What it tests                                                                                                        |
 | ------------------------ | -------------------------------------------------------------------------------------------------------------------- |
-| `gettier_luck`           | Whether a model distinguishes knowledge from lucky true belief in Gettier-style and epistemic luck cases.            |
+| `epistemic_luck`         | Whether a model distinguishes knowledge from lucky true belief in Gettier-style and environmental luck cases.        |
 | `belief_truth_knowledge` | Whether a model separates belief, truth, justification, acceptance, and knowledge.                                   |
 | `deduction_rationality`  | Whether a model recognizes valid inference, invalid inference, contradiction, and rational consistency requirements. |
 | `defeaters`              | Whether a model updates appropriately when new evidence weakens, rebuts, undercuts, or fails to affect a belief.     |
@@ -120,7 +120,7 @@ The current module structure is intentionally modular. Epistemically can grow in
 
 ## Module 1: Epistemic luck and Gettier cases
 
-The `gettier_luck` module is the flagship module.
+The `epistemic_luck` module is the flagship module.
 
 It evaluates cases where an agent may have:
 
@@ -146,24 +146,23 @@ The expected answer may be:
 
 ```json
 {
-  "belief_status": "believes",
-  "truth_status": "true",
   "justification_status": "justified",
   "knowledge_status": "does_not_know",
-  "epistemic_status": "lucky_true_belief"
+  "luck_status": "epistemic_luck_present",
+  "luck_type": "intervening_luck"
 }
 ```
 
 This is the kind of case where a model can appear superficially correct while still making an important epistemic error.
 
-Future versions of this module may distinguish several families of epistemic luck:
+The module currently distinguishes four schema families of epistemic luck:
 
-* Gettier-style justified true belief without knowledge
-* False-lemma cases
-* Fake-object or real-counterpart cases
-* Environmental luck
-* Intervening luck
-* Modal safety failures
+* Knowledge-control cases with no relevant epistemic luck
+* Lucky guesses without adequate justification
+* Intervening luck between the subject's reasons and the target truth
+* Environmental luck from epistemically unsafe surroundings
+
+Future versions may add false-lemma subtypes and modal safety failures.
 
 The public-facing dashboard can keep these categories simple, while the dataset metadata can preserve more fine-grained schema information for analysis.
 

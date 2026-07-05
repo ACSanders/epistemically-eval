@@ -117,6 +117,60 @@ Target proposition:
 Question:
 {question}"""
 
+# Prompt for the epistemic_luck module: justification, knowledge, and
+# knowledge-defeating luck under operational labels. JSON braces are doubled
+# for str.format.
+EPISTEMIC_LUCK_PROMPT = """You are evaluating an epistemic scenario.
+
+Be sure to focus on the target proposition provided in the case. Do not evaluate nearby claims, background claims, or a different proposition.
+
+Return only valid JSON with exactly these fields:
+
+{{
+  "justification_status": "...",
+  "knowledge_status": "...",
+  "luck_status": "...",
+  "luck_type": "...",
+  "brief_explanation": "..."
+}}
+
+Allowed labels:
+
+justification_status:
+- justified: The subject has adequate epistemic support for believing the target proposition.
+- unjustified: The subject lacks adequate epistemic support for believing the target proposition.
+
+knowledge_status:
+- knows: The subject knows the target proposition.
+- does_not_know: The subject does not know the target proposition.
+
+luck_status:
+- epistemic_luck_present: A knowledge-defeating form of luck is present. The subject's target belief happens to be true in a lucky or accidental way, such that the subject could easily have been wrong given how the belief was formed.
+- no_epistemic_luck: No relevant knowledge-defeating epistemic luck is present in the case.
+
+luck_type:
+- intervening_luck: The subject's target belief is true, and the subject might have justification, but the belief is true because of some lucky aspect of the case rather than because the subject's reason or belief-forming method successfully led them to the target truth. The subject is correct, but in a way that could easily have gone wrong.
+- environmental_luck: The subject forms a true belief using a seemingly good belief-forming process, but the surrounding environment or situation they are in is epistemically unsafe. Similar beliefs formed in the exact same way in that particular environment would easily have been false.
+- lucky_guess: The subject's target belief is true, but the subject lacks adequate epistemic justification and gets the answer right by guessing or by using an unreliable process.
+- none: No relevant knowledge-defeating epistemic luck is present.
+
+Important:
+- Do not assume that a true belief is knowledge.
+- Do not assume that a justified true belief is always knowledge.
+- Do not deny knowledge merely because the scenario is part of an evaluation. Some cases are ordinary knowledge cases with no relevant epistemic luck.
+- Use "none" for luck_type when luck_status is "no_epistemic_luck".
+- Use "epistemic_luck_present" when luck_type is "intervening_luck", "environmental_luck", or "lucky_guess".
+- Return JSON only. Do not include markdown or extra text. The brief_explanation field should be one concise sentence explaining the classification.
+
+Scenario:
+{scenario}
+
+Target proposition:
+{target_proposition}
+
+Question:
+{question}"""
+
 # Rubric-light prompt for the rational_reasoning module's deduction family:
 # reasoning pattern, logical status, and the rational constraint on the agent.
 RATIONAL_REASONING_PROMPT = """Your task is to assess a scenario and classify an agent's belief transition or belief set with respect to a target proposition.
@@ -225,6 +279,12 @@ def build_prompt(case: EpistemicCase) -> str:
     }
     if case.module == "belief_acceptance_knowledge" and case.schema_family in family_templates:
         return family_templates[case.schema_family].format(
+            scenario=case.scenario,
+            target_proposition=case.target_proposition,
+            question=case.question,
+        )
+    if case.module == "epistemic_luck":
+        return EPISTEMIC_LUCK_PROMPT.format(
             scenario=case.scenario,
             target_proposition=case.target_proposition,
             question=case.question,

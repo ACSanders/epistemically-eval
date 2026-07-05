@@ -843,7 +843,10 @@ claiming models literally believe or know anything. Current modules:
   (attitude/truth/knowledge), `acceptance_and_belief` (belief vs. pragmatic
   acceptance and reason type), and `justification` (reason type and epistemic
   justification status)
-- **gettier_luck**: justified true belief undermined by epistemic luck
+- **epistemic_luck**: families `knowledge_control`, `lucky_guess`,
+  `intervening_luck`, and `environmental_luck` covering epistemic luck
+  sensitivity, Gettier-style and environmental luck diagnostics, and whether
+  knowledge-defeating luck is tracked under operational labels
 - **rational_reasoning**: family `deduction` covering the reasoning pattern of a
   belief transition or belief set, its logical status, and the rational
   constraint it places on the agent (for example, accept the target or revise a
