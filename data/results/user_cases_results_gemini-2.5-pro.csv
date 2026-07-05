@@ -1,0 +1,931 @@
+case_id,module,schema_family,variant_id,difficulty,model,timestamp,expected_json,error,latency_s,raw_response,parsed_ok,predicted_json,brief_explanation,field_results_json,points,max_points,score
+btk_001_false_belief,belief_acceptance_knowledge,belief_truth_knowledge,,,gemini-2.5-pro,2026-07-05T21:27:47.803400+00:00,"{""attitude_status"": ""believes"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know""}",,4.474,"{
+  ""attitude_status"": ""believes"",
+  ""truth_status"": ""false"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Jack believes the proposition, but his belief is false, so he does not know it.""
+}",True,"{""attitude_status"": ""believes"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Jack believes the proposition, but his belief is false, so he does not know it.""}","Jack believes the proposition, but his belief is false, so he does not know it.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_002_true_without_belief,belief_acceptance_knowledge,belief_truth_knowledge,,,gemini-2.5-pro,2026-07-05T21:27:52.277931+00:00,"{""attitude_status"": ""does_not_believe"", ""truth_status"": ""true"", ""knowledge_status"": ""does_not_know""}",,4.658,"{
+  ""attitude_status"": ""does_not_believe"",
+  ""truth_status"": ""true"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""The proposition is true, but Bill does not know it because he does not form a belief about it.""
+}",True,"{""attitude_status"": ""does_not_believe"", ""truth_status"": ""true"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""The proposition is true, but Bill does not know it because he does not form a belief about it.""}","The proposition is true, but Bill does not know it because he does not form a belief about it.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_003_knowledge_with_distractor,belief_acceptance_knowledge,belief_truth_knowledge,,,gemini-2.5-pro,2026-07-05T21:27:56.936155+00:00,"{""attitude_status"": ""believes"", ""truth_status"": ""true"", ""knowledge_status"": ""knows""}",,5.513,"{
+  ""attitude_status"": ""believes"",
+  ""truth_status"": ""true"",
+  ""knowledge_status"": ""knows"",
+  ""brief_explanation"": ""Brooke has a justified true belief that Mars is red, as her belief is based on strong evidence and the proposition is true.""
+}",True,"{""attitude_status"": ""believes"", ""truth_status"": ""true"", ""knowledge_status"": ""knows"", ""brief_explanation"": ""Brooke has a justified true belief that Mars is red, as her belief is based on strong evidence and the proposition is true.""}","Brooke has a justified true belief that Mars is red, as her belief is based on strong evidence and the proposition is true.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_004_justified_false_belief,belief_acceptance_knowledge,belief_truth_knowledge,,,gemini-2.5-pro,2026-07-05T21:28:02.448781+00:00,"{""attitude_status"": ""believes"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know""}",,4.78,"{
+  ""attitude_status"": ""believes"",
+  ""truth_status"": ""false"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Adam believes the proposition based on reliable testimony, but since the proposition is false, he does not have knowledge.""
+}",True,"{""attitude_status"": ""believes"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Adam believes the proposition based on reliable testimony, but since the proposition is false, he does not have knowledge.""}","Adam believes the proposition based on reliable testimony, but since the proposition is false, he does not have knowledge.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_005_justification_without_belief,belief_acceptance_knowledge,belief_truth_knowledge,,,gemini-2.5-pro,2026-07-05T21:28:07.228618+00:00,"{""attitude_status"": ""does_not_believe"", ""truth_status"": ""true"", ""knowledge_status"": ""does_not_know""}",,5.466,"{
+  ""attitude_status"": ""does_not_believe"",
+  ""truth_status"": ""true"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Although the proposition is true, Jill does not know it because she fails to believe it.""
+}",True,"{""attitude_status"": ""does_not_believe"", ""truth_status"": ""true"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Although the proposition is true, Jill does not know it because she fails to believe it.""}","Although the proposition is true, Jill does not know it because she fails to believe it.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_006_unjustified_false_belief,belief_acceptance_knowledge,belief_truth_knowledge,,,gemini-2.5-pro,2026-07-05T21:28:12.695185+00:00,"{""attitude_status"": ""believes"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know""}",,4.715,"{
+  ""attitude_status"": ""believes"",
+  ""truth_status"": ""false"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Veronica believes the proposition, but it is false, so she does not have knowledge.""
+}",True,"{""attitude_status"": ""believes"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Veronica believes the proposition, but it is false, so she does not have knowledge.""}","Veronica believes the proposition, but it is false, so she does not have knowledge.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_007_simple_knowledge,belief_acceptance_knowledge,belief_truth_knowledge,,,gemini-2.5-pro,2026-07-05T21:28:17.410759+00:00,"{""attitude_status"": ""believes"", ""truth_status"": ""true"", ""knowledge_status"": ""knows""}",,3.776,"{
+  ""attitude_status"": ""believes"",
+  ""truth_status"": ""true"",
+  ""knowledge_status"": ""knows"",
+  ""brief_explanation"": ""Mark has a justified true belief based on information from a reliable source.""
+}",True,"{""attitude_status"": ""believes"", ""truth_status"": ""true"", ""knowledge_status"": ""knows"", ""brief_explanation"": ""Mark has a justified true belief based on information from a reliable source.""}",Mark has a justified true belief based on information from a reliable source.,"{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_008_false_belief_with_irrelevant_evidence,belief_acceptance_knowledge,belief_truth_knowledge,,,gemini-2.5-pro,2026-07-05T21:28:21.186601+00:00,"{""attitude_status"": ""believes"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know""}",,4.956,"{
+  ""attitude_status"": ""believes"",
+  ""truth_status"": ""false"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Jane believes the proposition, but it is false, so she does not know it.""
+}",True,"{""attitude_status"": ""believes"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Jane believes the proposition, but it is false, so she does not know it.""}","Jane believes the proposition, but it is false, so she does not know it.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_009_rejection_of_true_proposition,belief_acceptance_knowledge,belief_truth_knowledge,,,gemini-2.5-pro,2026-07-05T21:28:26.143144+00:00,"{""attitude_status"": ""does_not_believe"", ""truth_status"": ""true"", ""knowledge_status"": ""does_not_know""}",,5.826,"{
+  ""attitude_status"": ""does_not_believe"",
+  ""truth_status"": ""true"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Noah does not know the proposition because, despite it being true, he explicitly rejects it and therefore does not believe it.""
+}",True,"{""attitude_status"": ""does_not_believe"", ""truth_status"": ""true"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Noah does not know the proposition because, despite it being true, he explicitly rejects it and therefore does not believe it.""}","Noah does not know the proposition because, despite it being true, he explicitly rejects it and therefore does not believe it.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_010_indeterminate_attitude_true_target,belief_acceptance_knowledge,belief_truth_knowledge,,,gemini-2.5-pro,2026-07-05T21:28:31.969282+00:00,"{""attitude_status"": ""indeterminate"", ""truth_status"": ""true"", ""knowledge_status"": ""indeterminate""}",,5.855,"{
+  ""attitude_status"": ""indeterminate"",
+  ""truth_status"": ""true"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""The proposition is true, but the scenario explicitly states it is unknown whether Liam has noticed today's weather, so it is indeterminate whether he believes it and he therefore does not know it.""
+}",True,"{""attitude_status"": ""indeterminate"", ""truth_status"": ""true"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""The proposition is true, but the scenario explicitly states it is unknown whether Liam has noticed today's weather, so it is indeterminate whether he believes it and he therefore does not know it.""}","The proposition is true, but the scenario explicitly states it is unknown whether Liam has noticed today's weather, so it is indeterminate whether he believes it and he therefore does not know it.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": false}",2.0,3.0,0.6666666666666666
+btk_011_justified_false_belief_testimony,belief_acceptance_knowledge,belief_truth_knowledge,,,gemini-2.5-pro,2026-07-05T21:28:37.824164+00:00,"{""attitude_status"": ""believes"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know""}",,5.263,"{
+  ""attitude_status"": ""believes"",
+  ""truth_status"": ""false"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Nora believes the proposition, but she does not know it because her belief is false.""
+}",True,"{""attitude_status"": ""believes"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Nora believes the proposition, but she does not know it because her belief is false.""}","Nora believes the proposition, but she does not know it because her belief is false.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_012_unjustified_true_belief,belief_acceptance_knowledge,belief_truth_knowledge,,,gemini-2.5-pro,2026-07-05T21:28:43.087200+00:00,"{""attitude_status"": ""believes"", ""truth_status"": ""true"", ""knowledge_status"": ""does_not_know""}",,5.044,"{
+  ""attitude_status"": ""believes"",
+  ""truth_status"": ""true"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Rachel has a true belief, but she does not know because her belief is not based on good evidence and is therefore unjustified.""
+}",True,"{""attitude_status"": ""believes"", ""truth_status"": ""true"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Rachel has a true belief, but she does not know because her belief is not based on good evidence and is therefore unjustified.""}","Rachel has a true belief, but she does not know because her belief is not based on good evidence and is therefore unjustified.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_013_simple_knowledge_air_travel,belief_acceptance_knowledge,belief_truth_knowledge,,,gemini-2.5-pro,2026-07-05T21:28:48.131156+00:00,"{""attitude_status"": ""believes"", ""truth_status"": ""true"", ""knowledge_status"": ""knows""}",,4.472,"{
+  ""attitude_status"": ""believes"",
+  ""truth_status"": ""true"",
+  ""knowledge_status"": ""knows"",
+  ""brief_explanation"": ""Mike has a justified true belief based on the reliable evidence of seeing tickets for sale on a legitimate airline website.""
+}",True,"{""attitude_status"": ""believes"", ""truth_status"": ""true"", ""knowledge_status"": ""knows"", ""brief_explanation"": ""Mike has a justified true belief based on the reliable evidence of seeing tickets for sale on a legitimate airline website.""}",Mike has a justified true belief based on the reliable evidence of seeing tickets for sale on a legitimate airline website.,"{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_014_nonbelief_false_target_misleading_evidence,belief_acceptance_knowledge,belief_truth_knowledge,,,gemini-2.5-pro,2026-07-05T21:28:52.603469+00:00,"{""attitude_status"": ""does_not_believe"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know""}",,4.714,"{
+  ""attitude_status"": ""does_not_believe"",
+  ""truth_status"": ""false"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Jose correctly does not believe the false proposition that Eric has a red car, as Eric's car is actually purple.""
+}",True,"{""attitude_status"": ""does_not_believe"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Jose correctly does not believe the false proposition that Eric has a red car, as Eric's car is actually purple.""}","Jose correctly does not believe the false proposition that Eric has a red car, as Eric's car is actually purple.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_015_nonbelief_false_target,belief_acceptance_knowledge,belief_truth_knowledge,,,gemini-2.5-pro,2026-07-05T21:28:57.317489+00:00,"{""attitude_status"": ""does_not_believe"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know""}",,5.461,"{
+  ""attitude_status"": ""does_not_believe"",
+  ""truth_status"": ""false"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Layla does not believe the proposition, which is false, and knowledge requires belief in a true proposition.""
+}",True,"{""attitude_status"": ""does_not_believe"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Layla does not believe the proposition, which is false, and knowledge requires belief in a true proposition.""}","Layla does not believe the proposition, which is false, and knowledge requires belief in a true proposition.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_016_indeterminate_attitude_false_target,belief_acceptance_knowledge,belief_truth_knowledge,,,gemini-2.5-pro,2026-07-05T21:29:02.778710+00:00,"{""attitude_status"": ""indeterminate"", ""truth_status"": ""false"", ""knowledge_status"": ""indeterminate""}",,5.209,"{
+  ""attitude_status"": ""indeterminate"",
+  ""truth_status"": ""false"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""The proposition is false because the bakery is closed, and since Owen's belief state is unknown, he cannot have knowledge.""
+}",True,"{""attitude_status"": ""indeterminate"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""The proposition is false because the bakery is closed, and since Owen's belief state is unknown, he cannot have knowledge.""}","The proposition is false because the bakery is closed, and since Owen's belief state is unknown, he cannot have knowledge.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": false}",2.0,3.0,0.6666666666666666
+btk_017_belief_indeterminate_truth,belief_acceptance_knowledge,belief_truth_knowledge,,,gemini-2.5-pro,2026-07-05T21:29:07.987452+00:00,"{""attitude_status"": ""believes"", ""truth_status"": ""indeterminate"", ""knowledge_status"": ""indeterminate""}",,7.67,"{
+  ""attitude_status"": ""believes"",
+  ""truth_status"": ""indeterminate"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Mina believes the proposition, but since the scenario does not state whether the proposition is true, she does not know it.""
+}",True,"{""attitude_status"": ""believes"", ""truth_status"": ""indeterminate"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Mina believes the proposition, but since the scenario does not state whether the proposition is true, she does not know it.""}","Mina believes the proposition, but since the scenario does not state whether the proposition is true, she does not know it.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": false}",2.0,3.0,0.6666666666666666
+btk_018_nonbelief_indeterminate_truth,belief_acceptance_knowledge,belief_truth_knowledge,,,gemini-2.5-pro,2026-07-05T21:29:15.657930+00:00,"{""attitude_status"": ""does_not_believe"", ""truth_status"": ""indeterminate"", ""knowledge_status"": ""does_not_know""}",,4.809,"{
+  ""attitude_status"": ""does_not_believe"",
+  ""truth_status"": ""indeterminate"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Tara does not believe the proposition, which is a necessary condition for knowledge, and the truth of the proposition is not specified in the scenario.""
+}",True,"{""attitude_status"": ""does_not_believe"", ""truth_status"": ""indeterminate"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Tara does not believe the proposition, which is a necessary condition for knowledge, and the truth of the proposition is not specified in the scenario.""}","Tara does not believe the proposition, which is a necessary condition for knowledge, and the truth of the proposition is not specified in the scenario.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_019_false_belief_with_defined_variable,belief_acceptance_knowledge,belief_truth_knowledge,,,gemini-2.5-pro,2026-07-05T21:29:20.467037+00:00,"{""attitude_status"": ""believes"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know""}",,5.307,"{
+  ""attitude_status"": ""believes"",
+  ""truth_status"": ""false"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Carlos believes the proposition based on a guess, but the proposition is false, so he does not have knowledge.""
+}",True,"{""attitude_status"": ""believes"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Carlos believes the proposition based on a guess, but the proposition is false, so he does not have knowledge.""}","Carlos believes the proposition based on a guess, but the proposition is false, so he does not have knowledge.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_020_true_target_no_information_about_agent,belief_acceptance_knowledge,belief_truth_knowledge,,,gemini-2.5-pro,2026-07-05T21:29:25.774193+00:00,"{""attitude_status"": ""indeterminate"", ""truth_status"": ""true"", ""knowledge_status"": ""indeterminate""}",,5.694,"{
+  ""attitude_status"": ""indeterminate"",
+  ""truth_status"": ""true"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""The proposition is true, but since the scenario provides no information about Harper's beliefs regarding the entrance, Harper does not know it.""
+}",True,"{""attitude_status"": ""indeterminate"", ""truth_status"": ""true"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""The proposition is true, but since the scenario provides no information about Harper's beliefs regarding the entrance, Harper does not know it.""}","The proposition is true, but since the scenario provides no information about Harper's beliefs regarding the entrance, Harper does not know it.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": false}",2.0,3.0,0.6666666666666666
+ab_001_belief_from_receipt,belief_acceptance_knowledge,acceptance_and_belief,,,gemini-2.5-pro,2026-07-05T21:29:31.468484+00:00,"{""attitude_status"": ""believes"", ""reason_type"": ""epistemic"", ""knowledge_status"": ""knows""}",,5.961,"{
+  ""attitude_status"": ""believes"",
+  ""reason_type"": ""epistemic"",
+  ""knowledge_status"": ""knows"",
+  ""brief_explanation"": ""Loki forms a true belief based on strong evidence (a receipt), which constitutes justified true belief and therefore knowledge.""
+}",True,"{""attitude_status"": ""believes"", ""reason_type"": ""epistemic"", ""knowledge_status"": ""knows"", ""brief_explanation"": ""Loki forms a true belief based on strong evidence (a receipt), which constitutes justified true belief and therefore knowledge.""}","Loki forms a true belief based on strong evidence (a receipt), which constitutes justified true belief and therefore knowledge.","{""attitude_status"": true, ""reason_type"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+ab_002_belief_from_perception,belief_acceptance_knowledge,acceptance_and_belief,,,gemini-2.5-pro,2026-07-05T21:29:37.429612+00:00,"{""attitude_status"": ""believes"", ""reason_type"": ""epistemic"", ""knowledge_status"": ""knows""}",,8.118,"{
+  ""attitude_status"": ""believes"",
+  ""reason_type"": ""epistemic"",
+  ""knowledge_status"": ""knows"",
+  ""brief_explanation"": ""Peter knows the proposition is true because he forms a justified belief based on the direct perceptual evidence of seeing five geese in the lake.""
+}",True,"{""attitude_status"": ""believes"", ""reason_type"": ""epistemic"", ""knowledge_status"": ""knows"", ""brief_explanation"": ""Peter knows the proposition is true because he forms a justified belief based on the direct perceptual evidence of seeing five geese in the lake.""}",Peter knows the proposition is true because he forms a justified belief based on the direct perceptual evidence of seeing five geese in the lake.,"{""attitude_status"": true, ""reason_type"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+ab_003_belief_from_indirect_evidence,belief_acceptance_knowledge,acceptance_and_belief,,,gemini-2.5-pro,2026-07-05T21:29:45.547593+00:00,"{""attitude_status"": ""believes"", ""reason_type"": ""epistemic"", ""knowledge_status"": ""knows""}",,7.276,"{
+  ""attitude_status"": ""believes"",
+  ""reason_type"": ""epistemic"",
+  ""knowledge_status"": ""knows"",
+  ""brief_explanation"": ""Geoff forms a justified true belief based on the evidence of the horse feed and saddle.""
+}",True,"{""attitude_status"": ""believes"", ""reason_type"": ""epistemic"", ""knowledge_status"": ""knows"", ""brief_explanation"": ""Geoff forms a justified true belief based on the evidence of the horse feed and saddle.""}",Geoff forms a justified true belief based on the evidence of the horse feed and saddle.,"{""attitude_status"": true, ""reason_type"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+ab_004_practical_acceptance_golf_course,belief_acceptance_knowledge,acceptance_and_belief,,,gemini-2.5-pro,2026-07-05T21:29:52.823678+00:00,"{""attitude_status"": ""accepts_without_belief"", ""reason_type"": ""practical"", ""knowledge_status"": ""does_not_know""}",,8.919,"{
+  ""attitude_status"": ""accepts_without_belief"",
+  ""reason_type"": ""epistemic_and_practical"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Chris accepts the proposition for the practical reason of practicing for a tournament, but he does not believe it due to his friend's testimony, and therefore he does not know it.""
+}",True,"{""attitude_status"": ""accepts_without_belief"", ""reason_type"": ""epistemic_and_practical"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Chris accepts the proposition for the practical reason of practicing for a tournament, but he does not believe it due to his friend's testimony, and therefore he does not know it.""}","Chris accepts the proposition for the practical reason of practicing for a tournament, but he does not believe it due to his friend's testimony, and therefore he does not know it.","{""attitude_status"": true, ""reason_type"": false, ""knowledge_status"": true}",2.0,3.0,0.6666666666666666
+ab_005_practical_acceptance_raffle,belief_acceptance_knowledge,acceptance_and_belief,,,gemini-2.5-pro,2026-07-05T21:30:01.742786+00:00,"{""attitude_status"": ""accepts_without_belief"", ""reason_type"": ""practical"", ""knowledge_status"": ""does_not_know""}",,7.061,"{
+  ""attitude_status"": ""accepts_without_belief"",
+  ""reason_type"": ""practical"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Johnny accepts the proposition for the practical purpose of trying to win, but he does not actually believe it is true and therefore does not know it.""
+}",True,"{""attitude_status"": ""accepts_without_belief"", ""reason_type"": ""practical"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Johnny accepts the proposition for the practical purpose of trying to win, but he does not actually believe it is true and therefore does not know it.""}","Johnny accepts the proposition for the practical purpose of trying to win, but he does not actually believe it is true and therefore does not know it.","{""attitude_status"": true, ""reason_type"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+ab_006_supposition_against_belief,belief_acceptance_knowledge,acceptance_and_belief,,,gemini-2.5-pro,2026-07-05T21:30:08.803652+00:00,"{""attitude_status"": ""accepts_without_belief"", ""reason_type"": ""practical"", ""knowledge_status"": ""does_not_know""}",,5.718,"{
+  ""attitude_status"": ""accepts_without_belief"",
+  ""reason_type"": ""practical"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Larry accepts the proposition for the practical purpose of reasoning about its implications, but he does not believe it and it is false.""
+}",True,"{""attitude_status"": ""accepts_without_belief"", ""reason_type"": ""practical"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Larry accepts the proposition for the practical purpose of reasoning about its implications, but he does not believe it and it is false.""}","Larry accepts the proposition for the practical purpose of reasoning about its implications, but he does not believe it and it is false.","{""attitude_status"": true, ""reason_type"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+ab_007_practical_acceptance_persuasion,belief_acceptance_knowledge,acceptance_and_belief,,,gemini-2.5-pro,2026-07-05T21:30:14.521760+00:00,"{""attitude_status"": ""accepts_without_belief"", ""reason_type"": ""practical"", ""knowledge_status"": ""does_not_know""}",,5.095,"{
+  ""attitude_status"": ""accepts_without_belief"",
+  ""reason_type"": ""practical"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Moe accepts the proposition for the practical reason of convincing others, but he does not genuinely believe it is true.""
+}",True,"{""attitude_status"": ""accepts_without_belief"", ""reason_type"": ""practical"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Moe accepts the proposition for the practical reason of convincing others, but he does not genuinely believe it is true.""}","Moe accepts the proposition for the practical reason of convincing others, but he does not genuinely believe it is true.","{""attitude_status"": true, ""reason_type"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+ab_008_practical_acceptance_supportive_friend,belief_acceptance_knowledge,acceptance_and_belief,,,gemini-2.5-pro,2026-07-05T21:30:19.617104+00:00,"{""attitude_status"": ""accepts_without_belief"", ""reason_type"": ""practical"", ""knowledge_status"": ""does_not_know""}",,5.688,"{
+  ""attitude_status"": ""accepts_without_belief"",
+  ""reason_type"": ""practical"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Karen accepts the proposition for the practical reason of being supportive, but she does not believe it is true and therefore does not know it.""
+}",True,"{""attitude_status"": ""accepts_without_belief"", ""reason_type"": ""practical"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Karen accepts the proposition for the practical reason of being supportive, but she does not believe it is true and therefore does not know it.""}","Karen accepts the proposition for the practical reason of being supportive, but she does not believe it is true and therefore does not know it.","{""attitude_status"": true, ""reason_type"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+ab_009_belief_and_acceptance_cookies,belief_acceptance_knowledge,acceptance_and_belief,,,gemini-2.5-pro,2026-07-05T21:30:25.305531+00:00,"{""attitude_status"": ""believes_and_accepts"", ""reason_type"": ""epistemic_and_practical"", ""knowledge_status"": ""knows""}",,7.344,"{
+  ""attitude_status"": ""believes_and_accepts"",
+  ""reason_type"": ""epistemic_and_practical"",
+  ""knowledge_status"": ""knows"",
+  ""brief_explanation"": ""Billy believes the proposition is true based on the sign and accepts it to plan his trip, and since this justified belief is true, he knows.""
+}",True,"{""attitude_status"": ""believes_and_accepts"", ""reason_type"": ""epistemic_and_practical"", ""knowledge_status"": ""knows"", ""brief_explanation"": ""Billy believes the proposition is true based on the sign and accepts it to plan his trip, and since this justified belief is true, he knows.""}","Billy believes the proposition is true based on the sign and accepts it to plan his trip, and since this justified belief is true, he knows.","{""attitude_status"": true, ""reason_type"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+ab_010_practical_acceptance_caution,belief_acceptance_knowledge,acceptance_and_belief,,,gemini-2.5-pro,2026-07-05T21:30:32.649368+00:00,"{""attitude_status"": ""accepts_without_belief"", ""reason_type"": ""practical"", ""knowledge_status"": ""does_not_know""}",,9.228,"{
+  ""attitude_status"": ""accepts_without_belief"",
+  ""reason_type"": ""epistemic_and_practical"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Linda accepts the proposition for the practical reason of avoiding trouble but does not believe it based on evidence, and therefore does not know it.""
+}",True,"{""attitude_status"": ""accepts_without_belief"", ""reason_type"": ""epistemic_and_practical"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Linda accepts the proposition for the practical reason of avoiding trouble but does not believe it based on evidence, and therefore does not know it.""}","Linda accepts the proposition for the practical reason of avoiding trouble but does not believe it based on evidence, and therefore does not know it.","{""attitude_status"": true, ""reason_type"": false, ""knowledge_status"": true}",2.0,3.0,0.6666666666666666
+ab_011_conflicting_signs_practical_assumption,belief_acceptance_knowledge,acceptance_and_belief,,,gemini-2.5-pro,2026-07-05T21:30:41.877737+00:00,"{""attitude_status"": ""accepts_without_belief"", ""reason_type"": ""practical"", ""knowledge_status"": ""does_not_know""}",,11.505,"{
+  ""attitude_status"": ""accepts_without_belief"",
+  ""reason_type"": ""practical"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Gary accepts the proposition for the practical reason of wanting to buy a book, but he does not believe it due to conflicting evidence, and therefore does not know it.""
+}",True,"{""attitude_status"": ""accepts_without_belief"", ""reason_type"": ""practical"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Gary accepts the proposition for the practical reason of wanting to buy a book, but he does not believe it due to conflicting evidence, and therefore does not know it.""}","Gary accepts the proposition for the practical reason of wanting to buy a book, but he does not believe it due to conflicting evidence, and therefore does not know it.","{""attitude_status"": true, ""reason_type"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+ab_012_practical_acceptance_contest,belief_acceptance_knowledge,acceptance_and_belief,,,gemini-2.5-pro,2026-07-05T21:30:53.383185+00:00,"{""attitude_status"": ""accepts_without_belief"", ""reason_type"": ""practical"", ""knowledge_status"": ""does_not_know""}",,7.735,"{
+  ""attitude_status"": ""accepts_without_belief"",
+  ""reason_type"": ""practical"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Henry accepts the proposition for the practical reason of winning a prize, despite his evidence-based belief that it is false, and therefore he does not know it.""
+}",True,"{""attitude_status"": ""accepts_without_belief"", ""reason_type"": ""practical"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Henry accepts the proposition for the practical reason of winning a prize, despite his evidence-based belief that it is false, and therefore he does not know it.""}","Henry accepts the proposition for the practical reason of winning a prize, despite his evidence-based belief that it is false, and therefore he does not know it.","{""attitude_status"": true, ""reason_type"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+ab_013_no_attitude_parrots,belief_acceptance_knowledge,acceptance_and_belief,,,gemini-2.5-pro,2026-07-05T21:31:01.117818+00:00,"{""attitude_status"": ""does_not_believe_or_accept"", ""reason_type"": ""none_or_indeterminate"", ""knowledge_status"": ""does_not_know""}",,4.509,"{
+  ""attitude_status"": ""does_not_believe_or_accept"",
+  ""reason_type"": ""none_or_indeterminate"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Caroline does not consider the proposition, so she forms no belief or attitude about it and therefore cannot know it.""
+}",True,"{""attitude_status"": ""does_not_believe_or_accept"", ""reason_type"": ""none_or_indeterminate"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Caroline does not consider the proposition, so she forms no belief or attitude about it and therefore cannot know it.""}","Caroline does not consider the proposition, so she forms no belief or attitude about it and therefore cannot know it.","{""attitude_status"": true, ""reason_type"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+ab_014_indeterminate_pool,belief_acceptance_knowledge,acceptance_and_belief,,,gemini-2.5-pro,2026-07-05T21:31:05.627073+00:00,"{""attitude_status"": ""indeterminate"", ""reason_type"": ""none_or_indeterminate"", ""knowledge_status"": ""indeterminate""}",,9.078,"{
+  ""attitude_status"": ""indeterminate"",
+  ""reason_type"": ""practical"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Yuki only imagines the proposition for the practical reason of wanting to swim, and the scenario provides no information about her belief, judgment, or the actual state of the pool.""
+}",True,"{""attitude_status"": ""indeterminate"", ""reason_type"": ""practical"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Yuki only imagines the proposition for the practical reason of wanting to swim, and the scenario provides no information about her belief, judgment, or the actual state of the pool.""}","Yuki only imagines the proposition for the practical reason of wanting to swim, and the scenario provides no information about her belief, judgment, or the actual state of the pool.","{""attitude_status"": true, ""reason_type"": false, ""knowledge_status"": false}",1.0,3.0,0.3333333333333333
+ab_015_no_attitude_bananas,belief_acceptance_knowledge,acceptance_and_belief,,,gemini-2.5-pro,2026-07-05T21:31:14.705211+00:00,"{""attitude_status"": ""does_not_believe_or_accept"", ""reason_type"": ""none_or_indeterminate"", ""knowledge_status"": ""does_not_know""}",,4.678,"{
+  ""attitude_status"": ""does_not_believe_or_accept"",
+  ""reason_type"": ""none_or_indeterminate"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""The scenario states that Travis does not form any attitude about the proposition, which means he neither believes nor accepts it and therefore cannot know it.""
+}",True,"{""attitude_status"": ""does_not_believe_or_accept"", ""reason_type"": ""none_or_indeterminate"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""The scenario states that Travis does not form any attitude about the proposition, which means he neither believes nor accepts it and therefore cannot know it.""}","The scenario states that Travis does not form any attitude about the proposition, which means he neither believes nor accepts it and therefore cannot know it.","{""attitude_status"": true, ""reason_type"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+ab_016_belief_and_acceptance_train,belief_acceptance_knowledge,acceptance_and_belief,,,gemini-2.5-pro,2026-07-05T21:31:19.383196+00:00,"{""attitude_status"": ""believes_and_accepts"", ""reason_type"": ""epistemic_and_practical"", ""knowledge_status"": ""knows""}",,5.858,"{
+  ""attitude_status"": ""believes_and_accepts"",
+  ""reason_type"": ""epistemic_and_practical"",
+  ""knowledge_status"": ""knows"",
+  ""brief_explanation"": ""Sara forms a justified true belief from the official schedule (epistemic reason) and uses this proposition to plan her trip (practical reason), so she knows.""
+}",True,"{""attitude_status"": ""believes_and_accepts"", ""reason_type"": ""epistemic_and_practical"", ""knowledge_status"": ""knows"", ""brief_explanation"": ""Sara forms a justified true belief from the official schedule (epistemic reason) and uses this proposition to plan her trip (practical reason), so she knows.""}","Sara forms a justified true belief from the official schedule (epistemic reason) and uses this proposition to plan her trip (practical reason), so she knows.","{""attitude_status"": true, ""reason_type"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+ab_017_belief_from_calendar,belief_acceptance_knowledge,acceptance_and_belief,,,gemini-2.5-pro,2026-07-05T21:31:25.241711+00:00,"{""attitude_status"": ""believes"", ""reason_type"": ""epistemic"", ""knowledge_status"": ""knows""}",,10.456,"{
+  ""attitude_status"": ""believes_and_accepts"",
+  ""reason_type"": ""epistemic"",
+  ""knowledge_status"": ""knows"",
+  ""brief_explanation"": ""Omar knows the proposition is true because he formed a justified true belief from an accurate source, the work calendar.""
+}",True,"{""attitude_status"": ""believes_and_accepts"", ""reason_type"": ""epistemic"", ""knowledge_status"": ""knows"", ""brief_explanation"": ""Omar knows the proposition is true because he formed a justified true belief from an accurate source, the work calendar.""}","Omar knows the proposition is true because he formed a justified true belief from an accurate source, the work calendar.","{""attitude_status"": false, ""reason_type"": true, ""knowledge_status"": true}",2.0,3.0,0.6666666666666666
+ab_018_practical_acceptance_camping_stove,belief_acceptance_knowledge,acceptance_and_belief,,,gemini-2.5-pro,2026-07-05T21:31:35.698168+00:00,"{""attitude_status"": ""accepts_without_belief"", ""reason_type"": ""practical"", ""knowledge_status"": ""does_not_know""}",,8.159,"{
+  ""attitude_status"": ""accepts_without_belief"",
+  ""reason_type"": ""epistemic_and_practical"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Nina accepts the proposition for the practical reason of finishing packing, but she does not believe it for the epistemic reason that it failed previously, and therefore does not know it.""
+}",True,"{""attitude_status"": ""accepts_without_belief"", ""reason_type"": ""epistemic_and_practical"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Nina accepts the proposition for the practical reason of finishing packing, but she does not believe it for the epistemic reason that it failed previously, and therefore does not know it.""}","Nina accepts the proposition for the practical reason of finishing packing, but she does not believe it for the epistemic reason that it failed previously, and therefore does not know it.","{""attitude_status"": true, ""reason_type"": false, ""knowledge_status"": true}",2.0,3.0,0.6666666666666666
+ab_019_belief_and_acceptance_bridge,belief_acceptance_knowledge,acceptance_and_belief,,,gemini-2.5-pro,2026-07-05T21:31:43.857685+00:00,"{""attitude_status"": ""believes_and_accepts"", ""reason_type"": ""epistemic_and_practical"", ""knowledge_status"": ""knows""}",,5.214,"{
+  ""attitude_status"": ""believes_and_accepts"",
+  ""reason_type"": ""epistemic_and_practical"",
+  ""knowledge_status"": ""knows"",
+  ""brief_explanation"": ""Paul knows the bridge is closed based on an official alert (epistemic reason) and uses this proposition to plan his preferred scenic route (practical reason).""
+}",True,"{""attitude_status"": ""believes_and_accepts"", ""reason_type"": ""epistemic_and_practical"", ""knowledge_status"": ""knows"", ""brief_explanation"": ""Paul knows the bridge is closed based on an official alert (epistemic reason) and uses this proposition to plan his preferred scenic route (practical reason).""}",Paul knows the bridge is closed based on an official alert (epistemic reason) and uses this proposition to plan his preferred scenic route (practical reason).,"{""attitude_status"": true, ""reason_type"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+ab_020_practical_acceptance_unreliable_rumor,belief_acceptance_knowledge,acceptance_and_belief,,,gemini-2.5-pro,2026-07-05T21:31:49.071862+00:00,"{""attitude_status"": ""accepts_without_belief"", ""reason_type"": ""practical"", ""knowledge_status"": ""does_not_know""}",,5.558,"{
+  ""attitude_status"": ""accepts_without_belief"",
+  ""reason_type"": ""practical"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Amber accepts the proposition for the practical reason of wanting lemonade, but she does not believe it is true and therefore does not know it.""
+}",True,"{""attitude_status"": ""accepts_without_belief"", ""reason_type"": ""practical"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Amber accepts the proposition for the practical reason of wanting lemonade, but she does not believe it is true and therefore does not know it.""}","Amber accepts the proposition for the practical reason of wanting lemonade, but she does not believe it is true and therefore does not know it.","{""attitude_status"": true, ""reason_type"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+jus_001_perceptual_knowledge_hamburger,belief_acceptance_knowledge,justification,,,gemini-2.5-pro,2026-07-05T21:31:54.629647+00:00,"{""reason_type"": ""epistemic"", ""justification_status"": ""epistemically_justified"", ""knowledge_status"": ""knows""}",,6.186,"{
+  ""reason_type"": ""epistemic"",
+  ""justification_status"": ""epistemically_justified"",
+  ""knowledge_status"": ""knows"",
+  ""brief_explanation"": ""Jake's belief is based on direct perceptual evidence, which provides strong epistemic justification for his true belief, amounting to knowledge.""
+}",True,"{""reason_type"": ""epistemic"", ""justification_status"": ""epistemically_justified"", ""knowledge_status"": ""knows"", ""brief_explanation"": ""Jake's belief is based on direct perceptual evidence, which provides strong epistemic justification for his true belief, amounting to knowledge.""}","Jake's belief is based on direct perceptual evidence, which provides strong epistemic justification for his true belief, amounting to knowledge.","{""reason_type"": true, ""justification_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+jus_002_reliable_testimony_knowledge,belief_acceptance_knowledge,justification,,,gemini-2.5-pro,2026-07-05T21:32:00.815903+00:00,"{""reason_type"": ""epistemic"", ""justification_status"": ""epistemically_justified"", ""knowledge_status"": ""knows""}",,6.492,"{
+  ""reason_type"": ""epistemic"",
+  ""justification_status"": ""epistemically_justified"",
+  ""knowledge_status"": ""knows"",
+  ""brief_explanation"": ""Lilly's belief is true and justified by reliable testimony from a trusted source, which constitutes knowledge.""
+}",True,"{""reason_type"": ""epistemic"", ""justification_status"": ""epistemically_justified"", ""knowledge_status"": ""knows"", ""brief_explanation"": ""Lilly's belief is true and justified by reliable testimony from a trusted source, which constitutes knowledge.""}","Lilly's belief is true and justified by reliable testimony from a trusted source, which constitutes knowledge.","{""reason_type"": true, ""justification_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+jus_003_justified_false_belief_firetruck,belief_acceptance_knowledge,justification,,,gemini-2.5-pro,2026-07-05T21:32:07.307528+00:00,"{""reason_type"": ""epistemic"", ""justification_status"": ""epistemically_justified"", ""knowledge_status"": ""does_not_know""}",,5.563,"{
+  ""reason_type"": ""epistemic"",
+  ""justification_status"": ""epistemically_justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Cory's belief is epistemically justified based on strong evidence, but it is false because the firetruck was stolen, so it does not constitute knowledge.""
+}",True,"{""reason_type"": ""epistemic"", ""justification_status"": ""epistemically_justified"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Cory's belief is epistemically justified based on strong evidence, but it is false because the firetruck was stolen, so it does not constitute knowledge.""}","Cory's belief is epistemically justified based on strong evidence, but it is false because the firetruck was stolen, so it does not constitute knowledge.","{""reason_type"": true, ""justification_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+jus_004_practical_reason_baking_competition,belief_acceptance_knowledge,justification,,,gemini-2.5-pro,2026-07-05T21:32:12.870538+00:00,"{""reason_type"": ""practical"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know""}",,5.24,"{
+  ""reason_type"": ""practical"",
+  ""justification_status"": ""not_epistemically_justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Lara's belief is based on her desire to win, which is a practical reason, not on any evidence that would epistemically justify it.""
+}",True,"{""reason_type"": ""practical"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Lara's belief is based on her desire to win, which is a practical reason, not on any evidence that would epistemically justify it.""}","Lara's belief is based on her desire to win, which is a practical reason, not on any evidence that would epistemically justify it.","{""reason_type"": true, ""justification_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+jus_005_reliable_testimony_without_understanding,belief_acceptance_knowledge,justification,,,gemini-2.5-pro,2026-07-05T21:32:18.110526+00:00,"{""reason_type"": ""epistemic"", ""justification_status"": ""epistemically_justified"", ""knowledge_status"": ""knows""}",,5.989,"{
+  ""reason_type"": ""epistemic"",
+  ""justification_status"": ""epistemically_justified"",
+  ""knowledge_status"": ""knows"",
+  ""brief_explanation"": ""Norman has a justified true belief based on the reliable testimony of his teacher, which constitutes knowledge.""
+}",True,"{""reason_type"": ""epistemic"", ""justification_status"": ""epistemically_justified"", ""knowledge_status"": ""knows"", ""brief_explanation"": ""Norman has a justified true belief based on the reliable testimony of his teacher, which constitutes knowledge.""}","Norman has a justified true belief based on the reliable testimony of his teacher, which constitutes knowledge.","{""reason_type"": true, ""justification_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+jus_006_practical_reason_treadmill,belief_acceptance_knowledge,justification,,,gemini-2.5-pro,2026-07-05T21:32:24.099210+00:00,"{""reason_type"": ""practical"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know""}",,7.049,"{
+  ""reason_type"": ""practical"",
+  ""justification_status"": ""not_epistemically_justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Greg's belief is based on his desire to buy the treadmill, not on any evidence, so it is not epistemically justified and does not constitute knowledge.""
+}",True,"{""reason_type"": ""practical"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Greg's belief is based on his desire to buy the treadmill, not on any evidence, so it is not epistemically justified and does not constitute knowledge.""}","Greg's belief is based on his desire to buy the treadmill, not on any evidence, so it is not epistemically justified and does not constitute knowledge.","{""reason_type"": true, ""justification_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+jus_007_guess_taco_shop,belief_acceptance_knowledge,justification,,,gemini-2.5-pro,2026-07-05T21:32:31.147848+00:00,"{""reason_type"": ""none_or_indeterminate"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know""}",,5.564,"{
+  ""reason_type"": ""none_or_indeterminate"",
+  ""justification_status"": ""not_epistemically_justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""James's belief is an unjustified guess formed without any evidence or practical motivation, so he does not know the proposition.""
+}",True,"{""reason_type"": ""none_or_indeterminate"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""James's belief is an unjustified guess formed without any evidence or practical motivation, so he does not know the proposition.""}","James's belief is an unjustified guess formed without any evidence or practical motivation, so he does not know the proposition.","{""reason_type"": true, ""justification_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+jus_008_practical_reason_powerlifting,belief_acceptance_knowledge,justification,,,gemini-2.5-pro,2026-07-05T21:32:36.712362+00:00,"{""reason_type"": ""practical"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know""}",,5.922,"{
+  ""reason_type"": ""practical"",
+  ""justification_status"": ""not_epistemically_justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Sarah's belief is based on her desire to think of herself as a champion, not on any evidence of her strength, so it is not epistemically justified.""
+}",True,"{""reason_type"": ""practical"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Sarah's belief is based on her desire to think of herself as a champion, not on any evidence of her strength, so it is not epistemically justified.""}","Sarah's belief is based on her desire to think of herself as a champion, not on any evidence of her strength, so it is not epistemically justified.","{""reason_type"": true, ""justification_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+jus_009_overgeneralized_evidence_llamas,belief_acceptance_knowledge,justification,,,gemini-2.5-pro,2026-07-05T21:32:42.634878+00:00,"{""reason_type"": ""none_or_indeterminate"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know""}",,5.665,"{
+  ""reason_type"": ""epistemic"",
+  ""justification_status"": ""not_epistemically_justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Chelsey's belief is not justified because she makes a hasty generalization from evidence about one zoo to a conclusion about all zoos.""
+}",True,"{""reason_type"": ""epistemic"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Chelsey's belief is not justified because she makes a hasty generalization from evidence about one zoo to a conclusion about all zoos.""}",Chelsey's belief is not justified because she makes a hasty generalization from evidence about one zoo to a conclusion about all zoos.,"{""reason_type"": false, ""justification_status"": true, ""knowledge_status"": true}",2.0,3.0,0.6666666666666666
+jus_010_practical_reason_europe_trip,belief_acceptance_knowledge,justification,,,gemini-2.5-pro,2026-07-05T21:32:48.299858+00:00,"{""reason_type"": ""practical"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know""}",,5.567,"{
+  ""reason_type"": ""practical"",
+  ""justification_status"": ""not_epistemically_justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Christopher's belief is based on his strong desire to go on the trip, directly contradicting the evidence he possesses.""
+}",True,"{""reason_type"": ""practical"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Christopher's belief is based on his strong desire to go on the trip, directly contradicting the evidence he possesses.""}","Christopher's belief is based on his strong desire to go on the trip, directly contradicting the evidence he possesses.","{""reason_type"": true, ""justification_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+jus_011_ignoring_counterevidence_tank,belief_acceptance_knowledge,justification,,,gemini-2.5-pro,2026-07-05T21:32:53.867190+00:00,"{""reason_type"": ""practical"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know""}",,6.361,"{
+  ""reason_type"": ""practical"",
+  ""justification_status"": ""not_epistemically_justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Niel's belief is based on his desire and ignores direct, official evidence to the contrary, so it is not epistemically justified and does not constitute knowledge.""
+}",True,"{""reason_type"": ""practical"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Niel's belief is based on his desire and ignores direct, official evidence to the contrary, so it is not epistemically justified and does not constitute knowledge.""}","Niel's belief is based on his desire and ignores direct, official evidence to the contrary, so it is not epistemically justified and does not constitute knowledge.","{""reason_type"": true, ""justification_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+jus_012_practical_reason_bank_hours,belief_acceptance_knowledge,justification,,,gemini-2.5-pro,2026-07-05T21:33:00.228593+00:00,"{""reason_type"": ""practical"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know""}",,6.922,"{
+  ""reason_type"": ""practical"",
+  ""justification_status"": ""not_epistemically_justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Brooke's belief is based on her practical need, which is not an epistemic reason, and is contradicted by all of her available evidence.""
+}",True,"{""reason_type"": ""practical"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Brooke's belief is based on her practical need, which is not an epistemic reason, and is contradicted by all of her available evidence.""}","Brooke's belief is based on her practical need, which is not an epistemic reason, and is contradicted by all of her available evidence.","{""reason_type"": true, ""justification_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+jus_013_reliable_friend_pizza,belief_acceptance_knowledge,justification,,,gemini-2.5-pro,2026-07-05T21:33:07.150876+00:00,"{""reason_type"": ""epistemic"", ""justification_status"": ""epistemically_justified"", ""knowledge_status"": ""knows""}",,5.685,"{
+  ""reason_type"": ""epistemic"",
+  ""justification_status"": ""epistemically_justified"",
+  ""knowledge_status"": ""knows"",
+  ""brief_explanation"": ""Becky's true belief is justified by reliable testimony from an informed source, so she knows there will be pizza.""
+}",True,"{""reason_type"": ""epistemic"", ""justification_status"": ""epistemically_justified"", ""knowledge_status"": ""knows"", ""brief_explanation"": ""Becky's true belief is justified by reliable testimony from an informed source, so she knows there will be pizza.""}","Becky's true belief is justified by reliable testimony from an informed source, so she knows there will be pizza.","{""reason_type"": true, ""justification_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+jus_014_practical_reason_camping_spots,belief_acceptance_knowledge,justification,,,gemini-2.5-pro,2026-07-05T21:33:12.836279+00:00,"{""reason_type"": ""practical"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know""}",,6.171,"{
+  ""reason_type"": ""practical"",
+  ""justification_status"": ""not_epistemically_justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Julian's belief is based on his desire to go camping, not on evidence, and is contradicted by his knowledge that all reservations are taken.""
+}",True,"{""reason_type"": ""practical"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Julian's belief is based on his desire to go camping, not on evidence, and is contradicted by his knowledge that all reservations are taken.""}","Julian's belief is based on his desire to go camping, not on evidence, and is contradicted by his knowledge that all reservations are taken.","{""reason_type"": true, ""justification_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+jus_015_arbitrary_true_belief_fish,belief_acceptance_knowledge,justification,,,gemini-2.5-pro,2026-07-05T21:33:19.006946+00:00,"{""reason_type"": ""none_or_indeterminate"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know""}",,12.868,"{
+  ""reason_type"": ""none_or_indeterminate"",
+  ""justification_status"": ""not_epistemically_justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Carrie's belief is true by coincidence but is not epistemically justified because it is not based on any evidence, so it does not constitute knowledge.""
+}",True,"{""reason_type"": ""none_or_indeterminate"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Carrie's belief is true by coincidence but is not epistemically justified because it is not based on any evidence, so it does not constitute knowledge.""}","Carrie's belief is true by coincidence but is not epistemically justified because it is not based on any evidence, so it does not constitute knowledge.","{""reason_type"": true, ""justification_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+jus_016_epistemic_and_practical_weather,belief_acceptance_knowledge,justification,,,gemini-2.5-pro,2026-07-05T21:33:31.875022+00:00,"{""reason_type"": ""epistemic_and_practical"", ""justification_status"": ""epistemically_justified"", ""knowledge_status"": ""knows""}",,8.821,"{
+  ""reason_type"": ""epistemic"",
+  ""justification_status"": ""epistemically_justified"",
+  ""knowledge_status"": ""knows"",
+  ""brief_explanation"": ""Maya's belief is based on reliable evidence from a weather service, and since the proposition is true, she knows it.""
+}",True,"{""reason_type"": ""epistemic"", ""justification_status"": ""epistemically_justified"", ""knowledge_status"": ""knows"", ""brief_explanation"": ""Maya's belief is based on reliable evidence from a weather service, and since the proposition is true, she knows it.""}","Maya's belief is based on reliable evidence from a weather service, and since the proposition is true, she knows it.","{""reason_type"": false, ""justification_status"": true, ""knowledge_status"": true}",2.0,3.0,0.6666666666666666
+jus_017_epistemic_false_belief_package,belief_acceptance_knowledge,justification,,,gemini-2.5-pro,2026-07-05T21:33:40.695768+00:00,"{""reason_type"": ""epistemic"", ""justification_status"": ""epistemically_justified"", ""knowledge_status"": ""does_not_know""}",,7.06,"{
+  ""reason_type"": ""epistemic"",
+  ""justification_status"": ""epistemically_justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Owen's belief is epistemically justified because it is based on a usually reliable source, but it is not knowledge because the proposition is false.""
+}",True,"{""reason_type"": ""epistemic"", ""justification_status"": ""epistemically_justified"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Owen's belief is epistemically justified because it is based on a usually reliable source, but it is not knowledge because the proposition is false.""}","Owen's belief is epistemically justified because it is based on a usually reliable source, but it is not knowledge because the proposition is false.","{""reason_type"": true, ""justification_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+jus_018_epistemic_and_practical_concert,belief_acceptance_knowledge,justification,,,gemini-2.5-pro,2026-07-05T21:33:47.755589+00:00,"{""reason_type"": ""epistemic_and_practical"", ""justification_status"": ""epistemically_justified"", ""knowledge_status"": ""knows""}",,7.467,"{
+  ""reason_type"": ""epistemic"",
+  ""justification_status"": ""epistemically_justified"",
+  ""knowledge_status"": ""knows"",
+  ""brief_explanation"": ""Dana's belief is based on reliable evidence from an accurate confirmation email, which constitutes a justified true belief and therefore knowledge.""
+}",True,"{""reason_type"": ""epistemic"", ""justification_status"": ""epistemically_justified"", ""knowledge_status"": ""knows"", ""brief_explanation"": ""Dana's belief is based on reliable evidence from an accurate confirmation email, which constitutes a justified true belief and therefore knowledge.""}","Dana's belief is based on reliable evidence from an accurate confirmation email, which constitutes a justified true belief and therefore knowledge.","{""reason_type"": false, ""justification_status"": true, ""knowledge_status"": true}",2.0,3.0,0.6666666666666666
+jus_019_indeterminate_reason_belief,belief_acceptance_knowledge,justification,,,gemini-2.5-pro,2026-07-05T21:33:55.222650+00:00,"{""reason_type"": ""none_or_indeterminate"", ""justification_status"": ""indeterminate"", ""knowledge_status"": ""indeterminate""}",,6.283,"{
+  ""reason_type"": ""none_or_indeterminate"",
+  ""justification_status"": ""indeterminate"",
+  ""knowledge_status"": ""indeterminate"",
+  ""brief_explanation"": ""The scenario provides no information about why Ethan holds his belief or whether the door is actually unlocked, making it impossible to determine the reason type, justification, or knowledge status.""
+}",True,"{""reason_type"": ""none_or_indeterminate"", ""justification_status"": ""indeterminate"", ""knowledge_status"": ""indeterminate"", ""brief_explanation"": ""The scenario provides no information about why Ethan holds his belief or whether the door is actually unlocked, making it impossible to determine the reason type, justification, or knowledge status.""}","The scenario provides no information about why Ethan holds his belief or whether the door is actually unlocked, making it impossible to determine the reason type, justification, or knowledge status.","{""reason_type"": true, ""justification_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+jus_020_epistemic_justification_false_animal,belief_acceptance_knowledge,justification,,,gemini-2.5-pro,2026-07-05T21:34:01.505902+00:00,"{""reason_type"": ""epistemic"", ""justification_status"": ""epistemically_justified"", ""knowledge_status"": ""does_not_know""}",,5.87,"{
+  ""reason_type"": ""epistemic"",
+  ""justification_status"": ""epistemically_justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Priya's belief is epistemically justified based on her visual evidence, but since the proposition is false, she does not have knowledge.""
+}",True,"{""reason_type"": ""epistemic"", ""justification_status"": ""epistemically_justified"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Priya's belief is epistemically justified based on her visual evidence, but since the proposition is false, she does not have knowledge.""}","Priya's belief is epistemically justified based on her visual evidence, but since the proposition is false, she does not have knowledge.","{""reason_type"": true, ""justification_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+el_001,epistemic_luck,knowledge_control,,easy,gemini-2.5-pro,2026-07-05T21:34:07.376005+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none""}",,5.074,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""knows"",
+  ""luck_status"": ""no_epistemic_luck"",
+  ""luck_type"": ""none"",
+  ""brief_explanation"": ""Alfred forms a justified true belief based on recent, reliable testimony in a normal environment, which constitutes knowledge.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none"", ""brief_explanation"": ""Alfred forms a justified true belief based on recent, reliable testimony in a normal environment, which constitutes knowledge.""}","Alfred forms a justified true belief based on recent, reliable testimony in a normal environment, which constitutes knowledge.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_002,epistemic_luck,knowledge_control,,easy,gemini-2.5-pro,2026-07-05T21:34:12.450166+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none""}",,5.742,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""knows"",
+  ""luck_status"": ""no_epistemic_luck"",
+  ""luck_type"": ""none"",
+  ""brief_explanation"": ""Lea forms a true belief based on strong, direct evidence in a normal environment, so she knows the proposition.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none"", ""brief_explanation"": ""Lea forms a true belief based on strong, direct evidence in a normal environment, so she knows the proposition.""}","Lea forms a true belief based on strong, direct evidence in a normal environment, so she knows the proposition.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_003,epistemic_luck,knowledge_control,,easy,gemini-2.5-pro,2026-07-05T21:34:18.192520+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none""}",,6.521,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""knows"",
+  ""luck_status"": ""no_epistemic_luck"",
+  ""luck_type"": ""none"",
+  ""brief_explanation"": ""Nina forms a justified true belief using a reliable method in a normal environment, resulting in a standard case of knowledge without any epistemic luck.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none"", ""brief_explanation"": ""Nina forms a justified true belief using a reliable method in a normal environment, resulting in a standard case of knowledge without any epistemic luck.""}","Nina forms a justified true belief using a reliable method in a normal environment, resulting in a standard case of knowledge without any epistemic luck.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_004,epistemic_luck,knowledge_control,,easy,gemini-2.5-pro,2026-07-05T21:34:24.713416+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none""}",,5.262,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""knows"",
+  ""luck_status"": ""no_epistemic_luck"",
+  ""luck_type"": ""none"",
+  ""brief_explanation"": ""Rosa forms a true belief using multiple reliable, standard procedures that are functioning correctly, resulting in a clear case of knowledge.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none"", ""brief_explanation"": ""Rosa forms a true belief using multiple reliable, standard procedures that are functioning correctly, resulting in a clear case of knowledge.""}","Rosa forms a true belief using multiple reliable, standard procedures that are functioning correctly, resulting in a clear case of knowledge.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_005,epistemic_luck,knowledge_control,,easy,gemini-2.5-pro,2026-07-05T21:34:29.975792+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none""}",,6.31,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""knows"",
+  ""luck_status"": ""no_epistemic_luck"",
+  ""luck_type"": ""none"",
+  ""brief_explanation"": ""Marcus forms a true belief based on strong evidence from two reliable sources, and no knowledge-defeating luck is present.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none"", ""brief_explanation"": ""Marcus forms a true belief based on strong evidence from two reliable sources, and no knowledge-defeating luck is present.""}","Marcus forms a true belief based on strong evidence from two reliable sources, and no knowledge-defeating luck is present.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_006,epistemic_luck,lucky_guess,,easy,gemini-2.5-pro,2026-07-05T21:34:36.285674+00:00,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""lucky_guess""}",,6.318,"{
+  ""justification_status"": ""unjustified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""lucky_guess"",
+  ""brief_explanation"": ""William's belief is true but based on wishful thinking, not evidence, making it an unjustified lucky guess rather than knowledge.""
+}",True,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""lucky_guess"", ""brief_explanation"": ""William's belief is true but based on wishful thinking, not evidence, making it an unjustified lucky guess rather than knowledge.""}","William's belief is true but based on wishful thinking, not evidence, making it an unjustified lucky guess rather than knowledge.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_007,epistemic_luck,lucky_guess,,easy,gemini-2.5-pro,2026-07-05T21:34:42.604013+00:00,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""lucky_guess""}",,6.774,"{
+  ""justification_status"": ""unjustified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""lucky_guess"",
+  ""brief_explanation"": ""Michelle's belief is true by a lucky guess, as she had no adequate evidence that the die would land on 1 rather than any other number.""
+}",True,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""lucky_guess"", ""brief_explanation"": ""Michelle's belief is true by a lucky guess, as she had no adequate evidence that the die would land on 1 rather than any other number.""}","Michelle's belief is true by a lucky guess, as she had no adequate evidence that the die would land on 1 rather than any other number.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_008,epistemic_luck,lucky_guess,,easy,gemini-2.5-pro,2026-07-05T21:34:49.377965+00:00,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""lucky_guess""}",,5.52,"{
+  ""justification_status"": ""unjustified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""lucky_guess"",
+  ""brief_explanation"": ""Omar's belief is true by a lucky guess, as he formed it randomly without any evidence or justification.""
+}",True,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""lucky_guess"", ""brief_explanation"": ""Omar's belief is true by a lucky guess, as he formed it randomly without any evidence or justification.""}","Omar's belief is true by a lucky guess, as he formed it randomly without any evidence or justification.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_009,epistemic_luck,intervening_luck,,medium,gemini-2.5-pro,2026-07-05T21:34:54.898053+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,8.312,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Liam's justified belief is true only by luck, as his evidence is a fake copy, while the proposition is made true by a different, real copy he is unaware of.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Liam's justified belief is true only by luck, as his evidence is a fake copy, while the proposition is made true by a different, real copy he is unaware of.""}","Liam's justified belief is true only by luck, as his evidence is a fake copy, while the proposition is made true by a different, real copy he is unaware of.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_010,epistemic_luck,intervening_luck,,medium,gemini-2.5-pro,2026-07-05T21:35:03.210482+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,8.243,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Ava has a justified true belief, but she does not have knowledge because her belief is true due to a lucky coincidence (the unseen deer) and not because of her evidence (the statue).""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Ava has a justified true belief, but she does not have knowledge because her belief is true due to a lucky coincidence (the unseen deer) and not because of her evidence (the statue).""}","Ava has a justified true belief, but she does not have knowledge because her belief is true due to a lucky coincidence (the unseen deer) and not because of her evidence (the statue).","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_011,epistemic_luck,intervening_luck,,medium,gemini-2.5-pro,2026-07-05T21:35:11.454090+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,6.958,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Julian's justified belief is true by a lucky coincidence, as the person who makes the proposition true is not the person his evidence points to.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Julian's justified belief is true by a lucky coincidence, as the person who makes the proposition true is not the person his evidence points to.""}","Julian's justified belief is true by a lucky coincidence, as the person who makes the proposition true is not the person his evidence points to.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_012,epistemic_luck,intervening_luck,,medium,gemini-2.5-pro,2026-07-05T21:35:18.412562+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,7.575,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Vicky's justified belief is true only by luck, as her evidence points to an actor while the truth-maker is a different, unseen police officer.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Vicky's justified belief is true only by luck, as her evidence points to an actor while the truth-maker is a different, unseen police officer.""}","Vicky's justified belief is true only by luck, as her evidence points to an actor while the truth-maker is a different, unseen police officer.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_013,epistemic_luck,intervening_luck,,medium,gemini-2.5-pro,2026-07-05T21:35:25.987351+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,9.557,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Chris's justified belief is true only by coincidence, as his evidence is a fake parrot while the manager's real parrot is elsewhere.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Chris's justified belief is true only by coincidence, as his evidence is a fake parrot while the manager's real parrot is elsewhere.""}","Chris's justified belief is true only by coincidence, as his evidence is a fake parrot while the manager's real parrot is elsewhere.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_014,epistemic_luck,intervening_luck,,medium,gemini-2.5-pro,2026-07-05T21:35:35.544177+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,8.302,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Kimmy's justified belief is true by luck, as her evidence (a decoy) is disconnected from what makes her belief true (a real beaver elsewhere).""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Kimmy's justified belief is true by luck, as her evidence (a decoy) is disconnected from what makes her belief true (a real beaver elsewhere).""}","Kimmy's justified belief is true by luck, as her evidence (a decoy) is disconnected from what makes her belief true (a real beaver elsewhere).","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_015,epistemic_luck,intervening_luck,,medium,gemini-2.5-pro,2026-07-05T21:35:43.846565+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,6.477,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Shaun's justified belief is true by coincidence, as his evidence (a costumed dog) is unrelated to the fact that makes his belief true (a different, hidden monkey).""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Shaun's justified belief is true by coincidence, as his evidence (a costumed dog) is unrelated to the fact that makes his belief true (a different, hidden monkey).""}","Shaun's justified belief is true by coincidence, as his evidence (a costumed dog) is unrelated to the fact that makes his belief true (a different, hidden monkey).","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_016,epistemic_luck,intervening_luck,,hard,gemini-2.5-pro,2026-07-05T21:35:50.323925+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,9.428,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Justin's justified true belief is not knowledge because it is only true due to the lucky coincidence of the broken timer restarting at the correct moment.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Justin's justified true belief is not knowledge because it is only true due to the lucky coincidence of the broken timer restarting at the correct moment.""}",Justin's justified true belief is not knowledge because it is only true due to the lucky coincidence of the broken timer restarting at the correct moment.,"{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_017,epistemic_luck,intervening_luck,,medium,gemini-2.5-pro,2026-07-05T21:35:59.752552+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,7.576,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Mara's justified belief is true only because of a coincidence, as her evidence (the frozen display) is not connected to the actual reason the meeting is in that room today.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Mara's justified belief is true only because of a coincidence, as her evidence (the frozen display) is not connected to the actual reason the meeting is in that room today.""}","Mara's justified belief is true only because of a coincidence, as her evidence (the frozen display) is not connected to the actual reason the meeting is in that room today.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_018,epistemic_luck,intervening_luck,,medium,gemini-2.5-pro,2026-07-05T21:36:07.328745+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,8.547,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Evan's justified belief is true only by the lucky coincidence that a different package for him was hidden on the porch, a fact disconnected from his evidence.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Evan's justified belief is true only by the lucky coincidence that a different package for him was hidden on the porch, a fact disconnected from his evidence.""}","Evan's justified belief is true only by the lucky coincidence that a different package for him was hidden on the porch, a fact disconnected from his evidence.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_019,epistemic_luck,intervening_luck,,medium,gemini-2.5-pro,2026-07-05T21:36:15.875564+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,9.399,"{
+  ""justification_status"": ""unjustified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Priya's belief is based on an unreliable, outdated poster and is only true due to a last-minute, coincidental change in the theater's schedule.""
+}",True,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Priya's belief is based on an unreliable, outdated poster and is only true due to a last-minute, coincidental change in the theater's schedule.""}","Priya's belief is based on an unreliable, outdated poster and is only true due to a last-minute, coincidental change in the theater's schedule.","{""justification_status"": false, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",5.0,6.0,0.8333333333333334
+el_020,epistemic_luck,intervening_luck,,medium,gemini-2.5-pro,2026-07-05T21:36:25.274232+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,7.965,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Ben's justified belief is true by coincidence because his evidence, an old menu, is disconnected from the fact that makes his belief true.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Ben's justified belief is true by coincidence because his evidence, an old menu, is disconnected from the fact that makes his belief true.""}","Ben's justified belief is true by coincidence because his evidence, an old menu, is disconnected from the fact that makes his belief true.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_021,epistemic_luck,intervening_luck,,medium,gemini-2.5-pro,2026-07-05T21:36:33.239252+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,9.823,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Talia's justified belief is true only because of the lucky, last-minute return of Professor Chen, not because of the outdated schedule she consulted.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Talia's justified belief is true only because of the lucky, last-minute return of Professor Chen, not because of the outdated schedule she consulted.""}","Talia's justified belief is true only because of the lucky, last-minute return of Professor Chen, not because of the outdated schedule she consulted.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_022,epistemic_luck,intervening_luck,,medium,gemini-2.5-pro,2026-07-05T21:36:43.061965+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,8.793,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Diego's justified belief is true by luck, as his evidence is a different bicycle and his neighbor's actual bicycle happens to be nearby by coincidence.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Diego's justified belief is true by luck, as his evidence is a different bicycle and his neighbor's actual bicycle happens to be nearby by coincidence.""}","Diego's justified belief is true by luck, as his evidence is a different bicycle and his neighbor's actual bicycle happens to be nearby by coincidence.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_023,epistemic_luck,environmental_luck,,hard,gemini-2.5-pro,2026-07-05T21:36:51.855016+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck""}",,6.441,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""environmental_luck"",
+  ""brief_explanation"": ""Alex's justified true belief is not knowledge because he is in an environment full of fakes and could have easily formed a false belief using the same perceptual method.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck"", ""brief_explanation"": ""Alex's justified true belief is not knowledge because he is in an environment full of fakes and could have easily formed a false belief using the same perceptual method.""}",Alex's justified true belief is not knowledge because he is in an environment full of fakes and could have easily formed a false belief using the same perceptual method.,"{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_024,epistemic_luck,environmental_luck,,hard,gemini-2.5-pro,2026-07-05T21:36:58.296167+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck""}",,11.091,"{
+  ""justification_status"": ""unjustified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""environmental_luck"",
+  ""brief_explanation"": ""Micky's belief is true due to environmental luck; his method of identification is unreliable in a warehouse full of fakes, and he just happened to look at the one genuine painting.""
+}",True,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck"", ""brief_explanation"": ""Micky's belief is true due to environmental luck; his method of identification is unreliable in a warehouse full of fakes, and he just happened to look at the one genuine painting.""}","Micky's belief is true due to environmental luck; his method of identification is unreliable in a warehouse full of fakes, and he just happened to look at the one genuine painting.","{""justification_status"": false, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",5.0,6.0,0.8333333333333334
+el_025,epistemic_luck,environmental_luck,,hard,gemini-2.5-pro,2026-07-05T21:37:09.386799+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck""}",,11.576,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""environmental_luck"",
+  ""brief_explanation"": ""Dana's belief is true only by luck because she is in an environment full of fakes and happened to pick the only real bottle.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck"", ""brief_explanation"": ""Dana's belief is true only by luck because she is in an environment full of fakes and happened to pick the only real bottle.""}",Dana's belief is true only by luck because she is in an environment full of fakes and happened to pick the only real bottle.,"{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_026,epistemic_luck,environmental_luck,,hard,gemini-2.5-pro,2026-07-05T21:37:20.962988+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck""}",,7.125,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""environmental_luck"",
+  ""brief_explanation"": ""Harper has a justified true belief, but she does not have knowledge because she is in an environment full of fakes and could have easily formed a false belief in the same way.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck"", ""brief_explanation"": ""Harper has a justified true belief, but she does not have knowledge because she is in an environment full of fakes and could have easily formed a false belief in the same way.""}","Harper has a justified true belief, but she does not have knowledge because she is in an environment full of fakes and could have easily formed a false belief in the same way.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_027,epistemic_luck,environmental_luck,,hard,gemini-2.5-pro,2026-07-05T21:37:28.088144+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck""}",,10.346,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""environmental_luck"",
+  ""brief_explanation"": ""Noah has a justified true belief, but he does not have knowledge because he is in an environment full of convincing fakes and could have easily formed a false belief in the same way.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck"", ""brief_explanation"": ""Noah has a justified true belief, but he does not have knowledge because he is in an environment full of convincing fakes and could have easily formed a false belief in the same way.""}","Noah has a justified true belief, but he does not have knowledge because he is in an environment full of convincing fakes and could have easily formed a false belief in the same way.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_028,epistemic_luck,environmental_luck,,hard,gemini-2.5-pro,2026-07-05T21:37:38.434670+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck""}",,8.831,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""environmental_luck"",
+  ""brief_explanation"": ""Sofia has a justified true belief, but she lacks knowledge due to environmental luck, as she is in an environment full of indistinguishable fakes and could have easily been wrong.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck"", ""brief_explanation"": ""Sofia has a justified true belief, but she lacks knowledge due to environmental luck, as she is in an environment full of indistinguishable fakes and could have easily been wrong.""}","Sofia has a justified true belief, but she lacks knowledge due to environmental luck, as she is in an environment full of indistinguishable fakes and could have easily been wrong.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_029,epistemic_luck,environmental_luck,,hard,gemini-2.5-pro,2026-07-05T21:37:47.265403+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck""}",,13.816,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""environmental_luck"",
+  ""brief_explanation"": ""Caleb's justified true belief is not knowledge because he is in a deceptive environment where he could have easily formed a false belief using the same method.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck"", ""brief_explanation"": ""Caleb's justified true belief is not knowledge because he is in a deceptive environment where he could have easily formed a false belief using the same method.""}",Caleb's justified true belief is not knowledge because he is in a deceptive environment where he could have easily formed a false belief using the same method.,"{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_030,epistemic_luck,environmental_luck,,hard,gemini-2.5-pro,2026-07-05T21:38:01.081106+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck""}",,9.142,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""environmental_luck"",
+  ""brief_explanation"": ""Iris has a justified true belief, but she does not have knowledge because she is in an environment full of fakes and could have easily formed a false belief by picking a different sword.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck"", ""brief_explanation"": ""Iris has a justified true belief, but she does not have knowledge because she is in an environment full of fakes and could have easily formed a false belief by picking a different sword.""}","Iris has a justified true belief, but she does not have knowledge because she is in an environment full of fakes and could have easily formed a false belief by picking a different sword.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+rr_ded_001_direct_contradiction_cat,rational_reasoning,deduction,1.0,,gemini-2.5-pro,2026-07-05T21:38:10.223110+00:00,"{""reasoning_pattern"": ""direct_contradiction"", ""logical_status"": ""inconsistent"", ""rational_constraint"": ""belief_set_requires_revision""}",,8.739,"{
+  ""reasoning_pattern"": ""direct_contradiction"",
+  ""logical_status"": ""inconsistent"",
+  ""rational_constraint"": ""belief_set_requires_revision"",
+  ""brief_explanation"": ""Blake's belief set is inconsistent because it contains a proposition and its direct negation, which is a logical contradiction that requires revision.""
+}",True,"{""reasoning_pattern"": ""direct_contradiction"", ""logical_status"": ""inconsistent"", ""rational_constraint"": ""belief_set_requires_revision"", ""brief_explanation"": ""Blake's belief set is inconsistent because it contains a proposition and its direct negation, which is a logical contradiction that requires revision.""}","Blake's belief set is inconsistent because it contains a proposition and its direct negation, which is a logical contradiction that requires revision.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_002_direct_contradiction_fish,rational_reasoning,deduction,2.0,,gemini-2.5-pro,2026-07-05T21:38:18.962624+00:00,"{""reasoning_pattern"": ""direct_contradiction"", ""logical_status"": ""inconsistent"", ""rational_constraint"": ""belief_set_requires_revision""}",,4.472,"{
+  ""reasoning_pattern"": ""direct_contradiction"",
+  ""logical_status"": ""inconsistent"",
+  ""rational_constraint"": ""belief_set_requires_revision"",
+  ""brief_explanation"": ""Noah's beliefs consist of a proposition and its direct negation, which is a logical contradiction, making the belief set inconsistent.""
+}",True,"{""reasoning_pattern"": ""direct_contradiction"", ""logical_status"": ""inconsistent"", ""rational_constraint"": ""belief_set_requires_revision"", ""brief_explanation"": ""Noah's beliefs consist of a proposition and its direct negation, which is a logical contradiction, making the belief set inconsistent.""}","Noah's beliefs consist of a proposition and its direct negation, which is a logical contradiction, making the belief set inconsistent.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_003_joint_inconsistency_three_claims,rational_reasoning,deduction,1.0,,gemini-2.5-pro,2026-07-05T21:38:23.434939+00:00,"{""reasoning_pattern"": ""joint_inconsistency"", ""logical_status"": ""inconsistent"", ""rational_constraint"": ""belief_set_requires_revision""}",,6.216,"{
+  ""reasoning_pattern"": ""joint_inconsistency"",
+  ""logical_status"": ""inconsistent"",
+  ""rational_constraint"": ""belief_set_requires_revision"",
+  ""brief_explanation"": ""Liam's beliefs {p, q, r, and not-(p and q and r)} are logically inconsistent, meaning they cannot all be true at once and thus require revision.""
+}",True,"{""reasoning_pattern"": ""joint_inconsistency"", ""logical_status"": ""inconsistent"", ""rational_constraint"": ""belief_set_requires_revision"", ""brief_explanation"": ""Liam's beliefs {p, q, r, and not-(p and q and r)} are logically inconsistent, meaning they cannot all be true at once and thus require revision.""}","Liam's beliefs {p, q, r, and not-(p and q and r)} are logically inconsistent, meaning they cannot all be true at once and thus require revision.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_004_joint_inconsistency_irrelevant_revision,rational_reasoning,deduction,2.0,,gemini-2.5-pro,2026-07-05T21:38:29.650861+00:00,"{""reasoning_pattern"": ""joint_inconsistency"", ""logical_status"": ""inconsistent"", ""rational_constraint"": ""belief_set_requires_revision""}",,14.81,"{
+  ""reasoning_pattern"": ""non_sequitur"",
+  ""logical_status"": ""inconsistent"",
+  ""rational_constraint"": ""belief_set_requires_revision"",
+  ""brief_explanation"": ""The beliefs that Kiwi has gills, that anything with gills is a fish, and that Kiwi is not a fish are mutually contradictory, and rejecting an unrelated belief about snakes does not resolve this inconsistency.""
+}",True,"{""reasoning_pattern"": ""non_sequitur"", ""logical_status"": ""inconsistent"", ""rational_constraint"": ""belief_set_requires_revision"", ""brief_explanation"": ""The beliefs that Kiwi has gills, that anything with gills is a fish, and that Kiwi is not a fish are mutually contradictory, and rejecting an unrelated belief about snakes does not resolve this inconsistency.""}","The beliefs that Kiwi has gills, that anything with gills is a fish, and that Kiwi is not a fish are mutually contradictory, and rejecting an unrelated belief about snakes does not resolve this inconsistency.","{""reasoning_pattern"": false, ""logical_status"": true, ""rational_constraint"": true}",2.0,3.0,0.6666666666666666
+rr_ded_005_consistent_belief_set_lights,rational_reasoning,deduction,1.0,,gemini-2.5-pro,2026-07-05T21:38:44.461226+00:00,"{""reasoning_pattern"": ""consistent_belief_set"", ""logical_status"": ""consistent"", ""rational_constraint"": ""belief_set_may_be_retained""}",,6.406,"{
+  ""reasoning_pattern"": ""consistent_belief_set"",
+  ""logical_status"": ""consistent"",
+  ""rational_constraint"": ""belief_set_may_be_retained"",
+  ""brief_explanation"": ""The three beliefs (the lights are on; the screen is not blank; and it is not the case that both the lights are on and the screen is blank) can all be true at the same time.""
+}",True,"{""reasoning_pattern"": ""consistent_belief_set"", ""logical_status"": ""consistent"", ""rational_constraint"": ""belief_set_may_be_retained"", ""brief_explanation"": ""The three beliefs (the lights are on; the screen is not blank; and it is not the case that both the lights are on and the screen is blank) can all be true at the same time.""}",The three beliefs (the lights are on; the screen is not blank; and it is not the case that both the lights are on and the screen is blank) can all be true at the same time.,"{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_006_consistent_belief_set_train,rational_reasoning,deduction,2.0,,gemini-2.5-pro,2026-07-05T21:38:50.867746+00:00,"{""reasoning_pattern"": ""consistent_belief_set"", ""logical_status"": ""consistent"", ""rational_constraint"": ""belief_set_may_be_retained""}",,6.841,"{
+  ""reasoning_pattern"": ""consistent_belief_set"",
+  ""logical_status"": ""consistent"",
+  ""rational_constraint"": ""belief_set_may_be_retained"",
+  ""brief_explanation"": ""The belief set is consistent because it is possible for the train to arrive at 8:00, for it not to be delayed, and for the disjunction 'it arrives at 8:00 or is delayed' to be true simultaneously.""
+}",True,"{""reasoning_pattern"": ""consistent_belief_set"", ""logical_status"": ""consistent"", ""rational_constraint"": ""belief_set_may_be_retained"", ""brief_explanation"": ""The belief set is consistent because it is possible for the train to arrive at 8:00, for it not to be delayed, and for the disjunction 'it arrives at 8:00 or is delayed' to be true simultaneously.""}","The belief set is consistent because it is possible for the train to arrive at 8:00, for it not to be delayed, and for the disjunction 'it arrives at 8:00 or is delayed' to be true simultaneously.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_007_modus_ponens_raise,rational_reasoning,deduction,1.0,,gemini-2.5-pro,2026-07-05T21:38:57.709097+00:00,"{""reasoning_pattern"": ""modus_ponens"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised""}",,5.315,"{
+  ""reasoning_pattern"": ""modus_ponens"",
+  ""logical_status"": ""valid"",
+  ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"",
+  ""brief_explanation"": ""The target proposition is the consequent of a conditional, and the agent's beliefs affirm the antecedent, which is a valid inference pattern known as modus ponens.""
+}",True,"{""reasoning_pattern"": ""modus_ponens"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"", ""brief_explanation"": ""The target proposition is the consequent of a conditional, and the agent's beliefs affirm the antecedent, which is a valid inference pattern known as modus ponens.""}","The target proposition is the consequent of a conditional, and the agent's beliefs affirm the antecedent, which is a valid inference pattern known as modus ponens.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_008_modus_ponens_bizarre_premises,rational_reasoning,deduction,2.0,,gemini-2.5-pro,2026-07-05T21:39:03.024237+00:00,"{""reasoning_pattern"": ""modus_ponens"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised""}",,5.587,"{
+  ""reasoning_pattern"": ""modus_ponens"",
+  ""logical_status"": ""valid"",
+  ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"",
+  ""brief_explanation"": ""The target proposition is the consequent of a conditional statement, and the antecedent is affirmed as a premise, which is a valid inference known as modus ponens.""
+}",True,"{""reasoning_pattern"": ""modus_ponens"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"", ""brief_explanation"": ""The target proposition is the consequent of a conditional statement, and the antecedent is affirmed as a premise, which is a valid inference known as modus ponens.""}","The target proposition is the consequent of a conditional statement, and the antecedent is affirmed as a premise, which is a valid inference known as modus ponens.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_009_modus_ponens_rejects_conclusion,rational_reasoning,deduction,3.0,,gemini-2.5-pro,2026-07-05T21:39:08.611721+00:00,"{""reasoning_pattern"": ""modus_ponens"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised""}",,5.508,"{
+  ""reasoning_pattern"": ""modus_ponens"",
+  ""logical_status"": ""valid"",
+  ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"",
+  ""brief_explanation"": ""The agent's beliefs form the premises of a valid modus ponens argument, which deductively entails the target proposition.""
+}",True,"{""reasoning_pattern"": ""modus_ponens"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"", ""brief_explanation"": ""The agent's beliefs form the premises of a valid modus ponens argument, which deductively entails the target proposition.""}","The agent's beliefs form the premises of a valid modus ponens argument, which deductively entails the target proposition.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_010_modus_tollens_flowers,rational_reasoning,deduction,1.0,,gemini-2.5-pro,2026-07-05T21:39:14.120247+00:00,"{""reasoning_pattern"": ""modus_tollens"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised""}",,4.501,"{
+  ""reasoning_pattern"": ""modus_tollens"",
+  ""logical_status"": ""valid"",
+  ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"",
+  ""brief_explanation"": ""The conclusion that it will not rain follows deductively from the conditional premise and the negation of its consequent, which is a valid argument form known as modus tollens.""
+}",True,"{""reasoning_pattern"": ""modus_tollens"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"", ""brief_explanation"": ""The conclusion that it will not rain follows deductively from the conditional premise and the negation of its consequent, which is a valid argument form known as modus tollens.""}","The conclusion that it will not rain follows deductively from the conditional premise and the negation of its consequent, which is a valid argument form known as modus tollens.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_011_modus_tollens_cookies,rational_reasoning,deduction,2.0,,gemini-2.5-pro,2026-07-05T21:39:18.621384+00:00,"{""reasoning_pattern"": ""modus_tollens"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised""}",,4.442,"{
+  ""reasoning_pattern"": ""modus_tollens"",
+  ""logical_status"": ""valid"",
+  ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"",
+  ""brief_explanation"": ""The conclusion that the cookies are not burnt is a deductively valid inference from the premises via the modus tollens argument form.""
+}",True,"{""reasoning_pattern"": ""modus_tollens"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"", ""brief_explanation"": ""The conclusion that the cookies are not burnt is a deductively valid inference from the premises via the modus tollens argument form.""}",The conclusion that the cookies are not burnt is a deductively valid inference from the premises via the modus tollens argument form.,"{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_012_modus_tollens_dog,rational_reasoning,deduction,3.0,,gemini-2.5-pro,2026-07-05T21:39:23.063194+00:00,"{""reasoning_pattern"": ""modus_tollens"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised""}",,4.485,"{
+  ""reasoning_pattern"": ""modus_tollens"",
+  ""logical_status"": ""valid"",
+  ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"",
+  ""brief_explanation"": ""The conclusion that the dog is not upstairs is a deductively valid consequence of the premises via modus tollens.""
+}",True,"{""reasoning_pattern"": ""modus_tollens"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"", ""brief_explanation"": ""The conclusion that the dog is not upstairs is a deductively valid consequence of the premises via modus tollens.""}",The conclusion that the dog is not upstairs is a deductively valid consequence of the premises via modus tollens.,"{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_013_affirming_consequent_baseball,rational_reasoning,deduction,1.0,,gemini-2.5-pro,2026-07-05T21:39:27.548115+00:00,"{""reasoning_pattern"": ""affirming_the_consequent"", ""logical_status"": ""invalid"", ""rational_constraint"": ""target_not_supported_by_deduction""}",,4.722,"{
+  ""reasoning_pattern"": ""affirming_the_consequent"",
+  ""logical_status"": ""invalid"",
+  ""rational_constraint"": ""target_not_supported_by_deduction"",
+  ""brief_explanation"": ""Noah's reasoning commits the fallacy of affirming the consequent; the truth of the consequent (the team is playing) does not guarantee the truth of the antecedent (it is hot).""
+}",True,"{""reasoning_pattern"": ""affirming_the_consequent"", ""logical_status"": ""invalid"", ""rational_constraint"": ""target_not_supported_by_deduction"", ""brief_explanation"": ""Noah's reasoning commits the fallacy of affirming the consequent; the truth of the consequent (the team is playing) does not guarantee the truth of the antecedent (it is hot).""}",Noah's reasoning commits the fallacy of affirming the consequent; the truth of the consequent (the team is playing) does not guarantee the truth of the antecedent (it is hot).,"{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_014_affirming_consequent_alarm,rational_reasoning,deduction,2.0,,gemini-2.5-pro,2026-07-05T21:39:32.270091+00:00,"{""reasoning_pattern"": ""affirming_the_consequent"", ""logical_status"": ""invalid"", ""rational_constraint"": ""target_not_supported_by_deduction""}",,6.567,"{
+  ""reasoning_pattern"": ""affirming_the_consequent"",
+  ""logical_status"": ""invalid"",
+  ""rational_constraint"": ""target_not_supported_by_deduction"",
+  ""brief_explanation"": ""The reasoning is an example of affirming the consequent, a formal fallacy where the conclusion does not logically follow from the premises.""
+}",True,"{""reasoning_pattern"": ""affirming_the_consequent"", ""logical_status"": ""invalid"", ""rational_constraint"": ""target_not_supported_by_deduction"", ""brief_explanation"": ""The reasoning is an example of affirming the consequent, a formal fallacy where the conclusion does not logically follow from the premises.""}","The reasoning is an example of affirming the consequent, a formal fallacy where the conclusion does not logically follow from the premises.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_015_affirming_consequent_light,rational_reasoning,deduction,3.0,,gemini-2.5-pro,2026-07-05T21:39:38.836833+00:00,"{""reasoning_pattern"": ""affirming_the_consequent"", ""logical_status"": ""invalid"", ""rational_constraint"": ""target_not_supported_by_deduction""}",,7.415,"{
+  ""reasoning_pattern"": ""affirming_the_consequent"",
+  ""logical_status"": ""invalid"",
+  ""rational_constraint"": ""target_not_supported_by_deduction"",
+  ""brief_explanation"": ""The conclusion is reached by the formal fallacy of affirming the consequent, as the light could have turned on for a reason other than the motion sensor.""
+}",True,"{""reasoning_pattern"": ""affirming_the_consequent"", ""logical_status"": ""invalid"", ""rational_constraint"": ""target_not_supported_by_deduction"", ""brief_explanation"": ""The conclusion is reached by the formal fallacy of affirming the consequent, as the light could have turned on for a reason other than the motion sensor.""}","The conclusion is reached by the formal fallacy of affirming the consequent, as the light could have turned on for a reason other than the motion sensor.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_016_denying_antecedent_file,rational_reasoning,deduction,1.0,,gemini-2.5-pro,2026-07-05T21:39:46.251625+00:00,"{""reasoning_pattern"": ""denying_the_antecedent"", ""logical_status"": ""invalid"", ""rational_constraint"": ""target_not_supported_by_deduction""}",,6.327,"{
+  ""reasoning_pattern"": ""denying_the_antecedent"",
+  ""logical_status"": ""invalid"",
+  ""rational_constraint"": ""target_not_supported_by_deduction"",
+  ""brief_explanation"": ""The conclusion is derived by the invalid logical form of denying the antecedent, as the file could require a password for reasons other than encryption.""
+}",True,"{""reasoning_pattern"": ""denying_the_antecedent"", ""logical_status"": ""invalid"", ""rational_constraint"": ""target_not_supported_by_deduction"", ""brief_explanation"": ""The conclusion is derived by the invalid logical form of denying the antecedent, as the file could require a password for reasons other than encryption.""}","The conclusion is derived by the invalid logical form of denying the antecedent, as the file could require a password for reasons other than encryption.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_017_denying_antecedent_traffic,rational_reasoning,deduction,2.0,,gemini-2.5-pro,2026-07-05T21:39:52.579046+00:00,"{""reasoning_pattern"": ""denying_the_antecedent"", ""logical_status"": ""invalid"", ""rational_constraint"": ""target_not_supported_by_deduction""}",,5.955,"{
+  ""reasoning_pattern"": ""denying_the_antecedent"",
+  ""logical_status"": ""invalid"",
+  ""rational_constraint"": ""target_not_supported_by_deduction"",
+  ""brief_explanation"": ""Nadia's conclusion is based on the fallacy of denying the antecedent, as the road trip could be late for reasons other than heavy traffic.""
+}",True,"{""reasoning_pattern"": ""denying_the_antecedent"", ""logical_status"": ""invalid"", ""rational_constraint"": ""target_not_supported_by_deduction"", ""brief_explanation"": ""Nadia's conclusion is based on the fallacy of denying the antecedent, as the road trip could be late for reasons other than heavy traffic.""}","Nadia's conclusion is based on the fallacy of denying the antecedent, as the road trip could be late for reasons other than heavy traffic.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_018_denying_antecedent_sprinkler,rational_reasoning,deduction,3.0,,gemini-2.5-pro,2026-07-05T21:39:58.534371+00:00,"{""reasoning_pattern"": ""denying_the_antecedent"", ""logical_status"": ""invalid"", ""rational_constraint"": ""target_not_supported_by_deduction""}",,5.875,"{
+  ""reasoning_pattern"": ""denying_the_antecedent"",
+  ""logical_status"": ""invalid"",
+  ""rational_constraint"": ""target_not_supported_by_deduction"",
+  ""brief_explanation"": ""The reasoning is an instance of the formal fallacy of denying the antecedent, as the conclusion does not logically follow from the premises.""
+}",True,"{""reasoning_pattern"": ""denying_the_antecedent"", ""logical_status"": ""invalid"", ""rational_constraint"": ""target_not_supported_by_deduction"", ""brief_explanation"": ""The reasoning is an instance of the formal fallacy of denying the antecedent, as the conclusion does not logically follow from the premises.""}","The reasoning is an instance of the formal fallacy of denying the antecedent, as the conclusion does not logically follow from the premises.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_019_hypothetical_syllogism_mermaids,rational_reasoning,deduction,1.0,,gemini-2.5-pro,2026-07-05T21:40:04.409646+00:00,"{""reasoning_pattern"": ""hypothetical_syllogism"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised""}",,5.424,"{
+  ""reasoning_pattern"": ""hypothetical_syllogism"",
+  ""logical_status"": ""valid"",
+  ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"",
+  ""brief_explanation"": ""The target proposition follows deductively from the agent's two conditional beliefs through a valid chain of reasoning known as a hypothetical syllogism.""
+}",True,"{""reasoning_pattern"": ""hypothetical_syllogism"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"", ""brief_explanation"": ""The target proposition follows deductively from the agent's two conditional beliefs through a valid chain of reasoning known as a hypothetical syllogism.""}",The target proposition follows deductively from the agent's two conditional beliefs through a valid chain of reasoning known as a hypothetical syllogism.,"{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_020_hypothetical_syllogism_breakfast,rational_reasoning,deduction,2.0,,gemini-2.5-pro,2026-07-05T21:40:09.833727+00:00,"{""reasoning_pattern"": ""hypothetical_syllogism"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised""}",,5.126,"{
+  ""reasoning_pattern"": ""hypothetical_syllogism"",
+  ""logical_status"": ""valid"",
+  ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"",
+  ""brief_explanation"": ""The conclusion follows from the premises by a valid hypothetical syllogism, linking the first condition (eggs) to the final outcome (healthy breakfast).""
+}",True,"{""reasoning_pattern"": ""hypothetical_syllogism"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"", ""brief_explanation"": ""The conclusion follows from the premises by a valid hypothetical syllogism, linking the first condition (eggs) to the final outcome (healthy breakfast).""}","The conclusion follows from the premises by a valid hypothetical syllogism, linking the first condition (eggs) to the final outcome (healthy breakfast).","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_021_disjunctive_syllogism_tacos,rational_reasoning,deduction,1.0,,gemini-2.5-pro,2026-07-05T21:40:14.959815+00:00,"{""reasoning_pattern"": ""disjunctive_syllogism"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised""}",,4.506,"{
+  ""reasoning_pattern"": ""disjunctive_syllogism"",
+  ""logical_status"": ""valid"",
+  ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"",
+  ""brief_explanation"": ""The conclusion follows from the premises by a valid disjunctive syllogism, where one disjunct is affirmed by denying the other.""
+}",True,"{""reasoning_pattern"": ""disjunctive_syllogism"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"", ""brief_explanation"": ""The conclusion follows from the premises by a valid disjunctive syllogism, where one disjunct is affirmed by denying the other.""}","The conclusion follows from the premises by a valid disjunctive syllogism, where one disjunct is affirmed by denying the other.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_022_disjunctive_syllogism_croissants,rational_reasoning,deduction,2.0,,gemini-2.5-pro,2026-07-05T21:40:19.466032+00:00,"{""reasoning_pattern"": ""disjunctive_syllogism"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised""}",,4.625,"{
+  ""reasoning_pattern"": ""disjunctive_syllogism"",
+  ""logical_status"": ""valid"",
+  ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"",
+  ""brief_explanation"": ""The conclusion follows from the premises by the valid deductive pattern of disjunctive syllogism.""
+}",True,"{""reasoning_pattern"": ""disjunctive_syllogism"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"", ""brief_explanation"": ""The conclusion follows from the premises by the valid deductive pattern of disjunctive syllogism.""}",The conclusion follows from the premises by the valid deductive pattern of disjunctive syllogism.,"{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_023_constructive_dilemma_monster,rational_reasoning,deduction,1.0,,gemini-2.5-pro,2026-07-05T21:40:24.091124+00:00,"{""reasoning_pattern"": ""constructive_dilemma"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised""}",,6.527,"{
+  ""reasoning_pattern"": ""constructive_dilemma"",
+  ""logical_status"": ""valid"",
+  ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"",
+  ""brief_explanation"": ""The target proposition is the conclusion of a valid constructive dilemma derived from Natalie's beliefs.""
+}",True,"{""reasoning_pattern"": ""constructive_dilemma"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"", ""brief_explanation"": ""The target proposition is the conclusion of a valid constructive dilemma derived from Natalie's beliefs.""}",The target proposition is the conclusion of a valid constructive dilemma derived from Natalie's beliefs.,"{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_024_constructive_dilemma_backup,rational_reasoning,deduction,2.0,,gemini-2.5-pro,2026-07-05T21:40:30.618667+00:00,"{""reasoning_pattern"": ""constructive_dilemma"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised""}",,6.265,"{
+  ""reasoning_pattern"": ""constructive_dilemma"",
+  ""logical_status"": ""valid"",
+  ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"",
+  ""brief_explanation"": ""The conclusion follows from the premises via a valid constructive dilemma, as the two possibilities presented in the first premise each lead to one of the possibilities in the conclusion.""
+}",True,"{""reasoning_pattern"": ""constructive_dilemma"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"", ""brief_explanation"": ""The conclusion follows from the premises via a valid constructive dilemma, as the two possibilities presented in the first premise each lead to one of the possibilities in the conclusion.""}","The conclusion follows from the premises via a valid constructive dilemma, as the two possibilities presented in the first premise each lead to one of the possibilities in the conclusion.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_025_simplification_saturn,rational_reasoning,deduction,1.0,,gemini-2.5-pro,2026-07-05T21:40:36.884010+00:00,"{""reasoning_pattern"": ""simplification"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_may_be_accepted""}",,5.89,"{
+  ""reasoning_pattern"": ""simplification"",
+  ""logical_status"": ""valid"",
+  ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"",
+  ""brief_explanation"": ""The conclusion that Saturn has rings is one of the conjuncts of the premise, and inferring a conjunct from a conjunction is a valid inference known as simplification.""
+}",True,"{""reasoning_pattern"": ""simplification"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"", ""brief_explanation"": ""The conclusion that Saturn has rings is one of the conjuncts of the premise, and inferring a conjunct from a conjunction is a valid inference known as simplification.""}","The conclusion that Saturn has rings is one of the conjuncts of the premise, and inferring a conjunct from a conjunction is a valid inference known as simplification.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": false}",2.0,3.0,0.6666666666666666
+rr_ded_026_addition_wine,rational_reasoning,deduction,1.0,,gemini-2.5-pro,2026-07-05T21:40:42.773776+00:00,"{""reasoning_pattern"": ""addition"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_may_be_accepted""}",,8.422,"{
+  ""reasoning_pattern"": ""addition"",
+  ""logical_status"": ""valid"",
+  ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"",
+  ""brief_explanation"": ""The conclusion is derived from the premise using the rule of Addition (P, therefore P or Q), which is a deductively valid form of inference.""
+}",True,"{""reasoning_pattern"": ""addition"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"", ""brief_explanation"": ""The conclusion is derived from the premise using the rule of Addition (P, therefore P or Q), which is a deductively valid form of inference.""}","The conclusion is derived from the premise using the rule of Addition (P, therefore P or Q), which is a deductively valid form of inference.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": false}",2.0,3.0,0.6666666666666666
+rr_ded_027_categorical_syllogism_humans,rational_reasoning,deduction,1.0,,gemini-2.5-pro,2026-07-05T21:40:51.195812+00:00,"{""reasoning_pattern"": ""categorical_syllogism"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised""}",,9.119,"{
+  ""reasoning_pattern"": ""categorical_syllogism"",
+  ""logical_status"": ""valid"",
+  ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"",
+  ""brief_explanation"": ""The target proposition is the conclusion of a valid categorical syllogism based on Paul's stated beliefs.""
+}",True,"{""reasoning_pattern"": ""categorical_syllogism"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"", ""brief_explanation"": ""The target proposition is the conclusion of a valid categorical syllogism based on Paul's stated beliefs.""}",The target proposition is the conclusion of a valid categorical syllogism based on Paul's stated beliefs.,"{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_028_categorical_syllogism_spies,rational_reasoning,deduction,2.0,,gemini-2.5-pro,2026-07-05T21:41:00.314631+00:00,"{""reasoning_pattern"": ""categorical_syllogism"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised""}",,16.482,"{
+  ""reasoning_pattern"": ""joint_inconsistency"",
+  ""logical_status"": ""inconsistent"",
+  ""rational_constraint"": ""belief_set_requires_revision"",
+  ""brief_explanation"": ""Benny's beliefs that all spies wear hats, his mailman is a spy, and his mailman does not wear a hat are jointly inconsistent and cannot all be true.""
+}",True,"{""reasoning_pattern"": ""joint_inconsistency"", ""logical_status"": ""inconsistent"", ""rational_constraint"": ""belief_set_requires_revision"", ""brief_explanation"": ""Benny's beliefs that all spies wear hats, his mailman is a spy, and his mailman does not wear a hat are jointly inconsistent and cannot all be true.""}","Benny's beliefs that all spies wear hats, his mailman is a spy, and his mailman does not wear a hat are jointly inconsistent and cannot all be true.","{""reasoning_pattern"": false, ""logical_status"": false, ""rational_constraint"": false}",0.0,3.0,0.0
+rr_ded_029_non_sequitur_mercury,rational_reasoning,deduction,1.0,,gemini-2.5-pro,2026-07-05T21:41:16.797183+00:00,"{""reasoning_pattern"": ""non_sequitur"", ""logical_status"": ""invalid"", ""rational_constraint"": ""target_not_supported_by_deduction""}",,6.113,"{
+  ""reasoning_pattern"": ""non_sequitur"",
+  ""logical_status"": ""invalid"",
+  ""rational_constraint"": ""target_not_supported_by_deduction"",
+  ""brief_explanation"": ""The conclusion about Mercury's position in the solar system has no logical connection to the premise about Patrick's location.""
+}",True,"{""reasoning_pattern"": ""non_sequitur"", ""logical_status"": ""invalid"", ""rational_constraint"": ""target_not_supported_by_deduction"", ""brief_explanation"": ""The conclusion about Mercury's position in the solar system has no logical connection to the premise about Patrick's location.""}",The conclusion about Mercury's position in the solar system has no logical connection to the premise about Patrick's location.,"{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_030_equivocation_bank,rational_reasoning,deduction,1.0,,gemini-2.5-pro,2026-07-05T21:41:22.910409+00:00,"{""reasoning_pattern"": ""equivocation"", ""logical_status"": ""invalid"", ""rational_constraint"": ""target_not_supported_by_deduction""}",,5.026,"{
+  ""reasoning_pattern"": ""equivocation"",
+  ""logical_status"": ""invalid"",
+  ""rational_constraint"": ""target_not_supported_by_deduction"",
+  ""brief_explanation"": ""The conclusion does not follow because the word 'bank' is used with two different meanings in the premise and the conclusion.""
+}",True,"{""reasoning_pattern"": ""equivocation"", ""logical_status"": ""invalid"", ""rational_constraint"": ""target_not_supported_by_deduction"", ""brief_explanation"": ""The conclusion does not follow because the word 'bank' is used with two different meanings in the premise and the conclusion.""}",The conclusion does not follow because the word 'bank' is used with two different meanings in the premise and the conclusion.,"{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rc_001_package_placebo,defeaters,rebuttal_and_undercut,,,gemini-2.5-pro,2026-07-05T21:41:27.936424+00:00,"{""defeater_present"": ""no"", ""defeater_type"": ""placebo"", ""belief_update"": ""no_revision_from_new_information""}",,4.122,"{
+  ""defeater_present"": ""no"",
+  ""defeater_type"": ""placebo"",
+  ""belief_update"": ""no_revision_from_new_information"",
+  ""brief_explanation"": ""The color of the delivery truck is irrelevant to whether the package was delivered, so this new information does not defeat Ana's original justification.""
+}",True,"{""defeater_present"": ""no"", ""defeater_type"": ""placebo"", ""belief_update"": ""no_revision_from_new_information"", ""brief_explanation"": ""The color of the delivery truck is irrelevant to whether the package was delivered, so this new information does not defeat Ana's original justification.""}","The color of the delivery truck is irrelevant to whether the package was delivered, so this new information does not defeat Ana's original justification.","{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_002_package_rebutting,defeaters,rebuttal_and_undercut,,,gemini-2.5-pro,2026-07-05T21:41:32.058825+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""belief_update"": ""revise_belief""}",,5.432,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""rebutting_defeater"",
+  ""belief_update"": ""revise_belief"",
+  ""brief_explanation"": ""The new notification provides direct evidence that the target proposition is false, contradicting the initial evidence.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""belief_update"": ""revise_belief"", ""brief_explanation"": ""The new notification provides direct evidence that the target proposition is false, contradicting the initial evidence.""}","The new notification provides direct evidence that the target proposition is false, contradicting the initial evidence.","{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_003_package_undercutting,defeaters,rebuttal_and_undercut,,,gemini-2.5-pro,2026-07-05T21:41:37.490451+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief""}",,5.473,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""undercutting_defeater"",
+  ""belief_update"": ""revise_belief"",
+  ""brief_explanation"": ""The new information undermines the reliability of the tracking page as evidence for the package's arrival.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief"", ""brief_explanation"": ""The new information undermines the reliability of the tracking page as evidence for the package's arrival.""}",The new information undermines the reliability of the tracking page as evidence for the package's arrival.,"{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_004_dolphin_placebo,defeaters,rebuttal_and_undercut,,,gemini-2.5-pro,2026-07-05T21:41:42.963573+00:00,"{""defeater_present"": ""no"", ""defeater_type"": ""placebo"", ""belief_update"": ""no_revision_from_new_information""}",,4.322,"{
+  ""defeater_present"": ""no"",
+  ""defeater_type"": ""placebo"",
+  ""belief_update"": ""no_revision_from_new_information"",
+  ""brief_explanation"": ""The new information about pelicans is entirely irrelevant to the proposition that there is a dolphin in the water.""
+}",True,"{""defeater_present"": ""no"", ""defeater_type"": ""placebo"", ""belief_update"": ""no_revision_from_new_information"", ""brief_explanation"": ""The new information about pelicans is entirely irrelevant to the proposition that there is a dolphin in the water.""}",The new information about pelicans is entirely irrelevant to the proposition that there is a dolphin in the water.,"{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_005_dolphin_rebutting,defeaters,rebuttal_and_undercut,,,gemini-2.5-pro,2026-07-05T21:41:47.285310+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""belief_update"": ""revise_belief""}",,6.327,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""rebutting_defeater"",
+  ""belief_update"": ""revise_belief"",
+  ""brief_explanation"": ""The reliable marine biologist's testimony provides direct evidence that Jerry's belief is false.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""belief_update"": ""revise_belief"", ""brief_explanation"": ""The reliable marine biologist's testimony provides direct evidence that Jerry's belief is false.""}",The reliable marine biologist's testimony provides direct evidence that Jerry's belief is false.,"{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_006_dolphin_undercutting,defeaters,rebuttal_and_undercut,,,gemini-2.5-pro,2026-07-05T21:41:53.612557+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief""}",,6.623,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""undercutting_defeater"",
+  ""belief_update"": ""revise_belief"",
+  ""brief_explanation"": ""The new information gives Jerry a reason to doubt the reliability of his perceptual evidence, thereby undermining his justification for the belief.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief"", ""brief_explanation"": ""The new information gives Jerry a reason to doubt the reliability of his perceptual evidence, thereby undermining his justification for the belief.""}","The new information gives Jerry a reason to doubt the reliability of his perceptual evidence, thereby undermining his justification for the belief.","{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_007_burrito_placebo,defeaters,rebuttal_and_undercut,,,gemini-2.5-pro,2026-07-05T21:42:00.235217+00:00,"{""defeater_present"": ""no"", ""defeater_type"": ""placebo"", ""belief_update"": ""no_revision_from_new_information""}",,4.28,"{
+  ""defeater_present"": ""no"",
+  ""defeater_type"": ""placebo"",
+  ""belief_update"": ""no_revision_from_new_information"",
+  ""brief_explanation"": ""The new information about the restaurant's distance is irrelevant to the proposition about the size of its burritos.""
+}",True,"{""defeater_present"": ""no"", ""defeater_type"": ""placebo"", ""belief_update"": ""no_revision_from_new_information"", ""brief_explanation"": ""The new information about the restaurant's distance is irrelevant to the proposition about the size of its burritos.""}",The new information about the restaurant's distance is irrelevant to the proposition about the size of its burritos.,"{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_008_burrito_rebutting,defeaters,rebuttal_and_undercut,,,gemini-2.5-pro,2026-07-05T21:42:04.515098+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""belief_update"": ""revise_belief""}",,5.413,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""rebutting_defeater"",
+  ""belief_update"": ""revise_belief"",
+  ""brief_explanation"": ""The photographic evidence that the burritos are small is a reason to believe the target proposition is false.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""belief_update"": ""revise_belief"", ""brief_explanation"": ""The photographic evidence that the burritos are small is a reason to believe the target proposition is false.""}",The photographic evidence that the burritos are small is a reason to believe the target proposition is false.,"{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_009_burrito_undercutting,defeaters,rebuttal_and_undercut,,,gemini-2.5-pro,2026-07-05T21:42:09.927768+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief""}",,5.571,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""undercutting_defeater"",
+  ""belief_update"": ""revise_belief"",
+  ""brief_explanation"": ""The new information undermines the reliability of the friend's testimony, which was the basis for Adam's belief.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief"", ""brief_explanation"": ""The new information undermines the reliability of the friend's testimony, which was the basis for Adam's belief.""}","The new information undermines the reliability of the friend's testimony, which was the basis for Adam's belief.","{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_010_antarctica_placebo,defeaters,rebuttal_and_undercut,,,gemini-2.5-pro,2026-07-05T21:42:15.498733+00:00,"{""defeater_present"": ""no"", ""defeater_type"": ""placebo"", ""belief_update"": ""no_revision_from_new_information""}",,5.023,"{
+  ""defeater_present"": ""no"",
+  ""defeater_type"": ""placebo"",
+  ""belief_update"": ""no_revision_from_new_information"",
+  ""brief_explanation"": ""The color of a geography textbook is completely irrelevant to the existence of Antarctica.""
+}",True,"{""defeater_present"": ""no"", ""defeater_type"": ""placebo"", ""belief_update"": ""no_revision_from_new_information"", ""brief_explanation"": ""The color of a geography textbook is completely irrelevant to the existence of Antarctica.""}",The color of a geography textbook is completely irrelevant to the existence of Antarctica.,"{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_011_antarctica_rebutting,defeaters,rebuttal_and_undercut,,,gemini-2.5-pro,2026-07-05T21:42:20.522299+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""belief_update"": ""revise_belief""}",,5.686,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""rebutting_defeater"",
+  ""belief_update"": ""revise_belief"",
+  ""brief_explanation"": ""The reliable textbook provides direct evidence against Cindy's belief, giving her a reason to believe the opposite is true.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""belief_update"": ""revise_belief"", ""brief_explanation"": ""The reliable textbook provides direct evidence against Cindy's belief, giving her a reason to believe the opposite is true.""}","The reliable textbook provides direct evidence against Cindy's belief, giving her a reason to believe the opposite is true.","{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_012_antarctica_undercutting,defeaters,rebuttal_and_undercut,,,gemini-2.5-pro,2026-07-05T21:42:26.208474+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief""}",,5.316,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""undercutting_defeater"",
+  ""belief_update"": ""revise_belief"",
+  ""brief_explanation"": ""The new information undermines the justification for Cindy's belief by showing that her reason for holding it is unreliable.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief"", ""brief_explanation"": ""The new information undermines the justification for Cindy's belief by showing that her reason for holding it is unreliable.""}",The new information undermines the justification for Cindy's belief by showing that her reason for holding it is unreliable.,"{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_013_aliens_placebo,defeaters,rebuttal_and_undercut,,,gemini-2.5-pro,2026-07-05T21:42:31.525004+00:00,"{""defeater_present"": ""no"", ""defeater_type"": ""placebo"", ""belief_update"": ""no_revision_from_new_information""}",,6.107,"{
+  ""defeater_present"": ""no"",
+  ""defeater_type"": ""placebo"",
+  ""belief_update"": ""no_revision_from_new_information"",
+  ""brief_explanation"": ""The new information that others also saw the object corroborates Kyle's initial observation rather than defeating his conclusion.""
+}",True,"{""defeater_present"": ""no"", ""defeater_type"": ""placebo"", ""belief_update"": ""no_revision_from_new_information"", ""brief_explanation"": ""The new information that others also saw the object corroborates Kyle's initial observation rather than defeating his conclusion.""}",The new information that others also saw the object corroborates Kyle's initial observation rather than defeating his conclusion.,"{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_014_aliens_rebutting,defeaters,rebuttal_and_undercut,,,gemini-2.5-pro,2026-07-05T21:42:37.632596+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""belief_update"": ""revise_belief""}",,6.392,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""undercutting_defeater"",
+  ""belief_update"": ""revise_belief"",
+  ""brief_explanation"": ""The news report provides an alternative explanation for the bright object, which undercuts the evidential support for Kyle's belief that aliens are attacking.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief"", ""brief_explanation"": ""The news report provides an alternative explanation for the bright object, which undercuts the evidential support for Kyle's belief that aliens are attacking.""}","The news report provides an alternative explanation for the bright object, which undercuts the evidential support for Kyle's belief that aliens are attacking.","{""defeater_present"": true, ""defeater_type"": false, ""belief_update"": true}",2.0,3.0,0.6666666666666666
+rc_015_aliens_undercutting,defeaters,rebuttal_and_undercut,,,gemini-2.5-pro,2026-07-05T21:42:44.024438+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief""}",,5.792,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""undercutting_defeater"",
+  ""belief_update"": ""revise_belief"",
+  ""brief_explanation"": ""The new information about Kyle's vision problem undermines the evidential support his observation provides for his belief, without directly contradicting the belief itself.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief"", ""brief_explanation"": ""The new information about Kyle's vision problem undermines the evidential support his observation provides for his belief, without directly contradicting the belief itself.""}","The new information about Kyle's vision problem undermines the evidential support his observation provides for his belief, without directly contradicting the belief itself.","{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_016_scuba_placebo,defeaters,rebuttal_and_undercut,,,gemini-2.5-pro,2026-07-05T21:42:49.816175+00:00,"{""defeater_present"": ""no"", ""defeater_type"": ""placebo"", ""belief_update"": ""no_revision_from_new_information""}",,5.979,"{
+  ""defeater_present"": ""no"",
+  ""defeater_type"": ""placebo"",
+  ""belief_update"": ""no_revision_from_new_information"",
+  ""brief_explanation"": ""The hotel's lack of direct access to the marina is irrelevant to whether boats at the marina offer scuba diving tours.""
+}",True,"{""defeater_present"": ""no"", ""defeater_type"": ""placebo"", ""belief_update"": ""no_revision_from_new_information"", ""brief_explanation"": ""The hotel's lack of direct access to the marina is irrelevant to whether boats at the marina offer scuba diving tours.""}",The hotel's lack of direct access to the marina is irrelevant to whether boats at the marina offer scuba diving tours.,"{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_017_scuba_rebutting,defeaters,rebuttal_and_undercut,,,gemini-2.5-pro,2026-07-05T21:42:55.795356+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""belief_update"": ""revise_belief""}",,5.112,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""rebutting_defeater"",
+  ""belief_update"": ""revise_belief"",
+  ""brief_explanation"": ""The new information from the marina staff is direct evidence against the proposition, giving Brooke a reason to believe it is false.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""belief_update"": ""revise_belief"", ""brief_explanation"": ""The new information from the marina staff is direct evidence against the proposition, giving Brooke a reason to believe it is false.""}","The new information from the marina staff is direct evidence against the proposition, giving Brooke a reason to believe it is false.","{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_018_scuba_undercutting,defeaters,rebuttal_and_undercut,,,gemini-2.5-pro,2026-07-05T21:43:00.907262+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief""}",,6.551,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""undercutting_defeater"",
+  ""belief_update"": ""revise_belief"",
+  ""brief_explanation"": ""The new information undermines the reliability of the tour guide as a source, which was Brooke's reason for her belief.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief"", ""brief_explanation"": ""The new information undermines the reliability of the tour guide as a source, which was Brooke's reason for her belief.""}","The new information undermines the reliability of the tour guide as a source, which was Brooke's reason for her belief.","{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_019_dog_fleas_placebo,defeaters,rebuttal_and_undercut,,,gemini-2.5-pro,2026-07-05T21:43:07.457922+00:00,"{""defeater_present"": ""no"", ""defeater_type"": ""placebo"", ""belief_update"": ""no_revision_from_new_information""}",,5.838,"{
+  ""defeater_present"": ""no"",
+  ""defeater_type"": ""placebo"",
+  ""belief_update"": ""no_revision_from_new_information"",
+  ""brief_explanation"": ""The fact that the dog has a new blue collar is completely irrelevant to whether the dog has fleas.""
+}",True,"{""defeater_present"": ""no"", ""defeater_type"": ""placebo"", ""belief_update"": ""no_revision_from_new_information"", ""brief_explanation"": ""The fact that the dog has a new blue collar is completely irrelevant to whether the dog has fleas.""}",The fact that the dog has a new blue collar is completely irrelevant to whether the dog has fleas.,"{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_020_dog_fleas_rebutting,defeaters,rebuttal_and_undercut,,,gemini-2.5-pro,2026-07-05T21:43:13.295895+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""belief_update"": ""revise_belief""}",,6.781,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""rebutting_defeater"",
+  ""belief_update"": ""revise_belief"",
+  ""brief_explanation"": ""The veterinarian's expert finding that the dog has no fleas is a direct reason to believe the target proposition is false.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""belief_update"": ""revise_belief"", ""brief_explanation"": ""The veterinarian's expert finding that the dog has no fleas is a direct reason to believe the target proposition is false.""}",The veterinarian's expert finding that the dog has no fleas is a direct reason to believe the target proposition is false.,"{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_021_dog_fleas_undercutting,defeaters,rebuttal_and_undercut,,,gemini-2.5-pro,2026-07-05T21:43:20.076926+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief""}",,5.74,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""undercutting_defeater"",
+  ""belief_update"": ""revise_belief"",
+  ""brief_explanation"": ""The new information provides an alternative explanation for the scratching sound, undermining the justification for Evan's belief.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief"", ""brief_explanation"": ""The new information provides an alternative explanation for the scratching sound, undermining the justification for Evan's belief.""}","The new information provides an alternative explanation for the scratching sound, undermining the justification for Evan's belief.","{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_022_bank_placebo,defeaters,rebuttal_and_undercut,,,gemini-2.5-pro,2026-07-05T21:43:25.817381+00:00,"{""defeater_present"": ""no"", ""defeater_type"": ""placebo"", ""belief_update"": ""no_revision_from_new_information""}",,6.158,"{
+  ""defeater_present"": ""no"",
+  ""defeater_type"": ""placebo"",
+  ""belief_update"": ""no_revision_from_new_information"",
+  ""brief_explanation"": ""The fact that the bank's lobby was repainted is irrelevant to its operating hours and does not challenge the information on the official website.""
+}",True,"{""defeater_present"": ""no"", ""defeater_type"": ""placebo"", ""belief_update"": ""no_revision_from_new_information"", ""brief_explanation"": ""The fact that the bank's lobby was repainted is irrelevant to its operating hours and does not challenge the information on the official website.""}",The fact that the bank's lobby was repainted is irrelevant to its operating hours and does not challenge the information on the official website.,"{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_023_bank_rebutting,defeaters,rebuttal_and_undercut,,,gemini-2.5-pro,2026-07-05T21:43:31.975669+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""belief_update"": ""revise_belief""}",,6.038,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""rebutting_defeater"",
+  ""belief_update"": ""revise_belief"",
+  ""brief_explanation"": ""The text alert provides direct evidence that Maya's initial belief is false, giving her a reason to believe the opposite is true.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""belief_update"": ""revise_belief"", ""brief_explanation"": ""The text alert provides direct evidence that Maya's initial belief is false, giving her a reason to believe the opposite is true.""}","The text alert provides direct evidence that Maya's initial belief is false, giving her a reason to believe the opposite is true.","{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_024_bank_undercutting,defeaters,rebuttal_and_undercut,,,gemini-2.5-pro,2026-07-05T21:43:38.013754+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief""}",,6.351,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""undercutting_defeater"",
+  ""belief_update"": ""revise_belief"",
+  ""brief_explanation"": ""The new information undermines the reliability of the website, which was Maya's reason for believing the bank's hours.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief"", ""brief_explanation"": ""The new information undermines the reliability of the website, which was Maya's reason for believing the bank's hours.""}","The new information undermines the reliability of the website, which was Maya's reason for believing the bank's hours.","{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_025_thermometer_placebo,defeaters,rebuttal_and_undercut,,,gemini-2.5-pro,2026-07-05T21:43:44.364917+00:00,"{""defeater_present"": ""no"", ""defeater_type"": ""placebo"", ""belief_update"": ""no_revision_from_new_information""}",,4.42,"{
+  ""defeater_present"": ""no"",
+  ""defeater_type"": ""placebo"",
+  ""belief_update"": ""no_revision_from_new_information"",
+  ""brief_explanation"": ""The color of the thermometer's frame is irrelevant to its accuracy in measuring the room's temperature.""
+}",True,"{""defeater_present"": ""no"", ""defeater_type"": ""placebo"", ""belief_update"": ""no_revision_from_new_information"", ""brief_explanation"": ""The color of the thermometer's frame is irrelevant to its accuracy in measuring the room's temperature.""}",The color of the thermometer's frame is irrelevant to its accuracy in measuring the room's temperature.,"{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_026_thermometer_rebutting,defeaters,rebuttal_and_undercut,,,gemini-2.5-pro,2026-07-05T21:43:48.785202+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""belief_update"": ""revise_belief""}",,5.164,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""rebutting_defeater"",
+  ""belief_update"": ""revise_belief"",
+  ""brief_explanation"": ""The reading from the newly calibrated digital thermometer provides direct evidence against the proposition that the room is 72 degrees.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""belief_update"": ""revise_belief"", ""brief_explanation"": ""The reading from the newly calibrated digital thermometer provides direct evidence against the proposition that the room is 72 degrees.""}",The reading from the newly calibrated digital thermometer provides direct evidence against the proposition that the room is 72 degrees.,"{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_027_thermometer_undercutting,defeaters,rebuttal_and_undercut,,,gemini-2.5-pro,2026-07-05T21:43:53.949774+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief""}",,5.389,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""undercutting_defeater"",
+  ""belief_update"": ""revise_belief"",
+  ""brief_explanation"": ""The new information undermines the reliability of the evidence for Noah's belief, without directly proving the belief is false.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief"", ""brief_explanation"": ""The new information undermines the reliability of the evidence for Noah's belief, without directly proving the belief is false.""}","The new information undermines the reliability of the evidence for Noah's belief, without directly proving the belief is false.","{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_028_meeting_placebo,defeaters,rebuttal_and_undercut,,,gemini-2.5-pro,2026-07-05T21:43:59.339306+00:00,"{""defeater_present"": ""no"", ""defeater_type"": ""placebo"", ""belief_update"": ""no_revision_from_new_information""}",,5.187,"{
+  ""defeater_present"": ""no"",
+  ""defeater_type"": ""placebo"",
+  ""belief_update"": ""no_revision_from_new_information"",
+  ""brief_explanation"": ""The fact that the meeting room has new chairs is irrelevant to the meeting's start time and does not undermine the evidence from the calendar invitation.""
+}",True,"{""defeater_present"": ""no"", ""defeater_type"": ""placebo"", ""belief_update"": ""no_revision_from_new_information"", ""brief_explanation"": ""The fact that the meeting room has new chairs is irrelevant to the meeting's start time and does not undermine the evidence from the calendar invitation.""}",The fact that the meeting room has new chairs is irrelevant to the meeting's start time and does not undermine the evidence from the calendar invitation.,"{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_029_meeting_rebutting,defeaters,rebuttal_and_undercut,,,gemini-2.5-pro,2026-07-05T21:44:04.526167+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""belief_update"": ""revise_belief""}",,5.861,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""rebutting_defeater"",
+  ""belief_update"": ""revise_belief"",
+  ""brief_explanation"": ""The updated invitation provides a direct reason to believe the original proposition is false.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""belief_update"": ""revise_belief"", ""brief_explanation"": ""The updated invitation provides a direct reason to believe the original proposition is false.""}",The updated invitation provides a direct reason to believe the original proposition is false.,"{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_030_meeting_undercutting,defeaters,rebuttal_and_undercut,,,gemini-2.5-pro,2026-07-05T21:44:10.387418+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief""}",,7.33,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""undercutting_defeater"",
+  ""belief_update"": ""revise_belief"",
+  ""brief_explanation"": ""The new information undermines the reliability of the calendar as a source, which was Rina's reason for her belief, without directly proving the meeting is at a different time.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief"", ""brief_explanation"": ""The new information undermines the reliability of the calendar as a source, which was Rina's reason for her belief, without directly proving the meeting is at a different time.""}","The new information undermines the reliability of the calendar as a source, which was Rina's reason for her belief, without directly proving the meeting is at a different time.","{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
