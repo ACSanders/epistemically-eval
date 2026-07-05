@@ -132,13 +132,14 @@ Allowed labels include:
 
 defeater_present: yes, no
 defeater_type: placebo, rebutting_defeater, undercutting_defeater
-belief_update: retain_belief, reduce_confidence_or_withhold, reject_belief
+belief_update: no_revision_from_new_information, revise_belief
 
 Important considerations for this task:
 - Evaluate each output field only with respect to the target proposition provided.
 - Use the given scenario as the only source of information.
 - A placebo is not a genuine defeater with respect to the target proposition.
 - If defeater_present is no, set defeater_type to placebo.
+- If defeater_present is no, set belief_update to no_revision_from_new_information.
 - The brief_explanation should be one concise sentence explaining the classification.
 - Return JSON only.
 

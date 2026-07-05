@@ -77,9 +77,8 @@ ALLOWED_LABELS: Dict[str, List[str]] = {
         "undercutting_defeater",
     ],
     "belief_update": [
-        "retain_belief",
-        "reduce_confidence_or_withhold",
-        "reject_belief",
+        "no_revision_from_new_information",
+        "revise_belief",
     ],
 }
 
