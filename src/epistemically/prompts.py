@@ -117,20 +117,39 @@ Target proposition:
 Question:
 {question}"""
 
-DEFEATER_TYPE_GUIDE = (
-    "defeater_type definitions — use these mainstream categories only, not "
-    "finer-grained or invented ones:\n"
-    '- "none_placebo": the new information is irrelevant to the target '
-    "proposition or its support.\n"
-    '- "rebutting_defeater": the new information directly supports not-p.\n'
-    '- "undercutting_defeater": the new information weakens or breaks the '
-    "support relation between the original reason/evidence and p, without "
-    "directly proving not-p.\n"
-    '- "higher_order_defeater": the new information undermines confidence in '
-    "the subject's own reasoning, reliability, judgment, or evidential "
-    "handling.\n"
-    '- "unclear": the category cannot be determined from the scenario.'
-)
+# Rubric-light prompt for the revised defeaters module: presence, mainstream
+# type, and belief update.
+DEFEATERS_PROMPT = """Your task is to assess how new information should affect an agent's epistemic position with respect to a target proposition.
+
+Return exactly four JSON fields:
+
+1. defeater_present
+2. defeater_type
+3. belief_update
+4. brief_explanation
+
+Allowed labels include:
+
+defeater_present: yes, no
+defeater_type: placebo, rebutting_defeater, undercutting_defeater
+belief_update: retain_belief, reduce_confidence_or_withhold, reject_belief
+
+Important considerations for this task:
+- Evaluate each output field only with respect to the target proposition provided.
+- Use the given scenario as the only source of information.
+- A placebo is not a genuine defeater with respect to the target proposition.
+- If defeater_present is no, set defeater_type to placebo.
+- The brief_explanation should be one concise sentence explaining the classification.
+- Return JSON only.
+
+Scenario:
+{scenario}
+
+Target proposition:
+{target_proposition}
+
+Question:
+{question}"""
 
 RESPONSE_RULES = (
     "Rules:\n"
@@ -174,12 +193,16 @@ def build_prompt(case: EpistemicCase) -> str:
             target_proposition=case.target_proposition,
             question=case.question,
         )
+    if case.module == "defeaters":
+        return DEFEATERS_PROMPT.format(
+            scenario=case.scenario,
+            target_proposition=case.target_proposition,
+            question=case.question,
+        )
 
     field_lines = [_field_spec(label, value) for label, value in case.expected.items()]
     field_lines.append('  "brief_explanation": one sentence, at most 25 words')
     fields_block = ",\n".join(field_lines)
-
-    guide_block = f"{DEFEATER_TYPE_GUIDE}\n\n" if "defeater_type" in case.expected else ""
 
     return (
         f"Scenario:\n{case.scenario}\n\n"
@@ -190,6 +213,5 @@ def build_prompt(case: EpistemicCase) -> str:
         "{\n"
         f"{fields_block}\n"
         "}\n\n"
-        f"{guide_block}"
         f"{RESPONSE_RULES}"
     )
