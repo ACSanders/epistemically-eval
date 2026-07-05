@@ -41,10 +41,14 @@ st.markdown(f"<style>{APP_CSS}</style>", unsafe_allow_html=True)
 
 st.markdown(
     '<div class="hero"><h1>Epistemically<span class="dot">.</span></h1>'
-    "<p>An epistemic behavior lab for evaluating how LLMs track belief, truth, "
-    "knowledge, inference, defeaters, and luck.</p></div>",
+    "<p>An epistemic AI lab for evaluating how LLMs handle epistemic luck, "
+    "belief, truth, knowledge, defeaters, and rational inference.</p></div>",
     unsafe_allow_html=True,
 )
+
+
+def plural(count: int, noun: str) -> str:
+    return f"{count} {noun}" if count == 1 else f"{count} {noun}s"
 
 cases_by_id, case_file_problems = load_case_lookup(CASES_DIR)
 
@@ -60,30 +64,37 @@ all_models = sorted(combined["model"].astype(str).unique())
 all_modules = sorted(combined["module"].astype(str).unique())
 n_cases = combined["case_id"].nunique()
 st.caption(
-    f"{len(all_models)} model(s) evaluated on {n_cases} cases; combined from "
-    f"{len(loaded_files)} result file(s), latest run kept per model and case."
+    f"{plural(len(all_models), 'model')} evaluated on "
+    f"{plural(n_cases, 'case')}; combined from "
+    f"{plural(len(loaded_files), 'result file')}, latest run kept per model and case."
 )
 
 api_errors = combined["error"].fillna("").astype(str).str.strip().str.len() > 0
 parse_failures = combined["parsed_ok"].astype(str).str.lower() != "true"
-if api_errors.any() or parse_failures.any():
-    st.warning(
-        f"The combined results contain {int(api_errors.sum())} row(s) with API "
-        f"errors and {int(parse_failures.sum())} row(s) with unparseable "
-        "responses. Affected fields score 0; interpret aggregates with care."
+latest_run_at = None
+if "timestamp" in combined.columns:
+    parsed_ts = pd.to_datetime(combined["timestamp"], errors="coerce", utc=True)
+    if parsed_ts.notna().any():
+        latest_run_at = parsed_ts.max()
+with st.expander("Run health details"):
+    st.caption(
+        f"API-error rows: {int(api_errors.sum())}. "
+        f"Unparseable rows: {int(parse_failures.sum())}. "
+        "Unparseable responses score 0 for affected fields."
     )
+    if latest_run_at is not None:
+        st.caption(f"Latest evaluated row: {latest_run_at.strftime('%Y-%m-%d %H:%M')} UTC")
 
 for problem in case_file_problems:
     st.warning(f"Case file issue: {problem}")
 
-tab_overview, tab_profile, tab_compare, tab_failures, tab_explorer, tab_method = st.tabs(
+tab_overview, tab_profile, tab_compare, tab_failures, tab_explorer = st.tabs(
     [
         "Overview",
         "Model Profile",
         "Model Comparison",
         "Failure Gallery",
         "Case Explorer",
-        "Methodology",
     ]
 )
 
@@ -827,81 +838,56 @@ with tab_explorer:
                 with st.expander(f"Raw model response ({row['model']})"):
                     st.code(raw, language="json")
 
-# --- Methodology ---------------------------------------------------------------------
-with tab_method:
+# --- Footer area: methodology and contact, below all tab content -----------------------
+st.divider()
+with st.expander("Methodology", expanded=False):
     st.markdown(
         """
+### Quick overview
+
+Epistemically is an AI evaluation lab focused on epistemic behavior: how models handle belief, truth, knowledge, justification, inference, defeaters, and luck. Most benchmarks ask whether a model gets an answer right. Epistemically asks a different question: does the model track the epistemic status of a claim under controlled philosophical scenarios?
+
+The flagship direction is epistemic luck. These cases test whether models distinguish ordinary justified true belief from lucky true belief, including Gettier-style and environmental luck cases where knowledge should be denied.
+
 ### What Epistemically evaluates
 
-Each case describes an agent in a short scenario and asks the model for
-structured judgments about a target proposition. Epistemically behaviorally
-evaluates whether those outputs track expected epistemic labels: it
-operationalizes distinctions from epistemology as scoreable fields, without
-claiming models literally believe or know anything. Current modules:
+Each case gives a short scenario and a target proposition. The model returns structured labels for that target proposition only.
 
-- **belief_acceptance_knowledge**: families `belief_truth_knowledge`
-  (attitude/truth/knowledge), `acceptance_and_belief` (belief vs. pragmatic
-  acceptance and reason type), and `justification` (reason type and epistemic
-  justification status)
-- **epistemic_luck**: families `knowledge_control`, `lucky_guess`,
-  `intervening_luck`, and `environmental_luck` covering epistemic luck
-  sensitivity, Gettier-style and environmental luck diagnostics, and whether
-  knowledge-defeating luck is tracked under operational labels
-- **rational_reasoning**: family `deduction` covering the reasoning pattern of a
-  belief transition or belief set, its logical status, and the rational
-  constraint it places on the agent (for example, accept the target or revise a
-  premise when the entailment is recognized and in view)
-- **defeaters**: family `rebuttal_and_undercut` covering defeater presence,
-  mainstream defeater type, and whether new information requires belief revision
+Epistemically evaluates whether model outputs match operationalized distinctions from epistemology, such as belief vs. acceptance, truth vs. knowledge, justification, defeaters, valid inference, and knowledge-defeating luck. The benchmark does not claim that models literally believe, know, or possess epistemic agency.
 
-An induction/updating module is planned.
+Current modules:
 
-### Why exact-label scoring
+- **Belief, acceptance, and knowledge:** attitude, truth, pragmatic acceptance, reason type, and justification.
+- **Defeaters:** whether new information undercuts or rebuts a belief and whether revision is required.
+- **Rational reasoning:** deductive patterns, logical status, and rational constraints.
+- **Epistemic luck:** knowledge controls, lucky guesses, intervening luck, and environmental luck.
 
-Models answer from a fixed vocabulary of labels per field, and each field is
-scored by exact match after light normalization. This keeps scoring
-deterministic, cheap, and auditable: every point can be traced to a specific
-field on a specific case. The trade-off is no partial credit for near-miss
-phrasing, which is why prompts constrain the model to the exact vocabulary.
+Planned work includes social epistemology benchmarks for testimony and disagreement, expanded defeater cases, and induction/updating.
 
-### What the confidence intervals mean
+### Scoring
 
-Mean scores carry percentile-bootstrap 95% intervals: the case set is
-resampled with replacement many times and the middle 95% of resampled means
-is reported. Wide intervals mean the case sample is too small to pin down the
-score precisely. Comparisons between models on the same cases use a paired
-bootstrap on per-case differences.
+Models answer using fixed labels for each field. Fields are scored by exact match after light normalization. This keeps scoring deterministic and highly interpretable: every point traces back to a specific label on a specific case.
 
-### How results are combined
+The tradeoff is that near misses do not receive partial credit. The unscored `brief_explanation` field helps diagnose why a model gave a label, but it does not affect the score.
 
-Every results CSV in `data/results/` is merged into one dataset, keeping the
-latest run per model and case. Superseded or duplicate files never appear as
-extra leaderboard entries. The Overview summarizes all evaluated models; the
-Model Profile and Model Comparison tabs slice the same combined data.
+### Uncertainty and comparison
 
-### How model comparison works
+Module and overall scores use percentile bootstrap confidence intervals over cases. Pairwise model comparisons use a paired bootstrap over per-case differences, so both models are compared on the same case set.
 
-The Model Comparison tab pairs two models on the identical case set (latest
-run per model). A case counts as solved only at a perfect score, so the
-improved / regressed / persistently-hard buckets are conservative. Buckets and
-deltas are diagnostic signals about epistemic failure patterns on this case
-set: a map of where to look, not a leaderboard verdict, especially at current
-sample sizes.
+The Model Comparison tab groups cases into improved, regressed, shared-solved, and persistently-hard buckets. These are diagnostic signals about failure patterns, not final verdicts about model intelligence.
 
-### Behavioral, not literal
+### Caveats
 
-A high score means the model's *outputs* reliably track epistemic
-distinctions on these cases. It is not evidence that the model believes,
-knows, or represents anything in the philosophical sense, and a claim like
-that is outside what this kind of test could establish.
+High scores mean the model's outputs tracked the expected epistemic labels on this benchmark. They are not evidence that the model literally knows, believes, or represents the propositions.
 
-### Current limitations
+Each result is a single run at temperature 0, so the dashboard does not measure sampling variance.
 
-- Small case counts per module: intervals are wide, results are directional.
-- Exact-label scoring gives no credit for partially correct reasoning, and
-  `brief_explanation` is collected but unscored.
-- Single-run evaluation at temperature 0 does not measure sampling variance.
-- Expected labels follow mainstream textbook verdicts; a few standard cases
-  (notably fake barns) are philosophically contested.
+Expected labels follow mainstream epistemological concepts and verdicts, but some cases, especially environmental luck and fake-barn-style cases, remain philosophically contestable.
         """
     )
+
+st.markdown(
+    '<div class="footer">© 2026 Adam Sanders · Contact: '
+    '<a href="mailto:adamsandersc@gmail.com">adamsandersc@gmail.com</a></div>',
+    unsafe_allow_html=True,
+)

@@ -25,12 +25,22 @@ MUTED = "#8b96a5"
 GOOD = "#3fb950"
 BAD = "#f85149"
 
-# Chart palette: coral distinguishes data visuals from the orange UI accent,
-# and the heatmap ramps navy -> muted purple -> amber/gold so intensity reads
-# on the dark background without being orange everywhere.
+# Chart palette: coral distinguishes data visuals from the orange UI accent.
+# Heatmaps use a rocket-inspired sequential scale (seaborn's rocket is not a
+# Plotly built-in): near-black indigo -> deep purple -> magenta -> crimson ->
+# warm orange, capped before bright yellow so light numeric annotations stay
+# readable and low scores sink into the dark end, clearly apart from the
+# magenta/orange mass of high scores.
 CORAL = "#f4695f"
 CORAL_FILL = "rgba(244, 105, 95, 0.22)"
-HEATMAP_SCALE = [[0.0, "#141b29"], [0.5, "#5d4a7e"], [1.0, "#f5c04e"]]
+HEATMAP_SCALE = [
+    [0.0, "#0b0724"],
+    [0.3, "#35193e"],
+    [0.55, "#701f57"],
+    [0.75, "#ad1759"],
+    [0.9, "#e13342"],
+    [1.0, "#f37651"],
+]
 
 CHART_COLORWAY = [ACCENT, "#ffd27d", "#d16a1f", "#8b96a5"]
 
@@ -82,10 +92,15 @@ table.epi-fields td { padding: 0.3rem 0.5rem; border-bottom: 1px solid #1a2028;
 div[data-testid="stVerticalBlockBorderWrapper"] { background: #11161f;
     border: 1px solid #232a35 !important; border-radius: 12px; }
 
-.stTabs [data-baseweb="tab-list"] { gap: 0.3rem; border-bottom: 1px solid #232a35; }
-.stTabs [data-baseweb="tab"] { color: #8b96a5; padding: 0.75rem 1.35rem; }
-.stTabs [data-baseweb="tab"] p { font-size: 1.05rem; }
+.stTabs [data-baseweb="tab-list"] { gap: 0.35rem; border-bottom: 1px solid #232a35; }
+.stTabs [data-baseweb="tab"] { color: #8b96a5; padding: 0.85rem 1.5rem; }
+.stTabs [data-baseweb="tab"] p { font-size: 1.14rem; font-weight: 600; }
 .stTabs [aria-selected="true"] { color: #ffa657 !important; }
+
+.footer { color: #8b96a5; font-size: 0.82rem; padding: 0.9rem 0 0.4rem 0;
+          margin-top: 0.4rem; }
+.footer a { color: #ffa657; text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
 .stTabs [data-baseweb="tab-highlight"] { background-color: #f0883e; }
 """
 
