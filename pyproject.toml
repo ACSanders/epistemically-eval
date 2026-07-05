@@ -20,6 +20,7 @@ dependencies = [
     "plotly",
     "openai",
     "anthropic",
+    "google-genai",
 ]
 
 [tool.setuptools.packages.find]

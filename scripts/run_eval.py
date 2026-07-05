@@ -18,11 +18,16 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT / "src"))
 
 from epistemically.dataset import load_cases  # noqa: E402
-from epistemically.runners import anthropic_runner, openai_runner  # noqa: E402
+from epistemically.runners import anthropic_runner, gemini_runner, openai_runner  # noqa: E402
 
 
-def is_anthropic_model(model: str) -> bool:
-    return model.startswith("claude")
+def pick_runner(model: str):
+    """Route the model name to its provider runner (OpenAI is the default)."""
+    if model.startswith("claude"):
+        return anthropic_runner
+    if model.startswith("gemini"):
+        return gemini_runner
+    return openai_runner
 
 
 def main() -> None:
@@ -35,8 +40,9 @@ def main() -> None:
     parser.add_argument(
         "--model",
         default=None,
-        help="Model name. claude-* models use the Anthropic runner; anything "
-        "else uses the OpenAI runner (default: OPENAI_MODEL from .env)",
+        help="Model name. claude-* models use the Anthropic runner, gemini-* "
+        "the Gemini runner; anything else uses the OpenAI runner "
+        "(default: OPENAI_MODEL from .env)",
     )
     parser.add_argument(
         "--output",
@@ -53,7 +59,7 @@ def main() -> None:
         cases = cases[: args.limit]
     print(f"Loaded {len(cases)} cases from {args.cases}")
 
-    runner = anthropic_runner if is_anthropic_model(args.model or "") else openai_runner
+    runner = pick_runner(args.model or "")
     rows = runner.run_cases(cases, model=args.model)
     df = pd.DataFrame(rows)
 
