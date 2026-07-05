@@ -1,0 +1,1231 @@
+case_id,module,schema_family,variant_id,difficulty,model,timestamp,expected_json,error,latency_s,raw_response,parsed_ok,predicted_json,brief_explanation,field_results_json,points,max_points,score
+btk_001_false_belief,belief_acceptance_knowledge,belief_truth_knowledge,,,claude-haiku-4-5,2026-07-05T20:12:13.079701+00:00,"{""attitude_status"": ""believes"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know""}",,1.17,"```json
+{
+  ""attitude_status"": ""believes"",
+  ""truth_status"": ""false"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Jack believes the proposition, but it is false, so he lacks knowledge despite his belief.""
+}
+```",True,"{""attitude_status"": ""believes"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Jack believes the proposition, but it is false, so he lacks knowledge despite his belief.""}","Jack believes the proposition, but it is false, so he lacks knowledge despite his belief.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_002_true_without_belief,belief_acceptance_knowledge,belief_truth_knowledge,,,claude-haiku-4-5,2026-07-05T20:12:14.249625+00:00,"{""attitude_status"": ""does_not_believe"", ""truth_status"": ""true"", ""knowledge_status"": ""does_not_know""}",,1.022,"```json
+{
+  ""attitude_status"": ""does_not_believe"",
+  ""truth_status"": ""true"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Bill merely imagined the proposition without forming a belief about it, so he neither believes nor knows it, despite the proposition being factually true.""
+}
+```",True,"{""attitude_status"": ""does_not_believe"", ""truth_status"": ""true"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Bill merely imagined the proposition without forming a belief about it, so he neither believes nor knows it, despite the proposition being factually true.""}","Bill merely imagined the proposition without forming a belief about it, so he neither believes nor knows it, despite the proposition being factually true.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_003_knowledge_with_distractor,belief_acceptance_knowledge,belief_truth_knowledge,,,claude-haiku-4-5,2026-07-05T20:12:15.271318+00:00,"{""attitude_status"": ""believes"", ""truth_status"": ""true"", ""knowledge_status"": ""knows""}",,0.992,"```json
+{
+  ""attitude_status"": ""believes"",
+  ""truth_status"": ""true"",
+  ""knowledge_status"": ""knows"",
+  ""brief_explanation"": ""Brooke believes Mars is red based on strong astronomical evidence, the proposition is true, and she has adequate justification from reliable evidence, satisfying the conditions for knowledge.""
+}
+```",True,"{""attitude_status"": ""believes"", ""truth_status"": ""true"", ""knowledge_status"": ""knows"", ""brief_explanation"": ""Brooke believes Mars is red based on strong astronomical evidence, the proposition is true, and she has adequate justification from reliable evidence, satisfying the conditions for knowledge.""}","Brooke believes Mars is red based on strong astronomical evidence, the proposition is true, and she has adequate justification from reliable evidence, satisfying the conditions for knowledge.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_004_justified_false_belief,belief_acceptance_knowledge,belief_truth_knowledge,,,claude-haiku-4-5,2026-07-05T20:12:16.263747+00:00,"{""attitude_status"": ""believes"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know""}",,1.068,"```json
+{
+  ""attitude_status"": ""believes"",
+  ""truth_status"": ""false"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Adam believes the proposition based on reliable testimony, but the proposition is false because the doctor was mistaken, so Adam's belief does not constitute knowledge.""
+}
+```",True,"{""attitude_status"": ""believes"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Adam believes the proposition based on reliable testimony, but the proposition is false because the doctor was mistaken, so Adam's belief does not constitute knowledge.""}","Adam believes the proposition based on reliable testimony, but the proposition is false because the doctor was mistaken, so Adam's belief does not constitute knowledge.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_005_justification_without_belief,belief_acceptance_knowledge,belief_truth_knowledge,,,claude-haiku-4-5,2026-07-05T20:12:17.332123+00:00,"{""attitude_status"": ""does_not_believe"", ""truth_status"": ""true"", ""knowledge_status"": ""does_not_know""}",,1.074,"```json
+{
+  ""attitude_status"": ""does_not_believe"",
+  ""truth_status"": ""true"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Jill does not believe the proposition despite having reliable evidence for it, so she lacks the belief component necessary for knowledge, even though the proposition is true.""
+}
+```",True,"{""attitude_status"": ""does_not_believe"", ""truth_status"": ""true"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Jill does not believe the proposition despite having reliable evidence for it, so she lacks the belief component necessary for knowledge, even though the proposition is true.""}","Jill does not believe the proposition despite having reliable evidence for it, so she lacks the belief component necessary for knowledge, even though the proposition is true.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_006_unjustified_false_belief,belief_acceptance_knowledge,belief_truth_knowledge,,,claude-haiku-4-5,2026-07-05T20:12:18.405743+00:00,"{""attitude_status"": ""believes"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know""}",,0.963,"```json
+{
+  ""attitude_status"": ""believes"",
+  ""truth_status"": ""false"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Veronica believes the proposition without evidence, but it is false in fact, so she lacks knowledge despite her belief.""
+}
+```",True,"{""attitude_status"": ""believes"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Veronica believes the proposition without evidence, but it is false in fact, so she lacks knowledge despite her belief.""}","Veronica believes the proposition without evidence, but it is false in fact, so she lacks knowledge despite her belief.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_007_simple_knowledge,belief_acceptance_knowledge,belief_truth_knowledge,,,claude-haiku-4-5,2026-07-05T20:12:19.368584+00:00,"{""attitude_status"": ""believes"", ""truth_status"": ""true"", ""knowledge_status"": ""knows""}",,0.903,"```json
+{
+  ""attitude_status"": ""believes"",
+  ""truth_status"": ""true"",
+  ""knowledge_status"": ""knows"",
+  ""brief_explanation"": ""Mark believes the proposition, it is true, and his belief is based on reliable testimony from a trustworthy source, satisfying the conditions for knowledge.""
+}
+```",True,"{""attitude_status"": ""believes"", ""truth_status"": ""true"", ""knowledge_status"": ""knows"", ""brief_explanation"": ""Mark believes the proposition, it is true, and his belief is based on reliable testimony from a trustworthy source, satisfying the conditions for knowledge.""}","Mark believes the proposition, it is true, and his belief is based on reliable testimony from a trustworthy source, satisfying the conditions for knowledge.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_008_false_belief_with_irrelevant_evidence,belief_acceptance_knowledge,belief_truth_knowledge,,,claude-haiku-4-5,2026-07-05T20:12:20.271939+00:00,"{""attitude_status"": ""believes"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know""}",,1.187,"```json
+{
+  ""attitude_status"": ""believes"",
+  ""truth_status"": ""false"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Jane believes the proposition without evidence, but it is false, so she lacks knowledge despite her belief.""
+}
+```",True,"{""attitude_status"": ""believes"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Jane believes the proposition without evidence, but it is false, so she lacks knowledge despite her belief.""}","Jane believes the proposition without evidence, but it is false, so she lacks knowledge despite her belief.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_009_rejection_of_true_proposition,belief_acceptance_knowledge,belief_truth_knowledge,,,claude-haiku-4-5,2026-07-05T20:12:21.458654+00:00,"{""attitude_status"": ""does_not_believe"", ""truth_status"": ""true"", ""knowledge_status"": ""does_not_know""}",,1.104,"```json
+{
+  ""attitude_status"": ""does_not_believe"",
+  ""truth_status"": ""true"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Noah rejects the proposition despite having good reasons supporting it and despite it being true, so he does not believe it and therefore does not know it.""
+}
+```",True,"{""attitude_status"": ""does_not_believe"", ""truth_status"": ""true"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Noah rejects the proposition despite having good reasons supporting it and despite it being true, so he does not believe it and therefore does not know it.""}","Noah rejects the proposition despite having good reasons supporting it and despite it being true, so he does not believe it and therefore does not know it.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_010_indeterminate_attitude_true_target,belief_acceptance_knowledge,belief_truth_knowledge,,,claude-haiku-4-5,2026-07-05T20:12:22.563087+00:00,"{""attitude_status"": ""indeterminate"", ""truth_status"": ""true"", ""knowledge_status"": ""indeterminate""}",,1.23,"```json
+{
+  ""attitude_status"": ""indeterminate"",
+  ""truth_status"": ""true"",
+  ""knowledge_status"": ""indeterminate"",
+  ""brief_explanation"": ""The scenario does not specify whether Liam has noticed today's weather, so his belief about the current rain is indeterminate; the proposition itself is true since it is raining today.""
+}
+```",True,"{""attitude_status"": ""indeterminate"", ""truth_status"": ""true"", ""knowledge_status"": ""indeterminate"", ""brief_explanation"": ""The scenario does not specify whether Liam has noticed today's weather, so his belief about the current rain is indeterminate; the proposition itself is true since it is raining today.""}","The scenario does not specify whether Liam has noticed today's weather, so his belief about the current rain is indeterminate; the proposition itself is true since it is raining today.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_011_justified_false_belief_testimony,belief_acceptance_knowledge,belief_truth_knowledge,,,claude-haiku-4-5,2026-07-05T20:12:23.793306+00:00,"{""attitude_status"": ""believes"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know""}",,1.151,"```json
+{
+  ""attitude_status"": ""believes"",
+  ""truth_status"": ""false"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Nora believes the proposition based on trustworthy sources, but the proposition is false, so her belief does not constitute knowledge despite being well-grounded.""
+}
+```",True,"{""attitude_status"": ""believes"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Nora believes the proposition based on trustworthy sources, but the proposition is false, so her belief does not constitute knowledge despite being well-grounded.""}","Nora believes the proposition based on trustworthy sources, but the proposition is false, so her belief does not constitute knowledge despite being well-grounded.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_012_unjustified_true_belief,belief_acceptance_knowledge,belief_truth_knowledge,,,claude-haiku-4-5,2026-07-05T20:12:24.944329+00:00,"{""attitude_status"": ""believes"", ""truth_status"": ""true"", ""knowledge_status"": ""does_not_know""}",,0.958,"```json
+{
+  ""attitude_status"": ""believes"",
+  ""truth_status"": ""true"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Rachel believes the proposition and it is true (Ana has 45 chickens), but she lacks good epistemic evidence, so her belief does not constitute knowledge.""
+}
+```",True,"{""attitude_status"": ""believes"", ""truth_status"": ""true"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Rachel believes the proposition and it is true (Ana has 45 chickens), but she lacks good epistemic evidence, so her belief does not constitute knowledge.""}","Rachel believes the proposition and it is true (Ana has 45 chickens), but she lacks good epistemic evidence, so her belief does not constitute knowledge.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_013_simple_knowledge_air_travel,belief_acceptance_knowledge,belief_truth_knowledge,,,claude-haiku-4-5,2026-07-05T20:12:25.901990+00:00,"{""attitude_status"": ""believes"", ""truth_status"": ""true"", ""knowledge_status"": ""knows""}",,1.797,"```json
+{
+  ""attitude_status"": ""believes"",
+  ""truth_status"": ""true"",
+  ""knowledge_status"": ""knows"",
+  ""brief_explanation"": ""Mike believes the proposition based on legitimate evidence (airline tickets), the proposition is actually true, and his belief is justified by reliable sources, constituting knowledge.""
+}
+```",True,"{""attitude_status"": ""believes"", ""truth_status"": ""true"", ""knowledge_status"": ""knows"", ""brief_explanation"": ""Mike believes the proposition based on legitimate evidence (airline tickets), the proposition is actually true, and his belief is justified by reliable sources, constituting knowledge.""}","Mike believes the proposition based on legitimate evidence (airline tickets), the proposition is actually true, and his belief is justified by reliable sources, constituting knowledge.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_014_nonbelief_false_target_misleading_evidence,belief_acceptance_knowledge,belief_truth_knowledge,,,claude-haiku-4-5,2026-07-05T20:12:27.699044+00:00,"{""attitude_status"": ""does_not_believe"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know""}",,2.106,"```json
+{
+  ""attitude_status"": ""does_not_believe"",
+  ""truth_status"": ""false"",
+  ""knowledge_status"": ""knows"",
+  ""brief_explanation"": ""Jose does not believe Eric has a red car, which is true since Eric currently owns a purple car; Jose's disbelief constitutes knowledge based on the outdated registration and current facts.""
+}
+```",True,"{""attitude_status"": ""does_not_believe"", ""truth_status"": ""false"", ""knowledge_status"": ""knows"", ""brief_explanation"": ""Jose does not believe Eric has a red car, which is true since Eric currently owns a purple car; Jose's disbelief constitutes knowledge based on the outdated registration and current facts.""}","Jose does not believe Eric has a red car, which is true since Eric currently owns a purple car; Jose's disbelief constitutes knowledge based on the outdated registration and current facts.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": false}",2.0,3.0,0.6666666666666666
+btk_015_nonbelief_false_target,belief_acceptance_knowledge,belief_truth_knowledge,,,claude-haiku-4-5,2026-07-05T20:12:29.804815+00:00,"{""attitude_status"": ""does_not_believe"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know""}",,1.022,"```json
+{
+  ""attitude_status"": ""does_not_believe"",
+  ""truth_status"": ""false"",
+  ""knowledge_status"": ""knows"",
+  ""brief_explanation"": ""Layla does not believe the shop has muffins, the shop objectively lacks muffins (only has coffee and donuts), and her disbelief is justified by the actual facts, constituting knowledge.""
+}
+```",True,"{""attitude_status"": ""does_not_believe"", ""truth_status"": ""false"", ""knowledge_status"": ""knows"", ""brief_explanation"": ""Layla does not believe the shop has muffins, the shop objectively lacks muffins (only has coffee and donuts), and her disbelief is justified by the actual facts, constituting knowledge.""}","Layla does not believe the shop has muffins, the shop objectively lacks muffins (only has coffee and donuts), and her disbelief is justified by the actual facts, constituting knowledge.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": false}",2.0,3.0,0.6666666666666666
+btk_016_indeterminate_attitude_false_target,belief_acceptance_knowledge,belief_truth_knowledge,,,claude-haiku-4-5,2026-07-05T20:12:30.826489+00:00,"{""attitude_status"": ""indeterminate"", ""truth_status"": ""false"", ""knowledge_status"": ""indeterminate""}",,1.01,"```json
+{
+  ""attitude_status"": ""indeterminate"",
+  ""truth_status"": ""false"",
+  ""knowledge_status"": ""indeterminate"",
+  ""brief_explanation"": ""The bakery is factually closed, but Owen's beliefs about it are unspecified, making his epistemic position indeterminate.""
+}
+```",True,"{""attitude_status"": ""indeterminate"", ""truth_status"": ""false"", ""knowledge_status"": ""indeterminate"", ""brief_explanation"": ""The bakery is factually closed, but Owen's beliefs about it are unspecified, making his epistemic position indeterminate.""}","The bakery is factually closed, but Owen's beliefs about it are unspecified, making his epistemic position indeterminate.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_017_belief_indeterminate_truth,belief_acceptance_knowledge,belief_truth_knowledge,,,claude-haiku-4-5,2026-07-05T20:12:31.836486+00:00,"{""attitude_status"": ""believes"", ""truth_status"": ""indeterminate"", ""knowledge_status"": ""indeterminate""}",,1.855,"```json
+{
+  ""attitude_status"": ""believes"",
+  ""truth_status"": ""indeterminate"",
+  ""knowledge_status"": ""indeterminate"",
+  ""brief_explanation"": ""Mina believes the proposition, but without information about whether the envelope is actually in the drawer or how Mina formed this belief, we cannot determine if it is true or if her belief constitutes knowledge.""
+}
+```",True,"{""attitude_status"": ""believes"", ""truth_status"": ""indeterminate"", ""knowledge_status"": ""indeterminate"", ""brief_explanation"": ""Mina believes the proposition, but without information about whether the envelope is actually in the drawer or how Mina formed this belief, we cannot determine if it is true or if her belief constitutes knowledge.""}","Mina believes the proposition, but without information about whether the envelope is actually in the drawer or how Mina formed this belief, we cannot determine if it is true or if her belief constitutes knowledge.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_018_nonbelief_indeterminate_truth,belief_acceptance_knowledge,belief_truth_knowledge,,,claude-haiku-4-5,2026-07-05T20:12:33.691165+00:00,"{""attitude_status"": ""does_not_believe"", ""truth_status"": ""indeterminate"", ""knowledge_status"": ""does_not_know""}",,1.075,"```json
+{
+  ""attitude_status"": ""does_not_believe"",
+  ""truth_status"": ""indeterminate"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Tara does not believe the proposition, its actual truth value is unknown, and without belief or justification she cannot know it.""
+}
+```",True,"{""attitude_status"": ""does_not_believe"", ""truth_status"": ""indeterminate"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Tara does not believe the proposition, its actual truth value is unknown, and without belief or justification she cannot know it.""}","Tara does not believe the proposition, its actual truth value is unknown, and without belief or justification she cannot know it.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_019_false_belief_with_defined_variable,belief_acceptance_knowledge,belief_truth_knowledge,,,claude-haiku-4-5,2026-07-05T20:12:34.766280+00:00,"{""attitude_status"": ""believes"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know""}",,1.132,"```json
+{
+  ""attitude_status"": ""believes"",
+  ""truth_status"": ""false"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Carlos believes the light is on based on a guess without evidence, but the light is actually off, so his belief is false and does not constitute knowledge.""
+}
+```",True,"{""attitude_status"": ""believes"", ""truth_status"": ""false"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Carlos believes the light is on based on a guess without evidence, but the light is actually off, so his belief is false and does not constitute knowledge.""}","Carlos believes the light is on based on a guess without evidence, but the light is actually off, so his belief is false and does not constitute knowledge.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+btk_020_true_target_no_information_about_agent,belief_acceptance_knowledge,belief_truth_knowledge,,,claude-haiku-4-5,2026-07-05T20:12:35.898645+00:00,"{""attitude_status"": ""indeterminate"", ""truth_status"": ""true"", ""knowledge_status"": ""indeterminate""}",,1.003,"```json
+{
+  ""attitude_status"": ""indeterminate"",
+  ""truth_status"": ""true"",
+  ""knowledge_status"": ""indeterminate"",
+  ""brief_explanation"": ""The north entrance is objectively open (true), but there is no information about whether Harper believes this or has access to knowledge of it.""
+}
+```",True,"{""attitude_status"": ""indeterminate"", ""truth_status"": ""true"", ""knowledge_status"": ""indeterminate"", ""brief_explanation"": ""The north entrance is objectively open (true), but there is no information about whether Harper believes this or has access to knowledge of it.""}","The north entrance is objectively open (true), but there is no information about whether Harper believes this or has access to knowledge of it.","{""attitude_status"": true, ""truth_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+ab_001_belief_from_receipt,belief_acceptance_knowledge,acceptance_and_belief,,,claude-haiku-4-5,2026-07-05T20:12:36.901944+00:00,"{""attitude_status"": ""believes"", ""reason_type"": ""epistemic"", ""knowledge_status"": ""knows""}",,1.081,"```json
+{
+  ""attitude_status"": ""believes"",
+  ""reason_type"": ""epistemic"",
+  ""knowledge_status"": ""knows"",
+  ""brief_explanation"": ""Loki believes the proposition based on evidence (a receipt), the proposition is true, and his belief is justified by reliable evidence, constituting knowledge.""
+}
+```",True,"{""attitude_status"": ""believes"", ""reason_type"": ""epistemic"", ""knowledge_status"": ""knows"", ""brief_explanation"": ""Loki believes the proposition based on evidence (a receipt), the proposition is true, and his belief is justified by reliable evidence, constituting knowledge.""}","Loki believes the proposition based on evidence (a receipt), the proposition is true, and his belief is justified by reliable evidence, constituting knowledge.","{""attitude_status"": true, ""reason_type"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+ab_002_belief_from_perception,belief_acceptance_knowledge,acceptance_and_belief,,,claude-haiku-4-5,2026-07-05T20:12:37.982578+00:00,"{""attitude_status"": ""believes"", ""reason_type"": ""epistemic"", ""knowledge_status"": ""knows""}",,0.936,"```json
+{
+  ""attitude_status"": ""believes"",
+  ""reason_type"": ""epistemic"",
+  ""knowledge_status"": ""knows"",
+  ""brief_explanation"": ""Peter observes five geese and forms a belief that there is at least one bird swimming in the lake; this belief is true and based on direct perceptual evidence, constituting knowledge.""
+}
+```",True,"{""attitude_status"": ""believes"", ""reason_type"": ""epistemic"", ""knowledge_status"": ""knows"", ""brief_explanation"": ""Peter observes five geese and forms a belief that there is at least one bird swimming in the lake; this belief is true and based on direct perceptual evidence, constituting knowledge.""}","Peter observes five geese and forms a belief that there is at least one bird swimming in the lake; this belief is true and based on direct perceptual evidence, constituting knowledge.","{""attitude_status"": true, ""reason_type"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+ab_003_belief_from_indirect_evidence,belief_acceptance_knowledge,acceptance_and_belief,,,claude-haiku-4-5,2026-07-05T20:12:38.918952+00:00,"{""attitude_status"": ""believes"", ""reason_type"": ""epistemic"", ""knowledge_status"": ""knows""}",,1.065,"```json
+{
+  ""attitude_status"": ""believes_and_accepts"",
+  ""reason_type"": ""epistemic"",
+  ""knowledge_status"": ""knows"",
+  ""brief_explanation"": ""Geoff believes and accepts that Earl owns a horse based on observing relevant evidence (horse feed and saddle), the proposition is true, and his belief is justified by reasonable inference from observable facts.""
+}
+```",True,"{""attitude_status"": ""believes_and_accepts"", ""reason_type"": ""epistemic"", ""knowledge_status"": ""knows"", ""brief_explanation"": ""Geoff believes and accepts that Earl owns a horse based on observing relevant evidence (horse feed and saddle), the proposition is true, and his belief is justified by reasonable inference from observable facts.""}","Geoff believes and accepts that Earl owns a horse based on observing relevant evidence (horse feed and saddle), the proposition is true, and his belief is justified by reasonable inference from observable facts.","{""attitude_status"": false, ""reason_type"": true, ""knowledge_status"": true}",2.0,3.0,0.6666666666666666
+ab_004_practical_acceptance_golf_course,belief_acceptance_knowledge,acceptance_and_belief,,,claude-haiku-4-5,2026-07-05T20:12:39.983777+00:00,"{""attitude_status"": ""accepts_without_belief"", ""reason_type"": ""practical"", ""knowledge_status"": ""does_not_know""}",,1.144,"```json
+{
+  ""attitude_status"": ""believes_and_accepts"",
+  ""reason_type"": ""practical"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Chris does not believe the proposition based on his friend's testimony, but he accepts it for practical reasons (winning the tournament), adopting it as a working assumption despite lacking epistemic justification.""
+}
+```",True,"{""attitude_status"": ""believes_and_accepts"", ""reason_type"": ""practical"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Chris does not believe the proposition based on his friend's testimony, but he accepts it for practical reasons (winning the tournament), adopting it as a working assumption despite lacking epistemic justification.""}","Chris does not believe the proposition based on his friend's testimony, but he accepts it for practical reasons (winning the tournament), adopting it as a working assumption despite lacking epistemic justification.","{""attitude_status"": false, ""reason_type"": true, ""knowledge_status"": true}",2.0,3.0,0.6666666666666666
+ab_005_practical_acceptance_raffle,belief_acceptance_knowledge,acceptance_and_belief,,,claude-haiku-4-5,2026-07-05T20:12:41.128239+00:00,"{""attitude_status"": ""accepts_without_belief"", ""reason_type"": ""practical"", ""knowledge_status"": ""does_not_know""}",,0.974,"```json
+{
+  ""attitude_status"": ""accepts_without_belief"",
+  ""reason_type"": ""practical"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Johnny does not believe the proposition is true but accepts it as a practical assumption to pursue his goal of winning the raffle.""
+}
+```",True,"{""attitude_status"": ""accepts_without_belief"", ""reason_type"": ""practical"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Johnny does not believe the proposition is true but accepts it as a practical assumption to pursue his goal of winning the raffle.""}",Johnny does not believe the proposition is true but accepts it as a practical assumption to pursue his goal of winning the raffle.,"{""attitude_status"": true, ""reason_type"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+ab_006_supposition_against_belief,belief_acceptance_knowledge,acceptance_and_belief,,,claude-haiku-4-5,2026-07-05T20:12:42.102496+00:00,"{""attitude_status"": ""accepts_without_belief"", ""reason_type"": ""practical"", ""knowledge_status"": ""does_not_know""}",,1.09,"```json
+{
+  ""attitude_status"": ""accepts_without_belief"",
+  ""reason_type"": ""practical"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Larry supposes lizards are fish for reasoning purposes while believing the opposite, accepting it without belief for the practical goal of exploring implications.""
+}
+```",True,"{""attitude_status"": ""accepts_without_belief"", ""reason_type"": ""practical"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Larry supposes lizards are fish for reasoning purposes while believing the opposite, accepting it without belief for the practical goal of exploring implications.""}","Larry supposes lizards are fish for reasoning purposes while believing the opposite, accepting it without belief for the practical goal of exploring implications.","{""attitude_status"": true, ""reason_type"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+ab_007_practical_acceptance_persuasion,belief_acceptance_knowledge,acceptance_and_belief,,,claude-haiku-4-5,2026-07-05T20:12:43.192724+00:00,"{""attitude_status"": ""accepts_without_belief"", ""reason_type"": ""practical"", ""knowledge_status"": ""does_not_know""}",,1.03,"```json
+{
+  ""attitude_status"": ""accepts_without_belief"",
+  ""reason_type"": ""practical"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Moe accepts the proposition for the practical reason of persuading others, but does not genuinely believe it since he thinks red and orange cars are equally fast.""
+}
+```",True,"{""attitude_status"": ""accepts_without_belief"", ""reason_type"": ""practical"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Moe accepts the proposition for the practical reason of persuading others, but does not genuinely believe it since he thinks red and orange cars are equally fast.""}","Moe accepts the proposition for the practical reason of persuading others, but does not genuinely believe it since he thinks red and orange cars are equally fast.","{""attitude_status"": true, ""reason_type"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+ab_008_practical_acceptance_supportive_friend,belief_acceptance_knowledge,acceptance_and_belief,,,claude-haiku-4-5,2026-07-05T20:12:44.223018+00:00,"{""attitude_status"": ""accepts_without_belief"", ""reason_type"": ""practical"", ""knowledge_status"": ""does_not_know""}",,4.851,"```json
+{
+  ""attitude_status"": ""accepts_without_belief"",
+  ""reason_type"": ""practical"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Karen accepts the proposition for practical reasons (to be supportive) while secretly disbelieving it, so she neither knows nor genuinely believes it.""
+}
+```",True,"{""attitude_status"": ""accepts_without_belief"", ""reason_type"": ""practical"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Karen accepts the proposition for practical reasons (to be supportive) while secretly disbelieving it, so she neither knows nor genuinely believes it.""}","Karen accepts the proposition for practical reasons (to be supportive) while secretly disbelieving it, so she neither knows nor genuinely believes it.","{""attitude_status"": true, ""reason_type"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+ab_009_belief_and_acceptance_cookies,belief_acceptance_knowledge,acceptance_and_belief,,,claude-haiku-4-5,2026-07-05T20:12:49.074219+00:00,"{""attitude_status"": ""believes_and_accepts"", ""reason_type"": ""epistemic_and_practical"", ""knowledge_status"": ""knows""}",,1.119,"```json
+{
+  ""attitude_status"": ""believes_and_accepts"",
+  ""reason_type"": ""epistemic_and_practical"",
+  ""knowledge_status"": ""knows"",
+  ""brief_explanation"": ""Billy believes the proposition based on the reliable sign (epistemic reason) and accepts it to plan his trip for cookies (practical reason); the proposition is true and his belief is justified, constituting knowledge.""
+}
+```",True,"{""attitude_status"": ""believes_and_accepts"", ""reason_type"": ""epistemic_and_practical"", ""knowledge_status"": ""knows"", ""brief_explanation"": ""Billy believes the proposition based on the reliable sign (epistemic reason) and accepts it to plan his trip for cookies (practical reason); the proposition is true and his belief is justified, constituting knowledge.""}","Billy believes the proposition based on the reliable sign (epistemic reason) and accepts it to plan his trip for cookies (practical reason); the proposition is true and his belief is justified, constituting knowledge.","{""attitude_status"": true, ""reason_type"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+ab_010_practical_acceptance_caution,belief_acceptance_knowledge,acceptance_and_belief,,,claude-haiku-4-5,2026-07-05T20:12:50.193495+00:00,"{""attitude_status"": ""accepts_without_belief"", ""reason_type"": ""practical"", ""knowledge_status"": ""does_not_know""}",,1.501,"```json
+{
+  ""attitude_status"": ""accepts_without_belief"",
+  ""reason_type"": ""practical"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Linda does not believe swimming is prohibited (she has evidence the sign is fake), but she accepts this proposition for practical reasons of caution, and therefore does not know it to be true.""
+}
+```",True,"{""attitude_status"": ""accepts_without_belief"", ""reason_type"": ""practical"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Linda does not believe swimming is prohibited (she has evidence the sign is fake), but she accepts this proposition for practical reasons of caution, and therefore does not know it to be true.""}","Linda does not believe swimming is prohibited (she has evidence the sign is fake), but she accepts this proposition for practical reasons of caution, and therefore does not know it to be true.","{""attitude_status"": true, ""reason_type"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+ab_011_conflicting_signs_practical_assumption,belief_acceptance_knowledge,acceptance_and_belief,,,claude-haiku-4-5,2026-07-05T20:12:51.694225+00:00,"{""attitude_status"": ""accepts_without_belief"", ""reason_type"": ""practical"", ""knowledge_status"": ""does_not_know""}",,1.415,"```json
+{
+  ""attitude_status"": ""accepts_without_belief"",
+  ""reason_type"": ""practical"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Gary accepts that the shop is open for practical reasons (to attempt a purchase) despite having conflicting evidence and no genuine belief, so he does not know whether the shop is actually open.""
+}
+```",True,"{""attitude_status"": ""accepts_without_belief"", ""reason_type"": ""practical"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Gary accepts that the shop is open for practical reasons (to attempt a purchase) despite having conflicting evidence and no genuine belief, so he does not know whether the shop is actually open.""}","Gary accepts that the shop is open for practical reasons (to attempt a purchase) despite having conflicting evidence and no genuine belief, so he does not know whether the shop is actually open.","{""attitude_status"": true, ""reason_type"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+ab_012_practical_acceptance_contest,belief_acceptance_knowledge,acceptance_and_belief,,,claude-haiku-4-5,2026-07-05T20:12:53.109449+00:00,"{""attitude_status"": ""accepts_without_belief"", ""reason_type"": ""practical"", ""knowledge_status"": ""does_not_know""}",,1.088,"```json
+{
+  ""attitude_status"": ""accepts_without_belief"",
+  ""reason_type"": ""practical"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Henry has strong evidence against the proposition but assumes it for practical reasons (winning the contest prize), without genuinely believing it based on his epistemic evidence.""
+}
+```",True,"{""attitude_status"": ""accepts_without_belief"", ""reason_type"": ""practical"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Henry has strong evidence against the proposition but assumes it for practical reasons (winning the contest prize), without genuinely believing it based on his epistemic evidence.""}","Henry has strong evidence against the proposition but assumes it for practical reasons (winning the contest prize), without genuinely believing it based on his epistemic evidence.","{""attitude_status"": true, ""reason_type"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+ab_013_no_attitude_parrots,belief_acceptance_knowledge,acceptance_and_belief,,,claude-haiku-4-5,2026-07-05T20:12:54.197701+00:00,"{""attitude_status"": ""does_not_believe_or_accept"", ""reason_type"": ""none_or_indeterminate"", ""knowledge_status"": ""does_not_know""}",,0.923,"```json
+{
+  ""attitude_status"": ""does_not_believe_or_accept"",
+  ""reason_type"": ""none_or_indeterminate"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Caroline has not considered the proposition and has no reason to think it is true, so she neither believes nor accepts it, and therefore does not know whether there are parrots in the tree.""
+}
+```",True,"{""attitude_status"": ""does_not_believe_or_accept"", ""reason_type"": ""none_or_indeterminate"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Caroline has not considered the proposition and has no reason to think it is true, so she neither believes nor accepts it, and therefore does not know whether there are parrots in the tree.""}","Caroline has not considered the proposition and has no reason to think it is true, so she neither believes nor accepts it, and therefore does not know whether there are parrots in the tree.","{""attitude_status"": true, ""reason_type"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+ab_014_indeterminate_pool,belief_acceptance_knowledge,acceptance_and_belief,,,claude-haiku-4-5,2026-07-05T20:12:55.121244+00:00,"{""attitude_status"": ""indeterminate"", ""reason_type"": ""none_or_indeterminate"", ""knowledge_status"": ""indeterminate""}",,1.141,"```json
+{
+  ""attitude_status"": ""does_not_believe_or_accept"",
+  ""reason_type"": ""none_or_indeterminate"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Yuki merely imagined the proposition for practical reasons (wanting to swim) without forming any genuine belief or acceptance of it, and the scenario provides no evidence she knows the pool is open.""
+}
+```",True,"{""attitude_status"": ""does_not_believe_or_accept"", ""reason_type"": ""none_or_indeterminate"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Yuki merely imagined the proposition for practical reasons (wanting to swim) without forming any genuine belief or acceptance of it, and the scenario provides no evidence she knows the pool is open.""}","Yuki merely imagined the proposition for practical reasons (wanting to swim) without forming any genuine belief or acceptance of it, and the scenario provides no evidence she knows the pool is open.","{""attitude_status"": false, ""reason_type"": true, ""knowledge_status"": false}",1.0,3.0,0.3333333333333333
+ab_015_no_attitude_bananas,belief_acceptance_knowledge,acceptance_and_belief,,,claude-haiku-4-5,2026-07-05T20:12:56.262839+00:00,"{""attitude_status"": ""does_not_believe_or_accept"", ""reason_type"": ""none_or_indeterminate"", ""knowledge_status"": ""does_not_know""}",,1.058,"```json
+{
+  ""attitude_status"": ""does_not_believe_or_accept"",
+  ""reason_type"": ""none_or_indeterminate"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Travis forms no attitude or thought about whether the store has bananas, lacks epistemic reasons to believe it, and has no practical motivations regarding bananas, so he neither believes nor accepts the proposition.""
+}
+```",True,"{""attitude_status"": ""does_not_believe_or_accept"", ""reason_type"": ""none_or_indeterminate"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Travis forms no attitude or thought about whether the store has bananas, lacks epistemic reasons to believe it, and has no practical motivations regarding bananas, so he neither believes nor accepts the proposition.""}","Travis forms no attitude or thought about whether the store has bananas, lacks epistemic reasons to believe it, and has no practical motivations regarding bananas, so he neither believes nor accepts the proposition.","{""attitude_status"": true, ""reason_type"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+ab_016_belief_and_acceptance_train,belief_acceptance_knowledge,acceptance_and_belief,,,claude-haiku-4-5,2026-07-05T20:12:57.320725+00:00,"{""attitude_status"": ""believes_and_accepts"", ""reason_type"": ""epistemic_and_practical"", ""knowledge_status"": ""knows""}",,1.405,"```json
+{
+  ""attitude_status"": ""believes_and_accepts"",
+  ""reason_type"": ""epistemic_and_practical"",
+  ""knowledge_status"": ""knows"",
+  ""brief_explanation"": ""Sara believes the proposition based on checking the official schedule, accepts it for practical decision-making about when to leave, and knows it since her belief is true and based on reliable evidence.""
+}
+```",True,"{""attitude_status"": ""believes_and_accepts"", ""reason_type"": ""epistemic_and_practical"", ""knowledge_status"": ""knows"", ""brief_explanation"": ""Sara believes the proposition based on checking the official schedule, accepts it for practical decision-making about when to leave, and knows it since her belief is true and based on reliable evidence.""}","Sara believes the proposition based on checking the official schedule, accepts it for practical decision-making about when to leave, and knows it since her belief is true and based on reliable evidence.","{""attitude_status"": true, ""reason_type"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+ab_017_belief_from_calendar,belief_acceptance_knowledge,acceptance_and_belief,,,claude-haiku-4-5,2026-07-05T20:12:58.725434+00:00,"{""attitude_status"": ""believes"", ""reason_type"": ""epistemic"", ""knowledge_status"": ""knows""}",,0.95,"```json
+{
+  ""attitude_status"": ""believes"",
+  ""reason_type"": ""epistemic"",
+  ""knowledge_status"": ""knows"",
+  ""brief_explanation"": ""Omar believes the proposition based on checking an accurate calendar, which provides epistemic justification, and since the calendar is accurate, his belief constitutes knowledge.""
+}
+```",True,"{""attitude_status"": ""believes"", ""reason_type"": ""epistemic"", ""knowledge_status"": ""knows"", ""brief_explanation"": ""Omar believes the proposition based on checking an accurate calendar, which provides epistemic justification, and since the calendar is accurate, his belief constitutes knowledge.""}","Omar believes the proposition based on checking an accurate calendar, which provides epistemic justification, and since the calendar is accurate, his belief constitutes knowledge.","{""attitude_status"": true, ""reason_type"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+ab_018_practical_acceptance_camping_stove,belief_acceptance_knowledge,acceptance_and_belief,,,claude-haiku-4-5,2026-07-05T20:12:59.675864+00:00,"{""attitude_status"": ""accepts_without_belief"", ""reason_type"": ""practical"", ""knowledge_status"": ""does_not_know""}",,1.234,"```json
+{
+  ""attitude_status"": ""accepts_without_belief"",
+  ""reason_type"": ""practical"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Nina does not believe the stove will work based on past failure, but accepts this proposition for practical reasons (expediting packing), and lacks knowledge since her acceptance is not grounded in justified true belief.""
+}
+```",True,"{""attitude_status"": ""accepts_without_belief"", ""reason_type"": ""practical"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Nina does not believe the stove will work based on past failure, but accepts this proposition for practical reasons (expediting packing), and lacks knowledge since her acceptance is not grounded in justified true belief.""}","Nina does not believe the stove will work based on past failure, but accepts this proposition for practical reasons (expediting packing), and lacks knowledge since her acceptance is not grounded in justified true belief.","{""attitude_status"": true, ""reason_type"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+ab_019_belief_and_acceptance_bridge,belief_acceptance_knowledge,acceptance_and_belief,,,claude-haiku-4-5,2026-07-05T20:13:00.909898+00:00,"{""attitude_status"": ""believes_and_accepts"", ""reason_type"": ""epistemic_and_practical"", ""knowledge_status"": ""knows""}",,1.465,"```json
+{
+  ""attitude_status"": ""believes_and_accepts"",
+  ""reason_type"": ""epistemic_and_practical"",
+  ""knowledge_status"": ""knows"",
+  ""brief_explanation"": ""Paul believes the proposition based on an official alert, accepts it for practical planning purposes (choosing a scenic route), the proposition is true, and he has reliable justification from an authoritative source.""
+}
+```",True,"{""attitude_status"": ""believes_and_accepts"", ""reason_type"": ""epistemic_and_practical"", ""knowledge_status"": ""knows"", ""brief_explanation"": ""Paul believes the proposition based on an official alert, accepts it for practical planning purposes (choosing a scenic route), the proposition is true, and he has reliable justification from an authoritative source.""}","Paul believes the proposition based on an official alert, accepts it for practical planning purposes (choosing a scenic route), the proposition is true, and he has reliable justification from an authoritative source.","{""attitude_status"": true, ""reason_type"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+ab_020_practical_acceptance_unreliable_rumor,belief_acceptance_knowledge,acceptance_and_belief,,,claude-haiku-4-5,2026-07-05T20:13:02.375074+00:00,"{""attitude_status"": ""accepts_without_belief"", ""reason_type"": ""practical"", ""knowledge_status"": ""does_not_know""}",,1.059,"```json
+{
+  ""attitude_status"": ""accepts_without_belief"",
+  ""reason_type"": ""practical"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Amber does not believe the proposition but accepts it for practical purposes (planning) because she wants lemonade, not for epistemic reasons.""
+}
+```",True,"{""attitude_status"": ""accepts_without_belief"", ""reason_type"": ""practical"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Amber does not believe the proposition but accepts it for practical purposes (planning) because she wants lemonade, not for epistemic reasons.""}","Amber does not believe the proposition but accepts it for practical purposes (planning) because she wants lemonade, not for epistemic reasons.","{""attitude_status"": true, ""reason_type"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+jus_001_perceptual_knowledge_hamburger,belief_acceptance_knowledge,justification,,,claude-haiku-4-5,2026-07-05T20:13:03.433923+00:00,"{""reason_type"": ""epistemic"", ""justification_status"": ""epistemically_justified"", ""knowledge_status"": ""knows""}",,1.162,"```json
+{
+  ""reason_type"": ""epistemic"",
+  ""justification_status"": ""epistemically_justified"",
+  ""knowledge_status"": ""knows"",
+  ""brief_explanation"": ""Jake directly observed Lonny placing a hamburger in his bag, providing strong epistemic justification for his belief, and the proposition is true, so Jake knows it.""
+}
+```",True,"{""reason_type"": ""epistemic"", ""justification_status"": ""epistemically_justified"", ""knowledge_status"": ""knows"", ""brief_explanation"": ""Jake directly observed Lonny placing a hamburger in his bag, providing strong epistemic justification for his belief, and the proposition is true, so Jake knows it.""}","Jake directly observed Lonny placing a hamburger in his bag, providing strong epistemic justification for his belief, and the proposition is true, so Jake knows it.","{""reason_type"": true, ""justification_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+jus_002_reliable_testimony_knowledge,belief_acceptance_knowledge,justification,,,claude-haiku-4-5,2026-07-05T20:13:04.596009+00:00,"{""reason_type"": ""epistemic"", ""justification_status"": ""epistemically_justified"", ""knowledge_status"": ""knows""}",,1.058,"```json
+{
+  ""reason_type"": ""epistemic"",
+  ""justification_status"": ""epistemically_justified"",
+  ""knowledge_status"": ""knows"",
+  ""brief_explanation"": ""Lilly believes the proposition based on reliable testimony from a trustworthy source, the proposition is true, and she has adequate epistemic justification for her belief, constituting knowledge.""
+}
+```",True,"{""reason_type"": ""epistemic"", ""justification_status"": ""epistemically_justified"", ""knowledge_status"": ""knows"", ""brief_explanation"": ""Lilly believes the proposition based on reliable testimony from a trustworthy source, the proposition is true, and she has adequate epistemic justification for her belief, constituting knowledge.""}","Lilly believes the proposition based on reliable testimony from a trustworthy source, the proposition is true, and she has adequate epistemic justification for her belief, constituting knowledge.","{""reason_type"": true, ""justification_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+jus_003_justified_false_belief_firetruck,belief_acceptance_knowledge,justification,,,claude-haiku-4-5,2026-07-05T20:13:05.653648+00:00,"{""reason_type"": ""epistemic"", ""justification_status"": ""epistemically_justified"", ""knowledge_status"": ""does_not_know""}",,1.559,"```json
+{
+  ""reason_type"": ""epistemic"",
+  ""justification_status"": ""epistemically_justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Cory has good epistemic reasons (the firetruck's lights and sirens) that justify the belief, but the proposition is false due to an unusual circumstance (theft), so Cory lacks knowledge despite justified belief.""
+}
+```",True,"{""reason_type"": ""epistemic"", ""justification_status"": ""epistemically_justified"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Cory has good epistemic reasons (the firetruck's lights and sirens) that justify the belief, but the proposition is false due to an unusual circumstance (theft), so Cory lacks knowledge despite justified belief.""}","Cory has good epistemic reasons (the firetruck's lights and sirens) that justify the belief, but the proposition is false due to an unusual circumstance (theft), so Cory lacks knowledge despite justified belief.","{""reason_type"": true, ""justification_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+jus_004_practical_reason_baking_competition,belief_acceptance_knowledge,justification,,,claude-haiku-4-5,2026-07-05T20:13:07.213190+00:00,"{""reason_type"": ""practical"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know""}",,1.155,"```json
+{
+  ""reason_type"": ""practical"",
+  ""justification_status"": ""not_epistemically_justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Lara's belief is motivated by her practical desire to win rather than epistemic reasons, and she lacks epistemic justification since she has no epistemic basis for thinking chocolate cake will help her win.""
+}
+```",True,"{""reason_type"": ""practical"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Lara's belief is motivated by her practical desire to win rather than epistemic reasons, and she lacks epistemic justification since she has no epistemic basis for thinking chocolate cake will help her win.""}","Lara's belief is motivated by her practical desire to win rather than epistemic reasons, and she lacks epistemic justification since she has no epistemic basis for thinking chocolate cake will help her win.","{""reason_type"": true, ""justification_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+jus_005_reliable_testimony_without_understanding,belief_acceptance_knowledge,justification,,,claude-haiku-4-5,2026-07-05T20:13:08.367910+00:00,"{""reason_type"": ""epistemic"", ""justification_status"": ""epistemically_justified"", ""knowledge_status"": ""knows""}",,1.077,"```json
+{
+  ""reason_type"": ""epistemic"",
+  ""justification_status"": ""epistemically_justified"",
+  ""knowledge_status"": ""knows"",
+  ""brief_explanation"": ""Norman believes Mars is red based on reliable testimony from a trustworthy astronomy teacher, the proposition is true, and his belief is epistemically justified through this reliable source, constituting knowledge.""
+}
+```",True,"{""reason_type"": ""epistemic"", ""justification_status"": ""epistemically_justified"", ""knowledge_status"": ""knows"", ""brief_explanation"": ""Norman believes Mars is red based on reliable testimony from a trustworthy astronomy teacher, the proposition is true, and his belief is epistemically justified through this reliable source, constituting knowledge.""}","Norman believes Mars is red based on reliable testimony from a trustworthy astronomy teacher, the proposition is true, and his belief is epistemically justified through this reliable source, constituting knowledge.","{""reason_type"": true, ""justification_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+jus_006_practical_reason_treadmill,belief_acceptance_knowledge,justification,,,claude-haiku-4-5,2026-07-05T20:13:09.444827+00:00,"{""reason_type"": ""practical"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know""}",,1.191,"```json
+{
+  ""reason_type"": ""practical"",
+  ""justification_status"": ""not_epistemically_justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Greg believes the proposition because he wants to buy the treadmill (practical reason), not because he has epistemic evidence, and he explicitly lacks good evidence for the belief, so it is not epistemically justified.""
+}
+```",True,"{""reason_type"": ""practical"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Greg believes the proposition because he wants to buy the treadmill (practical reason), not because he has epistemic evidence, and he explicitly lacks good evidence for the belief, so it is not epistemically justified.""}","Greg believes the proposition because he wants to buy the treadmill (practical reason), not because he has epistemic evidence, and he explicitly lacks good evidence for the belief, so it is not epistemically justified.","{""reason_type"": true, ""justification_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+jus_007_guess_taco_shop,belief_acceptance_knowledge,justification,,,claude-haiku-4-5,2026-07-05T20:13:10.636375+00:00,"{""reason_type"": ""none_or_indeterminate"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know""}",,1.008,"```json
+{
+  ""reason_type"": ""none_or_indeterminate"",
+  ""justification_status"": ""not_epistemically_justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""James's belief is a mere guess without evidence or practical motivation, providing no epistemic justification and thus no knowledge of whether the taco shop has corn tortillas.""
+}
+```",True,"{""reason_type"": ""none_or_indeterminate"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""James's belief is a mere guess without evidence or practical motivation, providing no epistemic justification and thus no knowledge of whether the taco shop has corn tortillas.""}","James's belief is a mere guess without evidence or practical motivation, providing no epistemic justification and thus no knowledge of whether the taco shop has corn tortillas.","{""reason_type"": true, ""justification_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+jus_008_practical_reason_powerlifting,belief_acceptance_knowledge,justification,,,claude-haiku-4-5,2026-07-05T20:13:11.644960+00:00,"{""reason_type"": ""practical"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know""}",,1.036,"```json
+{
+  ""reason_type"": ""practical"",
+  ""justification_status"": ""not_epistemically_justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Sarah's belief is motivated by her practical desire to see herself as a future champion rather than by evidence, and she lacks epistemic justification since she has no evidence supporting her ability to lift 200 pounds.""
+}
+```",True,"{""reason_type"": ""practical"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Sarah's belief is motivated by her practical desire to see herself as a future champion rather than by evidence, and she lacks epistemic justification since she has no evidence supporting her ability to lift 200 pounds.""}","Sarah's belief is motivated by her practical desire to see herself as a future champion rather than by evidence, and she lacks epistemic justification since she has no evidence supporting her ability to lift 200 pounds.","{""reason_type"": true, ""justification_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+jus_009_overgeneralized_evidence_llamas,belief_acceptance_knowledge,justification,,,claude-haiku-4-5,2026-07-05T20:13:12.680666+00:00,"{""reason_type"": ""none_or_indeterminate"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know""}",,1.086,"```json
+{
+  ""reason_type"": ""epistemic"",
+  ""justification_status"": ""not_epistemically_justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Chelsey's evidence about fake llamas at one local zoo does not epistemically justify a universal claim about all zoos, making her belief unjustified and failing to constitute knowledge.""
+}
+```",True,"{""reason_type"": ""epistemic"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Chelsey's evidence about fake llamas at one local zoo does not epistemically justify a universal claim about all zoos, making her belief unjustified and failing to constitute knowledge.""}","Chelsey's evidence about fake llamas at one local zoo does not epistemically justify a universal claim about all zoos, making her belief unjustified and failing to constitute knowledge.","{""reason_type"": false, ""justification_status"": true, ""knowledge_status"": true}",2.0,3.0,0.6666666666666666
+jus_010_practical_reason_europe_trip,belief_acceptance_knowledge,justification,,,claude-haiku-4-5,2026-07-05T20:13:13.766278+00:00,"{""reason_type"": ""practical"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know""}",,1.159,"```json
+{
+  ""reason_type"": ""practical"",
+  ""justification_status"": ""not_epistemically_justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Christopher's belief is motivated by his strong desire to go (practical reason), not by epistemic evidence, and his own evidence actually contradicts the proposition, leaving him without epistemic justification.""
+}
+```",True,"{""reason_type"": ""practical"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Christopher's belief is motivated by his strong desire to go (practical reason), not by epistemic evidence, and his own evidence actually contradicts the proposition, leaving him without epistemic justification.""}","Christopher's belief is motivated by his strong desire to go (practical reason), not by epistemic evidence, and his own evidence actually contradicts the proposition, leaving him without epistemic justification.","{""reason_type"": true, ""justification_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+jus_011_ignoring_counterevidence_tank,belief_acceptance_knowledge,justification,,,claude-haiku-4-5,2026-07-05T20:13:14.924993+00:00,"{""reason_type"": ""practical"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know""}",,1.408,"```json
+{
+  ""reason_type"": ""practical"",
+  ""justification_status"": ""not_epistemically_justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Niel's belief is motivated by his practical desire for the proposition to be true rather than by epistemic reasons, and he actively ignores contrary official evidence, leaving him without epistemic justification.""
+}
+```",True,"{""reason_type"": ""practical"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Niel's belief is motivated by his practical desire for the proposition to be true rather than by epistemic reasons, and he actively ignores contrary official evidence, leaving him without epistemic justification.""}","Niel's belief is motivated by his practical desire for the proposition to be true rather than by epistemic reasons, and he actively ignores contrary official evidence, leaving him without epistemic justification.","{""reason_type"": true, ""justification_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+jus_012_practical_reason_bank_hours,belief_acceptance_knowledge,justification,,,claude-haiku-4-5,2026-07-05T20:13:16.333039+00:00,"{""reason_type"": ""practical"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know""}",,1.193,"```json
+{
+  ""reason_type"": ""practical"",
+  ""justification_status"": ""not_epistemically_justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Brooke's belief is motivated by practical need rather than epistemic reasons, and her past experience actually contradicts the proposition, leaving her without epistemic justification.""
+}
+```",True,"{""reason_type"": ""practical"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Brooke's belief is motivated by practical need rather than epistemic reasons, and her past experience actually contradicts the proposition, leaving her without epistemic justification.""}","Brooke's belief is motivated by practical need rather than epistemic reasons, and her past experience actually contradicts the proposition, leaving her without epistemic justification.","{""reason_type"": true, ""justification_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+jus_013_reliable_friend_pizza,belief_acceptance_knowledge,justification,,,claude-haiku-4-5,2026-07-05T20:13:17.525944+00:00,"{""reason_type"": ""epistemic"", ""justification_status"": ""epistemically_justified"", ""knowledge_status"": ""knows""}",,1.173,"```json
+{
+  ""reason_type"": ""epistemic"",
+  ""justification_status"": ""epistemically_justified"",
+  ""knowledge_status"": ""knows"",
+  ""brief_explanation"": ""Becky believes the proposition based on reliable testimony from a knowledgeable friend, the proposition is true, and her belief is formed through a reliable epistemic process, constituting knowledge.""
+}
+```",True,"{""reason_type"": ""epistemic"", ""justification_status"": ""epistemically_justified"", ""knowledge_status"": ""knows"", ""brief_explanation"": ""Becky believes the proposition based on reliable testimony from a knowledgeable friend, the proposition is true, and her belief is formed through a reliable epistemic process, constituting knowledge.""}","Becky believes the proposition based on reliable testimony from a knowledgeable friend, the proposition is true, and her belief is formed through a reliable epistemic process, constituting knowledge.","{""reason_type"": true, ""justification_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+jus_014_practical_reason_camping_spots,belief_acceptance_knowledge,justification,,,claude-haiku-4-5,2026-07-05T20:13:18.699419+00:00,"{""reason_type"": ""practical"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know""}",,1.218,"```json
+{
+  ""reason_type"": ""practical"",
+  ""justification_status"": ""not_epistemically_justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Julian believes the proposition based on his desire to go camping rather than evidence, lacks epistemic justification since he knows all reservations are taken, and therefore does not have knowledge of the proposition.""
+}
+```",True,"{""reason_type"": ""practical"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Julian believes the proposition based on his desire to go camping rather than evidence, lacks epistemic justification since he knows all reservations are taken, and therefore does not have knowledge of the proposition.""}","Julian believes the proposition based on his desire to go camping rather than evidence, lacks epistemic justification since he knows all reservations are taken, and therefore does not have knowledge of the proposition.","{""reason_type"": true, ""justification_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+jus_015_arbitrary_true_belief_fish,belief_acceptance_knowledge,justification,,,claude-haiku-4-5,2026-07-05T20:13:19.917934+00:00,"{""reason_type"": ""none_or_indeterminate"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know""}",,1.29,"```json
+{
+  ""reason_type"": ""none_or_indeterminate"",
+  ""justification_status"": ""not_epistemically_justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Carrie formed her belief without epistemic reasons (she had no evidence and decided to believe arbitrarily), so while the proposition turned out true, her belief lacked epistemic justification and thus does not constitute knowledge.""
+}
+```",True,"{""reason_type"": ""none_or_indeterminate"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Carrie formed her belief without epistemic reasons (she had no evidence and decided to believe arbitrarily), so while the proposition turned out true, her belief lacked epistemic justification and thus does not constitute knowledge.""}","Carrie formed her belief without epistemic reasons (she had no evidence and decided to believe arbitrarily), so while the proposition turned out true, her belief lacked epistemic justification and thus does not constitute knowledge.","{""reason_type"": true, ""justification_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+jus_016_epistemic_and_practical_weather,belief_acceptance_knowledge,justification,,,claude-haiku-4-5,2026-07-05T20:13:21.208446+00:00,"{""reason_type"": ""epistemic_and_practical"", ""justification_status"": ""epistemically_justified"", ""knowledge_status"": ""knows""}",,1.337,"```json
+{
+  ""reason_type"": ""epistemic_and_practical"",
+  ""justification_status"": ""epistemically_justified"",
+  ""knowledge_status"": ""knows"",
+  ""brief_explanation"": ""Maya's belief is based on a reliable weather service (epistemic reason), and she also uses it for practical planning (bringing an umbrella); her belief is true, based on reliable evidence, and constitutes knowledge.""
+}
+```",True,"{""reason_type"": ""epistemic_and_practical"", ""justification_status"": ""epistemically_justified"", ""knowledge_status"": ""knows"", ""brief_explanation"": ""Maya's belief is based on a reliable weather service (epistemic reason), and she also uses it for practical planning (bringing an umbrella); her belief is true, based on reliable evidence, and constitutes knowledge.""}","Maya's belief is based on a reliable weather service (epistemic reason), and she also uses it for practical planning (bringing an umbrella); her belief is true, based on reliable evidence, and constitutes knowledge.","{""reason_type"": true, ""justification_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+jus_017_epistemic_false_belief_package,belief_acceptance_knowledge,justification,,,claude-haiku-4-5,2026-07-05T20:13:22.545299+00:00,"{""reason_type"": ""epistemic"", ""justification_status"": ""epistemically_justified"", ""knowledge_status"": ""does_not_know""}",,1.064,"```json
+{
+  ""reason_type"": ""epistemic"",
+  ""justification_status"": ""epistemically_justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Owen has an epistemic reason (the reliable tracking page) that justifies his belief, but the belief is false, so he lacks knowledge despite being justified.""
+}
+```",True,"{""reason_type"": ""epistemic"", ""justification_status"": ""epistemically_justified"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Owen has an epistemic reason (the reliable tracking page) that justifies his belief, but the belief is false, so he lacks knowledge despite being justified.""}","Owen has an epistemic reason (the reliable tracking page) that justifies his belief, but the belief is false, so he lacks knowledge despite being justified.","{""reason_type"": true, ""justification_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+jus_018_epistemic_and_practical_concert,belief_acceptance_knowledge,justification,,,claude-haiku-4-5,2026-07-05T20:13:23.609056+00:00,"{""reason_type"": ""epistemic_and_practical"", ""justification_status"": ""epistemically_justified"", ""knowledge_status"": ""knows""}",,1.115,"```json
+{
+  ""reason_type"": ""epistemic_and_practical"",
+  ""justification_status"": ""epistemically_justified"",
+  ""knowledge_status"": ""knows"",
+  ""brief_explanation"": ""Dana's belief is based on a reliable source (accurate confirmation email), providing epistemic justification, and she also has a practical reason (planning arrival time) for holding the belief.""
+}
+```",True,"{""reason_type"": ""epistemic_and_practical"", ""justification_status"": ""epistemically_justified"", ""knowledge_status"": ""knows"", ""brief_explanation"": ""Dana's belief is based on a reliable source (accurate confirmation email), providing epistemic justification, and she also has a practical reason (planning arrival time) for holding the belief.""}","Dana's belief is based on a reliable source (accurate confirmation email), providing epistemic justification, and she also has a practical reason (planning arrival time) for holding the belief.","{""reason_type"": true, ""justification_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+jus_019_indeterminate_reason_belief,belief_acceptance_knowledge,justification,,,claude-haiku-4-5,2026-07-05T20:13:24.723947+00:00,"{""reason_type"": ""none_or_indeterminate"", ""justification_status"": ""indeterminate"", ""knowledge_status"": ""indeterminate""}",,0.999,"```json
+{
+  ""reason_type"": ""none_or_indeterminate"",
+  ""justification_status"": ""indeterminate"",
+  ""knowledge_status"": ""indeterminate"",
+  ""brief_explanation"": ""The scenario provides no information about why Ethan holds this belief, whether the door is actually unlocked, or what evidence or reasoning supports his conviction.""
+}
+```",True,"{""reason_type"": ""none_or_indeterminate"", ""justification_status"": ""indeterminate"", ""knowledge_status"": ""indeterminate"", ""brief_explanation"": ""The scenario provides no information about why Ethan holds this belief, whether the door is actually unlocked, or what evidence or reasoning supports his conviction.""}","The scenario provides no information about why Ethan holds this belief, whether the door is actually unlocked, or what evidence or reasoning supports his conviction.","{""reason_type"": true, ""justification_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+jus_020_epistemic_justification_false_animal,belief_acceptance_knowledge,justification,,,claude-haiku-4-5,2026-07-05T20:13:25.722658+00:00,"{""reason_type"": ""epistemic"", ""justification_status"": ""epistemically_justified"", ""knowledge_status"": ""does_not_know""}",,1.203,"```json
+{
+  ""reason_type"": ""epistemic"",
+  ""justification_status"": ""epistemically_justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Priya has epistemic reasons (visual appearance and movement) that justify her belief, but the belief is false, so she lacks knowledge despite being justified.""
+}
+```",True,"{""reason_type"": ""epistemic"", ""justification_status"": ""epistemically_justified"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Priya has epistemic reasons (visual appearance and movement) that justify her belief, but the belief is false, so she lacks knowledge despite being justified.""}","Priya has epistemic reasons (visual appearance and movement) that justify her belief, but the belief is false, so she lacks knowledge despite being justified.","{""reason_type"": true, ""justification_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+el_001,epistemic_luck,knowledge_control,,easy,claude-haiku-4-5,2026-07-05T20:13:26.925781+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none""}",,1.187,"```json
+{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""knows"",
+  ""luck_status"": ""no_epistemic_luck"",
+  ""luck_type"": ""none"",
+  ""brief_explanation"": ""Alfred has adequate justification from a reliable source (Ted's recent testimony), the proposition is true, and there is no knowledge-defeating luck present in this ordinary case.""
+}
+```",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none"", ""brief_explanation"": ""Alfred has adequate justification from a reliable source (Ted's recent testimony), the proposition is true, and there is no knowledge-defeating luck present in this ordinary case.""}","Alfred has adequate justification from a reliable source (Ted's recent testimony), the proposition is true, and there is no knowledge-defeating luck present in this ordinary case.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_002,epistemic_luck,knowledge_control,,easy,claude-haiku-4-5,2026-07-05T20:13:28.113355+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none""}",,1.471,"```json
+{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""knows"",
+  ""luck_status"": ""no_epistemic_luck"",
+  ""luck_type"": ""none"",
+  ""brief_explanation"": ""Lea has adequate justification based on direct observation of Luke driving and parking his car, the belief is true, and there is no relevant epistemic luck undermining the knowledge.""
+}
+```",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none"", ""brief_explanation"": ""Lea has adequate justification based on direct observation of Luke driving and parking his car, the belief is true, and there is no relevant epistemic luck undermining the knowledge.""}","Lea has adequate justification based on direct observation of Luke driving and parking his car, the belief is true, and there is no relevant epistemic luck undermining the knowledge.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_003,epistemic_luck,knowledge_control,,easy,claude-haiku-4-5,2026-07-05T20:13:29.584816+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none""}",,1.167,"```json
+{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""knows"",
+  ""luck_status"": ""no_epistemic_luck"",
+  ""luck_type"": ""none"",
+  ""brief_explanation"": ""Nina forms a true belief using a reliable, well-functioning system with no reported errors, providing adequate justification and resulting in ordinary knowledge without epistemic luck.""
+}
+```",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none"", ""brief_explanation"": ""Nina forms a true belief using a reliable, well-functioning system with no reported errors, providing adequate justification and resulting in ordinary knowledge without epistemic luck.""}","Nina forms a true belief using a reliable, well-functioning system with no reported errors, providing adequate justification and resulting in ordinary knowledge without epistemic luck.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_004,epistemic_luck,knowledge_control,,easy,claude-haiku-4-5,2026-07-05T20:13:30.752355+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none""}",,1.125,"```json
+{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""knows"",
+  ""luck_status"": ""no_epistemic_luck"",
+  ""luck_type"": ""none"",
+  ""brief_explanation"": ""Rosa has reliable justification from a properly functioning scanner and database, her belief is true, and there is no relevant epistemic luck undermining her knowledge.""
+}
+```",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none"", ""brief_explanation"": ""Rosa has reliable justification from a properly functioning scanner and database, her belief is true, and there is no relevant epistemic luck undermining her knowledge.""}","Rosa has reliable justification from a properly functioning scanner and database, her belief is true, and there is no relevant epistemic luck undermining her knowledge.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_005,epistemic_luck,knowledge_control,,easy,claude-haiku-4-5,2026-07-05T20:13:31.877745+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none""}",,1.087,"```json
+{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""knows"",
+  ""luck_status"": ""no_epistemic_luck"",
+  ""luck_type"": ""none"",
+  ""brief_explanation"": ""Marcus used reliable methods (checking the official website and calling the front desk) to form a true belief about the pool's status, with no relevant epistemic luck involved.""
+}
+```",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none"", ""brief_explanation"": ""Marcus used reliable methods (checking the official website and calling the front desk) to form a true belief about the pool's status, with no relevant epistemic luck involved.""}","Marcus used reliable methods (checking the official website and calling the front desk) to form a true belief about the pool's status, with no relevant epistemic luck involved.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_006,epistemic_luck,lucky_guess,,easy,claude-haiku-4-5,2026-07-05T20:13:32.965311+00:00,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""lucky_guess""}",,1.219,"```json
+{
+  ""justification_status"": ""unjustified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""lucky_guess"",
+  ""brief_explanation"": ""William believes the coffee shop is open based solely on hope without adequate epistemic support, and while his belief happens to be true, this is a lucky guess rather than knowledge.""
+}
+```",True,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""lucky_guess"", ""brief_explanation"": ""William believes the coffee shop is open based solely on hope without adequate epistemic support, and while his belief happens to be true, this is a lucky guess rather than knowledge.""}","William believes the coffee shop is open based solely on hope without adequate epistemic support, and while his belief happens to be true, this is a lucky guess rather than knowledge.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_007,epistemic_luck,lucky_guess,,easy,claude-haiku-4-5,2026-07-05T20:13:34.183968+00:00,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""lucky_guess""}",,1.338,"```json
+{
+  ""justification_status"": ""unjustified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""lucky_guess"",
+  ""brief_explanation"": ""Michelle formed her belief on a whim without adequate epistemic support, and while the belief happens to be true, it is true only by luck rather than through a reliable belief-forming process.""
+}
+```",True,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""lucky_guess"", ""brief_explanation"": ""Michelle formed her belief on a whim without adequate epistemic support, and while the belief happens to be true, it is true only by luck rather than through a reliable belief-forming process.""}","Michelle formed her belief on a whim without adequate epistemic support, and while the belief happens to be true, it is true only by luck rather than through a reliable belief-forming process.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_008,epistemic_luck,lucky_guess,,easy,claude-haiku-4-5,2026-07-05T20:13:35.522201+00:00,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""lucky_guess""}",,1.065,"```json
+{
+  ""justification_status"": ""unjustified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""lucky_guess"",
+  ""brief_explanation"": ""Omar formed a true belief through an unreliable process (random decision without evidence), lacking adequate justification and arriving at the truth purely by accident.""
+}
+```",True,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""lucky_guess"", ""brief_explanation"": ""Omar formed a true belief through an unreliable process (random decision without evidence), lacking adequate justification and arriving at the truth purely by accident.""}","Omar formed a true belief through an unreliable process (random decision without evidence), lacking adequate justification and arriving at the truth purely by accident.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_009,epistemic_luck,intervening_luck,,medium,claude-haiku-4-5,2026-07-05T20:13:36.587093+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,1.443,"```json
+{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""knows"",
+  ""luck_status"": ""no_epistemic_luck"",
+  ""luck_type"": ""none"",
+  ""brief_explanation"": ""Liam has adequate justification from observing what appears to be a signed copy, the target proposition is true (Priya owns a real signed copy), and his belief was formed through a reliable perceptual process that successfully tracked the truth despite the misleading object.""
+}
+```",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none"", ""brief_explanation"": ""Liam has adequate justification from observing what appears to be a signed copy, the target proposition is true (Priya owns a real signed copy), and his belief was formed through a reliable perceptual process that successfully tracked the truth despite the misleading object.""}","Liam has adequate justification from observing what appears to be a signed copy, the target proposition is true (Priya owns a real signed copy), and his belief was formed through a reliable perceptual process that successfully tracked the truth despite the misleading object.","{""justification_status"": true, ""knowledge_status"": false, ""luck_status"": false, ""luck_type"": false}",1.0,6.0,0.16666666666666666
+el_010,epistemic_luck,intervening_luck,,medium,claude-haiku-4-5,2026-07-05T20:13:38.030096+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,1.561,"```json
+{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""knows"",
+  ""luck_status"": ""no_epistemic_luck"",
+  ""luck_type"": ""none"",
+  ""brief_explanation"": ""Ava's belief that there is a deer in the park is justified by her visual experience, the proposition is true (a real deer exists in the park), and her belief-forming method reliably tracks the truth despite being based on a statue rather than the actual deer.""
+}
+```",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none"", ""brief_explanation"": ""Ava's belief that there is a deer in the park is justified by her visual experience, the proposition is true (a real deer exists in the park), and her belief-forming method reliably tracks the truth despite being based on a statue rather than the actual deer.""}","Ava's belief that there is a deer in the park is justified by her visual experience, the proposition is true (a real deer exists in the park), and her belief-forming method reliably tracks the truth despite being based on a statue rather than the actual deer.","{""justification_status"": true, ""knowledge_status"": false, ""luck_status"": false, ""luck_type"": false}",1.0,6.0,0.16666666666666666
+el_011,epistemic_luck,intervening_luck,,medium,claude-haiku-4-5,2026-07-05T20:13:39.591303+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,1.469,"```json
+{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""knows"",
+  ""luck_status"": ""no_epistemic_luck"",
+  ""luck_type"": ""none"",
+  ""brief_explanation"": ""Julian has justified true belief based on his visual observation of what appeared to be an apple being placed in a pocket, and the proposition is true because another shopper does have an apple in his pocket, making this ordinary knowledge despite the misdirection about Robert's pear.""
+}
+```",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none"", ""brief_explanation"": ""Julian has justified true belief based on his visual observation of what appeared to be an apple being placed in a pocket, and the proposition is true because another shopper does have an apple in his pocket, making this ordinary knowledge despite the misdirection about Robert's pear.""}","Julian has justified true belief based on his visual observation of what appeared to be an apple being placed in a pocket, and the proposition is true because another shopper does have an apple in his pocket, making this ordinary knowledge despite the misdirection about Robert's pear.","{""justification_status"": true, ""knowledge_status"": false, ""luck_status"": false, ""luck_type"": false}",1.0,6.0,0.16666666666666666
+el_012,epistemic_luck,intervening_luck,,medium,claude-haiku-4-5,2026-07-05T20:13:41.060502+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,1.416,"```json
+{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""knows"",
+  ""luck_status"": ""no_epistemic_luck"",
+  ""luck_type"": ""none"",
+  ""brief_explanation"": ""Vicky's belief that there is a police officer on her side of the street is justified by her visual observation, true because a real officer is present, and formed through a reliable perceptual process that successfully tracked the truth despite the misleading appearance of the actor.""
+}
+```",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none"", ""brief_explanation"": ""Vicky's belief that there is a police officer on her side of the street is justified by her visual observation, true because a real officer is present, and formed through a reliable perceptual process that successfully tracked the truth despite the misleading appearance of the actor.""}","Vicky's belief that there is a police officer on her side of the street is justified by her visual observation, true because a real officer is present, and formed through a reliable perceptual process that successfully tracked the truth despite the misleading appearance of the actor.","{""justification_status"": true, ""knowledge_status"": false, ""luck_status"": false, ""luck_type"": false}",1.0,6.0,0.16666666666666666
+el_013,epistemic_luck,intervening_luck,,medium,claude-haiku-4-5,2026-07-05T20:13:42.476876+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,2.591,"```json
+{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Chris has justified belief based on what appears to be a parrot in the shop, and the proposition is true, but his belief is true only by accident—the bird he observed is mechanical, not the manager's actual home parrot, making his justification disconnected from the actual truth.""
+}
+```",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Chris has justified belief based on what appears to be a parrot in the shop, and the proposition is true, but his belief is true only by accident\u2014the bird he observed is mechanical, not the manager's actual home parrot, making his justification disconnected from the actual truth.""}","Chris has justified belief based on what appears to be a parrot in the shop, and the proposition is true, but his belief is true only by accident—the bird he observed is mechanical, not the manager's actual home parrot, making his justification disconnected from the actual truth.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_014,epistemic_luck,intervening_luck,,medium,claude-haiku-4-5,2026-07-05T20:13:45.068451+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,1.441,"```json
+{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""knows"",
+  ""luck_status"": ""no_epistemic_luck"",
+  ""luck_type"": ""none"",
+  ""brief_explanation"": ""Kimmy's belief that there is a beaver in the lake is justified by her visual experience, the proposition is true (a real beaver is present), and her belief was formed through a reliable perceptual process that successfully tracked the truth, despite being caused by a decoy.""
+}
+```",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none"", ""brief_explanation"": ""Kimmy's belief that there is a beaver in the lake is justified by her visual experience, the proposition is true (a real beaver is present), and her belief was formed through a reliable perceptual process that successfully tracked the truth, despite being caused by a decoy.""}","Kimmy's belief that there is a beaver in the lake is justified by her visual experience, the proposition is true (a real beaver is present), and her belief was formed through a reliable perceptual process that successfully tracked the truth, despite being caused by a decoy.","{""justification_status"": true, ""knowledge_status"": false, ""luck_status"": false, ""luck_type"": false}",1.0,6.0,0.16666666666666666
+el_015,epistemic_luck,intervening_luck,,medium,claude-haiku-4-5,2026-07-05T20:13:46.509277+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,1.681,"```json
+{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""knows"",
+  ""luck_status"": ""no_epistemic_luck"",
+  ""luck_type"": ""none"",
+  ""brief_explanation"": ""Shaun has justified true belief based on his visual evidence of what appears to be a monkey, and the proposition is true because an actual monkey is in the library, making this ordinary knowledge despite the misleading appearance he observed.""
+}
+```",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none"", ""brief_explanation"": ""Shaun has justified true belief based on his visual evidence of what appears to be a monkey, and the proposition is true because an actual monkey is in the library, making this ordinary knowledge despite the misleading appearance he observed.""}","Shaun has justified true belief based on his visual evidence of what appears to be a monkey, and the proposition is true because an actual monkey is in the library, making this ordinary knowledge despite the misleading appearance he observed.","{""justification_status"": true, ""knowledge_status"": false, ""luck_status"": false, ""luck_type"": false}",1.0,6.0,0.16666666666666666
+el_016,epistemic_luck,intervening_luck,,hard,claude-haiku-4-5,2026-07-05T20:13:48.190701+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,1.19,"```json
+{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Justin has justified belief based on the timer reading, and the proposition is true, but the timer's accidental restart at precisely the right moment constitutes intervening luck that defeats knowledge.""
+}
+```",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Justin has justified belief based on the timer reading, and the proposition is true, but the timer's accidental restart at precisely the right moment constitutes intervening luck that defeats knowledge.""}","Justin has justified belief based on the timer reading, and the proposition is true, but the timer's accidental restart at precisely the right moment constitutes intervening luck that defeats knowledge.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_017,epistemic_luck,intervening_luck,,medium,claude-haiku-4-5,2026-07-05T20:13:49.380752+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,1.445,"```json
+{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Mara's belief is justified by the display and happens to be true, but the truth depends on a lucky coincidence (the meeting being moved back to 4B) rather than on her belief-forming method successfully tracking reality.""
+}
+```",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Mara's belief is justified by the display and happens to be true, but the truth depends on a lucky coincidence (the meeting being moved back to 4B) rather than on her belief-forming method successfully tracking reality.""}","Mara's belief is justified by the display and happens to be true, but the truth depends on a lucky coincidence (the meeting being moved back to 4B) rather than on her belief-forming method successfully tracking reality.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_018,epistemic_luck,intervening_luck,,medium,claude-haiku-4-5,2026-07-05T20:13:50.825512+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,1.905,"```json
+{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""knows"",
+  ""luck_status"": ""no_epistemic_luck"",
+  ""luck_type"": ""none"",
+  ""brief_explanation"": ""Evan has adequate justification from the visible label, his belief is true (a package addressed to him is indeed on the porch), and there is no knowledge-defeating luck because his justified belief-forming method (reading the label) successfully tracked the truth despite the mislabeled package.""
+}
+```",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none"", ""brief_explanation"": ""Evan has adequate justification from the visible label, his belief is true (a package addressed to him is indeed on the porch), and there is no knowledge-defeating luck because his justified belief-forming method (reading the label) successfully tracked the truth despite the mislabeled package.""}","Evan has adequate justification from the visible label, his belief is true (a package addressed to him is indeed on the porch), and there is no knowledge-defeating luck because his justified belief-forming method (reading the label) successfully tracked the truth despite the mislabeled package.","{""justification_status"": true, ""knowledge_status"": false, ""luck_status"": false, ""luck_type"": false}",1.0,6.0,0.16666666666666666
+el_019,epistemic_luck,intervening_luck,,medium,claude-haiku-4-5,2026-07-05T20:13:52.730976+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,1.552,"```json
+{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Priya's belief is true and based on what appears to be adequate justification (the poster), but the poster is unreliable and her belief is true only by accident—the theater happened to reinstate Hamlet after canceling the replacement show that morning, making her correct through intervening luck rather than through her belief-forming method.""
+}
+```",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Priya's belief is true and based on what appears to be adequate justification (the poster), but the poster is unreliable and her belief is true only by accident\u2014the theater happened to reinstate Hamlet after canceling the replacement show that morning, making her correct through intervening luck rather than through her belief-forming method.""}","Priya's belief is true and based on what appears to be adequate justification (the poster), but the poster is unreliable and her belief is true only by accident—the theater happened to reinstate Hamlet after canceling the replacement show that morning, making her correct through intervening luck rather than through her belief-forming method.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_020,epistemic_luck,intervening_luck,,medium,claude-haiku-4-5,2026-07-05T20:13:54.283356+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,1.543,"```json
+{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Ben has adequate justification from the posted menu, and his belief is true because the chef independently made mushroom soup, but this truth is disconnected from his justifying reason—he is correct by accident rather than through reliable belief formation.""
+}
+```",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Ben has adequate justification from the posted menu, and his belief is true because the chef independently made mushroom soup, but this truth is disconnected from his justifying reason\u2014he is correct by accident rather than through reliable belief formation.""}","Ben has adequate justification from the posted menu, and his belief is true because the chef independently made mushroom soup, but this truth is disconnected from his justifying reason—he is correct by accident rather than through reliable belief formation.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_021,epistemic_luck,intervening_luck,,medium,claude-haiku-4-5,2026-07-05T20:13:55.826237+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,1.754,"```json
+{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""knows"",
+  ""luck_status"": ""no_epistemic_luck"",
+  ""luck_type"": ""none"",
+  ""brief_explanation"": ""Talia has adequate justification from the printed schedule, her belief is true because Chen ultimately does give the lecture, and while the path to truth involved contingent events, her justified belief-forming method (checking the schedule) reliably tracked the truth in this case.""
+}
+```",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none"", ""brief_explanation"": ""Talia has adequate justification from the printed schedule, her belief is true because Chen ultimately does give the lecture, and while the path to truth involved contingent events, her justified belief-forming method (checking the schedule) reliably tracked the truth in this case.""}","Talia has adequate justification from the printed schedule, her belief is true because Chen ultimately does give the lecture, and while the path to truth involved contingent events, her justified belief-forming method (checking the schedule) reliably tracked the truth in this case.","{""justification_status"": true, ""knowledge_status"": false, ""luck_status"": false, ""luck_type"": false}",1.0,6.0,0.16666666666666666
+el_022,epistemic_luck,intervening_luck,,medium,claude-haiku-4-5,2026-07-05T20:13:57.580134+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,1.56,"```json
+{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Diego has justified belief based on visual evidence, and the target proposition is true, but his belief is true only by luck—he's looking at the wrong bicycle while his neighbor's actual bicycle happens to be nearby.""
+}
+```",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Diego has justified belief based on visual evidence, and the target proposition is true, but his belief is true only by luck\u2014he's looking at the wrong bicycle while his neighbor's actual bicycle happens to be nearby.""}","Diego has justified belief based on visual evidence, and the target proposition is true, but his belief is true only by luck—he's looking at the wrong bicycle while his neighbor's actual bicycle happens to be nearby.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_023,epistemic_luck,environmental_luck,,hard,claude-haiku-4-5,2026-07-05T20:13:59.140690+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck""}",,1.822,"```json
+{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""environmental_luck"",
+  ""brief_explanation"": ""Alex's belief is justified by his visual perception and is true, but the environment is epistemically unsafe—he could easily have been wrong since nearly all similar-looking trees in that environment are artificial fakes, making his true belief a matter of environmental luck rather than reliable belief formation.""
+}
+```",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck"", ""brief_explanation"": ""Alex's belief is justified by his visual perception and is true, but the environment is epistemically unsafe\u2014he could easily have been wrong since nearly all similar-looking trees in that environment are artificial fakes, making his true belief a matter of environmental luck rather than reliable belief formation.""}","Alex's belief is justified by his visual perception and is true, but the environment is epistemically unsafe—he could easily have been wrong since nearly all similar-looking trees in that environment are artificial fakes, making his true belief a matter of environmental luck rather than reliable belief formation.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_024,epistemic_luck,environmental_luck,,hard,claude-haiku-4-5,2026-07-05T20:14:00.963086+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck""}",,1.457,"```json
+{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""environmental_luck"",
+  ""brief_explanation"": ""Micky's belief-forming process (visual inspection) is reasonable, but the warehouse environment is epistemically unsafe—nearly all similar paintings are replicas, so his method would easily have produced a false belief, making his true belief a matter of lucky circumstance rather than knowledge.""
+}
+```",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck"", ""brief_explanation"": ""Micky's belief-forming process (visual inspection) is reasonable, but the warehouse environment is epistemically unsafe\u2014nearly all similar paintings are replicas, so his method would easily have produced a false belief, making his true belief a matter of lucky circumstance rather than knowledge.""}","Micky's belief-forming process (visual inspection) is reasonable, but the warehouse environment is epistemically unsafe—nearly all similar paintings are replicas, so his method would easily have produced a false belief, making his true belief a matter of lucky circumstance rather than knowledge.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_025,epistemic_luck,environmental_luck,,hard,claude-haiku-4-5,2026-07-05T20:14:02.420564+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck""}",,1.265,"```json
+{
+  ""justification_status"": ""unjustified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""lucky_guess"",
+  ""brief_explanation"": ""Dana has no adequate epistemic support for her belief; she merely happened to pick the one real insulin bottle among many props by chance, making her true belief a lucky guess rather than knowledge.""
+}
+```",True,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""lucky_guess"", ""brief_explanation"": ""Dana has no adequate epistemic support for her belief; she merely happened to pick the one real insulin bottle among many props by chance, making her true belief a lucky guess rather than knowledge.""}","Dana has no adequate epistemic support for her belief; she merely happened to pick the one real insulin bottle among many props by chance, making her true belief a lucky guess rather than knowledge.","{""justification_status"": false, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": false}",3.0,6.0,0.5
+el_026,epistemic_luck,environmental_luck,,hard,claude-haiku-4-5,2026-07-05T20:14:03.685408+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck""}",,1.518,"```json
+{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""environmental_luck"",
+  ""brief_explanation"": ""Harper's belief is justified by the login screen she observes and happens to be true, but the environment is epistemically unsafe—nearly identical observations in that showroom would yield false beliefs, making her true belief environmentally lucky rather than knowledge.""
+}
+```",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck"", ""brief_explanation"": ""Harper's belief is justified by the login screen she observes and happens to be true, but the environment is epistemically unsafe\u2014nearly identical observations in that showroom would yield false beliefs, making her true belief environmentally lucky rather than knowledge.""}","Harper's belief is justified by the login screen she observes and happens to be true, but the environment is epistemically unsafe—nearly identical observations in that showroom would yield false beliefs, making her true belief environmentally lucky rather than knowledge.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_027,epistemic_luck,environmental_luck,,hard,claude-haiku-4-5,2026-07-05T20:14:05.203207+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck""}",,1.548,"```json
+{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""environmental_luck"",
+  ""brief_explanation"": ""Noah's belief is justified by reasonable perceptual evidence, and the proposition is true, but the environment is epistemically unsafe—nearly all similar jackets are replicas, so his belief-forming method could easily have yielded a false belief in this context.""
+}
+```",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck"", ""brief_explanation"": ""Noah's belief is justified by reasonable perceptual evidence, and the proposition is true, but the environment is epistemically unsafe\u2014nearly all similar jackets are replicas, so his belief-forming method could easily have yielded a false belief in this context.""}","Noah's belief is justified by reasonable perceptual evidence, and the proposition is true, but the environment is epistemically unsafe—nearly all similar jackets are replicas, so his belief-forming method could easily have yielded a false belief in this context.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_028,epistemic_luck,environmental_luck,,hard,claude-haiku-4-5,2026-07-05T20:14:06.751725+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck""}",,1.218,"```json
+{
+  ""justification_status"": ""unjustified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""environmental_luck"",
+  ""brief_explanation"": ""Sofia's belief-forming process (visual inspection) is unreliable in this particular environment where nearly all orchids are artificial, making her true belief epistemically unsafe despite being correct.""
+}
+```",True,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck"", ""brief_explanation"": ""Sofia's belief-forming process (visual inspection) is unreliable in this particular environment where nearly all orchids are artificial, making her true belief epistemically unsafe despite being correct.""}","Sofia's belief-forming process (visual inspection) is unreliable in this particular environment where nearly all orchids are artificial, making her true belief epistemically unsafe despite being correct.","{""justification_status"": false, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",5.0,6.0,0.8333333333333334
+el_029,epistemic_luck,environmental_luck,,hard,claude-haiku-4-5,2026-07-05T20:14:07.970205+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck""}",,1.285,"```json
+{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""environmental_luck"",
+  ""brief_explanation"": ""Caleb's belief is justified by observing the moving second hand, and the watch is indeed working, but he is in an epistemically unsafe environment where nearly identical watches are nonworking displays, making his true belief unreliably formed in that context.""
+}
+```",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck"", ""brief_explanation"": ""Caleb's belief is justified by observing the moving second hand, and the watch is indeed working, but he is in an epistemically unsafe environment where nearly identical watches are nonworking displays, making his true belief unreliably formed in that context.""}","Caleb's belief is justified by observing the moving second hand, and the watch is indeed working, but he is in an epistemically unsafe environment where nearly identical watches are nonworking displays, making his true belief unreliably formed in that context.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_030,epistemic_luck,environmental_luck,,hard,claude-haiku-4-5,2026-07-05T20:14:09.255647+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck""}",,1.308,"```json
+{
+  ""justification_status"": ""unjustified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""environmental_luck"",
+  ""brief_explanation"": ""Iris's belief is true but formed in an epistemically unsafe environment where nearly identical swords are plastic props, making her belief-forming process unreliable in that context despite this particular instance being correct.""
+}
+```",True,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck"", ""brief_explanation"": ""Iris's belief is true but formed in an epistemically unsafe environment where nearly identical swords are plastic props, making her belief-forming process unreliable in that context despite this particular instance being correct.""}","Iris's belief is true but formed in an epistemically unsafe environment where nearly identical swords are plastic props, making her belief-forming process unreliable in that context despite this particular instance being correct.","{""justification_status"": false, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",5.0,6.0,0.8333333333333334
+rr_ded_001_direct_contradiction_cat,rational_reasoning,deduction,1.0,,claude-haiku-4-5,2026-07-05T20:14:10.563659+00:00,"{""reasoning_pattern"": ""direct_contradiction"", ""logical_status"": ""inconsistent"", ""rational_constraint"": ""belief_set_requires_revision""}",,1.01,"```json
+{
+  ""reasoning_pattern"": ""direct_contradiction"",
+  ""logical_status"": ""inconsistent"",
+  ""rational_constraint"": ""belief_set_requires_revision"",
+  ""brief_explanation"": ""Blake simultaneously holds that the clinic cat ate a mouse and did not eat a mouse in the same context, which is a direct logical contradiction that makes the belief set inconsistent and rationally untenable.""
+}
+```",True,"{""reasoning_pattern"": ""direct_contradiction"", ""logical_status"": ""inconsistent"", ""rational_constraint"": ""belief_set_requires_revision"", ""brief_explanation"": ""Blake simultaneously holds that the clinic cat ate a mouse and did not eat a mouse in the same context, which is a direct logical contradiction that makes the belief set inconsistent and rationally untenable.""}","Blake simultaneously holds that the clinic cat ate a mouse and did not eat a mouse in the same context, which is a direct logical contradiction that makes the belief set inconsistent and rationally untenable.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_002_direct_contradiction_fish,rational_reasoning,deduction,2.0,,claude-haiku-4-5,2026-07-05T20:14:11.574107+00:00,"{""reasoning_pattern"": ""direct_contradiction"", ""logical_status"": ""inconsistent"", ""rational_constraint"": ""belief_set_requires_revision""}",,1.231,"```json
+{
+  ""reasoning_pattern"": ""direct_contradiction"",
+  ""logical_status"": ""inconsistent"",
+  ""rational_constraint"": ""belief_set_requires_revision"",
+  ""brief_explanation"": ""Noah simultaneously holds that the aquarium fish is a mammal and is not a mammal, which is a direct logical contradiction that makes his belief set inconsistent and rationally untenable.""
+}
+```",True,"{""reasoning_pattern"": ""direct_contradiction"", ""logical_status"": ""inconsistent"", ""rational_constraint"": ""belief_set_requires_revision"", ""brief_explanation"": ""Noah simultaneously holds that the aquarium fish is a mammal and is not a mammal, which is a direct logical contradiction that makes his belief set inconsistent and rationally untenable.""}","Noah simultaneously holds that the aquarium fish is a mammal and is not a mammal, which is a direct logical contradiction that makes his belief set inconsistent and rationally untenable.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_003_joint_inconsistency_three_claims,rational_reasoning,deduction,1.0,,claude-haiku-4-5,2026-07-05T20:14:12.805077+00:00,"{""reasoning_pattern"": ""joint_inconsistency"", ""logical_status"": ""inconsistent"", ""rational_constraint"": ""belief_set_requires_revision""}",,1.084,"```json
+{
+  ""reasoning_pattern"": ""direct_contradiction"",
+  ""logical_status"": ""inconsistent"",
+  ""rational_constraint"": ""belief_set_requires_revision"",
+  ""brief_explanation"": ""Liam's belief set contains a direct contradiction: he believes p, q, and r are all true while simultaneously believing they cannot all be true together, making the set logically inconsistent and rationally indefensible without revision.""
+}
+```",True,"{""reasoning_pattern"": ""direct_contradiction"", ""logical_status"": ""inconsistent"", ""rational_constraint"": ""belief_set_requires_revision"", ""brief_explanation"": ""Liam's belief set contains a direct contradiction: he believes p, q, and r are all true while simultaneously believing they cannot all be true together, making the set logically inconsistent and rationally indefensible without revision.""}","Liam's belief set contains a direct contradiction: he believes p, q, and r are all true while simultaneously believing they cannot all be true together, making the set logically inconsistent and rationally indefensible without revision.","{""reasoning_pattern"": false, ""logical_status"": true, ""rational_constraint"": true}",2.0,3.0,0.6666666666666666
+rr_ded_004_joint_inconsistency_irrelevant_revision,rational_reasoning,deduction,2.0,,claude-haiku-4-5,2026-07-05T20:14:13.889500+00:00,"{""reasoning_pattern"": ""joint_inconsistency"", ""logical_status"": ""inconsistent"", ""rational_constraint"": ""belief_set_requires_revision""}",,2.272,"```json
+{
+  ""reasoning_pattern"": ""direct_contradiction"",
+  ""logical_status"": ""inconsistent"",
+  ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"",
+  ""brief_explanation"": ""Brooke's beliefs entail that Kiwi is both a fish (via gills) and not a fish, creating a direct logical contradiction that cannot be resolved by rejecting the unrelated belief about snakes; at least one of the core premises must be revised.""
+}
+```",True,"{""reasoning_pattern"": ""direct_contradiction"", ""logical_status"": ""inconsistent"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"", ""brief_explanation"": ""Brooke's beliefs entail that Kiwi is both a fish (via gills) and not a fish, creating a direct logical contradiction that cannot be resolved by rejecting the unrelated belief about snakes; at least one of the core premises must be revised.""}","Brooke's beliefs entail that Kiwi is both a fish (via gills) and not a fish, creating a direct logical contradiction that cannot be resolved by rejecting the unrelated belief about snakes; at least one of the core premises must be revised.","{""reasoning_pattern"": false, ""logical_status"": true, ""rational_constraint"": false}",1.0,3.0,0.3333333333333333
+rr_ded_005_consistent_belief_set_lights,rational_reasoning,deduction,1.0,,claude-haiku-4-5,2026-07-05T20:14:16.162090+00:00,"{""reasoning_pattern"": ""consistent_belief_set"", ""logical_status"": ""consistent"", ""rational_constraint"": ""belief_set_may_be_retained""}",,1.648,"```json
+{
+  ""reasoning_pattern"": ""consistent_belief_set"",
+  ""logical_status"": ""consistent"",
+  ""rational_constraint"": ""belief_set_may_be_retained"",
+  ""brief_explanation"": ""Elena's three beliefs are mutually consistent: lights on, screen not blank, and the negation of (lights on AND screen blank) are all simultaneously satisfiable without logical contradiction.""
+}
+```",True,"{""reasoning_pattern"": ""consistent_belief_set"", ""logical_status"": ""consistent"", ""rational_constraint"": ""belief_set_may_be_retained"", ""brief_explanation"": ""Elena's three beliefs are mutually consistent: lights on, screen not blank, and the negation of (lights on AND screen blank) are all simultaneously satisfiable without logical contradiction.""}","Elena's three beliefs are mutually consistent: lights on, screen not blank, and the negation of (lights on AND screen blank) are all simultaneously satisfiable without logical contradiction.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_006_consistent_belief_set_train,rational_reasoning,deduction,2.0,,claude-haiku-4-5,2026-07-05T20:14:17.810100+00:00,"{""reasoning_pattern"": ""consistent_belief_set"", ""logical_status"": ""consistent"", ""rational_constraint"": ""belief_set_may_be_retained""}",,1.782,"```json
+{
+  ""reasoning_pattern"": ""consistent_belief_set"",
+  ""logical_status"": ""consistent"",
+  ""rational_constraint"": ""belief_set_may_be_retained"",
+  ""brief_explanation"": ""Robin's three beliefs form a consistent set: the disjunction (train arrives at 8:00 OR is delayed) is satisfied by the first disjunct being true, which is also what Robin believes, and the negation of the second disjunct aligns with this, so no logical contradiction arises.""
+}
+```",True,"{""reasoning_pattern"": ""consistent_belief_set"", ""logical_status"": ""consistent"", ""rational_constraint"": ""belief_set_may_be_retained"", ""brief_explanation"": ""Robin's three beliefs form a consistent set: the disjunction (train arrives at 8:00 OR is delayed) is satisfied by the first disjunct being true, which is also what Robin believes, and the negation of the second disjunct aligns with this, so no logical contradiction arises.""}","Robin's three beliefs form a consistent set: the disjunction (train arrives at 8:00 OR is delayed) is satisfied by the first disjunct being true, which is also what Robin believes, and the negation of the second disjunct aligns with this, so no logical contradiction arises.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_007_modus_ponens_raise,rational_reasoning,deduction,1.0,,claude-haiku-4-5,2026-07-05T20:14:19.592072+00:00,"{""reasoning_pattern"": ""modus_ponens"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised""}",,1.067,"```json
+{
+  ""reasoning_pattern"": ""modus_ponens"",
+  ""logical_status"": ""valid"",
+  ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"",
+  ""brief_explanation"": ""Yuki's beliefs form a valid modus ponens argument: she believes P (will get a raise), believes P→Q (if raise then buy car), and therefore validly concludes Q (will buy car).""
+}
+```",True,"{""reasoning_pattern"": ""modus_ponens"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"", ""brief_explanation"": ""Yuki's beliefs form a valid modus ponens argument: she believes P (will get a raise), believes P\u2192Q (if raise then buy car), and therefore validly concludes Q (will buy car).""}","Yuki's beliefs form a valid modus ponens argument: she believes P (will get a raise), believes P→Q (if raise then buy car), and therefore validly concludes Q (will buy car).","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_008_modus_ponens_bizarre_premises,rational_reasoning,deduction,2.0,,claude-haiku-4-5,2026-07-05T20:14:20.659527+00:00,"{""reasoning_pattern"": ""modus_ponens"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised""}",,1.424,"```json
+{
+  ""reasoning_pattern"": ""modus_ponens"",
+  ""logical_status"": ""valid"",
+  ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"",
+  ""brief_explanation"": ""Travis's beliefs form a valid modus ponens: he believes cats play basketball (antecedent) and that if cats play basketball then submarines make horrible chefs (conditional), so the consequent logically follows.""
+}
+```",True,"{""reasoning_pattern"": ""modus_ponens"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"", ""brief_explanation"": ""Travis's beliefs form a valid modus ponens: he believes cats play basketball (antecedent) and that if cats play basketball then submarines make horrible chefs (conditional), so the consequent logically follows.""}","Travis's beliefs form a valid modus ponens: he believes cats play basketball (antecedent) and that if cats play basketball then submarines make horrible chefs (conditional), so the consequent logically follows.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_009_modus_ponens_rejects_conclusion,rational_reasoning,deduction,3.0,,claude-haiku-4-5,2026-07-05T20:14:22.083330+00:00,"{""reasoning_pattern"": ""modus_ponens"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised""}",,1.836,"```json
+{
+  ""reasoning_pattern"": ""modus_ponens"",
+  ""logical_status"": ""valid"",
+  ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"",
+  ""brief_explanation"": ""Johnny's two beliefs (if rain then wet patio; it is raining) validly entail the target proposition by modus ponens, so rational consistency requires him to accept it or revise one of his premises.""
+}
+```",True,"{""reasoning_pattern"": ""modus_ponens"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"", ""brief_explanation"": ""Johnny's two beliefs (if rain then wet patio; it is raining) validly entail the target proposition by modus ponens, so rational consistency requires him to accept it or revise one of his premises.""}","Johnny's two beliefs (if rain then wet patio; it is raining) validly entail the target proposition by modus ponens, so rational consistency requires him to accept it or revise one of his premises.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_010_modus_tollens_flowers,rational_reasoning,deduction,1.0,,claude-haiku-4-5,2026-07-05T20:14:23.919382+00:00,"{""reasoning_pattern"": ""modus_tollens"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised""}",,1.365,"```json
+{
+  ""reasoning_pattern"": ""modus_tollens"",
+  ""logical_status"": ""valid"",
+  ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"",
+  ""brief_explanation"": ""Adam's beliefs form a valid modus tollens argument: if rain then bloom, bloom is false, therefore rain is false; the target proposition is deductively entailed and must be accepted given the premises.""
+}
+```",True,"{""reasoning_pattern"": ""modus_tollens"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"", ""brief_explanation"": ""Adam's beliefs form a valid modus tollens argument: if rain then bloom, bloom is false, therefore rain is false; the target proposition is deductively entailed and must be accepted given the premises.""}","Adam's beliefs form a valid modus tollens argument: if rain then bloom, bloom is false, therefore rain is false; the target proposition is deductively entailed and must be accepted given the premises.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_011_modus_tollens_cookies,rational_reasoning,deduction,2.0,,claude-haiku-4-5,2026-07-05T20:14:25.284245+00:00,"{""reasoning_pattern"": ""modus_tollens"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised""}",,1.246,"```json
+{
+  ""reasoning_pattern"": ""modus_tollens"",
+  ""logical_status"": ""valid"",
+  ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"",
+  ""brief_explanation"": ""Mia's beliefs form a valid modus tollens: if burnt cookies then smoke; no smoke; therefore not burnt cookies—a deductively valid inference that rationally requires acceptance of the target proposition given the premises.""
+}
+```",True,"{""reasoning_pattern"": ""modus_tollens"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"", ""brief_explanation"": ""Mia's beliefs form a valid modus tollens: if burnt cookies then smoke; no smoke; therefore not burnt cookies\u2014a deductively valid inference that rationally requires acceptance of the target proposition given the premises.""}",Mia's beliefs form a valid modus tollens: if burnt cookies then smoke; no smoke; therefore not burnt cookies—a deductively valid inference that rationally requires acceptance of the target proposition given the premises.,"{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_012_modus_tollens_dog,rational_reasoning,deduction,3.0,,claude-haiku-4-5,2026-07-05T20:14:26.530597+00:00,"{""reasoning_pattern"": ""modus_tollens"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised""}",,1.433,"```json
+{
+  ""reasoning_pattern"": ""modus_tollens"",
+  ""logical_status"": ""valid"",
+  ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"",
+  ""brief_explanation"": ""Chris's beliefs form a valid modus tollens: if upstairs then trouble; not trouble; therefore not upstairs, which deductively entails the target proposition.""
+}
+```",True,"{""reasoning_pattern"": ""modus_tollens"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"", ""brief_explanation"": ""Chris's beliefs form a valid modus tollens: if upstairs then trouble; not trouble; therefore not upstairs, which deductively entails the target proposition.""}","Chris's beliefs form a valid modus tollens: if upstairs then trouble; not trouble; therefore not upstairs, which deductively entails the target proposition.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_013_affirming_consequent_baseball,rational_reasoning,deduction,1.0,,claude-haiku-4-5,2026-07-05T20:14:27.963798+00:00,"{""reasoning_pattern"": ""affirming_the_consequent"", ""logical_status"": ""invalid"", ""rational_constraint"": ""target_not_supported_by_deduction""}",,1.023,"```json
+{
+  ""reasoning_pattern"": ""affirming_the_consequent"",
+  ""logical_status"": ""invalid"",
+  ""rational_constraint"": ""target_not_supported_by_deduction"",
+  ""brief_explanation"": ""Noah infers the antecedent from the consequent of a conditional, which is a fallacious pattern; the team could be playing for reasons other than it being hot.""
+}
+```",True,"{""reasoning_pattern"": ""affirming_the_consequent"", ""logical_status"": ""invalid"", ""rational_constraint"": ""target_not_supported_by_deduction"", ""brief_explanation"": ""Noah infers the antecedent from the consequent of a conditional, which is a fallacious pattern; the team could be playing for reasons other than it being hot.""}","Noah infers the antecedent from the consequent of a conditional, which is a fallacious pattern; the team could be playing for reasons other than it being hot.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_014_affirming_consequent_alarm,rational_reasoning,deduction,2.0,,claude-haiku-4-5,2026-07-05T20:14:28.986478+00:00,"{""reasoning_pattern"": ""affirming_the_consequent"", ""logical_status"": ""invalid"", ""rational_constraint"": ""target_not_supported_by_deduction""}",,1.16,"```json
+{
+  ""reasoning_pattern"": ""affirming_the_consequent"",
+  ""logical_status"": ""invalid"",
+  ""rational_constraint"": ""target_not_supported_by_deduction"",
+  ""brief_explanation"": ""Priya infers the antecedent from the consequent of a conditional, which is a fallacious pattern; the alarm sounding is consistent with the case being opened but does not logically entail it.""
+}
+```",True,"{""reasoning_pattern"": ""affirming_the_consequent"", ""logical_status"": ""invalid"", ""rational_constraint"": ""target_not_supported_by_deduction"", ""brief_explanation"": ""Priya infers the antecedent from the consequent of a conditional, which is a fallacious pattern; the alarm sounding is consistent with the case being opened but does not logically entail it.""}","Priya infers the antecedent from the consequent of a conditional, which is a fallacious pattern; the alarm sounding is consistent with the case being opened but does not logically entail it.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_015_affirming_consequent_light,rational_reasoning,deduction,3.0,,claude-haiku-4-5,2026-07-05T20:14:30.146990+00:00,"{""reasoning_pattern"": ""affirming_the_consequent"", ""logical_status"": ""invalid"", ""rational_constraint"": ""target_not_supported_by_deduction""}",,1.684,"```json
+{
+  ""reasoning_pattern"": ""affirming_the_consequent"",
+  ""logical_status"": ""invalid"",
+  ""rational_constraint"": ""target_not_supported_by_deduction"",
+  ""brief_explanation"": ""Omar's inference commits the fallacy of affirming the consequent: from 'if P then Q' and 'Q is true,' he concludes 'P is true,' which does not logically follow since Q could be true for other reasons.""
+}
+```",True,"{""reasoning_pattern"": ""affirming_the_consequent"", ""logical_status"": ""invalid"", ""rational_constraint"": ""target_not_supported_by_deduction"", ""brief_explanation"": ""Omar's inference commits the fallacy of affirming the consequent: from 'if P then Q' and 'Q is true,' he concludes 'P is true,' which does not logically follow since Q could be true for other reasons.""}","Omar's inference commits the fallacy of affirming the consequent: from 'if P then Q' and 'Q is true,' he concludes 'P is true,' which does not logically follow since Q could be true for other reasons.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_016_denying_antecedent_file,rational_reasoning,deduction,1.0,,claude-haiku-4-5,2026-07-05T20:14:31.831197+00:00,"{""reasoning_pattern"": ""denying_the_antecedent"", ""logical_status"": ""invalid"", ""rational_constraint"": ""target_not_supported_by_deduction""}",,1.176,"```json
+{
+  ""reasoning_pattern"": ""denying_the_antecedent"",
+  ""logical_status"": ""invalid"",
+  ""rational_constraint"": ""target_not_supported_by_deduction"",
+  ""brief_explanation"": ""Sam's inference commits the fallacy of denying the antecedent: from 'if encrypted then password required' and 'not encrypted,' one cannot validly conclude 'no password required,' since unencrypted files may still require passwords for other reasons.""
+}
+```",True,"{""reasoning_pattern"": ""denying_the_antecedent"", ""logical_status"": ""invalid"", ""rational_constraint"": ""target_not_supported_by_deduction"", ""brief_explanation"": ""Sam's inference commits the fallacy of denying the antecedent: from 'if encrypted then password required' and 'not encrypted,' one cannot validly conclude 'no password required,' since unencrypted files may still require passwords for other reasons.""}","Sam's inference commits the fallacy of denying the antecedent: from 'if encrypted then password required' and 'not encrypted,' one cannot validly conclude 'no password required,' since unencrypted files may still require passwords for other reasons.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_017_denying_antecedent_traffic,rational_reasoning,deduction,2.0,,claude-haiku-4-5,2026-07-05T20:14:33.007535+00:00,"{""reasoning_pattern"": ""denying_the_antecedent"", ""logical_status"": ""invalid"", ""rational_constraint"": ""target_not_supported_by_deduction""}",,1.292,"```json
+{
+  ""reasoning_pattern"": ""denying_the_antecedent"",
+  ""logical_status"": ""invalid"",
+  ""rational_constraint"": ""target_not_supported_by_deduction"",
+  ""brief_explanation"": ""Nadia denies the antecedent (traffic is not heavy) and concludes the consequent is false, which is a fallacious inference pattern that does not logically support the target proposition.""
+}
+```",True,"{""reasoning_pattern"": ""denying_the_antecedent"", ""logical_status"": ""invalid"", ""rational_constraint"": ""target_not_supported_by_deduction"", ""brief_explanation"": ""Nadia denies the antecedent (traffic is not heavy) and concludes the consequent is false, which is a fallacious inference pattern that does not logically support the target proposition.""}","Nadia denies the antecedent (traffic is not heavy) and concludes the consequent is false, which is a fallacious inference pattern that does not logically support the target proposition.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_018_denying_antecedent_sprinkler,rational_reasoning,deduction,3.0,,claude-haiku-4-5,2026-07-05T20:14:34.299630+00:00,"{""reasoning_pattern"": ""denying_the_antecedent"", ""logical_status"": ""invalid"", ""rational_constraint"": ""target_not_supported_by_deduction""}",,1.354,"```json
+{
+  ""reasoning_pattern"": ""denying_the_antecedent"",
+  ""logical_status"": ""invalid"",
+  ""rational_constraint"": ""target_not_supported_by_deduction"",
+  ""brief_explanation"": ""Leo's inference commits the fallacy of denying the antecedent: from 'if sprinkler on then grass wet' and 'sprinkler not on,' he cannot validly conclude the grass is not wet, since the grass could be wet from other sources.""
+}
+```",True,"{""reasoning_pattern"": ""denying_the_antecedent"", ""logical_status"": ""invalid"", ""rational_constraint"": ""target_not_supported_by_deduction"", ""brief_explanation"": ""Leo's inference commits the fallacy of denying the antecedent: from 'if sprinkler on then grass wet' and 'sprinkler not on,' he cannot validly conclude the grass is not wet, since the grass could be wet from other sources.""}","Leo's inference commits the fallacy of denying the antecedent: from 'if sprinkler on then grass wet' and 'sprinkler not on,' he cannot validly conclude the grass is not wet, since the grass could be wet from other sources.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_019_hypothetical_syllogism_mermaids,rational_reasoning,deduction,1.0,,claude-haiku-4-5,2026-07-05T20:14:35.653577+00:00,"{""reasoning_pattern"": ""hypothetical_syllogism"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised""}",,1.024,"```json
+{
+  ""reasoning_pattern"": ""hypothetical_syllogism"",
+  ""logical_status"": ""valid"",
+  ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"",
+  ""brief_explanation"": ""Jenny's two conditional beliefs chain together via hypothetical syllogism to validly entail the target conditional: if dogs are raccoons, then mermaids exist.""
+}
+```",True,"{""reasoning_pattern"": ""hypothetical_syllogism"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"", ""brief_explanation"": ""Jenny's two conditional beliefs chain together via hypothetical syllogism to validly entail the target conditional: if dogs are raccoons, then mermaids exist.""}","Jenny's two conditional beliefs chain together via hypothetical syllogism to validly entail the target conditional: if dogs are raccoons, then mermaids exist.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_020_hypothetical_syllogism_breakfast,rational_reasoning,deduction,2.0,,claude-haiku-4-5,2026-07-05T20:14:36.678193+00:00,"{""reasoning_pattern"": ""hypothetical_syllogism"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised""}",,1.152,"```json
+{
+  ""reasoning_pattern"": ""hypothetical_syllogism"",
+  ""logical_status"": ""valid"",
+  ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"",
+  ""brief_explanation"": ""Sarah's two conditional beliefs chain together via hypothetical syllogism to validly entail the target conditional, so rational consistency requires accepting it.""
+}
+```",True,"{""reasoning_pattern"": ""hypothetical_syllogism"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"", ""brief_explanation"": ""Sarah's two conditional beliefs chain together via hypothetical syllogism to validly entail the target conditional, so rational consistency requires accepting it.""}","Sarah's two conditional beliefs chain together via hypothetical syllogism to validly entail the target conditional, so rational consistency requires accepting it.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_021_disjunctive_syllogism_tacos,rational_reasoning,deduction,1.0,,claude-haiku-4-5,2026-07-05T20:14:37.830615+00:00,"{""reasoning_pattern"": ""disjunctive_syllogism"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised""}",,1.303,"```json
+{
+  ""reasoning_pattern"": ""disjunctive_syllogism"",
+  ""logical_status"": ""valid"",
+  ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"",
+  ""brief_explanation"": ""Justin's beliefs form a valid disjunctive syllogism: either tacos or pizza (disjunction), pizza will not be served (negation of right disjunct), therefore tacos will be served (affirmation of left disjunct).""
+}
+```",True,"{""reasoning_pattern"": ""disjunctive_syllogism"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"", ""brief_explanation"": ""Justin's beliefs form a valid disjunctive syllogism: either tacos or pizza (disjunction), pizza will not be served (negation of right disjunct), therefore tacos will be served (affirmation of left disjunct).""}","Justin's beliefs form a valid disjunctive syllogism: either tacos or pizza (disjunction), pizza will not be served (negation of right disjunct), therefore tacos will be served (affirmation of left disjunct).","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_022_disjunctive_syllogism_croissants,rational_reasoning,deduction,2.0,,claude-haiku-4-5,2026-07-05T20:14:39.134201+00:00,"{""reasoning_pattern"": ""disjunctive_syllogism"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised""}",,1.123,"```json
+{
+  ""reasoning_pattern"": ""disjunctive_syllogism"",
+  ""logical_status"": ""valid"",
+  ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"",
+  ""brief_explanation"": ""Chelsey's beliefs form a disjunctive syllogism: either muffins or croissants, not muffins, therefore croissants—a valid deductive inference that rationally requires accepting the target proposition.""
+}
+```",True,"{""reasoning_pattern"": ""disjunctive_syllogism"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"", ""brief_explanation"": ""Chelsey's beliefs form a disjunctive syllogism: either muffins or croissants, not muffins, therefore croissants\u2014a valid deductive inference that rationally requires accepting the target proposition.""}","Chelsey's beliefs form a disjunctive syllogism: either muffins or croissants, not muffins, therefore croissants—a valid deductive inference that rationally requires accepting the target proposition.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_023_constructive_dilemma_monster,rational_reasoning,deduction,1.0,,claude-haiku-4-5,2026-07-05T20:14:40.257556+00:00,"{""reasoning_pattern"": ""constructive_dilemma"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised""}",,1.25,"```json
+{
+  ""reasoning_pattern"": ""constructive_dilemma"",
+  ""logical_status"": ""valid"",
+  ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"",
+  ""brief_explanation"": ""Natalie's beliefs form a constructive dilemma: either disjunct (LA west of Chicago or Spain north of Finland) leads to one of the target disjuncts (dogs are mammals or Loch Ness monster is real), making the target proposition a valid deductive consequence.""
+}
+```",True,"{""reasoning_pattern"": ""constructive_dilemma"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"", ""brief_explanation"": ""Natalie's beliefs form a constructive dilemma: either disjunct (LA west of Chicago or Spain north of Finland) leads to one of the target disjuncts (dogs are mammals or Loch Ness monster is real), making the target proposition a valid deductive consequence.""}","Natalie's beliefs form a constructive dilemma: either disjunct (LA west of Chicago or Spain north of Finland) leads to one of the target disjuncts (dogs are mammals or Loch Ness monster is real), making the target proposition a valid deductive consequence.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_024_constructive_dilemma_backup,rational_reasoning,deduction,2.0,,claude-haiku-4-5,2026-07-05T20:14:41.507311+00:00,"{""reasoning_pattern"": ""constructive_dilemma"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised""}",,1.449,"```json
+{
+  ""reasoning_pattern"": ""constructive_dilemma"",
+  ""logical_status"": ""valid"",
+  ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"",
+  ""brief_explanation"": ""Marcus's three beliefs form a constructive dilemma: a disjunction (backup local or cloud) combined with two conditionals (local→laptop, cloud→account) validly entails the disjunctive conclusion (laptop or account).""
+}
+```",True,"{""reasoning_pattern"": ""constructive_dilemma"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"", ""brief_explanation"": ""Marcus's three beliefs form a constructive dilemma: a disjunction (backup local or cloud) combined with two conditionals (local\u2192laptop, cloud\u2192account) validly entails the disjunctive conclusion (laptop or account).""}","Marcus's three beliefs form a constructive dilemma: a disjunction (backup local or cloud) combined with two conditionals (local→laptop, cloud→account) validly entails the disjunctive conclusion (laptop or account).","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_025_simplification_saturn,rational_reasoning,deduction,1.0,,claude-haiku-4-5,2026-07-05T20:14:42.956067+00:00,"{""reasoning_pattern"": ""simplification"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_may_be_accepted""}",,1.208,"```json
+{
+  ""reasoning_pattern"": ""simplification"",
+  ""logical_status"": ""valid"",
+  ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"",
+  ""brief_explanation"": ""Christian's inference from the conjunction (roses are red AND Saturn has rings) to Saturn has rings is the valid logical rule of simplification, which permits extracting either conjunct from a true conjunction.""
+}
+```",True,"{""reasoning_pattern"": ""simplification"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"", ""brief_explanation"": ""Christian's inference from the conjunction (roses are red AND Saturn has rings) to Saturn has rings is the valid logical rule of simplification, which permits extracting either conjunct from a true conjunction.""}","Christian's inference from the conjunction (roses are red AND Saturn has rings) to Saturn has rings is the valid logical rule of simplification, which permits extracting either conjunct from a true conjunction.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": false}",2.0,3.0,0.6666666666666666
+rr_ded_026_addition_wine,rational_reasoning,deduction,1.0,,claude-haiku-4-5,2026-07-05T20:14:44.163894+00:00,"{""reasoning_pattern"": ""addition"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_may_be_accepted""}",,1.194,"```json
+{
+  ""reasoning_pattern"": ""addition"",
+  ""logical_status"": ""valid"",
+  ""rational_constraint"": ""target_may_be_accepted"",
+  ""brief_explanation"": ""Linda validly applies the addition rule by inferring a disjunction from a single conjunct; if wine is produced in France is true, then the disjunction is necessarily true regardless of the second disjunct's truth value.""
+}
+```",True,"{""reasoning_pattern"": ""addition"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_may_be_accepted"", ""brief_explanation"": ""Linda validly applies the addition rule by inferring a disjunction from a single conjunct; if wine is produced in France is true, then the disjunction is necessarily true regardless of the second disjunct's truth value.""}","Linda validly applies the addition rule by inferring a disjunction from a single conjunct; if wine is produced in France is true, then the disjunction is necessarily true regardless of the second disjunct's truth value.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_027_categorical_syllogism_humans,rational_reasoning,deduction,1.0,,claude-haiku-4-5,2026-07-05T20:14:45.357768+00:00,"{""reasoning_pattern"": ""categorical_syllogism"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised""}",,1.071,"```json
+{
+  ""reasoning_pattern"": ""categorical_syllogism"",
+  ""logical_status"": ""valid"",
+  ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"",
+  ""brief_explanation"": ""Paul's beliefs form a valid categorical syllogism (all humans have brains; Paul is human; therefore Paul has a brain), which deductively entails the target proposition and rationally requires its acceptance.""
+}
+```",True,"{""reasoning_pattern"": ""categorical_syllogism"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"", ""brief_explanation"": ""Paul's beliefs form a valid categorical syllogism (all humans have brains; Paul is human; therefore Paul has a brain), which deductively entails the target proposition and rationally requires its acceptance.""}","Paul's beliefs form a valid categorical syllogism (all humans have brains; Paul is human; therefore Paul has a brain), which deductively entails the target proposition and rationally requires its acceptance.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_028_categorical_syllogism_spies,rational_reasoning,deduction,2.0,,claude-haiku-4-5,2026-07-05T20:14:46.429017+00:00,"{""reasoning_pattern"": ""categorical_syllogism"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised""}",,1.187,"```json
+{
+  ""reasoning_pattern"": ""modus_ponens"",
+  ""logical_status"": ""valid"",
+  ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"",
+  ""brief_explanation"": ""Benny's beliefs that all spies wear hats and his mailman is a spy validly entail via modus ponens that his mailman wears a hat, so rational consistency requires either accepting this conclusion or revising one of the premises.""
+}
+```",True,"{""reasoning_pattern"": ""modus_ponens"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"", ""brief_explanation"": ""Benny's beliefs that all spies wear hats and his mailman is a spy validly entail via modus ponens that his mailman wears a hat, so rational consistency requires either accepting this conclusion or revising one of the premises.""}","Benny's beliefs that all spies wear hats and his mailman is a spy validly entail via modus ponens that his mailman wears a hat, so rational consistency requires either accepting this conclusion or revising one of the premises.","{""reasoning_pattern"": false, ""logical_status"": true, ""rational_constraint"": true}",2.0,3.0,0.6666666666666666
+rr_ded_029_non_sequitur_mercury,rational_reasoning,deduction,1.0,,claude-haiku-4-5,2026-07-05T20:14:47.616297+00:00,"{""reasoning_pattern"": ""non_sequitur"", ""logical_status"": ""invalid"", ""rational_constraint"": ""target_not_supported_by_deduction""}",,1.195,"```json
+{
+  ""reasoning_pattern"": ""non_sequitur"",
+  ""logical_status"": ""invalid"",
+  ""rational_constraint"": ""target_not_supported_by_deduction"",
+  ""brief_explanation"": ""Anupam's belief about Patrick's location provides no logical connection to the claim about Mercury's orbital position, making this an invalid inference with no deductive support for the target proposition.""
+}
+```",True,"{""reasoning_pattern"": ""non_sequitur"", ""logical_status"": ""invalid"", ""rational_constraint"": ""target_not_supported_by_deduction"", ""brief_explanation"": ""Anupam's belief about Patrick's location provides no logical connection to the claim about Mercury's orbital position, making this an invalid inference with no deductive support for the target proposition.""}","Anupam's belief about Patrick's location provides no logical connection to the claim about Mercury's orbital position, making this an invalid inference with no deductive support for the target proposition.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_030_equivocation_bank,rational_reasoning,deduction,1.0,,claude-haiku-4-5,2026-07-05T20:14:48.811529+00:00,"{""reasoning_pattern"": ""equivocation"", ""logical_status"": ""invalid"", ""rational_constraint"": ""target_not_supported_by_deduction""}",,1.072,"```json
+{
+  ""reasoning_pattern"": ""equivocation"",
+  ""logical_status"": ""invalid"",
+  ""rational_constraint"": ""target_not_supported_by_deduction"",
+  ""brief_explanation"": ""Dana's conclusion commits the fallacy of equivocation by using 'bank' in two different senses (river bank vs. financial institution), making the inference logically invalid despite superficial structural similarity.""
+}
+```",True,"{""reasoning_pattern"": ""equivocation"", ""logical_status"": ""invalid"", ""rational_constraint"": ""target_not_supported_by_deduction"", ""brief_explanation"": ""Dana's conclusion commits the fallacy of equivocation by using 'bank' in two different senses (river bank vs. financial institution), making the inference logically invalid despite superficial structural similarity.""}","Dana's conclusion commits the fallacy of equivocation by using 'bank' in two different senses (river bank vs. financial institution), making the inference logically invalid despite superficial structural similarity.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rc_001_package_placebo,defeaters,rebuttal_and_undercut,,,claude-haiku-4-5,2026-07-05T20:14:49.883559+00:00,"{""defeater_present"": ""no"", ""defeater_type"": ""placebo"", ""belief_update"": ""no_revision_from_new_information""}",,1.484,"```json
+{
+  ""defeater_present"": ""no"",
+  ""defeater_type"": ""placebo"",
+  ""belief_update"": ""no_revision_from_new_information"",
+  ""brief_explanation"": ""The color of the delivery truck is irrelevant to whether the package actually arrived, so it provides no genuine defeater to Ana's belief based on the tracking page confirmation.""
+}
+```",True,"{""defeater_present"": ""no"", ""defeater_type"": ""placebo"", ""belief_update"": ""no_revision_from_new_information"", ""brief_explanation"": ""The color of the delivery truck is irrelevant to whether the package actually arrived, so it provides no genuine defeater to Ana's belief based on the tracking page confirmation.""}","The color of the delivery truck is irrelevant to whether the package actually arrived, so it provides no genuine defeater to Ana's belief based on the tracking page confirmation.","{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_002_package_rebutting,defeaters,rebuttal_and_undercut,,,claude-haiku-4-5,2026-07-05T20:14:51.367859+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""belief_update"": ""revise_belief""}",,1.114,"```json
+{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""rebutting_defeater"",
+  ""belief_update"": ""revise_belief"",
+  ""brief_explanation"": ""The warehouse notification directly contradicts the delivery confirmation, providing evidence that the package has not actually arrived, which rebuts Ana's original belief.""
+}
+```",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""belief_update"": ""revise_belief"", ""brief_explanation"": ""The warehouse notification directly contradicts the delivery confirmation, providing evidence that the package has not actually arrived, which rebuts Ana's original belief.""}","The warehouse notification directly contradicts the delivery confirmation, providing evidence that the package has not actually arrived, which rebuts Ana's original belief.","{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_003_package_undercutting,defeaters,rebuttal_and_undercut,,,claude-haiku-4-5,2026-07-05T20:14:52.482039+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief""}",,1.165,"```json
+{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""undercutting_defeater"",
+  ""belief_update"": ""revise_belief"",
+  ""brief_explanation"": ""The discovery that the tracking system has issued false delivery notices to neighbors undermines the reliability of Ana's original evidence without directly contradicting that the package arrived, warranting reduced confidence in her belief.""
+}
+```",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief"", ""brief_explanation"": ""The discovery that the tracking system has issued false delivery notices to neighbors undermines the reliability of Ana's original evidence without directly contradicting that the package arrived, warranting reduced confidence in her belief.""}","The discovery that the tracking system has issued false delivery notices to neighbors undermines the reliability of Ana's original evidence without directly contradicting that the package arrived, warranting reduced confidence in her belief.","{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_004_dolphin_placebo,defeaters,rebuttal_and_undercut,,,claude-haiku-4-5,2026-07-05T20:14:53.647398+00:00,"{""defeater_present"": ""no"", ""defeater_type"": ""placebo"", ""belief_update"": ""no_revision_from_new_information""}",,0.994,"```json
+{
+  ""defeater_present"": ""no"",
+  ""defeater_type"": ""placebo"",
+  ""belief_update"": ""no_revision_from_new_information"",
+  ""brief_explanation"": ""The observation of pelicans flying above the beach is unrelated to whether there is a dolphin in the water and provides no reason to doubt Jerry's original observation.""
+}
+```",True,"{""defeater_present"": ""no"", ""defeater_type"": ""placebo"", ""belief_update"": ""no_revision_from_new_information"", ""brief_explanation"": ""The observation of pelicans flying above the beach is unrelated to whether there is a dolphin in the water and provides no reason to doubt Jerry's original observation.""}",The observation of pelicans flying above the beach is unrelated to whether there is a dolphin in the water and provides no reason to doubt Jerry's original observation.,"{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_005_dolphin_rebutting,defeaters,rebuttal_and_undercut,,,claude-haiku-4-5,2026-07-05T20:14:54.641946+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""belief_update"": ""revise_belief""}",,1.478,"```json
+{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""rebutting_defeater"",
+  ""belief_update"": ""revise_belief"",
+  ""brief_explanation"": ""The reliable marine biologist's testimony directly contradicts Jerry's belief by asserting the animal is a shark, not a dolphin, providing a rebutting defeater that should lead Jerry to revise his belief.""
+}
+```",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""belief_update"": ""revise_belief"", ""brief_explanation"": ""The reliable marine biologist's testimony directly contradicts Jerry's belief by asserting the animal is a shark, not a dolphin, providing a rebutting defeater that should lead Jerry to revise his belief.""}","The reliable marine biologist's testimony directly contradicts Jerry's belief by asserting the animal is a shark, not a dolphin, providing a rebutting defeater that should lead Jerry to revise his belief.","{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_006_dolphin_undercutting,defeaters,rebuttal_and_undercut,,,claude-haiku-4-5,2026-07-05T20:14:56.119639+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief""}",,1.856,"```json
+{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""undercutting_defeater"",
+  ""belief_update"": ""revise_belief"",
+  ""brief_explanation"": ""The doctor's information about medication-induced hallucinations undermines the reliability of Jerry's perceptual evidence without directly contradicting the proposition, requiring him to revise his confidence in the belief.""
+}
+```",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief"", ""brief_explanation"": ""The doctor's information about medication-induced hallucinations undermines the reliability of Jerry's perceptual evidence without directly contradicting the proposition, requiring him to revise his confidence in the belief.""}","The doctor's information about medication-induced hallucinations undermines the reliability of Jerry's perceptual evidence without directly contradicting the proposition, requiring him to revise his confidence in the belief.","{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_007_burrito_placebo,defeaters,rebuttal_and_undercut,,,claude-haiku-4-5,2026-07-05T20:14:57.975714+00:00,"{""defeater_present"": ""no"", ""defeater_type"": ""placebo"", ""belief_update"": ""no_revision_from_new_information""}",,0.939,"```json
+{
+  ""defeater_present"": ""no"",
+  ""defeater_type"": ""placebo"",
+  ""belief_update"": ""no_revision_from_new_information"",
+  ""brief_explanation"": ""The distance of the restaurant is irrelevant to whether the burritos are giant, so this information does not defeat Adam's belief about burrito size.""
+}
+```",True,"{""defeater_present"": ""no"", ""defeater_type"": ""placebo"", ""belief_update"": ""no_revision_from_new_information"", ""brief_explanation"": ""The distance of the restaurant is irrelevant to whether the burritos are giant, so this information does not defeat Adam's belief about burrito size.""}","The distance of the restaurant is irrelevant to whether the burritos are giant, so this information does not defeat Adam's belief about burrito size.","{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_008_burrito_rebutting,defeaters,rebuttal_and_undercut,,,claude-haiku-4-5,2026-07-05T20:14:58.914934+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""belief_update"": ""revise_belief""}",,1.201,"```json
+{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""rebutting_defeater"",
+  ""belief_update"": ""revise_belief"",
+  ""brief_explanation"": ""The photographic evidence from the review directly contradicts Adam's belief that the burritos are giant by showing they are small, constituting a rebutting defeater that should lead him to revise his belief.""
+}
+```",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""belief_update"": ""revise_belief"", ""brief_explanation"": ""The photographic evidence from the review directly contradicts Adam's belief that the burritos are giant by showing they are small, constituting a rebutting defeater that should lead him to revise his belief.""}","The photographic evidence from the review directly contradicts Adam's belief that the burritos are giant by showing they are small, constituting a rebutting defeater that should lead him to revise his belief.","{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_009_burrito_undercutting,defeaters,rebuttal_and_undercut,,,claude-haiku-4-5,2026-07-05T20:15:00.115543+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief""}",,1.068,"```json
+{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""undercutting_defeater"",
+  ""belief_update"": ""revise_belief"",
+  ""brief_explanation"": ""Learning that Adam's source has repeatedly lied about burritos and tacos undermines the reliability of the friend's testimony, which was Adam's sole justification for believing the burritos are giant.""
+}
+```",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief"", ""brief_explanation"": ""Learning that Adam's source has repeatedly lied about burritos and tacos undermines the reliability of the friend's testimony, which was Adam's sole justification for believing the burritos are giant.""}","Learning that Adam's source has repeatedly lied about burritos and tacos undermines the reliability of the friend's testimony, which was Adam's sole justification for believing the burritos are giant.","{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_010_antarctica_placebo,defeaters,rebuttal_and_undercut,,,claude-haiku-4-5,2026-07-05T20:15:01.183865+00:00,"{""defeater_present"": ""no"", ""defeater_type"": ""placebo"", ""belief_update"": ""no_revision_from_new_information""}",,0.883,"```json
+{
+  ""defeater_present"": ""no"",
+  ""defeater_type"": ""placebo"",
+  ""belief_update"": ""no_revision_from_new_information"",
+  ""brief_explanation"": ""The information that a geography textbook has a blue cover is irrelevant to whether Antarctica is real and provides no genuine defeater to Cindy's belief.""
+}
+```",True,"{""defeater_present"": ""no"", ""defeater_type"": ""placebo"", ""belief_update"": ""no_revision_from_new_information"", ""brief_explanation"": ""The information that a geography textbook has a blue cover is irrelevant to whether Antarctica is real and provides no genuine defeater to Cindy's belief.""}",The information that a geography textbook has a blue cover is irrelevant to whether Antarctica is real and provides no genuine defeater to Cindy's belief.,"{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_011_antarctica_rebutting,defeaters,rebuttal_and_undercut,,,claude-haiku-4-5,2026-07-05T20:15:02.066521+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""belief_update"": ""revise_belief""}",,1.234,"```json
+{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""rebutting_defeater"",
+  ""belief_update"": ""revise_belief"",
+  ""brief_explanation"": ""The reliable textbook directly contradicts Cindy's belief by asserting that Antarctica is real, providing a rebutting defeater that should lead her to revise her position.""
+}
+```",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""belief_update"": ""revise_belief"", ""brief_explanation"": ""The reliable textbook directly contradicts Cindy's belief by asserting that Antarctica is real, providing a rebutting defeater that should lead her to revise her position.""}","The reliable textbook directly contradicts Cindy's belief by asserting that Antarctica is real, providing a rebutting defeater that should lead her to revise her position.","{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_012_antarctica_undercutting,defeaters,rebuttal_and_undercut,,,claude-haiku-4-5,2026-07-05T20:15:03.300863+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief""}",,1.803,"```json
+{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""undercutting_defeater"",
+  ""belief_update"": ""revise_belief"",
+  ""brief_explanation"": ""The new information undermines the reliability of Cindy's justification (lack of personal observation) for believing Antarctica is not real, without directly contradicting the proposition itself.""
+}
+```",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief"", ""brief_explanation"": ""The new information undermines the reliability of Cindy's justification (lack of personal observation) for believing Antarctica is not real, without directly contradicting the proposition itself.""}","The new information undermines the reliability of Cindy's justification (lack of personal observation) for believing Antarctica is not real, without directly contradicting the proposition itself.","{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_013_aliens_placebo,defeaters,rebuttal_and_undercut,,,claude-haiku-4-5,2026-07-05T20:15:05.104261+00:00,"{""defeater_present"": ""no"", ""defeater_type"": ""placebo"", ""belief_update"": ""no_revision_from_new_information""}",,1.004,"```json
+{
+  ""defeater_present"": ""no"",
+  ""defeater_type"": ""placebo"",
+  ""belief_update"": ""no_revision_from_new_information"",
+  ""brief_explanation"": ""Learning that others also saw the bright object corroborates Kyle's observation rather than undermining his belief that aliens are attacking, so no genuine defeater is present.""
+}
+```",True,"{""defeater_present"": ""no"", ""defeater_type"": ""placebo"", ""belief_update"": ""no_revision_from_new_information"", ""brief_explanation"": ""Learning that others also saw the bright object corroborates Kyle's observation rather than undermining his belief that aliens are attacking, so no genuine defeater is present.""}","Learning that others also saw the bright object corroborates Kyle's observation rather than undermining his belief that aliens are attacking, so no genuine defeater is present.","{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_014_aliens_rebutting,defeaters,rebuttal_and_undercut,,,claude-haiku-4-5,2026-07-05T20:15:06.108551+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""belief_update"": ""revise_belief""}",,1.056,"```json
+{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""rebutting_defeater"",
+  ""belief_update"": ""revise_belief"",
+  ""brief_explanation"": ""The news report that the bright object was a meteor directly rebuts Kyle's reason for believing aliens are attacking, providing an alternative explanation for the observed phenomenon.""
+}
+```",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""belief_update"": ""revise_belief"", ""brief_explanation"": ""The news report that the bright object was a meteor directly rebuts Kyle's reason for believing aliens are attacking, providing an alternative explanation for the observed phenomenon.""}","The news report that the bright object was a meteor directly rebuts Kyle's reason for believing aliens are attacking, providing an alternative explanation for the observed phenomenon.","{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_015_aliens_undercutting,defeaters,rebuttal_and_undercut,,,claude-haiku-4-5,2026-07-05T20:15:07.164595+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief""}",,1.141,"```json
+{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""undercutting_defeater"",
+  ""belief_update"": ""revise_belief"",
+  ""brief_explanation"": ""The doctor's information about Kyle's untreated vision problem undermines the reliability of his perceptual evidence for aliens attacking, providing an undercutting defeater that should prompt belief revision.""
+}
+```",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief"", ""brief_explanation"": ""The doctor's information about Kyle's untreated vision problem undermines the reliability of his perceptual evidence for aliens attacking, providing an undercutting defeater that should prompt belief revision.""}","The doctor's information about Kyle's untreated vision problem undermines the reliability of his perceptual evidence for aliens attacking, providing an undercutting defeater that should prompt belief revision.","{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_016_scuba_placebo,defeaters,rebuttal_and_undercut,,,claude-haiku-4-5,2026-07-05T20:15:08.305855+00:00,"{""defeater_present"": ""no"", ""defeater_type"": ""placebo"", ""belief_update"": ""no_revision_from_new_information""}",,1.115,"```json
+{
+  ""defeater_present"": ""no"",
+  ""defeater_type"": ""placebo"",
+  ""belief_update"": ""no_revision_from_new_information"",
+  ""brief_explanation"": ""The fact that her hotel lacks direct marina access does not undercut or rebut the truth of the proposition that a boat can take her scuba diving; it only affects practical accessibility.""
+}
+```",True,"{""defeater_present"": ""no"", ""defeater_type"": ""placebo"", ""belief_update"": ""no_revision_from_new_information"", ""brief_explanation"": ""The fact that her hotel lacks direct marina access does not undercut or rebut the truth of the proposition that a boat can take her scuba diving; it only affects practical accessibility.""}",The fact that her hotel lacks direct marina access does not undercut or rebut the truth of the proposition that a boat can take her scuba diving; it only affects practical accessibility.,"{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_017_scuba_rebutting,defeaters,rebuttal_and_undercut,,,claude-haiku-4-5,2026-07-05T20:15:09.420582+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""belief_update"": ""revise_belief""}",,1.695,"```json
+{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""rebutting_defeater"",
+  ""belief_update"": ""revise_belief"",
+  ""brief_explanation"": ""The information that the marina is closed and no boats are taking passengers directly contradicts the proposition that a boat can take Brooke scuba diving today, providing a rebutting defeater to her original belief.""
+}
+```",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""belief_update"": ""revise_belief"", ""brief_explanation"": ""The information that the marina is closed and no boats are taking passengers directly contradicts the proposition that a boat can take Brooke scuba diving today, providing a rebutting defeater to her original belief.""}","The information that the marina is closed and no boats are taking passengers directly contradicts the proposition that a boat can take Brooke scuba diving today, providing a rebutting defeater to her original belief.","{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_018_scuba_undercutting,defeaters,rebuttal_and_undercut,,,claude-haiku-4-5,2026-07-05T20:15:11.115731+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief""}",,1.159,"```json
+{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""undercutting_defeater"",
+  ""belief_update"": ""revise_belief"",
+  ""brief_explanation"": ""The discovery that many tour guides are imposters undermines the reliability of Brooke's source (the tour guide), creating doubt about whether the original testimony should be trusted.""
+}
+```",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief"", ""brief_explanation"": ""The discovery that many tour guides are imposters undermines the reliability of Brooke's source (the tour guide), creating doubt about whether the original testimony should be trusted.""}","The discovery that many tour guides are imposters undermines the reliability of Brooke's source (the tour guide), creating doubt about whether the original testimony should be trusted.","{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_019_dog_fleas_placebo,defeaters,rebuttal_and_undercut,,,claude-haiku-4-5,2026-07-05T20:15:12.274502+00:00,"{""defeater_present"": ""no"", ""defeater_type"": ""placebo"", ""belief_update"": ""no_revision_from_new_information""}",,1.042,"```json
+{
+  ""defeater_present"": ""no"",
+  ""defeater_type"": ""placebo"",
+  ""belief_update"": ""no_revision_from_new_information"",
+  ""brief_explanation"": ""The information that the dog has a new blue collar is irrelevant to whether the dog has fleas and provides no genuine defeater to Evan's belief based on the scratching evidence.""
+}
+```",True,"{""defeater_present"": ""no"", ""defeater_type"": ""placebo"", ""belief_update"": ""no_revision_from_new_information"", ""brief_explanation"": ""The information that the dog has a new blue collar is irrelevant to whether the dog has fleas and provides no genuine defeater to Evan's belief based on the scratching evidence.""}",The information that the dog has a new blue collar is irrelevant to whether the dog has fleas and provides no genuine defeater to Evan's belief based on the scratching evidence.,"{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_020_dog_fleas_rebutting,defeaters,rebuttal_and_undercut,,,claude-haiku-4-5,2026-07-05T20:15:13.316213+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""belief_update"": ""revise_belief""}",,1.456,"```json
+{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""rebutting_defeater"",
+  ""belief_update"": ""revise_belief"",
+  ""brief_explanation"": ""The veterinarian's examination directly contradicts Evan's belief by providing evidence that the dog has no fleas and an alternative explanation for the scratching behavior.""
+}
+```",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""belief_update"": ""revise_belief"", ""brief_explanation"": ""The veterinarian's examination directly contradicts Evan's belief by providing evidence that the dog has no fleas and an alternative explanation for the scratching behavior.""}",The veterinarian's examination directly contradicts Evan's belief by providing evidence that the dog has no fleas and an alternative explanation for the scratching behavior.,"{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_021_dog_fleas_undercutting,defeaters,rebuttal_and_undercut,,,claude-haiku-4-5,2026-07-05T20:15:14.772390+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief""}",,1.389,"```json
+{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""undercutting_defeater"",
+  ""belief_update"": ""revise_belief"",
+  ""brief_explanation"": ""The new information undermines Evan's justification for believing his dog has fleas by providing an alternative explanation for the scratching sounds he observed, thereby undercutting his original evidence.""
+}
+```",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief"", ""brief_explanation"": ""The new information undermines Evan's justification for believing his dog has fleas by providing an alternative explanation for the scratching sounds he observed, thereby undercutting his original evidence.""}","The new information undermines Evan's justification for believing his dog has fleas by providing an alternative explanation for the scratching sounds he observed, thereby undercutting his original evidence.","{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_022_bank_placebo,defeaters,rebuttal_and_undercut,,,claude-haiku-4-5,2026-07-05T20:15:16.161526+00:00,"{""defeater_present"": ""no"", ""defeater_type"": ""placebo"", ""belief_update"": ""no_revision_from_new_information""}",,0.994,"```json
+{
+  ""defeater_present"": ""no"",
+  ""defeater_type"": ""placebo"",
+  ""belief_update"": ""no_revision_from_new_information"",
+  ""brief_explanation"": ""The information that the bank repainted its lobby is irrelevant to whether the bank's operating hours are 9 a.m. to 6 p.m. today and does not undermine Maya's reliable source (the official website).""
+}
+```",True,"{""defeater_present"": ""no"", ""defeater_type"": ""placebo"", ""belief_update"": ""no_revision_from_new_information"", ""brief_explanation"": ""The information that the bank repainted its lobby is irrelevant to whether the bank's operating hours are 9 a.m. to 6 p.m. today and does not undermine Maya's reliable source (the official website).""}",The information that the bank repainted its lobby is irrelevant to whether the bank's operating hours are 9 a.m. to 6 p.m. today and does not undermine Maya's reliable source (the official website).,"{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_023_bank_rebutting,defeaters,rebuttal_and_undercut,,,claude-haiku-4-5,2026-07-05T20:15:17.155234+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""belief_update"": ""revise_belief""}",,1.057,"```json
+{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""rebutting_defeater"",
+  ""belief_update"": ""revise_belief"",
+  ""brief_explanation"": ""The bank's official text alert directly contradicts Maya's belief by stating the branch closed at 3 p.m., providing a rebutting defeater that should lead her to revise her belief about the 6 p.m. closing time.""
+}
+```",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""belief_update"": ""revise_belief"", ""brief_explanation"": ""The bank's official text alert directly contradicts Maya's belief by stating the branch closed at 3 p.m., providing a rebutting defeater that should lead her to revise her belief about the 6 p.m. closing time.""}","The bank's official text alert directly contradicts Maya's belief by stating the branch closed at 3 p.m., providing a rebutting defeater that should lead her to revise her belief about the 6 p.m. closing time.","{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_024_bank_undercutting,defeaters,rebuttal_and_undercut,,,claude-haiku-4-5,2026-07-05T20:15:18.212002+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief""}",,0.948,"```json
+{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""undercutting_defeater"",
+  ""belief_update"": ""revise_belief"",
+  ""brief_explanation"": ""Learning that the website is unreliable and outdated undermines the justification for Maya's belief without directly contradicting the proposition itself.""
+}
+```",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief"", ""brief_explanation"": ""Learning that the website is unreliable and outdated undermines the justification for Maya's belief without directly contradicting the proposition itself.""}",Learning that the website is unreliable and outdated undermines the justification for Maya's belief without directly contradicting the proposition itself.,"{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_025_thermometer_placebo,defeaters,rebuttal_and_undercut,,,claude-haiku-4-5,2026-07-05T20:15:19.160572+00:00,"{""defeater_present"": ""no"", ""defeater_type"": ""placebo"", ""belief_update"": ""no_revision_from_new_information""}",,1.019,"```json
+{
+  ""defeater_present"": ""no"",
+  ""defeater_type"": ""placebo"",
+  ""belief_update"": ""no_revision_from_new_information"",
+  ""brief_explanation"": ""Learning that the thermometer has a white plastic frame provides no relevant information about the thermometer's accuracy or reliability, so it neither rebuts nor undercuts Noah's justification for believing the room is 72 degrees.""
+}
+```",True,"{""defeater_present"": ""no"", ""defeater_type"": ""placebo"", ""belief_update"": ""no_revision_from_new_information"", ""brief_explanation"": ""Learning that the thermometer has a white plastic frame provides no relevant information about the thermometer's accuracy or reliability, so it neither rebuts nor undercuts Noah's justification for believing the room is 72 degrees.""}","Learning that the thermometer has a white plastic frame provides no relevant information about the thermometer's accuracy or reliability, so it neither rebuts nor undercuts Noah's justification for believing the room is 72 degrees.","{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_026_thermometer_rebutting,defeaters,rebuttal_and_undercut,,,claude-haiku-4-5,2026-07-05T20:15:20.180049+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""belief_update"": ""revise_belief""}",,1.353,"```json
+{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""rebutting_defeater"",
+  ""belief_update"": ""revise_belief"",
+  ""brief_explanation"": ""The newly calibrated digital thermometer reading 80 degrees directly contradicts Noah's belief that the room is 72 degrees, providing a rebutting defeater that should prompt him to revise his belief.""
+}
+```",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""belief_update"": ""revise_belief"", ""brief_explanation"": ""The newly calibrated digital thermometer reading 80 degrees directly contradicts Noah's belief that the room is 72 degrees, providing a rebutting defeater that should prompt him to revise his belief.""}","The newly calibrated digital thermometer reading 80 degrees directly contradicts Noah's belief that the room is 72 degrees, providing a rebutting defeater that should prompt him to revise his belief.","{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_027_thermometer_undercutting,defeaters,rebuttal_and_undercut,,,claude-haiku-4-5,2026-07-05T20:15:21.533357+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief""}",,1.698,"```json
+{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""undercutting_defeater"",
+  ""belief_update"": ""revise_belief"",
+  ""brief_explanation"": ""Learning that the thermometer has a weak battery and gives unreliable readings undermines the justification for Noah's belief without directly contradicting the proposition itself.""
+}
+```",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief"", ""brief_explanation"": ""Learning that the thermometer has a weak battery and gives unreliable readings undermines the justification for Noah's belief without directly contradicting the proposition itself.""}",Learning that the thermometer has a weak battery and gives unreliable readings undermines the justification for Noah's belief without directly contradicting the proposition itself.,"{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_028_meeting_placebo,defeaters,rebuttal_and_undercut,,,claude-haiku-4-5,2026-07-05T20:15:23.231769+00:00,"{""defeater_present"": ""no"", ""defeater_type"": ""placebo"", ""belief_update"": ""no_revision_from_new_information""}",,0.963,"```json
+{
+  ""defeater_present"": ""no"",
+  ""defeater_type"": ""placebo"",
+  ""belief_update"": ""no_revision_from_new_information"",
+  ""brief_explanation"": ""The information about new chairs in the meeting room is irrelevant to when the meeting starts and provides no reason to doubt the calendar invitation.""
+}
+```",True,"{""defeater_present"": ""no"", ""defeater_type"": ""placebo"", ""belief_update"": ""no_revision_from_new_information"", ""brief_explanation"": ""The information about new chairs in the meeting room is irrelevant to when the meeting starts and provides no reason to doubt the calendar invitation.""}",The information about new chairs in the meeting room is irrelevant to when the meeting starts and provides no reason to doubt the calendar invitation.,"{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_029_meeting_rebutting,defeaters,rebuttal_and_undercut,,,claude-haiku-4-5,2026-07-05T20:15:24.194563+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""belief_update"": ""revise_belief""}",,0.979,"```json
+{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""rebutting_defeater"",
+  ""belief_update"": ""revise_belief"",
+  ""brief_explanation"": ""The updated calendar invitation directly contradicts the original information, providing a rebutting defeater that undermines Rina's belief that the meeting starts at 2 p.m.""
+}
+```",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""belief_update"": ""revise_belief"", ""brief_explanation"": ""The updated calendar invitation directly contradicts the original information, providing a rebutting defeater that undermines Rina's belief that the meeting starts at 2 p.m.""}","The updated calendar invitation directly contradicts the original information, providing a rebutting defeater that undermines Rina's belief that the meeting starts at 2 p.m.","{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
+rc_030_meeting_undercutting,defeaters,rebuttal_and_undercut,,,claude-haiku-4-5,2026-07-05T20:15:25.173380+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief""}",,1.175,"```json
+{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""undercutting_defeater"",
+  ""belief_update"": ""revise_belief"",
+  ""brief_explanation"": ""Learning that the calendar system shows outdated times undermines the reliability of Rina's evidence (the calendar invitation) without directly contradicting the proposition, making this an undercutting defeater that should prompt belief revision.""
+}
+```",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""belief_update"": ""revise_belief"", ""brief_explanation"": ""Learning that the calendar system shows outdated times undermines the reliability of Rina's evidence (the calendar invitation) without directly contradicting the proposition, making this an undercutting defeater that should prompt belief revision.""}","Learning that the calendar system shows outdated times undermines the reliability of Rina's evidence (the calendar invitation) without directly contradicting the proposition, making this an undercutting defeater that should prompt belief revision.","{""defeater_present"": true, ""defeater_type"": true, ""belief_update"": true}",3.0,3.0,1.0
