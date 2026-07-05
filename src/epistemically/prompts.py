@@ -117,6 +117,41 @@ Target proposition:
 Question:
 {question}"""
 
+# Rubric-light prompt for the rational_reasoning module's deduction family:
+# reasoning pattern, logical status, and the rational constraint on the agent.
+RATIONAL_REASONING_PROMPT = """Your task is to assess a scenario and classify an agent's belief transition or belief set with respect to a target proposition.
+
+Return exactly four JSON fields:
+
+1. reasoning_pattern
+2. logical_status
+3. rational_constraint
+4. brief_explanation
+
+Allowed labels include:
+
+reasoning_pattern: direct_contradiction, joint_inconsistency, consistent_belief_set, modus_ponens, modus_tollens, affirming_the_consequent, denying_the_antecedent, hypothetical_syllogism, disjunctive_syllogism, constructive_dilemma, simplification, addition, categorical_syllogism, non_sequitur, equivocation
+logical_status: valid, invalid, consistent, inconsistent
+rational_constraint: target_must_be_accepted_or_premise_revised, target_may_be_accepted, target_not_supported_by_deduction, belief_set_may_be_retained, belief_set_requires_revision
+
+Important considerations for this task:
+- Focus on the logical relationship among the stated beliefs and the target proposition, not on whether the beliefs are actually true in the real world.
+- A conclusion can be deductively valid even when the premises are bizarre or false.
+- Do not treat a conclusion as deductively supported merely because it sounds plausible.
+- For invalid patterns, classify the target as not supported by deduction even if it might be true for some other reason.
+- For consistency cases, evaluate whether the belief set can be coherently retained or requires revision.
+- The brief_explanation should be one concise sentence explaining the classification.
+- Return JSON only.
+
+Scenario:
+{scenario}
+
+Target proposition:
+{target_proposition}
+
+Question:
+{question}"""
+
 # Rubric-light prompt for the revised defeaters module: presence, mainstream
 # type, and belief update.
 DEFEATERS_PROMPT = """Your task is to assess how new information should affect an agent's epistemic position with respect to a target proposition.
@@ -190,6 +225,12 @@ def build_prompt(case: EpistemicCase) -> str:
     }
     if case.module == "belief_acceptance_knowledge" and case.schema_family in family_templates:
         return family_templates[case.schema_family].format(
+            scenario=case.scenario,
+            target_proposition=case.target_proposition,
+            question=case.question,
+        )
+    if case.module == "rational_reasoning" and case.schema_family == "deduction":
+        return RATIONAL_REASONING_PROMPT.format(
             scenario=case.scenario,
             target_proposition=case.target_proposition,
             question=case.question,

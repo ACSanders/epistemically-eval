@@ -8,7 +8,8 @@ Module = Literal[
     "belief_acceptance_knowledge",
     "belief_truth_knowledge",  # legacy module name, still used by sample cases
     "gettier_luck",
-    "deduction_rationality",
+    "rational_reasoning",
+    "deduction_rationality",  # legacy module name, still used by sample cases
     "defeaters",
     "induction_updating",
 ]

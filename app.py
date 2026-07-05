@@ -842,7 +842,10 @@ claiming models literally believe or know anything. Current modules:
   acceptance and reason type), and `justification` (reason type and epistemic
   justification status)
 - **gettier_luck**: justified true belief undermined by epistemic luck
-- **deduction_rationality**: inference form, validity, and rational consistency
+- **rational_reasoning**: family `deduction` covering the reasoning pattern of a
+  belief transition or belief set, its logical status, and the rational
+  constraint it places on the agent (for example, accept the target or revise a
+  premise when the entailment is recognized and in view)
 - **defeaters**: family `rebuttal_and_undercut` covering defeater presence,
   mainstream defeater type, and whether new information requires belief revision
 
