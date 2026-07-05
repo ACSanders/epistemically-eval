@@ -35,7 +35,6 @@ from epistemically.app_utils import (  # noqa: E402
 
 RESULTS_DIR = REPO_ROOT / "data" / "results"
 CASES_DIR = REPO_ROOT / "data" / "cases"
-PREFERRED_RESULTS = RESULTS_DIR / "user_cases_results.csv"
 DEMO_RESULTS = RESULTS_DIR / "sample_results.csv"
 
 st.set_page_config(page_title="Epistemically", page_icon="◉", layout="wide")
@@ -68,11 +67,13 @@ if not csv_files:
 with st.container(border=True):
     col_file, col_models, col_modules = st.columns([2, 2, 2])
     with col_file:
-        default_index = (
-            csv_files.index(PREFERRED_RESULTS) if PREFERRED_RESULTS in csv_files else 0
-        )
+        # Default to the freshest run so a stale combined file never wins.
+        freshest = max(csv_files, key=lambda p: p.stat().st_mtime)
         selected_csv = st.selectbox(
-            "Results file", csv_files, index=default_index, format_func=results_label
+            "Results file",
+            csv_files,
+            index=csv_files.index(freshest),
+            format_func=results_label,
         )
     df = pd.read_csv(selected_csv)
     # Cases without a schema_family group under a placeholder so they still
@@ -98,8 +99,9 @@ with st.container(border=True):
         imperfect_only = st.toggle(
             "Show imperfect cases only",
             value=False,
-            help="Applies to Overview, Module Profile, and Case Explorer. "
-            "The Failure Gallery is always failure-focused.",
+            help="Applies to the single-run tabs (Lab Overview, Epistemic Modules, "
+            "Case Explorer). The Failure Gallery is always failure-focused, and "
+            "Model Comparison works across all result files.",
         )
 
 base = df[
@@ -108,7 +110,7 @@ base = df[
     & df["score"].between(score_range[0], score_range[1])
 ]
 fdf = base[base["score"] < 1.0] if imperfect_only else base
-st.caption(f"{len(fdf)} of {len(df)} rows selected — {results_label(selected_csv)}")
+st.caption(f"{len(fdf)} of {len(df)} rows selected ({results_label(selected_csv)})")
 
 api_errors = df["error"].fillna("").astype(str).str.strip().str.len() > 0
 parse_failures = df["parsed_ok"].astype(str).str.lower() != "true"
@@ -121,15 +123,15 @@ if api_errors.any() or parse_failures.any():
 
 cases_by_id, case_file_problems = load_case_lookup(CASES_DIR)
 for problem in case_file_problems:
-    st.warning(f"Case file issue — {problem}")
+    st.warning(f"Case file issue: {problem}")
 
-tab_overview, tab_profile, tab_failures, tab_explorer, tab_compare, tab_method = st.tabs(
+tab_overview, tab_compare, tab_profile, tab_failures, tab_explorer, tab_method = st.tabs(
     [
-        "Overview",
-        "Module Profile",
+        "Lab Overview",
+        "Model Comparison",
+        "Epistemic Modules",
         "Failure Gallery",
         "Case Explorer",
-        "Model Comparison",
         "Methodology",
     ]
 )
@@ -139,6 +141,10 @@ with tab_overview:
     if fdf.empty:
         st.info("No rows match the current filters.")
     else:
+        st.caption(
+            "Behavioral scores for the selected run: how reliably this model's "
+            "structured outputs match expected epistemic labels on this case set."
+        )
         module_means = fdf.groupby("module")["score"].mean()
         strongest = module_means.idxmax()
         weakest = module_means.idxmin()
@@ -211,6 +217,10 @@ with tab_profile:
     if fdf.empty:
         st.info("No rows match the current filters.")
     else:
+        st.caption(
+            "Per-module and per-schema-family profile for one model on the "
+            "selected run: the single-model view of the epistemic fingerprint."
+        )
         profile_models = sorted(fdf["model"].astype(str).unique())
         profile_model = (
             st.selectbox("Model", profile_models) if len(profile_models) > 1 else profile_models[0]
@@ -238,7 +248,7 @@ with tab_profile:
                 ),
                 showlegend=False,
             )
-            radar_fig = style_fig(radar, f"Module profile — {profile_model}", height=500)
+            radar_fig = style_fig(radar, f"Module profile: {profile_model}", height=500)
             # Room for the polar category labels on every side of the wheel.
             radar_fig.update_layout(margin=dict(l=90, r=90, t=60, b=70))
             st.plotly_chart(radar_fig, width="stretch")
@@ -277,7 +287,7 @@ with tab_profile:
             f"`{module_means.idxmin()}` ({module_means.min():.2f}). The schema families "
             f"with the lowest mean scores are:\n\n{weak_lines}\n\n"
             f"With {int(n_per_module.min())}–{int(n_per_module.max())} cases per module, "
-            "differences are directional rather than conclusive — treat this as a map of "
+            "differences are directional rather than conclusive: treat this as a map of "
             "where to look, not a verdict. Scores describe output behavior on these cases, "
             "not any internal epistemic state of the model."
         )
@@ -412,21 +422,33 @@ with tab_compare:
         )
     else:
         st.caption(
-            f"Combined from {len(loaded_files)} file(s): {', '.join(loaded_files)}. "
-            "Latest run kept per model/case. This tab ignores the filter panel above."
+            "Head-to-head behavioral comparison on the shared case set. Combined "
+            f"from {len(loaded_files)} result file(s), latest run kept per "
+            "model/case. This tab works across all files and ignores the filter "
+            "panel above."
         )
         all_models = sorted(combined["model"].astype(str).unique())
         col_a, col_b = st.columns(2)
         with col_a:
             index_a = all_models.index("gpt-4o-mini") if "gpt-4o-mini" in all_models else 0
-            model_a = st.selectbox("Baseline model (A)", all_models, index=index_a)
+            model_a = st.selectbox(
+                "Model A (baseline)",
+                all_models,
+                index=index_a,
+                help="Reference model. Deltas are computed as B minus A.",
+            )
         with col_b:
             index_b = (
                 all_models.index("gpt-5-mini")
                 if "gpt-5-mini" in all_models
                 else min(1, len(all_models) - 1)
             )
-            model_b = st.selectbox("Comparison model (B)", all_models, index=index_b)
+            model_b = st.selectbox(
+                "Model B (comparison)",
+                all_models,
+                index=index_b,
+                help="Model under comparison. Positive deltas mean B scores higher.",
+            )
 
         if model_a == model_b:
             st.warning("Pick two different models to compare.")
@@ -441,20 +463,45 @@ with tab_compare:
             mean_a, mean_b = adf["score"].mean(), bdf["score"].mean()
             color_map = {model_a: MUTED, model_b: ACCENT}
 
+            st.subheader("Headline result")
+            case_scores_head = cdf.pivot_table(index="case_id", columns="model", values="score")
+            n_improved = int(
+                ((case_scores_head[model_b] >= 1.0) & (case_scores_head[model_a] < 1.0)).sum()
+            )
+            n_regressed = int(
+                ((case_scores_head[model_a] >= 1.0) & (case_scores_head[model_b] < 1.0)).sum()
+            )
             cards = st.columns(4)
-            cards[0].markdown(metric_card(f"A · {model_a}", f"{mean_a:.3f}"), unsafe_allow_html=True)
+            cards[0].markdown(
+                metric_card(f"A · {model_a}", f"{mean_a:.3f}", sub="baseline mean score"),
+                unsafe_allow_html=True,
+            )
             cards[1].markdown(
-                metric_card(f"B · {model_b}", f"{mean_b:.3f}", accent=True), unsafe_allow_html=True
+                metric_card(f"B · {model_b}", f"{mean_b:.3f}", sub="comparison mean score", accent=True),
+                unsafe_allow_html=True,
             )
             cards[2].markdown(
-                metric_card("Δ overall (B − A)", f"{mean_b - mean_a:+.3f}"), unsafe_allow_html=True
+                metric_card(
+                    "Δ mean score (B − A)",
+                    f"{mean_b - mean_a:+.3f}",
+                    sub=f"on {len(shared_ids)} shared cases",
+                ),
+                unsafe_allow_html=True,
             )
             cards[3].markdown(
-                metric_card("Shared cases", str(len(shared_ids)), sub="latest run per model"),
+                metric_card(
+                    "Cases improved / regressed",
+                    f"{n_improved} / {n_regressed}",
+                    sub="B fixes A's misses / B loses cases A had",
+                ),
                 unsafe_allow_html=True,
             )
 
-            # Module-level scores: grouped bars with CI, plus a fingerprint radar
+            st.subheader("Epistemic fingerprint")
+            st.caption(
+                "Module-level behavioral profile: where each model's outputs track "
+                "the expected labels, with bootstrap 95% intervals over this case set."
+            )
             summary = summarize_by_model_module(cdf)
             bars = px.bar(
                 summary,
@@ -502,7 +549,12 @@ with tab_compare:
                 radar_fig.update_layout(margin=dict(l=90, r=90, t=60, b=70))
                 st.plotly_chart(radar_fig, width="stretch")
 
-            # Schema-family heatmap per model
+            st.subheader("Strengths and weaknesses by schema family")
+            st.caption(
+                "Schema families are reusable scenario templates. Family-level scores "
+                "localize each model's epistemic failure patterns more precisely than "
+                "module means; deltas show where the comparison model gains or loses."
+            )
             family_pivot = cdf.pivot_table(
                 index="model", columns="schema_family", values="score", aggfunc="mean"
             )
@@ -536,11 +588,23 @@ with tab_compare:
 
             col_dm, col_df = st.columns(2)
             with col_dm:
-                st.plotly_chart(delta_chart("module", "Δ by module"), width="stretch")
+                st.plotly_chart(
+                    delta_chart("module", f"Δ by module ({model_b} − {model_a})"),
+                    width="stretch",
+                )
             with col_df:
-                st.plotly_chart(delta_chart("schema_family", "Δ by schema family"), width="stretch")
+                st.plotly_chart(
+                    delta_chart("schema_family", f"Δ by schema family ({model_b} − {model_a})"),
+                    width="stretch",
+                )
 
-            # Field-level accuracy
+            st.subheader("Field-level diagnostic signal")
+            st.caption(
+                "Exact-label accuracy per output field, aggregated across every case "
+                "that scores the field. Persistent gaps on a single field (e.g. "
+                "defeater_type) isolate a specific epistemic distinction a model "
+                "mishandles, independent of overall score."
+            )
             acc = field_accuracy(cdf)
             if not acc.empty:
                 acc_fig = px.bar(
@@ -559,19 +623,27 @@ with tab_compare:
                     width="stretch",
                 )
 
-            # Disagreement explorer (case counts as correct when score == 1.0)
-            st.subheader("Disagreement explorer")
+            st.subheader("Case-level disagreements")
+            st.caption(
+                "A case counts as solved only at a perfect score (every expected "
+                "field exact). Improved and regressed cases show what changed "
+                "between models; persistently hard cases are the shared blind "
+                "spots, the most informative targets for new schema families."
+            )
             case_scores = cdf.pivot_table(index="case_id", columns="model", values="score")
             b_only = case_scores[(case_scores[model_b] >= 1.0) & (case_scores[model_a] < 1.0)]
             a_only = case_scores[(case_scores[model_a] >= 1.0) & (case_scores[model_b] < 1.0)]
             both_missed = case_scores[(case_scores[model_a] < 1.0) & (case_scores[model_b] < 1.0)]
             categories = {
-                f"B correct, A missed ({len(b_only)})": b_only,
-                f"A correct, B missed ({len(a_only)})": a_only,
-                f"Both missed ({len(both_missed)})": both_missed,
+                f"Improved: B solves, A missed ({len(b_only)})": b_only,
+                f"Regressed: A solved, B misses ({len(a_only)})": a_only,
+                f"Persistently hard: both miss ({len(both_missed)})": both_missed,
             }
             picked = st.radio(
-                "Category", list(categories), horizontal=True, label_visibility="collapsed"
+                "Disagreement category",
+                list(categories),
+                horizontal=True,
+                label_visibility="collapsed",
             )
             bucket = categories[picked]
             if bucket.empty:
@@ -597,6 +669,10 @@ with tab_compare:
                 detail_id = st.selectbox("Inspect case", sorted(bucket.index))
                 detail_case = cases_by_id.get(detail_id)
                 if detail_case is not None:
+                    detail_meta = [f"`{detail_case.module}`"]
+                    if detail_case.schema_family:
+                        detail_meta.append(f"`{detail_case.schema_family}`")
+                    st.markdown(f"**{detail_case.id}**: " + " · ".join(detail_meta))
                     st.markdown(f"**Scenario:** {detail_case.scenario}")
                     st.markdown(f"**Target proposition:** {detail_case.target_proposition}")
                 row_a = adf[adf["case_id"] == detail_id].iloc[0]
@@ -612,9 +688,9 @@ with tab_compare:
                             {
                                 "field": field,
                                 "expected": json.dumps(value),
-                                f"A · {model_a}": json.dumps(pred_a.get(field, "—")),
+                                f"A · {model_a}": json.dumps(pred_a.get(field, "-")),
                                 "A ✓": "✓" if res_a.get(field) else "✗",
-                                f"B · {model_b}": json.dumps(pred_b.get(field, "—")),
+                                f"B · {model_b}": json.dumps(pred_b.get(field, "-")),
                                 "B ✓": "✓" if res_b.get(field) else "✗",
                             }
                             for field, value in expected.items()
@@ -635,16 +711,27 @@ with tab_method:
 ### What Epistemically evaluates
 
 Each case describes an agent in a short scenario and asks the model for
-structured judgments about a target proposition: belief, truth, justification,
-knowledge, entailment, and how justification responds to new evidence. Cases
-span five modules — belief/truth/knowledge, Gettier-style epistemic luck,
-deduction/rationality, defeaters, and (planned) induction/updating.
+structured judgments about a target proposition. Epistemically behaviorally
+evaluates whether those outputs track expected epistemic labels: it
+operationalizes distinctions from epistemology as scoreable fields, without
+claiming models literally believe or know anything. Current modules:
+
+- **belief_acceptance_knowledge**: families `belief_truth_knowledge`
+  (attitude/truth/knowledge), `acceptance_and_belief` (belief vs. pragmatic
+  acceptance and reason type), and `justification` (reason type and epistemic
+  justification status)
+- **gettier_luck**: justified true belief undermined by epistemic luck
+- **deduction_rationality**: inference form, validity, and rational consistency
+- **defeaters**: family `rebuttal_and_undercut` covering defeater presence,
+  mainstream defeater type, and whether new information requires belief revision
+
+An induction/updating module is planned.
 
 ### Why exact-label scoring
 
 Models answer from a fixed vocabulary of labels per field, and each field is
 scored by exact match after light normalization. This keeps scoring
-deterministic, cheap, and auditable — every point can be traced to a specific
+deterministic, cheap, and auditable: every point can be traced to a specific
 field on a specific case. The trade-off is no partial credit for near-miss
 phrasing, which is why prompts constrain the model to the exact vocabulary.
 
@@ -656,11 +743,20 @@ is reported. Wide intervals mean the case sample is too small to pin down the
 score precisely. Comparisons between models on the same cases use a paired
 bootstrap on per-case differences.
 
+### How model comparison works
+
+The Model Comparison tab pairs two models on the identical case set (latest
+run per model). A case counts as solved only at a perfect score, so the
+improved / regressed / persistently-hard buckets are conservative. Buckets and
+deltas are diagnostic signals about epistemic failure patterns on this case
+set: a map of where to look, not a leaderboard verdict, especially at current
+sample sizes.
+
 ### Behavioral, not literal
 
 A high score means the model's *outputs* reliably track epistemic
 distinctions on these cases. It is not evidence that the model believes,
-knows, or represents anything in the philosophical sense — and a claim like
+knows, or represents anything in the philosophical sense, and a claim like
 that is outside what this kind of test could establish.
 
 ### Current limitations
