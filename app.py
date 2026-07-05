@@ -35,7 +35,6 @@ from epistemically.app_utils import (  # noqa: E402
 
 RESULTS_DIR = REPO_ROOT / "data" / "results"
 CASES_DIR = REPO_ROOT / "data" / "cases"
-DEMO_RESULTS = RESULTS_DIR / "sample_results.csv"
 
 st.set_page_config(page_title="Epistemically", page_icon="◉", layout="wide")
 st.markdown(f"<style>{APP_CSS}</style>", unsafe_allow_html=True)
@@ -47,141 +46,233 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-
-def results_label(path: Path) -> str:
-    return f"{path.name} (demo)" if path == DEMO_RESULTS else path.name
-
-
-# --- Sidebar: file selection and filters -------------------------------------
-all_csvs = sorted(RESULTS_DIR.glob("*.csv")) if RESULTS_DIR.exists() else []
-csv_files = [p for p in all_csvs if not p.name.endswith("_test_results.csv")]
-# De-emphasize the demo file: list it last, and only offer it alongside real runs.
-csv_files.sort(key=lambda p: (p == DEMO_RESULTS, p.name))
-if not csv_files:
-    csv_files = all_csvs
-if not csv_files:
+# All result CSVs are combined into one dataset; the latest run wins per
+# model/case, so stale or superseded files never surface as extra models.
+combined, loaded_files = load_all_results(RESULTS_DIR)
+if combined.empty:
     st.warning("No results found in data/results/. Run `python scripts/run_eval.py` first.")
     st.stop()
 
-# Top controls panel; columns stack vertically on narrow viewports.
-with st.container(border=True):
-    col_file, col_models, col_modules = st.columns([2, 2, 2])
-    with col_file:
-        # Default to the freshest run so a stale combined file never wins.
-        freshest = max(csv_files, key=lambda p: p.stat().st_mtime)
-        selected_csv = st.selectbox(
-            "Results file",
-            csv_files,
-            index=csv_files.index(freshest),
-            format_func=results_label,
-        )
-    df = pd.read_csv(selected_csv)
-    # Cases without a schema_family group under a placeholder so they still
-    # appear in family filters and the heatmap.
-    if "schema_family" in df.columns:
-        df["schema_family"] = df["schema_family"].fillna("(none)")
-    models = sorted(df["model"].astype(str).unique())
-    modules = sorted(df["module"].astype(str).unique())
+all_models = sorted(combined["model"].astype(str).unique())
+all_modules = sorted(combined["module"].astype(str).unique())
+n_cases = combined["case_id"].nunique()
+st.caption(
+    f"{len(all_models)} model(s) evaluated on {n_cases} cases; combined from "
+    f"{len(loaded_files)} result file(s), latest run kept per model and case."
+)
 
-    with col_models:
-        if len(models) > 1:
-            model_filter = st.multiselect("Models", models, default=models)
-        else:
-            model_filter = models
-            st.selectbox("Model", models, disabled=True)
-    with col_modules:
-        module_filter = st.multiselect("Modules", modules, default=modules)
-
-    col_range, col_toggle = st.columns([3, 2])
-    with col_range:
-        score_range = st.slider("Score range", 0.0, 1.0, (0.0, 1.0), 0.05)
-    with col_toggle:
-        imperfect_only = st.toggle(
-            "Show imperfect cases only",
-            value=False,
-            help="Applies to the single-run tabs (Lab Overview, Epistemic Modules, "
-            "Case Explorer). The Failure Gallery is always failure-focused, and "
-            "Model Comparison works across all result files.",
-        )
-
-base = df[
-    df["model"].astype(str).isin(model_filter)
-    & df["module"].astype(str).isin(module_filter)
-    & df["score"].between(score_range[0], score_range[1])
-]
-fdf = base[base["score"] < 1.0] if imperfect_only else base
-st.caption(f"{len(fdf)} of {len(df)} rows selected ({results_label(selected_csv)})")
-
-api_errors = df["error"].fillna("").astype(str).str.strip().str.len() > 0
-parse_failures = df["parsed_ok"].astype(str).str.lower() != "true"
+api_errors = combined["error"].fillna("").astype(str).str.strip().str.len() > 0
+parse_failures = combined["parsed_ok"].astype(str).str.lower() != "true"
 if api_errors.any() or parse_failures.any():
     st.warning(
-        f"This file contains {int(api_errors.sum())} row(s) with API errors and "
-        f"{int(parse_failures.sum())} row(s) with unparseable responses. Affected "
-        "fields score 0; interpret aggregates with care."
+        f"The combined results contain {int(api_errors.sum())} row(s) with API "
+        f"errors and {int(parse_failures.sum())} row(s) with unparseable "
+        "responses. Affected fields score 0; interpret aggregates with care."
     )
 
 cases_by_id, case_file_problems = load_case_lookup(CASES_DIR)
 for problem in case_file_problems:
     st.warning(f"Case file issue: {problem}")
 
-tab_overview, tab_compare, tab_profile, tab_failures, tab_explorer, tab_method = st.tabs(
+tab_overview, tab_profile, tab_compare, tab_failures, tab_explorer, tab_method = st.tabs(
     [
-        "Lab Overview",
+        "Overview",
+        "Model Profile",
         "Model Comparison",
-        "Epistemic Modules",
         "Failure Gallery",
         "Case Explorer",
         "Methodology",
     ]
 )
 
-# --- Overview -----------------------------------------------------------------
+# --- Overview: global benchmark snapshot -----------------------------------------
 with tab_overview:
-    if fdf.empty:
-        st.info("No rows match the current filters.")
-    else:
-        st.caption(
-            "Behavioral scores for the selected run: how reliably this model's "
-            "structured outputs match expected epistemic labels on this case set."
-        )
-        module_means = fdf.groupby("module")["score"].mean()
-        strongest = module_means.idxmax()
-        weakest = module_means.idxmin()
-        n_failures = int((fdf["score"] < 1.0).sum())
+    st.caption(
+        "Global benchmark snapshot: how reliably each evaluated model's "
+        "structured outputs track expected epistemic labels on the shared case set."
+    )
+    model_means = combined.groupby("model")["score"].mean().sort_values(ascending=False)
+    best_model = str(model_means.index[0])
 
-        row1 = st.columns(3)
-        row1[0].markdown(
-            metric_card("Overall Epistemic Score", f"{fdf['score'].mean():.3f}", accent=True),
+    case_pivot = combined.pivot_table(index="case_id", columns="model", values="score")
+    fully_shared = case_pivot.dropna()
+    n_persistent = int((fully_shared < 1.0).all(axis=1).sum()) if len(all_models) > 1 else int(
+        (fully_shared[best_model] < 1.0).sum()
+    )
+    module_pivot = combined.pivot_table(
+        index="module", columns="model", values="score", aggfunc="mean"
+    )
+    if len(all_models) > 1:
+        module_gaps = module_pivot.max(axis=1) - module_pivot.min(axis=1)
+        gap_module, gap_value = str(module_gaps.idxmax()), float(module_gaps.max())
+    else:
+        gap_module, gap_value = "n/a", 0.0
+
+    row1 = st.columns(3)
+    row1[0].markdown(
+        metric_card("Models Evaluated", str(len(all_models)), sub=", ".join(all_models)),
+        unsafe_allow_html=True,
+    )
+    row1[1].markdown(
+        metric_card("Total Cases", str(n_cases), sub="each scored per model"),
+        unsafe_allow_html=True,
+    )
+    row1[2].markdown(
+        metric_card(
+            "🏆 Best Overall Model",
+            best_model,
+            sub=f"mean score {model_means.iloc[0]:.3f}",
+            accent=True,
+        ),
+        unsafe_allow_html=True,
+    )
+    row2 = st.columns(3)
+    row2[0].markdown(
+        metric_card(
+            "Mean Score Across Models",
+            f"{model_means.mean():.3f}",
+            sub="average of per-model means",
+        ),
+        unsafe_allow_html=True,
+    )
+    row2[1].markdown(
+        metric_card(
+            "Persistently Hard Cases",
+            str(n_persistent),
+            sub="missed by every evaluated model",
+        ),
+        unsafe_allow_html=True,
+    )
+    row2[2].markdown(
+        metric_card(
+            "Largest Module Gap",
+            f"{gap_value:.3f}" if gap_module != "n/a" else "n/a",
+            sub=f"between models on {gap_module}" if gap_module != "n/a" else "needs 2+ models",
+        ),
+        unsafe_allow_html=True,
+    )
+
+    leaderboard = go.Figure(
+        go.Bar(
+            x=model_means.values[::-1],
+            y=[str(m) for m in model_means.index[::-1]],
+            orientation="h",
+            marker_color=[
+                ACCENT if str(m) == best_model else MUTED for m in model_means.index[::-1]
+            ],
+            text=[f"{v:.3f}" for v in model_means.values[::-1]],
+            textposition="outside",
+        )
+    )
+    leaderboard.update_xaxes(range=[0, 1.05])
+    st.plotly_chart(
+        style_fig(
+            leaderboard,
+            "Model leaderboard (mean score, best first)",
+            height=max(220, 70 * len(all_models) + 120),
+        ),
+        width="stretch",
+    )
+
+    module_heat = combined.pivot_table(
+        index="model", columns="module", values="score", aggfunc="mean"
+    )
+    heat_modules = px.imshow(
+        module_heat,
+        zmin=0,
+        zmax=1,
+        text_auto=".2f",
+        color_continuous_scale=HEATMAP_SCALE,
+        aspect="auto",
+    )
+    heat_modules.update_layout(coloraxis_colorbar=dict(title="score"))
+    st.plotly_chart(
+        style_fig(heat_modules, "Module performance by model", height=280),
+        width="stretch",
+    )
+
+    family_heat = combined.pivot_table(
+        index="model", columns="schema_family", values="score", aggfunc="mean"
+    )
+    heat_families = px.imshow(
+        family_heat,
+        zmin=0,
+        zmax=1,
+        text_auto=".2f",
+        color_continuous_scale=HEATMAP_SCALE,
+        aspect="auto",
+    )
+    heat_families.update_layout(coloraxis_colorbar=dict(title="score"))
+    st.plotly_chart(
+        style_fig(heat_families, "Schema-family performance by model", height=300),
+        width="stretch",
+    )
+
+    acc_all = field_accuracy(combined)
+    if not acc_all.empty:
+        acc_fig = px.bar(
+            acc_all,
+            x="field",
+            y="accuracy",
+            color="model",
+            barmode="group",
+            range_y=[0, 1.02],
+            hover_data=["n"],
+        )
+        acc_fig.update_traces(marker_line_width=0)
+        st.plotly_chart(
+            style_fig(acc_fig, "Field-level accuracy by model", height=380),
+            width="stretch",
+        )
+
+# --- Model Profile: deep dive into one model ------------------------------------------
+with tab_profile:
+    st.caption(
+        "Deep dive into one model's behavioral profile: where its outputs track "
+        "expected epistemic labels and where its characteristic failure patterns sit."
+    )
+    col_model, col_modules = st.columns([2, 3])
+    with col_model:
+        profile_model = st.selectbox("Model", all_models)
+    with col_modules:
+        profile_modules = st.multiselect("Modules", all_modules, default=all_modules)
+
+    mdf = combined[
+        (combined["model"].astype(str) == profile_model)
+        & combined["module"].astype(str).isin(profile_modules)
+    ]
+    if mdf.empty:
+        st.info("No rows match the selected modules.")
+    else:
+        module_means = mdf.groupby("module")["score"].mean()
+        n_solved = int((mdf["score"] >= 1.0).sum())
+        n_missed = int((mdf["score"] < 1.0).sum())
+
+        cards = st.columns(5)
+        cards[0].markdown(
+            metric_card("Overall Score", f"{mdf['score'].mean():.3f}", accent=True),
             unsafe_allow_html=True,
         )
-        row1[1].markdown(
-            metric_card("Cases Evaluated", str(len(fdf)), sub=f"{len(model_filter)} model(s)"),
+        cards[1].markdown(
+            metric_card("Cases Solved", str(n_solved), sub=f"of {len(mdf)} (perfect score)"),
             unsafe_allow_html=True,
         )
-        row1[2].markdown(
-            metric_card("Failures", str(n_failures), sub="cases below a perfect score"),
+        cards[2].markdown(
+            metric_card("Cases Missed", str(n_missed), sub="below a perfect score"),
             unsafe_allow_html=True,
         )
-        row2 = st.columns(3)
-        row2[0].markdown(
-            metric_card("Strongest Module", strongest, sub=f"mean {module_means.max():.3f}"),
+        cards[3].markdown(
+            metric_card("Best Module", str(module_means.idxmax()), sub=f"mean {module_means.max():.3f}"),
             unsafe_allow_html=True,
         )
-        row2[1].markdown(
-            metric_card("Weakest Module", weakest, sub=f"mean {module_means.min():.3f}"),
-            unsafe_allow_html=True,
-        )
-        row2[2].markdown(
+        cards[4].markdown(
             metric_card(
-                "Points Earned",
-                f"{fdf['points'].sum():g} / {fdf['max_points'].sum():g}",
-                sub="weighted label components",
+                "Weakest Module", str(module_means.idxmin()), sub=f"mean {module_means.min():.3f}"
             ),
             unsafe_allow_html=True,
         )
 
-        summary = summarize_by_model_module(fdf)
+        summary = summarize_by_model_module(mdf)
         fig = px.bar(
             summary,
             x="module",
@@ -191,13 +282,13 @@ with tab_overview:
             error_y=summary["ci_high"] - summary["mean_score"],
             error_y_minus=summary["mean_score"] - summary["ci_low"],
             range_y=[0, 1.02],
+            color_discrete_sequence=[ACCENT],
         )
         fig.update_traces(marker_line_width=0)
         st.plotly_chart(
             style_fig(fig, "Mean score by module (bootstrap 95% CI)", height=380),
             width="stretch",
         )
-
         st.dataframe(
             summary,
             width="stretch",
@@ -211,22 +302,6 @@ with tab_overview:
                 "n_cases": st.column_config.NumberColumn("n"),
             },
         )
-
-# --- Module Profile -------------------------------------------------------------
-with tab_profile:
-    if fdf.empty:
-        st.info("No rows match the current filters.")
-    else:
-        st.caption(
-            "Per-module and per-schema-family profile for one model on the "
-            "selected run: the single-model view of the epistemic fingerprint."
-        )
-        profile_models = sorted(fdf["model"].astype(str).unique())
-        profile_model = (
-            st.selectbox("Model", profile_models) if len(profile_models) > 1 else profile_models[0]
-        )
-        mdf = fdf[fdf["model"].astype(str) == profile_model]
-        module_means = mdf.groupby("module")["score"].mean()
 
         if len(module_means) >= 3:
             theta = list(module_means.index) + [module_means.index[0]]
@@ -269,9 +344,25 @@ with tab_profile:
         )
         heat.update_layout(coloraxis_colorbar=dict(title="score"))
         st.plotly_chart(
-            style_fig(heat, "Score by module × schema family", height=420),
+            style_fig(heat, "Score by module and schema family", height=420),
             width="stretch",
         )
+
+        acc_model = field_accuracy(mdf)
+        if not acc_model.empty:
+            acc_fig = px.bar(
+                acc_model,
+                x="field",
+                y="accuracy",
+                range_y=[0, 1.02],
+                color_discrete_sequence=[ACCENT],
+                hover_data=["n"],
+            )
+            acc_fig.update_traces(marker_line_width=0)
+            st.plotly_chart(
+                style_fig(acc_fig, f"Field-level accuracy: {profile_model}", height=360),
+                width="stretch",
+            )
 
         n_per_module = mdf.groupby("module")["score"].count()
         weak_families = (
@@ -292,129 +383,22 @@ with tab_profile:
             "not any internal epistemic state of the model."
         )
 
-# --- Failure Gallery -------------------------------------------------------------
-with tab_failures:
-    failed = base[base["score"] < 1.0].sort_values("score")
-    if failed.empty:
-        st.success("No failures within the current filters.")
-    else:
-        st.caption(
-            f"{len(failed)} case(s) below a perfect score, worst first. "
-            "✓/✗ marks per-field exact-label correctness."
-        )
-        MAX_CARDS = 30
-        for _, row in failed.head(MAX_CARDS).iterrows():
-            st.markdown(
-                failure_card(row.to_dict(), cases_by_id.get(str(row["case_id"]))),
-                unsafe_allow_html=True,
+        hardest = mdf[mdf["score"] < 1.0].sort_values("score").head(5)
+        if not hardest.empty:
+            st.subheader("Hardest cases for this model")
+            st.caption(
+                "The lowest-scoring cases in the current selection; the Failure "
+                "Gallery has the full list."
             )
-        if len(failed) > MAX_CARDS:
-            st.caption(f"Showing the {MAX_CARDS} lowest-scoring of {len(failed)} failures.")
-
-# --- Case Explorer -----------------------------------------------------------------
-with tab_explorer:
-    if fdf.empty:
-        st.info("No rows match the current filters.")
-    else:
-        col_search, col_module, col_family = st.columns([2, 2, 2])
-        with col_search:
-            search = st.text_input("Search case id", "")
-        with col_module:
-            explorer_module = st.selectbox(
-                "Module", ["all"] + sorted(fdf["module"].astype(str).unique())
-            )
-        with col_family:
-            family_pool = (
-                fdf if explorer_module == "all" else fdf[fdf["module"] == explorer_module]
-            )
-            explorer_family = st.selectbox(
-                "Schema family", ["all"] + sorted(family_pool["schema_family"].astype(str).unique())
-            )
-
-        edf = fdf.copy()
-        if search.strip():
-            edf = edf[edf["case_id"].astype(str).str.contains(search.strip(), case=False)]
-        if explorer_module != "all":
-            edf = edf[edf["module"] == explorer_module]
-        if explorer_family != "all":
-            edf = edf[edf["schema_family"] == explorer_family]
-
-        case_ids = sorted(edf["case_id"].astype(str).unique())
-        if not case_ids:
-            st.info("No cases match the search and filters.")
-        else:
-            selected_id = st.selectbox("Case", case_ids)
-            case = cases_by_id.get(selected_id)
-
-            if case is not None:
-                st.subheader(f"{case.id}")
-                meta = [f"`{case.module}`"]
-                if case.schema_family:
-                    meta.append(f"`{case.schema_family}`")
-                if case.variant_id is not None:
-                    meta.append(f"variant {case.variant_id}")
-                if case.difficulty:
-                    meta.append(f"difficulty **{case.difficulty}**")
-                st.markdown(" · ".join(meta))
-                st.markdown(f"**Scenario:** {case.scenario}")
-                st.markdown(f"**Target proposition:** {case.target_proposition}")
-                st.markdown(f"**Question:** {case.question}")
-                if case.notes:
-                    st.caption(case.notes)
-            else:
-                st.info(f"Case `{selected_id}` not found in any data/cases/*.jsonl file.")
-
-            for _, row in edf[edf["case_id"].astype(str) == selected_id].iterrows():
-                st.markdown(f"#### `{row['model']}`")
+            for _, row in hardest.iterrows():
                 st.markdown(
-                    f"**Score:** {row['score']:.2f} "
-                    f"({row['points']:g}/{row['max_points']:g} points)"
+                    failure_card(row.to_dict(), cases_by_id.get(str(row["case_id"]))),
+                    unsafe_allow_html=True,
                 )
-                if isinstance(row.get("error"), str) and row["error"].strip():
-                    st.error(f"API error: {row['error']}")
-
-                expected = json_or_empty(row.get("expected_json"))
-                predicted = json_or_empty(row.get("predicted_json"))
-                results = json_or_empty(row.get("field_results_json"))
-
-                col_exp, col_pred = st.columns(2)
-                with col_exp:
-                    st.markdown("**Expected labels**")
-                    st.json(expected)
-                with col_pred:
-                    st.markdown("**Model labels**")
-                    if predicted:
-                        st.json(predicted)
-                    else:
-                        st.caption("No parseable model output.")
-
-                comparison = field_rows(expected, predicted, results)
-                if comparison:
-                    st.dataframe(
-                        pd.DataFrame(
-                            [
-                                {
-                                    "field": r["field"],
-                                    "expected": r["expected"],
-                                    "model": r["model"],
-                                    "correct": "✓" if r["correct"] else "✗",
-                                }
-                                for r in comparison
-                            ]
-                        ),
-                        width="stretch",
-                        hide_index=True,
-                    )
-
-                raw = row.get("raw_response")
-                if isinstance(raw, str) and raw.strip():
-                    with st.expander("Raw model response"):
-                        st.code(raw, language="json")
 
 # --- Model Comparison ------------------------------------------------------------------
 with tab_compare:
-    combined, loaded_files = load_all_results(RESULTS_DIR)
-    n_models = combined["model"].nunique() if not combined.empty else 0
+    n_models = len(all_models)
     if n_models < 2:
         st.info(
             "Model comparison needs results from at least two models in "
@@ -422,12 +406,9 @@ with tab_compare:
         )
     else:
         st.caption(
-            "Head-to-head behavioral comparison on the shared case set. Combined "
-            f"from {len(loaded_files)} result file(s), latest run kept per "
-            "model/case. This tab works across all files and ignores the filter "
-            "panel above."
+            "Head-to-head behavioral comparison on the shared case set, using the "
+            "combined results (latest run kept per model and case)."
         )
-        all_models = sorted(combined["model"].astype(str).unique())
         col_a, col_b = st.columns(2)
         with col_a:
             index_a = all_models.index("gpt-4o-mini") if "gpt-4o-mini" in all_models else 0
@@ -704,6 +685,146 @@ with tab_compare:
                     if isinstance(explanation, str) and explanation.strip():
                         st.caption(f"{label}: {explanation}")
 
+# --- Failure Gallery -------------------------------------------------------------
+with tab_failures:
+    st.caption(
+        "Every case where a model's output fell short of a perfect exact-label "
+        "score, worst first. ✓/✗ marks per-field correctness."
+    )
+    col_gm, col_gmod = st.columns(2)
+    with col_gm:
+        gallery_models = st.multiselect("Models", all_models, default=all_models)
+    with col_gmod:
+        gallery_modules = st.multiselect(
+            "Modules", all_modules, default=all_modules, key="gallery_modules"
+        )
+    failed = combined[
+        combined["model"].astype(str).isin(gallery_models)
+        & combined["module"].astype(str).isin(gallery_modules)
+        & (combined["score"] < 1.0)
+    ].sort_values("score")
+    if failed.empty:
+        st.success("No failures within the current selection.")
+    else:
+        st.caption(f"{len(failed)} result(s) below a perfect score.")
+        MAX_CARDS = 30
+        for _, row in failed.head(MAX_CARDS).iterrows():
+            st.markdown(
+                failure_card(row.to_dict(), cases_by_id.get(str(row["case_id"]))),
+                unsafe_allow_html=True,
+            )
+        if len(failed) > MAX_CARDS:
+            st.caption(f"Showing the {MAX_CARDS} lowest-scoring of {len(failed)} failures.")
+
+# --- Case Explorer -----------------------------------------------------------------
+with tab_explorer:
+    st.caption(
+        "Audit view: filter to any slice of the combined results and inspect a "
+        "case's scenario, expected labels, and every model's output on it."
+    )
+    col_m, col_search, col_module, col_family, col_correct = st.columns([2, 2, 2, 2, 2])
+    with col_m:
+        explorer_models = st.multiselect(
+            "Models", all_models, default=all_models, key="explorer_models"
+        )
+    with col_search:
+        search = st.text_input("Search case id", "")
+    with col_module:
+        explorer_module = st.selectbox("Module", ["all"] + all_modules)
+    with col_family:
+        family_pool = (
+            combined if explorer_module == "all" else combined[combined["module"] == explorer_module]
+        )
+        explorer_family = st.selectbox(
+            "Schema family", ["all"] + sorted(family_pool["schema_family"].astype(str).unique())
+        )
+    with col_correct:
+        explorer_correct = st.selectbox("Correctness", ["all", "solved", "missed"])
+
+    edf = combined[combined["model"].astype(str).isin(explorer_models)].copy()
+    if search.strip():
+        edf = edf[edf["case_id"].astype(str).str.contains(search.strip(), case=False)]
+    if explorer_module != "all":
+        edf = edf[edf["module"] == explorer_module]
+    if explorer_family != "all":
+        edf = edf[edf["schema_family"] == explorer_family]
+    if explorer_correct == "solved":
+        edf = edf[edf["score"] >= 1.0]
+    elif explorer_correct == "missed":
+        edf = edf[edf["score"] < 1.0]
+
+    case_ids = sorted(edf["case_id"].astype(str).unique())
+    if not case_ids:
+        st.info("No cases match the search and filters.")
+    else:
+        selected_id = st.selectbox("Case", case_ids)
+        case = cases_by_id.get(selected_id)
+
+        if case is not None:
+            st.subheader(f"{case.id}")
+            meta = [f"`{case.module}`"]
+            if case.schema_family:
+                meta.append(f"`{case.schema_family}`")
+            if case.variant_id is not None:
+                meta.append(f"variant {case.variant_id}")
+            if case.difficulty:
+                meta.append(f"difficulty **{case.difficulty}**")
+            st.markdown(" · ".join(meta))
+            st.markdown(f"**Scenario:** {case.scenario}")
+            st.markdown(f"**Target proposition:** {case.target_proposition}")
+            st.markdown(f"**Question:** {case.question}")
+            if case.notes:
+                st.caption(case.notes)
+        else:
+            st.info(f"Case `{selected_id}` not found in any data/cases/*.jsonl file.")
+
+        for _, row in edf[edf["case_id"].astype(str) == selected_id].iterrows():
+            st.markdown(f"#### `{row['model']}`")
+            st.markdown(
+                f"**Score:** {row['score']:.2f} "
+                f"({row['points']:g}/{row['max_points']:g} points)"
+            )
+            if isinstance(row.get("error"), str) and row["error"].strip():
+                st.error(f"API error: {row['error']}")
+
+            expected = json_or_empty(row.get("expected_json"))
+            predicted = json_or_empty(row.get("predicted_json"))
+            results = json_or_empty(row.get("field_results_json"))
+
+            col_exp, col_pred = st.columns(2)
+            with col_exp:
+                st.markdown("**Expected labels**")
+                st.json(expected)
+            with col_pred:
+                st.markdown("**Model labels**")
+                if predicted:
+                    st.json(predicted)
+                else:
+                    st.caption("No parseable model output.")
+
+            comparison = field_rows(expected, predicted, results)
+            if comparison:
+                st.dataframe(
+                    pd.DataFrame(
+                        [
+                            {
+                                "field": r["field"],
+                                "expected": r["expected"],
+                                "model": r["model"],
+                                "correct": "✓" if r["correct"] else "✗",
+                            }
+                            for r in comparison
+                        ]
+                    ),
+                    width="stretch",
+                    hide_index=True,
+                )
+
+            raw = row.get("raw_response")
+            if isinstance(raw, str) and raw.strip():
+                with st.expander(f"Raw model response ({row['model']})"):
+                    st.code(raw, language="json")
+
 # --- Methodology ---------------------------------------------------------------------
 with tab_method:
     st.markdown(
@@ -742,6 +863,13 @@ resampled with replacement many times and the middle 95% of resampled means
 is reported. Wide intervals mean the case sample is too small to pin down the
 score precisely. Comparisons between models on the same cases use a paired
 bootstrap on per-case differences.
+
+### How results are combined
+
+Every results CSV in `data/results/` is merged into one dataset, keeping the
+latest run per model and case. Superseded or duplicate files never appear as
+extra leaderboard entries. The Overview summarizes all evaluated models; the
+Model Profile and Model Comparison tabs slice the same combined data.
 
 ### How model comparison works
 

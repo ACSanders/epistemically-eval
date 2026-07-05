@@ -248,10 +248,13 @@ def failure_card(row: Mapping[str, Any], case: Optional[EpistemicCase]) -> str:
     difficulty_badge = (
         badge(difficulty) if isinstance(difficulty, str) and difficulty.strip() else ""
     )
+    model = row.get("model")
+    model_badge = badge(model, "accent") if isinstance(model, str) and model.strip() else ""
     head = (
         '<div class="epi-card-head">'
         f'<span class="epi-case-id">{html.escape(str(row.get("case_id", "")))}</span>'
-        f'{badge(row.get("module", ""), "accent")}'
+        f"{model_badge}"
+        f'{badge(row.get("module", ""))}'
         f'{badge(row.get("schema_family", ""))}'
         f"{difficulty_badge}"
         f'<span class="epi-score {score_class}">{score:.2f}</span>'
