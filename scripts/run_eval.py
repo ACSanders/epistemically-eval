@@ -3,6 +3,7 @@
 Usage:
     python scripts/run_eval.py
     python scripts/run_eval.py --model gpt-4o-mini --cases data/cases/sample_cases.jsonl
+    python scripts/run_eval.py --model claude-haiku-4-5 --limit 2
     python scripts/run_eval.py --cases data/cases/user_cases_draft.jsonl --output data/results/user_cases_results.csv
 """
 
@@ -17,7 +18,11 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT / "src"))
 
 from epistemically.dataset import load_cases  # noqa: E402
-from epistemically.runners.openai_runner import resolve_model, run_cases  # noqa: E402
+from epistemically.runners import anthropic_runner, openai_runner  # noqa: E402
+
+
+def is_anthropic_model(model: str) -> bool:
+    return model.startswith("claude")
 
 
 def main() -> None:
@@ -27,7 +32,12 @@ def main() -> None:
         default=str(REPO_ROOT / "data" / "cases" / "sample_cases.jsonl"),
         help="Path to a JSONL case file",
     )
-    parser.add_argument("--model", default=None, help="OpenAI model (default: OPENAI_MODEL from .env)")
+    parser.add_argument(
+        "--model",
+        default=None,
+        help="Model name. claude-* models use the Anthropic runner; anything "
+        "else uses the OpenAI runner (default: OPENAI_MODEL from .env)",
+    )
     parser.add_argument(
         "--output",
         "--out",
@@ -43,13 +53,14 @@ def main() -> None:
         cases = cases[: args.limit]
     print(f"Loaded {len(cases)} cases from {args.cases}")
 
-    rows = run_cases(cases, model=args.model)
+    runner = anthropic_runner if is_anthropic_model(args.model or "") else openai_runner
+    rows = runner.run_cases(cases, model=args.model)
     df = pd.DataFrame(rows)
 
     if args.output:
         out_path = Path(args.output)
     else:
-        model_slug = resolve_model(args.model).replace("/", "-").replace(":", "-")
+        model_slug = runner.resolve_model(args.model).replace("/", "-").replace(":", "-")
         stamp = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M%S")
         out_path = REPO_ROOT / "data" / "results" / f"results_{model_slug}_{stamp}.csv"
     out_path.parent.mkdir(parents=True, exist_ok=True)

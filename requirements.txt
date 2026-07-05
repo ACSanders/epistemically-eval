@@ -6,3 +6,4 @@ scipy
 streamlit
 plotly
 openai
+anthropic

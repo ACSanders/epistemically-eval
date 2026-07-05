@@ -1,7 +1,9 @@
-"""OpenAI runner: one fresh, independent API call per case.
+"""Anthropic runner: one fresh, independent API call per case.
 
-Reads OPENAI_API_KEY (and optionally OPENAI_MODEL) from the environment /
-.env. Each case gets its own message list — no shared conversation state.
+Reads ANTHROPIC_API_KEY (and optionally ANTHROPIC_MODEL) from the
+environment / .env. Uses the exact same system prompt and per-case prompt as
+the OpenAI runner, and feeds raw response text through the same JSON parser
+and scorer, so results are directly comparable across providers.
 """
 
 import json
@@ -11,26 +13,46 @@ from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional
 
 from dotenv import load_dotenv
-from openai import OpenAI
+from anthropic import Anthropic
 
 from epistemically.prompts import SYSTEM_PROMPT, build_prompt
 from epistemically.runners.common import parse_json_response
 from epistemically.schemas import EpistemicCase
 from epistemically.scoring import score_case
 
-FALLBACK_MODEL = "gpt-4o-mini"
+FALLBACK_MODEL = "claude-haiku-4-5"
+
+# Room for short JSON answers plus any provider-default reasoning tokens,
+# which count against max_tokens on newer Claude models.
+DEFAULT_MAX_TOKENS = 4096
+
+# Claude models from Opus 4.7 / Sonnet 5 / Fable 5 onward reject non-default
+# sampling parameters (400), while Haiku 4.5 and the 4.6 family still accept
+# temperature=0 for deterministic behavior.
+_NO_TEMPERATURE_PREFIXES = (
+    "claude-opus-4-7",
+    "claude-opus-4-8",
+    "claude-sonnet-5",
+    "claude-fable",
+    "claude-mythos",
+)
 
 
 def resolve_model(cli_model: Optional[str] = None) -> str:
-    """CLI flag wins, then OPENAI_MODEL from the environment, then fallback."""
-    return cli_model or os.getenv("OPENAI_MODEL") or FALLBACK_MODEL
+    """CLI flag wins, then ANTHROPIC_MODEL from the environment, then fallback."""
+    return cli_model or os.getenv("ANTHROPIC_MODEL") or FALLBACK_MODEL
+
+
+def _supports_custom_temperature(model: str) -> bool:
+    return not model.startswith(_NO_TEMPERATURE_PREFIXES)
 
 
 def run_case(
-    client: OpenAI,
+    client: Anthropic,
     case: EpistemicCase,
     model: str,
     temperature: float = 0.0,
+    max_tokens: int = DEFAULT_MAX_TOKENS,
 ) -> Dict[str, Any]:
     """Run one case with a fresh API call and return a flat result row."""
     row: Dict[str, Any] = {
@@ -46,21 +68,24 @@ def run_case(
 
     request: Dict[str, Any] = {
         "model": model,
-        "response_format": {"type": "json_object"},
-        "messages": [
-            {"role": "system", "content": SYSTEM_PROMPT},
-            {"role": "user", "content": build_prompt(case)},
-        ],
+        "max_tokens": max_tokens,
+        "system": SYSTEM_PROMPT,
+        "messages": [{"role": "user", "content": build_prompt(case)}],
     }
-    # GPT-5 and o-series reasoning models only accept the default temperature.
-    if not model.startswith(("gpt-5", "o1", "o3", "o4")):
+    if _supports_custom_temperature(model):
         request["temperature"] = temperature
 
     started = time.perf_counter()
     try:
-        response = client.chat.completions.create(**request)
-        raw = response.choices[0].message.content or ""
-        row["error"] = ""
+        response = client.messages.create(**request)
+        raw = "".join(
+            block.text for block in response.content if block.type == "text"
+        )
+        if response.stop_reason == "end_turn":
+            row["error"] = ""
+        else:
+            # Refusals and truncation surface here instead of crashing the sweep.
+            row["error"] = f"stop_reason: {response.stop_reason}"
     except Exception as exc:  # keep the sweep going; record the failure
         raw = ""
         row["error"] = f"{type(exc).__name__}: {exc}"
@@ -86,13 +111,15 @@ def run_cases(
     temperature: float = 0.0,
     verbose: bool = True,
 ) -> List[Dict[str, Any]]:
-    """Run all cases against one OpenAI model, one independent call each."""
+    """Run all cases against one Anthropic model, one independent call each."""
     load_dotenv()
-    if not os.getenv("OPENAI_API_KEY"):
-        raise RuntimeError("OPENAI_API_KEY is not set; copy .env.example to .env and fill it in")
+    if not os.getenv("ANTHROPIC_API_KEY"):
+        raise RuntimeError(
+            "ANTHROPIC_API_KEY is not set; add it to .env or the environment"
+        )
 
     resolved = resolve_model(model)
-    client = OpenAI()
+    client = Anthropic()
     rows = []
     for i, case in enumerate(cases, start=1):
         row = run_case(client, case, resolved, temperature=temperature)
