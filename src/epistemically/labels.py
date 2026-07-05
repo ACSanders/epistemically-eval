@@ -70,27 +70,17 @@ ALLOWED_LABELS: Dict[str, List[str]] = {
     "incoherence_if_rejects_target": ["true", "false"],
     "contradiction_present": ["true", "false"],
     "consistency_status": ["consistent", "inconsistent"],
-    "initial_status": ["justified_belief", "unjustified_belief", "no_belief"],
-    # Mainstream categories only; finer distinctions (source reliability,
-    # dependency) live in schema_family, and defeater_type is diagnostic
-    # rather than part of the primary score in v0.
+    "defeater_present": ["yes", "no"],
     "defeater_type": [
-        "none_placebo",
+        "placebo",
         "rebutting_defeater",
         "undercutting_defeater",
-        "higher_order_defeater",
-        "unclear",
     ],
-    # v0 keeps belief-revision options coarse; finer retain/suspend
-    # distinctions can come later.
-    "updated_status": [
+    "belief_update": [
         "retain_belief",
-        "reduce_confidence",
-        "believe_not_p",
-        "unclear",
+        "reduce_confidence_or_withhold",
+        "reject_belief",
     ],
-    "retain_original_belief": ["yes", "no"],
-    "confidence_direction": ["increase", "decrease", "unchanged"],
 }
 
 

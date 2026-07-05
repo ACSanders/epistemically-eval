@@ -28,12 +28,12 @@ class EpistemicCase(BaseModel):
 
     id: str
     module: Module
-    schema_family: str
     scenario: str
     target_proposition: str
     question: str
     expected: Dict[str, LabelValue]
     # Optional metadata; lean cases omit these.
+    schema_family: Optional[str] = None
     variant_id: Optional[int] = None
     scoring_weights: Dict[str, float] = Field(default_factory=dict)
     difficulty: Optional[Literal["easy", "medium", "hard"]] = None

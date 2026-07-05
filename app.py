@@ -68,6 +68,10 @@ with st.container(border=True):
             "Results file", csv_files, index=default_index, format_func=results_label
         )
     df = pd.read_csv(selected_csv)
+    # Cases without a schema_family group under a placeholder so they still
+    # appear in family filters and the heatmap.
+    if "schema_family" in df.columns:
+        df["schema_family"] = df["schema_family"].fillna("(none)")
     models = sorted(df["model"].astype(str).unique())
     modules = sorted(df["module"].astype(str).unique())
 
@@ -320,7 +324,9 @@ with tab_explorer:
 
             if case is not None:
                 st.subheader(f"{case.id}")
-                meta = [f"`{case.module}`", f"`{case.schema_family}`"]
+                meta = [f"`{case.module}`"]
+                if case.schema_family:
+                    meta.append(f"`{case.schema_family}`")
                 if case.variant_id is not None:
                     meta.append(f"variant {case.variant_id}")
                 if case.difficulty:
