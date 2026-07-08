@@ -6,6 +6,7 @@ normalization, applies per-field weights, and ignores brief_explanation.
 
 from typing import Any, Dict, Optional
 
+from epistemically.defeaters import COHERENCE_WEIGHTS, coherence_components, is_v2_case
 from epistemically.schemas import EpistemicCase, ScoreResult
 
 _TRUTHY = {"true", "yes"}
@@ -50,6 +51,16 @@ def score_case(case: EpistemicCase, predicted: Optional[Dict[str, Any]]) -> Scor
         per_field[label] = correct
         if correct:
             points += weight
+
+    # Defeaters v2 cases also earn computed coherence components, derived
+    # from the model's own labels rather than compared against expected ones.
+    if is_v2_case(case):
+        for name, coherent in coherence_components(predicted).items():
+            weight = COHERENCE_WEIGHTS[name]
+            max_points += weight
+            per_field[name] = coherent
+            if coherent:
+                points += weight
 
     score = points / max_points if max_points > 0 else 0.0
     return ScoreResult(

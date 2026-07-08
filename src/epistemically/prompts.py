@@ -206,31 +206,59 @@ Target proposition:
 Question:
 {question}"""
 
-# Rubric-light prompt for the revised defeaters module: presence, mainstream
-# type, and belief update.
-DEFEATERS_PROMPT = """Your task is to assess how new information should affect an agent's epistemic position with respect to a target proposition.
+# Prompt for the defeaters v2 module: presence, type, strength, the
+# post-information support relation, and the rational belief revision.
+# Coherence between these labels is computed and scored by the app
+# (epistemically.defeaters); it is never requested from the model. JSON
+# braces are doubled for str.format.
+DEFEATERS_PROMPT = """You are evaluating how new information should affect an agent's epistemic position with respect to a target proposition.
 
-Return exactly four JSON fields:
+The target proposition is p; its negation is not-p. The agent initially has some support for p and then receives new information. Use only the information provided in the case. Do not assume additional facts, hidden evidence, unstated background probabilities, motives, or context not specified in the case. Evaluate the rational update from the agent's perspective after receiving the new information.
 
-1. defeater_present
-2. defeater_type
-3. belief_update
-4. brief_explanation
+Return only valid JSON with exactly these fields:
 
-Allowed labels include:
+{{
+  "defeater_present": "...",
+  "defeater_type": "...",
+  "defeater_strength": "...",
+  "support_relation": "...",
+  "belief_revision": "...",
+  "brief_explanation": "..."
+}}
 
-defeater_present: yes, no
-defeater_type: placebo, rebutting_defeater, undercutting_defeater
-belief_update: no_revision_from_new_information, revise_belief
+Allowed labels:
 
-Important considerations for this task:
+defeater_present:
+- yes: The new information epistemically affects the agent's initial support for p.
+- no: The new information does not epistemically affect the agent's initial support for p.
+
+defeater_type:
+- none_placebo: No real defeater is present; the new information is irrelevant, already accounted for, or has no epistemic effect on the initial support for p.
+- rebutting_defeater: The new information gives evidence against p or evidence for not-p.
+- undercutting_defeater: The new information weakens the connection between the agent's original reason or evidence and p, without itself directly supporting not-p.
+- higher_order_defeater: The new information gives the agent reason to doubt their own reliability, competence, reasoning, perception, memory, or evidence-handling in this case.
+
+defeater_strength:
+- none: The new information has no impact on the initial epistemic support for p.
+- weak: The new information reduces support for p, but p remains epistemically better supported than not-p.
+- moderate: The new information reduces support for p enough that p and not-p are equally supported, or the agent's reasons no longer favor either side.
+- strong: The new information makes not-p epistemically better supported than p.
+
+support_relation:
+- no_impact: The new information has no effect on the initial epistemic support for p.
+- target_better_supported: After considering the new information, p remains epistemically better supported than not-p.
+- equal_support: After considering the new information, p and not-p are equally supported, or the agent's reasons favor neither.
+- negation_better_supported: After considering the new information, not-p is epistemically better supported than p.
+
+belief_revision:
+- maintain_target_belief: The agent should continue believing p.
+- suspend_judgment: The agent should neither believe p nor believe not-p because the available reasons do not favor either side.
+- believe_negation: The agent should believe not-p.
+
+Important:
 - Evaluate each output field only with respect to the target proposition provided.
-- Use the given scenario as the only source of information.
-- A placebo is not a genuine defeater with respect to the target proposition.
-- If defeater_present is no, set defeater_type to placebo.
-- If defeater_present is no, set belief_update to no_revision_from_new_information.
-- The brief_explanation should be one concise sentence explaining the classification.
-- Return JSON only.
+- If defeater_present is no, set defeater_type to none_placebo.
+- Return JSON only. Do not include markdown or extra text. The brief_explanation field should be one concise sentence explaining the classification.
 
 Scenario:
 {scenario}

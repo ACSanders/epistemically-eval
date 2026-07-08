@@ -32,7 +32,7 @@ Cases live in JSONL, one object per line, validated by
 | `belief_truth_knowledge` | Separating an agent's belief from truth and from knowledge |
 | `gettier_luck` | Justified true belief without knowledge (epistemic luck) |
 | `deduction_rationality` | Entailment recognition and rational consistency of assertion |
-| `defeaters` | Justification updates under undercutting/rebutting evidence |
+| `defeaters` | Defeater-sensitive belief revision: defeater presence/type/strength, the post-information support relation, the rational update, and computed coherence between them |
 | `induction_updating` | Inductive inference and evidence updating (no seed cases yet) |
 
 ## Scoring
@@ -44,14 +44,26 @@ weight; the case score is earned points over maximum points, in [0, 1].
 Missing fields and unparseable responses score zero on the affected fields.
 The `brief_explanation` field is collected but not scored in v0.
 
+Defeaters cases additionally score two computed coherence components
+(`epistemically.defeaters`): whether the model's reported defeater strength
+and support relation pick out the same post-information support state, and
+whether its reported belief revision is the one its reported support
+relation rationally calls for. These are derived from the model's own
+labels, never self-reported, and each counts toward the case's maximum
+points at weight 1.0 (so coherence is 2/7 of a defeaters case). The same
+mappings are enforced on the case files' expected labels at validation
+time, so the answer key is internally coherent by construction.
+
 ## Uncertainty
 
 Mean scores per model/module come with percentile-bootstrap 95% confidence
 intervals (`epistemically.bootstrap`). For comparing two models on the same
 case set, a paired bootstrap on per-case score differences is provided; an
-interval excluding zero suggests a real difference. With only 8 sample cases
-the intervals are wide by design — v0 demonstrates the machinery, not
-statistical power.
+interval excluding zero suggests a real difference. The benchmark currently
+has 170 structured epistemic cases (60 belief_acceptance_knowledge,
+50 defeaters, 30 epistemic_luck, 30 rational_reasoning); per-module
+intervals are still wide, so they show uncertainty over the current case
+set rather than population-level claims.
 
 ## Known limitations
 

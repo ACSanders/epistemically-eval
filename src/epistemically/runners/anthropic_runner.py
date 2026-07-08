@@ -23,8 +23,10 @@ from epistemically.scoring import score_case
 FALLBACK_MODEL = "claude-haiku-4-5"
 
 # Room for short JSON answers plus any provider-default reasoning tokens,
-# which count against max_tokens on newer Claude models.
-DEFAULT_MAX_TOKENS = 4096
+# which count against max_tokens on newer Claude models. 4096 proved tight:
+# one Sonnet 5 defeaters case burned enough reasoning tokens to truncate the
+# JSON mid-object, scoring a false zero.
+DEFAULT_MAX_TOKENS = 8192
 
 # Claude models from Opus 4.7 / Sonnet 5 / Fable 5 onward reject non-default
 # sampling parameters (400), while Haiku 4.5 and the 4.6 family still accept

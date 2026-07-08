@@ -31,8 +31,25 @@ Field notes:
 {"id": "bkf-100", "module": "belief_truth_knowledge", "schema_family": "false_belief", "variant_id": 1, "scenario": "Describe an agent, their evidence, and what is actually true. Keep it concrete and self-contained.", "target_proposition": "The single proposition being judged.", "question": "Judge the epistemic status of the target proposition for the agent: does the agent believe it, does the agent know it, and is it a fact?", "expected": {"belief": true, "knowledge": false, "fact": false}, "scoring_weights": {"belief": 1.0, "knowledge": 1.0, "fact": 1.0}, "difficulty": "easy", "notes": "What this case is meant to test, and why the expected labels are correct."}
 ```
 
-## Template: defeater case
+## Template: defeater case (v2)
 
 ```json
-{"id": "def-100", "module": "defeaters", "schema_family": "undercutting_defeater", "variant_id": 1, "scenario": "Describe an agent forming a belief from some evidence, then receiving new information that undermines either the evidence (undercutting) or the proposition itself (rebutting).", "target_proposition": "The proposition the agent initially came to believe.", "question": "Was the agent's belief justified before the new information, is it justified after, and should the agent retain the belief?", "expected": {"justified_before": true, "justified_after": false, "should_retain_belief": false}, "scoring_weights": {"justified_before": 1.0, "justified_after": 1.5, "should_retain_belief": 1.5}, "difficulty": "medium", "notes": "Say whether the defeater is undercutting or rebutting, and whether anything later defeats the defeater."}
+{"id": "def_100_short_slug", "module": "defeaters", "schema_family": "defeater_revision", "variant_id": 1, "scenario": "Describe an agent with initial support for a target proposition p, then new information that rebuts p, undercuts the original evidence, challenges the agent's own reliability, or (for placebo cases) has no epistemic effect.", "target_proposition": "The proposition p the agent initially came to believe.", "question": "How should the new information affect the agent's epistemic position regarding the target proposition?", "expected": {"defeater_present": "yes", "defeater_type": "undercutting_defeater", "defeater_strength": "moderate", "support_relation": "equal_support", "belief_revision": "suspend_judgment"}, "difficulty": "medium", "notes": "Say why the defeater has this type and strength, and note anything contested about the intended reading."}
 ```
+
+Defeaters cases must define exactly these five expected labels, and the
+validator additionally enforces the coherence mappings on the answer key:
+
+- `defeater_strength` → `support_relation`: `none`→`no_impact`,
+  `weak`→`target_better_supported`, `moderate`→`equal_support`,
+  `strong`→`negation_better_supported`.
+- `support_relation` → `belief_revision`: `no_impact` and
+  `target_better_supported`→`maintain_target_belief`,
+  `equal_support`→`suspend_judgment`,
+  `negation_better_supported`→`believe_negation`.
+- `defeater_present: "no"` requires `defeater_type: "none_placebo"` and
+  `defeater_strength: "none"`; `"yes"` forbids both.
+
+Models are scored on the five exact labels plus two computed coherence
+components (see `docs/methodology.md`); the model never self-reports
+coherence, so cases only need the five labels above.

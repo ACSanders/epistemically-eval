@@ -39,7 +39,7 @@ The goal is not just an overall score. The goal is an **epistemic fingerprint** 
 
 The current benchmark includes:
 
-- **150 hand-written cases**
+- **170 hand-written cases** (60 `belief_acceptance_knowledge`, 50 `defeaters`, 30 `epistemic_luck`, 30 `rational_reasoning`)
 - **4 active epistemology modules**
 - **6 evaluated models**
 - **3 model providers**
@@ -65,16 +65,16 @@ Current evaluated models:
 | Anthropic | `claude-opus-4-8` |
 | Google | `gemini-2.5-pro` |
 
-Current leaderboard from the committed result files:
+Current leaderboard from the committed result files (170 cases, including the revised defeaters v2 module):
 
 | Model | Overall score |
 |---|---:|
-| `claude-opus-4-8` | 0.978 |
-| `gpt-5-mini` | 0.960 |
-| `gemini-2.5-pro` | 0.953 |
-| `claude-sonnet-5` | 0.951 |
-| `claude-haiku-4-5` | 0.923 |
-| `gpt-4o-mini` | 0.800 |
+| `claude-opus-4-8` | 0.959 |
+| `gpt-5-mini` | 0.945 |
+| `claude-sonnet-5` | 0.930 |
+| `gemini-2.5-pro` | 0.929 |
+| `claude-haiku-4-5` | 0.911 |
+| `gpt-4o-mini` | 0.774 |
 
 These results are useful as a live research prototype and public demo. They should not be treated as final leaderboard claims. The benchmark is still growing, and several modules need more cases, variants, and review.
 
@@ -145,18 +145,18 @@ Current schema families:
 
 Module key: `defeaters`
 
-This module tests whether models update appropriately when new information affects an existing belief.
+This module evaluates whether model outputs identify defeaters and whether their defeater strength, comparative support, and belief-revision judgments form a coherent update pattern.
 
-It focuses on belief revision behavior rather than over-weighting fine-grained taxonomy. Cases include:
+Each of the 50 cases identifies a target proposition p, gives the agent's initial support for it, and introduces new information. The model outputs five exact labels — `defeater_present`, `defeater_type`, `defeater_strength`, `support_relation`, and `belief_revision` — and the app computes two coherence components from the model's own labels (never self-reported): whether the reported strength and support relation pick out the same post-information support state, and whether the reported belief revision is the one the reported support relation rationally calls for. Coherence is a distinct diagnostic signal: a model can match individual expected labels while its own answers describe incompatible epistemic situations, or stay perfectly coherent while systematically over- or under-revising.
 
-- rebutting defeaters
-- undercutting defeaters
-- higher-order defeaters
-- irrelevant or placebo information
+Current schema families:
 
-Current schema family:
+- `rebutting` (evidence against p or for not-p)
+- `undercutting` (weakens the link between the original evidence and p)
+- `higher_order` (reason to doubt the agent's own reliability in the case)
+- `placebo_control` (epistemically irrelevant information)
 
-- `rebuttal_and_undercut`
+Expected labels in the case files are validated against the same coherence mappings, so the answer key is internally coherent by construction.
 
 ### 3. Rational reasoning
 
@@ -330,7 +330,8 @@ The current six-model comparison already surfaces several useful patterns:
 
 - `claude-opus-4-8` currently leads overall and is the first model in the benchmark to solve the epistemic-luck module perfectly.
 - `gpt-5-mini`, `gemini-2.5-pro`, and `claude-sonnet-5` are close overall but show different failure profiles.
-- All Claude models performed perfectly on the defeaters module in the current run.
+- The revised defeaters v2 module is no longer saturated: no model solves it perfectly, and the best scores sit around 0.93. Its computed coherence scoring separates two distinct epistemic failure patterns — `gpt-4o-mini` stays fully coherent while systematically over-revising (jumping to belief in not-p where suspension is warranted), while `gemini-2.5-pro` most often produces strength/support packages that describe incompatible situations.
+- Higher-order defeaters are the hardest defeater family for every evaluated model, typically misread as undercutting defeaters.
 - `gpt-4o-mini` and `claude-haiku-4-5` fail intervening-luck cases in different ways.
 - `gemini-2.5-pro` is near-perfect on epistemic luck but shows a distinctive two-direction confusion on reason-type labels.
 - Several indeterminate knowledge cases remain difficult across all evaluated models.
@@ -518,7 +519,7 @@ Epistemically is still early and intentionally evolving.
 
 Current limitations:
 
-- The benchmark has 150 cases, but several schema families still need more examples.
+- The benchmark has 170 cases, but several schema families still need more examples.
 - Cases are hand-written and should continue to receive philosophical and empirical review.
 - Expected labels follow mainstream epistemological concepts, but some cases, especially environmental luck and fake-barn-style cases, remain philosophically contestable.
 - Exact-label scoring is transparent but can be brittle.
@@ -536,7 +537,6 @@ Near-term priorities:
 - Add more epistemic-luck variants while preserving philosophical clarity.
 - Expand social epistemology modules, especially testimony and disagreement.
 - Add induction and evidence-updating cases.
-- Add more difficult defeater variants.
 - Add repeated-run stability checks.
 - Add case difficulty estimates.
 - Improve documentation and related-work notes.

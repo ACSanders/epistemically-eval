@@ -89,15 +89,26 @@ ALLOWED_LABELS: Dict[str, List[str]] = {
         "belief_set_may_be_retained",
         "belief_set_requires_revision",
     ],
+    # Defeaters v2 vocabulary; the coherence mappings over these values live
+    # in epistemically.defeaters.
     "defeater_present": ["yes", "no"],
     "defeater_type": [
-        "placebo",
+        "none_placebo",
         "rebutting_defeater",
         "undercutting_defeater",
+        "higher_order_defeater",
     ],
-    "belief_update": [
-        "no_revision_from_new_information",
-        "revise_belief",
+    "defeater_strength": ["none", "weak", "moderate", "strong"],
+    "support_relation": [
+        "no_impact",
+        "target_better_supported",
+        "equal_support",
+        "negation_better_supported",
+    ],
+    "belief_revision": [
+        "maintain_target_belief",
+        "suspend_judgment",
+        "believe_negation",
     ],
 }
 

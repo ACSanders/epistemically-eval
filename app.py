@@ -858,15 +858,17 @@ Epistemically evaluates whether model outputs match operationalized distinctions
 Current modules:
 
 - **Belief, acceptance, and knowledge:** attitude, truth, pragmatic acceptance, reason type, and justification.
-- **Defeaters:** whether new information undercuts or rebuts a belief and whether revision is required.
+- **Defeaters:** whether model outputs identify defeaters (rebutting, undercutting, higher-order, or placebo controls) and whether their defeater strength, comparative support, and belief-revision judgments form a coherent update pattern. Two coherence components are computed by the app from the model's own labels — never self-reported — and scored alongside the exact labels.
 - **Rational reasoning:** deductive patterns, logical status, and rational constraints.
 - **Epistemic luck:** knowledge controls, lucky guesses, intervening luck, and environmental luck.
 
-Planned work includes social epistemology benchmarks for testimony and disagreement, expanded defeater cases, and induction/updating.
+The benchmark currently has 170 structured epistemic cases across these four modules. Planned work includes social epistemology benchmarks for testimony and disagreement, and induction/updating.
 
 ### Scoring
 
 Models answer using fixed labels for each field. Fields are scored by exact match after light normalization. This keeps scoring deterministic and highly interpretable: every point traces back to a specific label on a specific case.
+
+Defeaters cases additionally score two computed coherence components, derived deterministically from the model's own labels rather than compared against expected ones. They surface a distinct diagnostic signal: whether a model's strength, support, and revision labels describe the same epistemic situation.
 
 The tradeoff is that near misses do not receive partial credit. The unscored `brief_explanation` field helps diagnose why a model gave a label, but it does not affect the score.
 

@@ -12,6 +12,7 @@ from typing import Any, Dict, List, Mapping, Optional, Set, Tuple
 import pandas as pd
 
 from epistemically.dataset import check_cases
+from epistemically.defeaters import COHERENCE_COMPONENTS
 from epistemically.schemas import EpistemicCase
 
 ACCENT = "#f0883e"
@@ -170,11 +171,24 @@ def load_all_results(
 
 
 def field_accuracy(df: pd.DataFrame) -> pd.DataFrame:
-    """Per-(model, field) exact-label accuracy from field_results_json."""
+    """Per-(model, field) exact-label accuracy from field_results_json.
+
+    Rows with both computed coherence components also get a derived
+    revision_coherence entry — their per-case mean (0, 0.5, or 1) — so the
+    combined coherence signal charts alongside the raw fields.
+    """
     records = []
     for _, row in df.iterrows():
-        for field, ok in json_or_empty(row.get("field_results_json")).items():
-            records.append({"model": row["model"], "field": field, "correct": bool(ok)})
+        results = json_or_empty(row.get("field_results_json"))
+        for field, ok in results.items():
+            records.append({"model": row["model"], "field": field, "correct": float(bool(ok))})
+        if all(name in results for name in COHERENCE_COMPONENTS):
+            revision = sum(bool(results[name]) for name in COHERENCE_COMPONENTS) / len(
+                COHERENCE_COMPONENTS
+            )
+            records.append(
+                {"model": row["model"], "field": "revision_coherence", "correct": revision}
+            )
     if not records:
         return pd.DataFrame(columns=["model", "field", "accuracy", "n"])
     long = pd.DataFrame(records)
@@ -222,6 +236,19 @@ def field_rows(
                 "expected": json.dumps(expected_value),
                 "model": json.dumps(predicted[field]) if field in predicted else "—",
                 "correct": bool(field_results.get(field, False)),
+            }
+        )
+    # Computed components (defeaters coherence) appear in field_results but
+    # not in expected: there is no expected label, only coherent/incoherent.
+    for field, ok in field_results.items():
+        if field in expected:
+            continue
+        rows.append(
+            {
+                "field": field,
+                "expected": "coherent",
+                "model": "coherent" if ok else "incoherent",
+                "correct": bool(ok),
             }
         )
     return rows
