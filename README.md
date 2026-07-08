@@ -39,7 +39,7 @@ The goal is not just an overall score. The goal is an **epistemic fingerprint** 
 
 The current benchmark includes:
 
-- **170 hand-written cases** (60 `belief_acceptance_knowledge`, 50 `defeaters`, 30 `epistemic_luck`, 30 `rational_reasoning`)
+- **200 hand-written cases** (60 `belief_acceptance_knowledge`, 50 `defeaters`, 60 `epistemic_luck`, 30 `rational_reasoning`)
 - **4 active epistemology modules**
 - **6 evaluated models**
 - **3 model providers**
@@ -65,16 +65,16 @@ Current evaluated models:
 | Anthropic | `claude-opus-4-8` |
 | Google | `gemini-2.5-pro` |
 
-Current leaderboard from the committed result files (170 cases, including the revised defeaters v2 module):
+Current leaderboard from the committed result files (200 cases, including the defeaters v2 module and the expanded 60-case epistemic luck module):
 
 | Model | Overall score |
 |---|---:|
-| `claude-opus-4-8` | 0.959 |
-| `gpt-5-mini` | 0.945 |
-| `claude-sonnet-5` | 0.930 |
-| `gemini-2.5-pro` | 0.929 |
-| `claude-haiku-4-5` | 0.911 |
-| `gpt-4o-mini` | 0.774 |
+| `claude-opus-4-8` | 0.963 |
+| `claude-sonnet-5` | 0.943 |
+| `gpt-5-mini` | 0.937 |
+| `gemini-2.5-pro` | 0.937 |
+| `claude-haiku-4-5` | 0.880 |
+| `gpt-4o-mini` | 0.761 |
 
 These results are useful as a live research prototype and public demo. They should not be treated as final leaderboard claims. The benchmark is still growing, and several modules need more cases, variants, and review.
 
@@ -94,11 +94,12 @@ The core question is:
 
 This matters because many evaluations focus on correctness. But correctness alone is not enough. In epistemic-luck cases, a model may classify an agent as knowing simply because the target proposition is true and the agent has some support. That is the exact failure the module is designed to expose.
 
-The current `epistemic_luck` module includes 30 cases across four schema families:
+The current `epistemic_luck` module includes 60 cases across five schema families:
 
 | Schema family | Purpose |
 |---|---|
 | `knowledge_control` | Ordinary knowledge cases with no relevant epistemic luck |
+| `no_knowledge_no_luck_control` | False or unsupported beliefs that are not knowledge and involve no knowledge-defeating luck, controlling for over-application of the luck concept |
 | `lucky_guess` | True beliefs formed without adequate justification |
 | `intervening_luck` | Gettier-style cases where the truth is lucky because something goes wrong between the subject's reason and the target fact |
 | `environmental_luck` | Cases where the subject forms a true belief in an unsafe epistemic environment |
@@ -328,13 +329,13 @@ Bootstrap confidence intervals are used to summarize uncertainty over the curren
 
 The current six-model comparison already surfaces several useful patterns:
 
-- `claude-opus-4-8` currently leads overall and is the first model in the benchmark to solve the epistemic-luck module perfectly.
-- `gpt-5-mini`, `gemini-2.5-pro`, and `claude-sonnet-5` are close overall but show different failure profiles.
+- `claude-opus-4-8` currently leads overall (0.963), closely followed by `claude-sonnet-5`, `gpt-5-mini`, and `gemini-2.5-pro`.
+- On the expanded 60-case epistemic luck module, `claude-opus-4-8` (0.994) and `gemini-2.5-pro` (0.986) are near-ceiling with no systematic luck confusions; both sit close enough to the ceiling that harder intervening- and environmental-luck variants are a natural next step.
+- The module cleanly separates a signature Gettier failure: `claude-haiku-4-5` labels 18 of 27 intervening-luck (Gettier) cases as `knows`, treating justified true belief with knowledge-defeating luck as knowledge, which pulls its luck-type accuracy down to 0.67.
+- `gpt-4o-mini` shows the opposite over-application: it treats 4 of 6 false-belief control cases as epistemic luck, marking plain non-lucky false beliefs as luck.
+- No model confused lucky guesses with intervening luck, and no model over-detected luck in ordinary knowledge controls.
 - The revised defeaters v2 module is no longer saturated: no model solves it perfectly, and the best scores sit around 0.93. Its computed coherence scoring separates two distinct epistemic failure patterns — `gpt-4o-mini` stays fully coherent while systematically over-revising (jumping to belief in not-p where suspension is warranted), while `gemini-2.5-pro` most often produces strength/support packages that describe incompatible situations.
 - Higher-order defeaters are the hardest defeater family for every evaluated model, typically misread as undercutting defeaters.
-- `gpt-4o-mini` and `claude-haiku-4-5` fail intervening-luck cases in different ways.
-- `gemini-2.5-pro` is near-perfect on epistemic luck but shows a distinctive two-direction confusion on reason-type labels.
-- Several indeterminate knowledge cases remain difficult across all evaluated models.
 
 These should be treated as diagnostic findings from the current case set, not as final claims about model capability in general.
 
@@ -519,7 +520,7 @@ Epistemically is still early and intentionally evolving.
 
 Current limitations:
 
-- The benchmark has 170 cases, but several schema families still need more examples.
+- The benchmark has 200 cases, but several schema families still need more examples, and the top models are near-ceiling on epistemic luck.
 - Cases are hand-written and should continue to receive philosophical and empirical review.
 - Expected labels follow mainstream epistemological concepts, but some cases, especially environmental luck and fake-barn-style cases, remain philosophically contestable.
 - Exact-label scoring is transparent but can be brittle.

@@ -60,8 +60,8 @@ Mean scores per model/module come with percentile-bootstrap 95% confidence
 intervals (`epistemically.bootstrap`). For comparing two models on the same
 case set, a paired bootstrap on per-case score differences is provided; an
 interval excluding zero suggests a real difference. The benchmark currently
-has 170 structured epistemic cases (60 belief_acceptance_knowledge,
-50 defeaters, 30 epistemic_luck, 30 rational_reasoning); per-module
+has 200 structured epistemic cases (60 belief_acceptance_knowledge,
+50 defeaters, 60 epistemic_luck, 30 rational_reasoning); per-module
 intervals are still wide, so they show uncertainty over the current case
 set rather than population-level claims.
 
