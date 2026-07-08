@@ -1,0 +1,9 @@
+case_id,module,schema_family,variant_id,difficulty,model,timestamp,expected_json,error,latency_s,raw_response,parsed_ok,predicted_json,brief_explanation,field_results_json,points,max_points,score
+def_046_label_moderate_higher_order,defeaters,higher_order,,,claude-sonnet-5,2026-07-08T04:48:35.643348+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""higher_order_defeater"", ""defeater_strength"": ""moderate"", ""support_relation"": ""equal_support"", ""belief_revision"": ""suspend_judgment""}",,2.604,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""higher_order_defeater"",
+  ""defeater_strength"": ""moderate"",
+  ""support_relation"": ""equal_support"",
+  ""belief_revision"": ""suspend_judgment"",
+  ""brief_explanation"": ""Learning her vision was impaired at the time undermines her reliability in reading the label, and without independent confirmation her reading no longer favors 10 mg over another value.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""higher_order_defeater"", ""defeater_strength"": ""moderate"", ""support_relation"": ""equal_support"", ""belief_revision"": ""suspend_judgment"", ""brief_explanation"": ""Learning her vision was impaired at the time undermines her reliability in reading the label, and without independent confirmation her reading no longer favors 10 mg over another value.""}","Learning her vision was impaired at the time undermines her reliability in reading the label, and without independent confirmation her reading no longer favors 10 mg over another value.","{""defeater_present"": true, ""defeater_type"": true, ""defeater_strength"": true, ""support_relation"": true, ""belief_revision"": true, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",7.0,7.0,1.0

@@ -1,0 +1,401 @@
+case_id,module,schema_family,variant_id,difficulty,model,timestamp,expected_json,error,latency_s,raw_response,parsed_ok,predicted_json,brief_explanation,field_results_json,points,max_points,score
+def_001_package_placebo,defeaters,placebo_control,,,gpt-4o-mini,2026-07-08T04:25:29.929495+00:00,"{""defeater_present"": ""no"", ""defeater_type"": ""none_placebo"", ""defeater_strength"": ""none"", ""support_relation"": ""no_impact"", ""belief_revision"": ""maintain_target_belief""}",,2.134,"{
+  ""defeater_present"": ""no"",
+  ""defeater_type"": ""none_placebo"",
+  ""defeater_strength"": ""none"",
+  ""support_relation"": ""no_impact"",
+  ""belief_revision"": ""maintain_target_belief"",
+  ""brief_explanation"": ""The new information about the truck's color does not affect the evidence supporting the belief that the package arrived.""
+}",True,"{""defeater_present"": ""no"", ""defeater_type"": ""none_placebo"", ""defeater_strength"": ""none"", ""support_relation"": ""no_impact"", ""belief_revision"": ""maintain_target_belief"", ""brief_explanation"": ""The new information about the truck's color does not affect the evidence supporting the belief that the package arrived.""}",The new information about the truck's color does not affect the evidence supporting the belief that the package arrived.,"{""defeater_present"": true, ""defeater_type"": true, ""defeater_strength"": true, ""support_relation"": true, ""belief_revision"": true, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",7.0,7.0,1.0
+def_002_package_rebutting,defeaters,rebutting,,,gpt-4o-mini,2026-07-08T04:25:32.063227+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""defeater_strength"": ""strong"", ""support_relation"": ""negation_better_supported"", ""belief_revision"": ""believe_negation""}",,1.887,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""rebutting_defeater"",
+  ""defeater_strength"": ""strong"",
+  ""support_relation"": ""negation_better_supported"",
+  ""belief_revision"": ""believe_negation"",
+  ""brief_explanation"": ""The new information directly contradicts the initial belief that the package arrived.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""defeater_strength"": ""strong"", ""support_relation"": ""negation_better_supported"", ""belief_revision"": ""believe_negation"", ""brief_explanation"": ""The new information directly contradicts the initial belief that the package arrived.""}",The new information directly contradicts the initial belief that the package arrived.,"{""defeater_present"": true, ""defeater_type"": true, ""defeater_strength"": true, ""support_relation"": true, ""belief_revision"": true, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",7.0,7.0,1.0
+def_003_package_undercutting,defeaters,undercutting,,,gpt-4o-mini,2026-07-08T04:25:33.950738+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""defeater_strength"": ""moderate"", ""support_relation"": ""equal_support"", ""belief_revision"": ""suspend_judgment""}",,2.692,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""rebutting_defeater"",
+  ""defeater_strength"": ""strong"",
+  ""support_relation"": ""negation_better_supported"",
+  ""belief_revision"": ""believe_negation"",
+  ""brief_explanation"": ""The new information indicates that the tracking system is unreliable, providing strong evidence against the package having arrived.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""defeater_strength"": ""strong"", ""support_relation"": ""negation_better_supported"", ""belief_revision"": ""believe_negation"", ""brief_explanation"": ""The new information indicates that the tracking system is unreliable, providing strong evidence against the package having arrived.""}","The new information indicates that the tracking system is unreliable, providing strong evidence against the package having arrived.","{""defeater_present"": true, ""defeater_type"": false, ""defeater_strength"": false, ""support_relation"": false, ""belief_revision"": false, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",3.0,7.0,0.42857142857142855
+def_004_dolphin_placebo,defeaters,placebo_control,,,gpt-4o-mini,2026-07-08T04:25:36.643265+00:00,"{""defeater_present"": ""no"", ""defeater_type"": ""none_placebo"", ""defeater_strength"": ""none"", ""support_relation"": ""no_impact"", ""belief_revision"": ""maintain_target_belief""}",,1.889,"{
+  ""defeater_present"": ""no"",
+  ""defeater_type"": ""none_placebo"",
+  ""defeater_strength"": ""none"",
+  ""support_relation"": ""no_impact"",
+  ""belief_revision"": ""maintain_target_belief"",
+  ""brief_explanation"": ""The presence of pelicans does not provide any evidence against the existence of a dolphin.""
+}",True,"{""defeater_present"": ""no"", ""defeater_type"": ""none_placebo"", ""defeater_strength"": ""none"", ""support_relation"": ""no_impact"", ""belief_revision"": ""maintain_target_belief"", ""brief_explanation"": ""The presence of pelicans does not provide any evidence against the existence of a dolphin.""}",The presence of pelicans does not provide any evidence against the existence of a dolphin.,"{""defeater_present"": true, ""defeater_type"": true, ""defeater_strength"": true, ""support_relation"": true, ""belief_revision"": true, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",7.0,7.0,1.0
+def_005_dolphin_rebutting,defeaters,rebutting,,,gpt-4o-mini,2026-07-08T04:25:38.532872+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""defeater_strength"": ""strong"", ""support_relation"": ""negation_better_supported"", ""belief_revision"": ""believe_negation""}",,1.995,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""rebutting_defeater"",
+  ""defeater_strength"": ""strong"",
+  ""support_relation"": ""negation_better_supported"",
+  ""belief_revision"": ""believe_negation"",
+  ""brief_explanation"": ""The marine biologist's reliable information directly contradicts Jerry's belief in the existence of a dolphin.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""defeater_strength"": ""strong"", ""support_relation"": ""negation_better_supported"", ""belief_revision"": ""believe_negation"", ""brief_explanation"": ""The marine biologist's reliable information directly contradicts Jerry's belief in the existence of a dolphin.""}",The marine biologist's reliable information directly contradicts Jerry's belief in the existence of a dolphin.,"{""defeater_present"": true, ""defeater_type"": true, ""defeater_strength"": true, ""support_relation"": true, ""belief_revision"": true, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",7.0,7.0,1.0
+def_006_dolphin_higher_order,defeaters,higher_order,,,gpt-4o-mini,2026-07-08T04:25:40.527479+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""higher_order_defeater"", ""defeater_strength"": ""moderate"", ""support_relation"": ""equal_support"", ""belief_revision"": ""suspend_judgment""}",,1.297,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""higher_order_defeater"",
+  ""defeater_strength"": ""strong"",
+  ""support_relation"": ""negation_better_supported"",
+  ""belief_revision"": ""believe_negation"",
+  ""brief_explanation"": ""The new information about potential hallucinations leads Jerry to doubt his perception, making not-p better supported.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""higher_order_defeater"", ""defeater_strength"": ""strong"", ""support_relation"": ""negation_better_supported"", ""belief_revision"": ""believe_negation"", ""brief_explanation"": ""The new information about potential hallucinations leads Jerry to doubt his perception, making not-p better supported.""}","The new information about potential hallucinations leads Jerry to doubt his perception, making not-p better supported.","{""defeater_present"": true, ""defeater_type"": true, ""defeater_strength"": false, ""support_relation"": false, ""belief_revision"": false, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",4.0,7.0,0.5714285714285714
+def_007_burrito_placebo,defeaters,placebo_control,,,gpt-4o-mini,2026-07-08T04:25:41.824623+00:00,"{""defeater_present"": ""no"", ""defeater_type"": ""none_placebo"", ""defeater_strength"": ""none"", ""support_relation"": ""no_impact"", ""belief_revision"": ""maintain_target_belief""}",,1.556,"{
+  ""defeater_present"": ""no"",
+  ""defeater_type"": ""none_placebo"",
+  ""defeater_strength"": ""none"",
+  ""support_relation"": ""no_impact"",
+  ""belief_revision"": ""maintain_target_belief"",
+  ""brief_explanation"": ""The new information about the distance does not affect the belief that the burritos are giant.""
+}",True,"{""defeater_present"": ""no"", ""defeater_type"": ""none_placebo"", ""defeater_strength"": ""none"", ""support_relation"": ""no_impact"", ""belief_revision"": ""maintain_target_belief"", ""brief_explanation"": ""The new information about the distance does not affect the belief that the burritos are giant.""}",The new information about the distance does not affect the belief that the burritos are giant.,"{""defeater_present"": true, ""defeater_type"": true, ""defeater_strength"": true, ""support_relation"": true, ""belief_revision"": true, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",7.0,7.0,1.0
+def_008_burrito_rebutting,defeaters,rebutting,,,gpt-4o-mini,2026-07-08T04:25:43.380826+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""defeater_strength"": ""strong"", ""support_relation"": ""negation_better_supported"", ""belief_revision"": ""believe_negation""}",,1.409,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""rebutting_defeater"",
+  ""defeater_strength"": ""strong"",
+  ""support_relation"": ""negation_better_supported"",
+  ""belief_revision"": ""believe_negation"",
+  ""brief_explanation"": ""The new review provides strong evidence against the belief that the burritos are giant.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""defeater_strength"": ""strong"", ""support_relation"": ""negation_better_supported"", ""belief_revision"": ""believe_negation"", ""brief_explanation"": ""The new review provides strong evidence against the belief that the burritos are giant.""}",The new review provides strong evidence against the belief that the burritos are giant.,"{""defeater_present"": true, ""defeater_type"": true, ""defeater_strength"": true, ""support_relation"": true, ""belief_revision"": true, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",7.0,7.0,1.0
+def_009_burrito_undercutting,defeaters,undercutting,,,gpt-4o-mini,2026-07-08T04:25:44.789742+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""defeater_strength"": ""moderate"", ""support_relation"": ""equal_support"", ""belief_revision"": ""suspend_judgment""}",,1.524,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""rebutting_defeater"",
+  ""defeater_strength"": ""strong"",
+  ""support_relation"": ""negation_better_supported"",
+  ""belief_revision"": ""believe_negation"",
+  ""brief_explanation"": ""The new information about the friend's dishonesty provides strong evidence against the target proposition.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""defeater_strength"": ""strong"", ""support_relation"": ""negation_better_supported"", ""belief_revision"": ""believe_negation"", ""brief_explanation"": ""The new information about the friend's dishonesty provides strong evidence against the target proposition.""}",The new information about the friend's dishonesty provides strong evidence against the target proposition.,"{""defeater_present"": true, ""defeater_type"": false, ""defeater_strength"": false, ""support_relation"": false, ""belief_revision"": false, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",3.0,7.0,0.42857142857142855
+def_010_antarctica_placebo,defeaters,placebo_control,,,gpt-4o-mini,2026-07-08T04:25:46.313607+00:00,"{""defeater_present"": ""no"", ""defeater_type"": ""none_placebo"", ""defeater_strength"": ""none"", ""support_relation"": ""no_impact"", ""belief_revision"": ""maintain_target_belief""}",,1.4,"{
+  ""defeater_present"": ""no"",
+  ""defeater_type"": ""none_placebo"",
+  ""defeater_strength"": ""none"",
+  ""support_relation"": ""no_impact"",
+  ""belief_revision"": ""maintain_target_belief"",
+  ""brief_explanation"": ""The new information about the textbook's cover does not affect Cindy's belief about Antarctica.""
+}",True,"{""defeater_present"": ""no"", ""defeater_type"": ""none_placebo"", ""defeater_strength"": ""none"", ""support_relation"": ""no_impact"", ""belief_revision"": ""maintain_target_belief"", ""brief_explanation"": ""The new information about the textbook's cover does not affect Cindy's belief about Antarctica.""}",The new information about the textbook's cover does not affect Cindy's belief about Antarctica.,"{""defeater_present"": true, ""defeater_type"": true, ""defeater_strength"": true, ""support_relation"": true, ""belief_revision"": true, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",7.0,7.0,1.0
+def_011_antarctica_rebutting,defeaters,rebutting,,,gpt-4o-mini,2026-07-08T04:25:47.713996+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""defeater_strength"": ""strong"", ""support_relation"": ""negation_better_supported"", ""belief_revision"": ""believe_negation""}",,1.919,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""rebutting_defeater"",
+  ""defeater_strength"": ""strong"",
+  ""support_relation"": ""negation_better_supported"",
+  ""belief_revision"": ""believe_negation"",
+  ""brief_explanation"": ""The new information from the reliable textbook provides strong evidence that contradicts Cindy's belief.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""defeater_strength"": ""strong"", ""support_relation"": ""negation_better_supported"", ""belief_revision"": ""believe_negation"", ""brief_explanation"": ""The new information from the reliable textbook provides strong evidence that contradicts Cindy's belief.""}",The new information from the reliable textbook provides strong evidence that contradicts Cindy's belief.,"{""defeater_present"": true, ""defeater_type"": true, ""defeater_strength"": true, ""support_relation"": true, ""belief_revision"": true, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",7.0,7.0,1.0
+def_012_antarctica_undercutting,defeaters,undercutting,,,gpt-4o-mini,2026-07-08T04:25:49.633152+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""defeater_strength"": ""moderate"", ""support_relation"": ""equal_support"", ""belief_revision"": ""suspend_judgment""}",,1.867,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""rebutting_defeater"",
+  ""defeater_strength"": ""strong"",
+  ""support_relation"": ""negation_better_supported"",
+  ""belief_revision"": ""believe_negation"",
+  ""brief_explanation"": ""Cindy's friend's information provides strong evidence against her belief that Antarctica is not real.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""defeater_strength"": ""strong"", ""support_relation"": ""negation_better_supported"", ""belief_revision"": ""believe_negation"", ""brief_explanation"": ""Cindy's friend's information provides strong evidence against her belief that Antarctica is not real.""}",Cindy's friend's information provides strong evidence against her belief that Antarctica is not real.,"{""defeater_present"": true, ""defeater_type"": false, ""defeater_strength"": false, ""support_relation"": false, ""belief_revision"": false, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",3.0,7.0,0.42857142857142855
+def_013_aliens_placebo,defeaters,placebo_control,,,gpt-4o-mini,2026-07-08T04:25:51.500205+00:00,"{""defeater_present"": ""no"", ""defeater_type"": ""none_placebo"", ""defeater_strength"": ""none"", ""support_relation"": ""no_impact"", ""belief_revision"": ""maintain_target_belief""}",,1.252,"{
+  ""defeater_present"": ""no"",
+  ""defeater_type"": ""none_placebo"",
+  ""defeater_strength"": ""none"",
+  ""support_relation"": ""no_impact"",
+  ""belief_revision"": ""maintain_target_belief"",
+  ""brief_explanation"": ""The new information does not provide evidence against the belief that aliens are attacking.""
+}",True,"{""defeater_present"": ""no"", ""defeater_type"": ""none_placebo"", ""defeater_strength"": ""none"", ""support_relation"": ""no_impact"", ""belief_revision"": ""maintain_target_belief"", ""brief_explanation"": ""The new information does not provide evidence against the belief that aliens are attacking.""}",The new information does not provide evidence against the belief that aliens are attacking.,"{""defeater_present"": true, ""defeater_type"": true, ""defeater_strength"": true, ""support_relation"": true, ""belief_revision"": true, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",7.0,7.0,1.0
+def_014_aliens_rebutting,defeaters,rebutting,,,gpt-4o-mini,2026-07-08T04:25:52.752057+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""defeater_strength"": ""strong"", ""support_relation"": ""negation_better_supported"", ""belief_revision"": ""believe_negation""}",,1.304,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""rebutting_defeater"",
+  ""defeater_strength"": ""strong"",
+  ""support_relation"": ""negation_better_supported"",
+  ""belief_revision"": ""believe_negation"",
+  ""brief_explanation"": ""The news report provides strong evidence against the belief that aliens are attacking.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""defeater_strength"": ""strong"", ""support_relation"": ""negation_better_supported"", ""belief_revision"": ""believe_negation"", ""brief_explanation"": ""The news report provides strong evidence against the belief that aliens are attacking.""}",The news report provides strong evidence against the belief that aliens are attacking.,"{""defeater_present"": true, ""defeater_type"": true, ""defeater_strength"": true, ""support_relation"": true, ""belief_revision"": true, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",7.0,7.0,1.0
+def_015_aliens_higher_order,defeaters,higher_order,,,gpt-4o-mini,2026-07-08T04:25:54.055735+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""higher_order_defeater"", ""defeater_strength"": ""moderate"", ""support_relation"": ""equal_support"", ""belief_revision"": ""suspend_judgment""}",,1.402,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""undercutting_defeater"",
+  ""defeater_strength"": ""strong"",
+  ""support_relation"": ""negation_better_supported"",
+  ""belief_revision"": ""believe_negation"",
+  ""brief_explanation"": ""The new information about Kyle's vision problem undermines his original evidence for believing in an alien attack.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""defeater_strength"": ""strong"", ""support_relation"": ""negation_better_supported"", ""belief_revision"": ""believe_negation"", ""brief_explanation"": ""The new information about Kyle's vision problem undermines his original evidence for believing in an alien attack.""}",The new information about Kyle's vision problem undermines his original evidence for believing in an alien attack.,"{""defeater_present"": true, ""defeater_type"": false, ""defeater_strength"": false, ""support_relation"": false, ""belief_revision"": false, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",3.0,7.0,0.42857142857142855
+def_016_scuba_placebo,defeaters,placebo_control,,,gpt-4o-mini,2026-07-08T04:25:55.457785+00:00,"{""defeater_present"": ""no"", ""defeater_type"": ""none_placebo"", ""defeater_strength"": ""none"", ""support_relation"": ""no_impact"", ""belief_revision"": ""maintain_target_belief""}",,1.368,"{
+  ""defeater_present"": ""no"",
+  ""defeater_type"": ""none_placebo"",
+  ""defeater_strength"": ""none"",
+  ""support_relation"": ""no_impact"",
+  ""belief_revision"": ""maintain_target_belief"",
+  ""brief_explanation"": ""The new information about the hotel does not affect the validity of the tour guide's statement regarding the boats.""
+}",True,"{""defeater_present"": ""no"", ""defeater_type"": ""none_placebo"", ""defeater_strength"": ""none"", ""support_relation"": ""no_impact"", ""belief_revision"": ""maintain_target_belief"", ""brief_explanation"": ""The new information about the hotel does not affect the validity of the tour guide's statement regarding the boats.""}",The new information about the hotel does not affect the validity of the tour guide's statement regarding the boats.,"{""defeater_present"": true, ""defeater_type"": true, ""defeater_strength"": true, ""support_relation"": true, ""belief_revision"": true, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",7.0,7.0,1.0
+def_017_scuba_rebutting,defeaters,rebutting,,,gpt-4o-mini,2026-07-08T04:25:56.825892+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""defeater_strength"": ""strong"", ""support_relation"": ""negation_better_supported"", ""belief_revision"": ""believe_negation""}",,1.711,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""rebutting_defeater"",
+  ""defeater_strength"": ""strong"",
+  ""support_relation"": ""negation_better_supported"",
+  ""belief_revision"": ""believe_negation"",
+  ""brief_explanation"": ""The new information directly contradicts the possibility of the boats taking passengers, strongly supporting not-p.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""defeater_strength"": ""strong"", ""support_relation"": ""negation_better_supported"", ""belief_revision"": ""believe_negation"", ""brief_explanation"": ""The new information directly contradicts the possibility of the boats taking passengers, strongly supporting not-p.""}","The new information directly contradicts the possibility of the boats taking passengers, strongly supporting not-p.","{""defeater_present"": true, ""defeater_type"": true, ""defeater_strength"": true, ""support_relation"": true, ""belief_revision"": true, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",7.0,7.0,1.0
+def_018_scuba_undercutting,defeaters,undercutting,,,gpt-4o-mini,2026-07-08T04:25:58.537227+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""defeater_strength"": ""moderate"", ""support_relation"": ""equal_support"", ""belief_revision"": ""suspend_judgment""}",,1.425,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""rebutting_defeater"",
+  ""defeater_strength"": ""strong"",
+  ""support_relation"": ""negation_better_supported"",
+  ""belief_revision"": ""believe_negation"",
+  ""brief_explanation"": ""The new information about imposters undermines the reliability of the tour guide's claim, making not-p better supported.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""defeater_strength"": ""strong"", ""support_relation"": ""negation_better_supported"", ""belief_revision"": ""believe_negation"", ""brief_explanation"": ""The new information about imposters undermines the reliability of the tour guide's claim, making not-p better supported.""}","The new information about imposters undermines the reliability of the tour guide's claim, making not-p better supported.","{""defeater_present"": true, ""defeater_type"": false, ""defeater_strength"": false, ""support_relation"": false, ""belief_revision"": false, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",3.0,7.0,0.42857142857142855
+def_019_dog_fleas_placebo,defeaters,placebo_control,,,gpt-4o-mini,2026-07-08T04:25:59.962572+00:00,"{""defeater_present"": ""no"", ""defeater_type"": ""none_placebo"", ""defeater_strength"": ""none"", ""support_relation"": ""no_impact"", ""belief_revision"": ""maintain_target_belief""}",,1.506,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""undercutting_defeater"",
+  ""defeater_strength"": ""weak"",
+  ""support_relation"": ""target_better_supported"",
+  ""belief_revision"": ""maintain_target_belief"",
+  ""brief_explanation"": ""The new information about the blue collar weakens the connection between the scratching and fleas, but does not eliminate the initial support for the belief.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""defeater_strength"": ""weak"", ""support_relation"": ""target_better_supported"", ""belief_revision"": ""maintain_target_belief"", ""brief_explanation"": ""The new information about the blue collar weakens the connection between the scratching and fleas, but does not eliminate the initial support for the belief.""}","The new information about the blue collar weakens the connection between the scratching and fleas, but does not eliminate the initial support for the belief.","{""defeater_present"": false, ""defeater_type"": false, ""defeater_strength"": false, ""support_relation"": false, ""belief_revision"": true, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",3.0,7.0,0.42857142857142855
+def_020_dog_fleas_rebutting,defeaters,rebutting,,,gpt-4o-mini,2026-07-08T04:26:01.468423+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""defeater_strength"": ""strong"", ""support_relation"": ""negation_better_supported"", ""belief_revision"": ""believe_negation""}",,1.509,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""rebutting_defeater"",
+  ""defeater_strength"": ""strong"",
+  ""support_relation"": ""negation_better_supported"",
+  ""belief_revision"": ""believe_negation"",
+  ""brief_explanation"": ""The veterinarian's finding provides strong evidence against the belief that Evan's dog has fleas.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""defeater_strength"": ""strong"", ""support_relation"": ""negation_better_supported"", ""belief_revision"": ""believe_negation"", ""brief_explanation"": ""The veterinarian's finding provides strong evidence against the belief that Evan's dog has fleas.""}",The veterinarian's finding provides strong evidence against the belief that Evan's dog has fleas.,"{""defeater_present"": true, ""defeater_type"": true, ""defeater_strength"": true, ""support_relation"": true, ""belief_revision"": true, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",7.0,7.0,1.0
+def_021_dog_fleas_undercutting,defeaters,undercutting,,,gpt-4o-mini,2026-07-08T04:26:02.978012+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""defeater_strength"": ""moderate"", ""support_relation"": ""equal_support"", ""belief_revision"": ""suspend_judgment""}",,1.636,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""undercutting_defeater"",
+  ""defeater_strength"": ""moderate"",
+  ""support_relation"": ""equal_support"",
+  ""belief_revision"": ""suspend_judgment"",
+  ""brief_explanation"": ""The new information weakens the connection between Evan's original reason for believing p, leading to equal support for p and not-p.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""defeater_strength"": ""moderate"", ""support_relation"": ""equal_support"", ""belief_revision"": ""suspend_judgment"", ""brief_explanation"": ""The new information weakens the connection between Evan's original reason for believing p, leading to equal support for p and not-p.""}","The new information weakens the connection between Evan's original reason for believing p, leading to equal support for p and not-p.","{""defeater_present"": true, ""defeater_type"": true, ""defeater_strength"": true, ""support_relation"": true, ""belief_revision"": true, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",7.0,7.0,1.0
+def_022_bank_placebo,defeaters,placebo_control,,,gpt-4o-mini,2026-07-08T04:26:04.614401+00:00,"{""defeater_present"": ""no"", ""defeater_type"": ""none_placebo"", ""defeater_strength"": ""none"", ""support_relation"": ""no_impact"", ""belief_revision"": ""maintain_target_belief""}",,2.285,"{
+  ""defeater_present"": ""no"",
+  ""defeater_type"": ""none_placebo"",
+  ""defeater_strength"": ""none"",
+  ""support_relation"": ""no_impact"",
+  ""belief_revision"": ""maintain_target_belief"",
+  ""brief_explanation"": ""The new information about the bank's lobby does not affect the hours listed on the official website.""
+}",True,"{""defeater_present"": ""no"", ""defeater_type"": ""none_placebo"", ""defeater_strength"": ""none"", ""support_relation"": ""no_impact"", ""belief_revision"": ""maintain_target_belief"", ""brief_explanation"": ""The new information about the bank's lobby does not affect the hours listed on the official website.""}",The new information about the bank's lobby does not affect the hours listed on the official website.,"{""defeater_present"": true, ""defeater_type"": true, ""defeater_strength"": true, ""support_relation"": true, ""belief_revision"": true, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",7.0,7.0,1.0
+def_023_bank_rebutting,defeaters,rebutting,,,gpt-4o-mini,2026-07-08T04:26:06.899970+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""defeater_strength"": ""strong"", ""support_relation"": ""negation_better_supported"", ""belief_revision"": ""believe_negation""}",,2.089,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""rebutting_defeater"",
+  ""defeater_strength"": ""strong"",
+  ""support_relation"": ""negation_better_supported"",
+  ""belief_revision"": ""believe_negation"",
+  ""brief_explanation"": ""The text alert provides strong evidence against the belief that the bank is open until 6 p.m.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""defeater_strength"": ""strong"", ""support_relation"": ""negation_better_supported"", ""belief_revision"": ""believe_negation"", ""brief_explanation"": ""The text alert provides strong evidence against the belief that the bank is open until 6 p.m.""}",The text alert provides strong evidence against the belief that the bank is open until 6 p.m.,"{""defeater_present"": true, ""defeater_type"": true, ""defeater_strength"": true, ""support_relation"": true, ""belief_revision"": true, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",7.0,7.0,1.0
+def_024_bank_undercutting,defeaters,undercutting,,,gpt-4o-mini,2026-07-08T04:26:08.989125+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""defeater_strength"": ""moderate"", ""support_relation"": ""equal_support"", ""belief_revision"": ""suspend_judgment""}",,2.201,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""undercutting_defeater"",
+  ""defeater_strength"": ""strong"",
+  ""support_relation"": ""negation_better_supported"",
+  ""belief_revision"": ""believe_negation"",
+  ""brief_explanation"": ""The new information undermines the reliability of the source supporting p, making not-p better supported.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""defeater_strength"": ""strong"", ""support_relation"": ""negation_better_supported"", ""belief_revision"": ""believe_negation"", ""brief_explanation"": ""The new information undermines the reliability of the source supporting p, making not-p better supported.""}","The new information undermines the reliability of the source supporting p, making not-p better supported.","{""defeater_present"": true, ""defeater_type"": true, ""defeater_strength"": false, ""support_relation"": false, ""belief_revision"": false, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",4.0,7.0,0.5714285714285714
+def_025_thermometer_placebo,defeaters,placebo_control,,,gpt-4o-mini,2026-07-08T04:26:11.190412+00:00,"{""defeater_present"": ""no"", ""defeater_type"": ""none_placebo"", ""defeater_strength"": ""none"", ""support_relation"": ""no_impact"", ""belief_revision"": ""maintain_target_belief""}",,2.025,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""undercutting_defeater"",
+  ""defeater_strength"": ""weak"",
+  ""support_relation"": ""target_better_supported"",
+  ""belief_revision"": ""maintain_target_belief"",
+  ""brief_explanation"": ""The new information about the thermometer's frame weakens the connection to the belief but does not provide direct evidence against the room being 72 degrees.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""defeater_strength"": ""weak"", ""support_relation"": ""target_better_supported"", ""belief_revision"": ""maintain_target_belief"", ""brief_explanation"": ""The new information about the thermometer's frame weakens the connection to the belief but does not provide direct evidence against the room being 72 degrees.""}",The new information about the thermometer's frame weakens the connection to the belief but does not provide direct evidence against the room being 72 degrees.,"{""defeater_present"": false, ""defeater_type"": false, ""defeater_strength"": false, ""support_relation"": false, ""belief_revision"": true, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",3.0,7.0,0.42857142857142855
+def_026_thermometer_rebutting,defeaters,rebutting,,,gpt-4o-mini,2026-07-08T04:26:13.215180+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""defeater_strength"": ""strong"", ""support_relation"": ""negation_better_supported"", ""belief_revision"": ""believe_negation""}",,1.693,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""rebutting_defeater"",
+  ""defeater_strength"": ""strong"",
+  ""support_relation"": ""negation_better_supported"",
+  ""belief_revision"": ""believe_negation"",
+  ""brief_explanation"": ""The new information from the digital thermometer provides strong evidence against the target proposition p.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""defeater_strength"": ""strong"", ""support_relation"": ""negation_better_supported"", ""belief_revision"": ""believe_negation"", ""brief_explanation"": ""The new information from the digital thermometer provides strong evidence against the target proposition p.""}",The new information from the digital thermometer provides strong evidence against the target proposition p.,"{""defeater_present"": true, ""defeater_type"": true, ""defeater_strength"": true, ""support_relation"": true, ""belief_revision"": true, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",7.0,7.0,1.0
+def_027_thermometer_undercutting,defeaters,undercutting,,,gpt-4o-mini,2026-07-08T04:26:14.907854+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""defeater_strength"": ""moderate"", ""support_relation"": ""equal_support"", ""belief_revision"": ""suspend_judgment""}",,1.971,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""undercutting_defeater"",
+  ""defeater_strength"": ""strong"",
+  ""support_relation"": ""negation_better_supported"",
+  ""belief_revision"": ""believe_negation"",
+  ""brief_explanation"": ""The new information about the thermometer's unreliability undermines Noah's support for the room being 72 degrees.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""defeater_strength"": ""strong"", ""support_relation"": ""negation_better_supported"", ""belief_revision"": ""believe_negation"", ""brief_explanation"": ""The new information about the thermometer's unreliability undermines Noah's support for the room being 72 degrees.""}",The new information about the thermometer's unreliability undermines Noah's support for the room being 72 degrees.,"{""defeater_present"": true, ""defeater_type"": true, ""defeater_strength"": false, ""support_relation"": false, ""belief_revision"": false, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",4.0,7.0,0.5714285714285714
+def_028_meeting_placebo,defeaters,placebo_control,,,gpt-4o-mini,2026-07-08T04:26:16.878821+00:00,"{""defeater_present"": ""no"", ""defeater_type"": ""none_placebo"", ""defeater_strength"": ""none"", ""support_relation"": ""no_impact"", ""belief_revision"": ""maintain_target_belief""}",,1.719,"{
+  ""defeater_present"": ""no"",
+  ""defeater_type"": ""none_placebo"",
+  ""defeater_strength"": ""none"",
+  ""support_relation"": ""no_impact"",
+  ""belief_revision"": ""maintain_target_belief"",
+  ""brief_explanation"": ""The new information about the chairs does not affect the belief that the meeting starts at 2 p.m.""
+}",True,"{""defeater_present"": ""no"", ""defeater_type"": ""none_placebo"", ""defeater_strength"": ""none"", ""support_relation"": ""no_impact"", ""belief_revision"": ""maintain_target_belief"", ""brief_explanation"": ""The new information about the chairs does not affect the belief that the meeting starts at 2 p.m.""}",The new information about the chairs does not affect the belief that the meeting starts at 2 p.m.,"{""defeater_present"": true, ""defeater_type"": true, ""defeater_strength"": true, ""support_relation"": true, ""belief_revision"": true, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",7.0,7.0,1.0
+def_029_meeting_rebutting,defeaters,rebutting,,,gpt-4o-mini,2026-07-08T04:26:18.598140+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""defeater_strength"": ""strong"", ""support_relation"": ""negation_better_supported"", ""belief_revision"": ""believe_negation""}",,1.627,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""rebutting_defeater"",
+  ""defeater_strength"": ""strong"",
+  ""support_relation"": ""negation_better_supported"",
+  ""belief_revision"": ""believe_negation"",
+  ""brief_explanation"": ""The updated calendar invitation provides strong evidence that the meeting starts at 3 p.m., directly contradicting Rina's initial belief.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""defeater_strength"": ""strong"", ""support_relation"": ""negation_better_supported"", ""belief_revision"": ""believe_negation"", ""brief_explanation"": ""The updated calendar invitation provides strong evidence that the meeting starts at 3 p.m., directly contradicting Rina's initial belief.""}","The updated calendar invitation provides strong evidence that the meeting starts at 3 p.m., directly contradicting Rina's initial belief.","{""defeater_present"": true, ""defeater_type"": true, ""defeater_strength"": true, ""support_relation"": true, ""belief_revision"": true, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",7.0,7.0,1.0
+def_030_meeting_undercutting,defeaters,undercutting,,,gpt-4o-mini,2026-07-08T04:26:20.225363+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""defeater_strength"": ""moderate"", ""support_relation"": ""equal_support"", ""belief_revision"": ""suspend_judgment""}",,1.605,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""undercutting_defeater"",
+  ""defeater_strength"": ""moderate"",
+  ""support_relation"": ""equal_support"",
+  ""belief_revision"": ""suspend_judgment"",
+  ""brief_explanation"": ""The new information weakens Rina's confidence in the calendar's accuracy, leading to equal support for both p and not-p.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""defeater_strength"": ""moderate"", ""support_relation"": ""equal_support"", ""belief_revision"": ""suspend_judgment"", ""brief_explanation"": ""The new information weakens Rina's confidence in the calendar's accuracy, leading to equal support for both p and not-p.""}","The new information weakens Rina's confidence in the calendar's accuracy, leading to equal support for both p and not-p.","{""defeater_present"": true, ""defeater_type"": true, ""defeater_strength"": true, ""support_relation"": true, ""belief_revision"": true, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",7.0,7.0,1.0
+def_031_coat_illegal_placebo,defeaters,placebo_control,,,gpt-4o-mini,2026-07-08T04:26:21.830075+00:00,"{""defeater_present"": ""no"", ""defeater_type"": ""none_placebo"", ""defeater_strength"": ""none"", ""support_relation"": ""no_impact"", ""belief_revision"": ""maintain_target_belief""}",,1.398,"{
+  ""defeater_present"": ""no"",
+  ""defeater_type"": ""none_placebo"",
+  ""defeater_strength"": ""none"",
+  ""support_relation"": ""no_impact"",
+  ""belief_revision"": ""maintain_target_belief"",
+  ""brief_explanation"": ""The new information about the legality of stealing does not affect the evidence Mary has for believing that a woman in a red dress stole the coat.""
+}",True,"{""defeater_present"": ""no"", ""defeater_type"": ""none_placebo"", ""defeater_strength"": ""none"", ""support_relation"": ""no_impact"", ""belief_revision"": ""maintain_target_belief"", ""brief_explanation"": ""The new information about the legality of stealing does not affect the evidence Mary has for believing that a woman in a red dress stole the coat.""}",The new information about the legality of stealing does not affect the evidence Mary has for believing that a woman in a red dress stole the coat.,"{""defeater_present"": true, ""defeater_type"": true, ""defeater_strength"": true, ""support_relation"": true, ""belief_revision"": true, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",7.0,7.0,1.0
+def_032_coat_weak_rebutting,defeaters,rebutting,,,gpt-4o-mini,2026-07-08T04:26:23.228198+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""defeater_strength"": ""weak"", ""support_relation"": ""target_better_supported"", ""belief_revision"": ""maintain_target_belief""}",,1.561,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""undercutting_defeater"",
+  ""defeater_strength"": ""weak"",
+  ""support_relation"": ""target_better_supported"",
+  ""belief_revision"": ""maintain_target_belief"",
+  ""brief_explanation"": ""Tina's uncertainty about Gina bringing a coat weakens the connection between Mary's original evidence and p, but does not provide strong evidence against p.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""defeater_strength"": ""weak"", ""support_relation"": ""target_better_supported"", ""belief_revision"": ""maintain_target_belief"", ""brief_explanation"": ""Tina's uncertainty about Gina bringing a coat weakens the connection between Mary's original evidence and p, but does not provide strong evidence against p.""}","Tina's uncertainty about Gina bringing a coat weakens the connection between Mary's original evidence and p, but does not provide strong evidence against p.","{""defeater_present"": true, ""defeater_type"": false, ""defeater_strength"": true, ""support_relation"": true, ""belief_revision"": true, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",6.0,7.0,0.8571428571428571
+def_033_coat_moderate_undercutting,defeaters,undercutting,,,gpt-4o-mini,2026-07-08T04:26:24.789530+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""defeater_strength"": ""moderate"", ""support_relation"": ""equal_support"", ""belief_revision"": ""suspend_judgment""}",,2.878,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""rebutting_defeater"",
+  ""defeater_strength"": ""strong"",
+  ""support_relation"": ""negation_better_supported"",
+  ""belief_revision"": ""believe_negation"",
+  ""brief_explanation"": ""The new information indicates that Gina, who was wearing a red dress, could be the woman Mary saw, undermining her belief that another woman stole the coat.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""defeater_strength"": ""strong"", ""support_relation"": ""negation_better_supported"", ""belief_revision"": ""believe_negation"", ""brief_explanation"": ""The new information indicates that Gina, who was wearing a red dress, could be the woman Mary saw, undermining her belief that another woman stole the coat.""}","The new information indicates that Gina, who was wearing a red dress, could be the woman Mary saw, undermining her belief that another woman stole the coat.","{""defeater_present"": true, ""defeater_type"": false, ""defeater_strength"": false, ""support_relation"": false, ""belief_revision"": false, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",3.0,7.0,0.42857142857142855
+def_034_alligator_desire_placebo,defeaters,placebo_control,,,gpt-4o-mini,2026-07-08T04:26:27.667473+00:00,"{""defeater_present"": ""no"", ""defeater_type"": ""none_placebo"", ""defeater_strength"": ""none"", ""support_relation"": ""no_impact"", ""belief_revision"": ""maintain_target_belief""}",,1.384,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""undercutting_defeater"",
+  ""defeater_strength"": ""weak"",
+  ""support_relation"": ""target_better_supported"",
+  ""belief_revision"": ""maintain_target_belief"",
+  ""brief_explanation"": ""Jimbo's desire and difficulty imagining the exhibit being closed weakens his initial support but does not outweigh it.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""defeater_strength"": ""weak"", ""support_relation"": ""target_better_supported"", ""belief_revision"": ""maintain_target_belief"", ""brief_explanation"": ""Jimbo's desire and difficulty imagining the exhibit being closed weakens his initial support but does not outweigh it.""}",Jimbo's desire and difficulty imagining the exhibit being closed weakens his initial support but does not outweigh it.,"{""defeater_present"": false, ""defeater_type"": false, ""defeater_strength"": false, ""support_relation"": false, ""belief_revision"": true, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",3.0,7.0,0.42857142857142855
+def_035_alligator_weak_rebutting,defeaters,rebutting,,,gpt-4o-mini,2026-07-08T04:26:29.051535+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""defeater_strength"": ""weak"", ""support_relation"": ""target_better_supported"", ""belief_revision"": ""maintain_target_belief""}",,1.641,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""undercutting_defeater"",
+  ""defeater_strength"": ""weak"",
+  ""support_relation"": ""target_better_supported"",
+  ""belief_revision"": ""maintain_target_belief"",
+  ""brief_explanation"": ""The new information introduces doubt about the initial evidence but does not sufficiently undermine Jimbo's belief that the exhibit is closed.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""defeater_strength"": ""weak"", ""support_relation"": ""target_better_supported"", ""belief_revision"": ""maintain_target_belief"", ""brief_explanation"": ""The new information introduces doubt about the initial evidence but does not sufficiently undermine Jimbo's belief that the exhibit is closed.""}",The new information introduces doubt about the initial evidence but does not sufficiently undermine Jimbo's belief that the exhibit is closed.,"{""defeater_present"": true, ""defeater_type"": false, ""defeater_strength"": true, ""support_relation"": true, ""belief_revision"": true, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",6.0,7.0,0.8571428571428571
+def_036_alligator_weak_undercutting,defeaters,undercutting,,,gpt-4o-mini,2026-07-08T04:26:30.692209+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""defeater_strength"": ""weak"", ""support_relation"": ""target_better_supported"", ""belief_revision"": ""maintain_target_belief""}",,1.19,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""rebutting_defeater"",
+  ""defeater_strength"": ""strong"",
+  ""support_relation"": ""negation_better_supported"",
+  ""belief_revision"": ""believe_negation"",
+  ""brief_explanation"": ""The new information directly contradicts Jimbo's belief about the exhibit being closed.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""defeater_strength"": ""strong"", ""support_relation"": ""negation_better_supported"", ""belief_revision"": ""believe_negation"", ""brief_explanation"": ""The new information directly contradicts Jimbo's belief about the exhibit being closed.""}",The new information directly contradicts Jimbo's belief about the exhibit being closed.,"{""defeater_present"": true, ""defeater_type"": false, ""defeater_strength"": false, ""support_relation"": false, ""belief_revision"": false, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",3.0,7.0,0.42857142857142855
+def_037_microwave_shock_placebo,defeaters,placebo_control,,,gpt-4o-mini,2026-07-08T04:26:31.882640+00:00,"{""defeater_present"": ""no"", ""defeater_type"": ""none_placebo"", ""defeater_strength"": ""none"", ""support_relation"": ""no_impact"", ""belief_revision"": ""maintain_target_belief""}",,1.431,"{
+  ""defeater_present"": ""no"",
+  ""defeater_type"": ""none_placebo"",
+  ""defeater_strength"": ""none"",
+  ""support_relation"": ""no_impact"",
+  ""belief_revision"": ""maintain_target_belief"",
+  ""brief_explanation"": ""The new information does not affect Kieran's belief about the microwave being damaged.""
+}",True,"{""defeater_present"": ""no"", ""defeater_type"": ""none_placebo"", ""defeater_strength"": ""none"", ""support_relation"": ""no_impact"", ""belief_revision"": ""maintain_target_belief"", ""brief_explanation"": ""The new information does not affect Kieran's belief about the microwave being damaged.""}",The new information does not affect Kieran's belief about the microwave being damaged.,"{""defeater_present"": true, ""defeater_type"": true, ""defeater_strength"": true, ""support_relation"": true, ""belief_revision"": true, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",7.0,7.0,1.0
+def_038_microwave_weak_undercutting,defeaters,undercutting,,,gpt-4o-mini,2026-07-08T04:26:33.314118+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""defeater_strength"": ""weak"", ""support_relation"": ""target_better_supported"", ""belief_revision"": ""maintain_target_belief""}",,1.632,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""undercutting_defeater"",
+  ""defeater_strength"": ""weak"",
+  ""support_relation"": ""target_better_supported"",
+  ""belief_revision"": ""maintain_target_belief"",
+  ""brief_explanation"": ""The new information weakens the certainty of the original evidence but does not provide strong enough grounds to abandon the belief that the microwave is damaged.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""defeater_strength"": ""weak"", ""support_relation"": ""target_better_supported"", ""belief_revision"": ""maintain_target_belief"", ""brief_explanation"": ""The new information weakens the certainty of the original evidence but does not provide strong enough grounds to abandon the belief that the microwave is damaged.""}",The new information weakens the certainty of the original evidence but does not provide strong enough grounds to abandon the belief that the microwave is damaged.,"{""defeater_present"": true, ""defeater_type"": true, ""defeater_strength"": true, ""support_relation"": true, ""belief_revision"": true, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",7.0,7.0,1.0
+def_039_microwave_weak_undercutting_old_box,defeaters,undercutting,,,gpt-4o-mini,2026-07-08T04:26:34.945753+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""defeater_strength"": ""weak"", ""support_relation"": ""target_better_supported"", ""belief_revision"": ""maintain_target_belief""}",,2.612,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""rebutting_defeater"",
+  ""defeater_strength"": ""strong"",
+  ""support_relation"": ""negation_better_supported"",
+  ""belief_revision"": ""believe_negation"",
+  ""brief_explanation"": ""The new information provides strong evidence that the microwave may not be damaged, as it suggests the possibility of new appliances being placed in damaged boxes.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""defeater_strength"": ""strong"", ""support_relation"": ""negation_better_supported"", ""belief_revision"": ""believe_negation"", ""brief_explanation"": ""The new information provides strong evidence that the microwave may not be damaged, as it suggests the possibility of new appliances being placed in damaged boxes.""}","The new information provides strong evidence that the microwave may not be damaged, as it suggests the possibility of new appliances being placed in damaged boxes.","{""defeater_present"": true, ""defeater_type"": false, ""defeater_strength"": false, ""support_relation"": false, ""belief_revision"": false, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",3.0,7.0,0.42857142857142855
+def_040_locker_moderate_rebutting,defeaters,rebutting,,,gpt-4o-mini,2026-07-08T04:26:37.557924+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""defeater_strength"": ""moderate"", ""support_relation"": ""equal_support"", ""belief_revision"": ""suspend_judgment""}",,1.249,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""rebutting_defeater"",
+  ""defeater_strength"": ""strong"",
+  ""support_relation"": ""negation_better_supported"",
+  ""belief_revision"": ""believe_negation"",
+  ""brief_explanation"": ""The new information from the second guard provides strong evidence against the target proposition.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""defeater_strength"": ""strong"", ""support_relation"": ""negation_better_supported"", ""belief_revision"": ""believe_negation"", ""brief_explanation"": ""The new information from the second guard provides strong evidence against the target proposition.""}",The new information from the second guard provides strong evidence against the target proposition.,"{""defeater_present"": true, ""defeater_type"": true, ""defeater_strength"": false, ""support_relation"": false, ""belief_revision"": false, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",4.0,7.0,0.5714285714285714
+def_041_temperature_moderate_rebutting,defeaters,rebutting,,,gpt-4o-mini,2026-07-08T04:26:38.807123+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""defeater_strength"": ""moderate"", ""support_relation"": ""equal_support"", ""belief_revision"": ""suspend_judgment""}",,1.38,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""undercutting_defeater"",
+  ""defeater_strength"": ""moderate"",
+  ""support_relation"": ""equal_support"",
+  ""belief_revision"": ""suspend_judgment"",
+  ""brief_explanation"": ""The second thermometer introduces doubt about the accuracy of the first, leading to equal support for both p and not-p.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""defeater_strength"": ""moderate"", ""support_relation"": ""equal_support"", ""belief_revision"": ""suspend_judgment"", ""brief_explanation"": ""The second thermometer introduces doubt about the accuracy of the first, leading to equal support for both p and not-p.""}","The second thermometer introduces doubt about the accuracy of the first, leading to equal support for both p and not-p.","{""defeater_present"": true, ""defeater_type"": false, ""defeater_strength"": true, ""support_relation"": true, ""belief_revision"": true, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",6.0,7.0,0.8571428571428571
+def_042_gate_moderate_rebutting,defeaters,rebutting,,,gpt-4o-mini,2026-07-08T04:26:40.187641+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""defeater_strength"": ""moderate"", ""support_relation"": ""equal_support"", ""belief_revision"": ""suspend_judgment""}",,1.43,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""rebutting_defeater"",
+  ""defeater_strength"": ""strong"",
+  ""support_relation"": ""negation_better_supported"",
+  ""belief_revision"": ""believe_negation"",
+  ""brief_explanation"": ""The departure board provides strong evidence against the belief that the flight leaves from Gate A.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""defeater_strength"": ""strong"", ""support_relation"": ""negation_better_supported"", ""belief_revision"": ""believe_negation"", ""brief_explanation"": ""The departure board provides strong evidence against the belief that the flight leaves from Gate A.""}",The departure board provides strong evidence against the belief that the flight leaves from Gate A.,"{""defeater_present"": true, ""defeater_type"": true, ""defeater_strength"": false, ""support_relation"": false, ""belief_revision"": false, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",4.0,7.0,0.5714285714285714
+def_043_database_weak_undercutting,defeaters,undercutting,,,gpt-4o-mini,2026-07-08T04:26:41.617672+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""defeater_strength"": ""weak"", ""support_relation"": ""target_better_supported"", ""belief_revision"": ""maintain_target_belief""}",,1.63,"{
+  ""defeater_present"": ""no"",
+  ""defeater_type"": ""none_placebo"",
+  ""defeater_strength"": ""none"",
+  ""support_relation"": ""no_impact"",
+  ""belief_revision"": ""maintain_target_belief"",
+  ""brief_explanation"": ""The new information about past metadata errors does not affect the current verification of the entry.""
+}",True,"{""defeater_present"": ""no"", ""defeater_type"": ""none_placebo"", ""defeater_strength"": ""none"", ""support_relation"": ""no_impact"", ""belief_revision"": ""maintain_target_belief"", ""brief_explanation"": ""The new information about past metadata errors does not affect the current verification of the entry.""}",The new information about past metadata errors does not affect the current verification of the entry.,"{""defeater_present"": false, ""defeater_type"": false, ""defeater_strength"": false, ""support_relation"": false, ""belief_revision"": true, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",3.0,7.0,0.42857142857142855
+def_044_qr_code_moderate_undercutting,defeaters,undercutting,,,gpt-4o-mini,2026-07-08T04:26:43.247778+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""defeater_strength"": ""moderate"", ""support_relation"": ""equal_support"", ""belief_revision"": ""suspend_judgment""}",,1.409,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""undercutting_defeater"",
+  ""defeater_strength"": ""moderate"",
+  ""support_relation"": ""equal_support"",
+  ""belief_revision"": ""suspend_judgment"",
+  ""brief_explanation"": ""The new information weakens the connection between Tessa's original evidence and the belief that the request was approved.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""defeater_strength"": ""moderate"", ""support_relation"": ""equal_support"", ""belief_revision"": ""suspend_judgment"", ""brief_explanation"": ""The new information weakens the connection between Tessa's original evidence and the belief that the request was approved.""}",The new information weakens the connection between Tessa's original evidence and the belief that the request was approved.,"{""defeater_present"": true, ""defeater_type"": true, ""defeater_strength"": true, ""support_relation"": true, ""belief_revision"": true, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",7.0,7.0,1.0
+def_045_ticket_moderate_undercutting,defeaters,undercutting,,,gpt-4o-mini,2026-07-08T04:26:44.657396+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""defeater_strength"": ""moderate"", ""support_relation"": ""equal_support"", ""belief_revision"": ""suspend_judgment""}",,1.696,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""undercutting_defeater"",
+  ""defeater_strength"": ""moderate"",
+  ""support_relation"": ""equal_support"",
+  ""belief_revision"": ""suspend_judgment"",
+  ""brief_explanation"": ""The new information introduces doubt about the reliability of the ticket app, leading to equal support for both p and not-p.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""defeater_strength"": ""moderate"", ""support_relation"": ""equal_support"", ""belief_revision"": ""suspend_judgment"", ""brief_explanation"": ""The new information introduces doubt about the reliability of the ticket app, leading to equal support for both p and not-p.""}","The new information introduces doubt about the reliability of the ticket app, leading to equal support for both p and not-p.","{""defeater_present"": true, ""defeater_type"": true, ""defeater_strength"": true, ""support_relation"": true, ""belief_revision"": true, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",7.0,7.0,1.0
+def_046_label_moderate_higher_order,defeaters,higher_order,,,gpt-4o-mini,2026-07-08T04:26:46.353932+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""higher_order_defeater"", ""defeater_strength"": ""moderate"", ""support_relation"": ""equal_support"", ""belief_revision"": ""suspend_judgment""}",,1.429,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""higher_order_defeater"",
+  ""defeater_strength"": ""strong"",
+  ""support_relation"": ""negation_better_supported"",
+  ""belief_revision"": ""believe_negation"",
+  ""brief_explanation"": ""Lena's temporary vision side effect undermines her confidence in her ability to accurately read the label, making not-p better supported.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""higher_order_defeater"", ""defeater_strength"": ""strong"", ""support_relation"": ""negation_better_supported"", ""belief_revision"": ""believe_negation"", ""brief_explanation"": ""Lena's temporary vision side effect undermines her confidence in her ability to accurately read the label, making not-p better supported.""}","Lena's temporary vision side effect undermines her confidence in her ability to accurately read the label, making not-p better supported.","{""defeater_present"": true, ""defeater_type"": true, ""defeater_strength"": false, ""support_relation"": false, ""belief_revision"": false, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",4.0,7.0,0.5714285714285714
+def_047_checklist_moderate_higher_order,defeaters,higher_order,,,gpt-4o-mini,2026-07-08T04:26:47.782973+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""higher_order_defeater"", ""defeater_strength"": ""moderate"", ""support_relation"": ""equal_support"", ""belief_revision"": ""suspend_judgment""}",,1.47,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""higher_order_defeater"",
+  ""defeater_strength"": ""strong"",
+  ""support_relation"": ""negation_better_supported"",
+  ""belief_revision"": ""believe_negation"",
+  ""brief_explanation"": ""Noah's sleep deprivation and prior errors undermine his confidence in the accuracy of his conclusion about the contract clause.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""higher_order_defeater"", ""defeater_strength"": ""strong"", ""support_relation"": ""negation_better_supported"", ""belief_revision"": ""believe_negation"", ""brief_explanation"": ""Noah's sleep deprivation and prior errors undermine his confidence in the accuracy of his conclusion about the contract clause.""}",Noah's sleep deprivation and prior errors undermine his confidence in the accuracy of his conclusion about the contract clause.,"{""defeater_present"": true, ""defeater_type"": true, ""defeater_strength"": false, ""support_relation"": false, ""belief_revision"": false, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",4.0,7.0,0.5714285714285714
+def_048_spreadsheet_weak_higher_order,defeaters,higher_order,,,gpt-4o-mini,2026-07-08T04:26:49.252848+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""higher_order_defeater"", ""defeater_strength"": ""weak"", ""support_relation"": ""target_better_supported"", ""belief_revision"": ""maintain_target_belief""}",,1.483,"{
+  ""defeater_present"": ""no"",
+  ""defeater_type"": ""none_placebo"",
+  ""defeater_strength"": ""none"",
+  ""support_relation"": ""no_impact"",
+  ""belief_revision"": ""maintain_target_belief"",
+  ""brief_explanation"": ""The new information about distraction does not undermine the accuracy of the sums, which remain consistent.""
+}",True,"{""defeater_present"": ""no"", ""defeater_type"": ""none_placebo"", ""defeater_strength"": ""none"", ""support_relation"": ""no_impact"", ""belief_revision"": ""maintain_target_belief"", ""brief_explanation"": ""The new information about distraction does not undermine the accuracy of the sums, which remain consistent.""}","The new information about distraction does not undermine the accuracy of the sums, which remain consistent.","{""defeater_present"": false, ""defeater_type"": false, ""defeater_strength"": false, ""support_relation"": false, ""belief_revision"": true, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",3.0,7.0,0.42857142857142855
+def_049_sign_strong_higher_order,defeaters,higher_order,,,gpt-4o-mini,2026-07-08T04:26:50.736398+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""higher_order_defeater"", ""defeater_strength"": ""strong"", ""support_relation"": ""negation_better_supported"", ""belief_revision"": ""believe_negation""}",,1.443,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""rebutting_defeater"",
+  ""defeater_strength"": ""strong"",
+  ""support_relation"": ""negation_better_supported"",
+  ""belief_revision"": ""believe_negation"",
+  ""brief_explanation"": ""The new information reveals that Marco's perception of the sign was fundamentally flawed, leading to strong support for not-p.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""rebutting_defeater"", ""defeater_strength"": ""strong"", ""support_relation"": ""negation_better_supported"", ""belief_revision"": ""believe_negation"", ""brief_explanation"": ""The new information reveals that Marco's perception of the sign was fundamentally flawed, leading to strong support for not-p.""}","The new information reveals that Marco's perception of the sign was fundamentally flawed, leading to strong support for not-p.","{""defeater_present"": true, ""defeater_type"": false, ""defeater_strength"": true, ""support_relation"": true, ""belief_revision"": true, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",6.0,7.0,0.8571428571428571
+def_050_inventory_strong_higher_order,defeaters,higher_order,,,gpt-4o-mini,2026-07-08T04:26:52.179701+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""higher_order_defeater"", ""defeater_strength"": ""strong"", ""support_relation"": ""negation_better_supported"", ""belief_revision"": ""believe_negation""}",,1.441,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""undercutting_defeater"",
+  ""defeater_strength"": ""strong"",
+  ""support_relation"": ""negation_better_supported"",
+  ""belief_revision"": ""believe_negation"",
+  ""brief_explanation"": ""The new information reveals that Keira's original belief was based on a misreading, undermining her support for p.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""defeater_strength"": ""strong"", ""support_relation"": ""negation_better_supported"", ""belief_revision"": ""believe_negation"", ""brief_explanation"": ""The new information reveals that Keira's original belief was based on a misreading, undermining her support for p.""}","The new information reveals that Keira's original belief was based on a misreading, undermining her support for p.","{""defeater_present"": true, ""defeater_type"": false, ""defeater_strength"": true, ""support_relation"": true, ""belief_revision"": true, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",6.0,7.0,0.8571428571428571

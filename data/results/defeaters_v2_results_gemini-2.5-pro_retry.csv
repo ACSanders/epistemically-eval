@@ -1,0 +1,9 @@
+case_id,module,schema_family,variant_id,difficulty,model,timestamp,expected_json,error,latency_s,raw_response,parsed_ok,predicted_json,brief_explanation,field_results_json,points,max_points,score
+def_037_microwave_shock_placebo,defeaters,placebo_control,,,gemini-2.5-pro,2026-07-08T04:48:42.388065+00:00,"{""defeater_present"": ""no"", ""defeater_type"": ""none_placebo"", ""defeater_strength"": ""none"", ""support_relation"": ""no_impact"", ""belief_revision"": ""maintain_target_belief""}",,15.46,"{
+  ""defeater_present"": ""no"",
+  ""defeater_type"": ""none_placebo"",
+  ""defeater_strength"": ""none"",
+  ""support_relation"": ""target_better_supported"",
+  ""belief_revision"": ""maintain_target_belief"",
+  ""brief_explanation"": ""Kieran's emotional shock and inability to imagine a culprit are epistemically irrelevant to the physical evidence provided by the damaged box.""
+}",True,"{""defeater_present"": ""no"", ""defeater_type"": ""none_placebo"", ""defeater_strength"": ""none"", ""support_relation"": ""target_better_supported"", ""belief_revision"": ""maintain_target_belief"", ""brief_explanation"": ""Kieran's emotional shock and inability to imagine a culprit are epistemically irrelevant to the physical evidence provided by the damaged box.""}",Kieran's emotional shock and inability to imagine a culprit are epistemically irrelevant to the physical evidence provided by the damaged box.,"{""defeater_present"": true, ""defeater_type"": true, ""defeater_strength"": true, ""support_relation"": false, ""belief_revision"": true, ""strength_support_coherence"": false, ""support_revision_coherence"": true}",5.0,7.0,0.7142857142857143
