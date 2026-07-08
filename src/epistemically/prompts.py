@@ -149,17 +149,19 @@ luck_status:
 - no_epistemic_luck: No relevant knowledge-defeating epistemic luck is present in the case.
 
 luck_type:
-- intervening_luck: The subject's target belief is true, and the subject might have justification, but the belief is true because of some lucky aspect of the case rather than because the subject's reason or belief-forming method successfully led them to the target truth. The subject is correct, but in a way that could easily have gone wrong.
+- intervening_luck: The subject's target belief is true, and the subject might have justification, but the belief is true because of some lucky aspect of the case — a lucky break, misleading evidence, a disconnected source, a stale record, a wrong truth-maker, or another accidental connection — rather than because the subject's reason or belief-forming method successfully led them to the target truth. The subject is correct, but in a way that could easily have gone wrong.
 - environmental_luck: The subject forms a true belief using a seemingly good belief-forming process, but the surrounding environment or situation they are in is epistemically unsafe. Similar beliefs formed in the exact same way in that particular environment would easily have been false.
 - lucky_guess: The subject's target belief is true, but the subject lacks adequate epistemic justification and gets the answer right by guessing or by using an unreliable process.
 - none: No relevant knowledge-defeating epistemic luck is present.
 
-Important:
-- Do not assume that a true belief is knowledge.
-- Do not assume that a justified true belief is always knowledge.
+Constraints:
+- Use only the information provided in the case. Do not assume hidden facts, unstated background probabilities, motives, or extra evidence not stated in the case.
+- Do not treat practical desire, convenience, legal consequences, emotional salience, hope, fear, or other pragmatic reasons as epistemic support for the target proposition.
+- If the target proposition is false, set knowledge_status to does_not_know.
+- Do not classify every false or unsupported belief as epistemic luck. Epistemic luck in this module is knowledge-defeating luck in true-belief cases — lucky guesses, intervening luck, or environmental luck. A plain false belief with no lucky true-belief element is no_epistemic_luck with luck_type none.
+- Do not assume that a true belief is knowledge, and do not assume that a justified true belief is always knowledge.
 - Do not deny knowledge merely because the scenario is part of an evaluation. Some cases are ordinary knowledge cases with no relevant epistemic luck.
-- Use "none" for luck_type when luck_status is "no_epistemic_luck".
-- Use "epistemic_luck_present" when luck_type is "intervening_luck", "environmental_luck", or "lucky_guess".
+- Use "none" for luck_type when luck_status is "no_epistemic_luck"; use "epistemic_luck_present" when luck_type is "intervening_luck", "environmental_luck", or "lucky_guess".
 - Return JSON only. Do not include markdown or extra text. The brief_explanation field should be one concise sentence explaining the classification.
 
 Scenario:

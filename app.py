@@ -860,9 +860,9 @@ Current modules:
 - **Belief, acceptance, and knowledge:** attitude, truth, pragmatic acceptance, reason type, and justification.
 - **Defeaters:** whether model outputs identify defeaters (rebutting, undercutting, higher-order, or placebo controls) and whether their defeater strength, comparative support, and belief-revision judgments form a coherent update pattern. Two coherence components are computed by the app from the model's own labels — never self-reported — and scored alongside the exact labels.
 - **Rational reasoning:** deductive patterns, logical status, and rational constraints.
-- **Epistemic luck:** knowledge controls, lucky guesses, intervening luck, and environmental luck.
+- **Epistemic luck:** knowledge controls, false-belief/no-luck controls, lucky guesses, intervening luck, and environmental luck.
 
-The benchmark currently has 170 structured epistemic cases across these four modules. Planned work includes social epistemology benchmarks for testimony and disagreement, and induction/updating.
+The benchmark currently has 200 structured epistemic cases across these four modules. Planned work includes social epistemology benchmarks for testimony and disagreement, and induction/updating.
 
 ### Scoring
 
