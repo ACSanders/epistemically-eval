@@ -1,0 +1,415 @@
+case_id,module,schema_family,variant_id,difficulty,model,timestamp,expected_json,error,latency_s,raw_response,parsed_ok,predicted_json,brief_explanation,field_results_json,points,max_points,score
+el_001,epistemic_luck,knowledge_control,,easy,claude-opus-4-8,2026-07-08T21:56:43.167199+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none""}",,2.526,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""knows"",
+  ""luck_status"": ""no_epistemic_luck"",
+  ""luck_type"": ""none"",
+  ""brief_explanation"": ""Alfred's belief is based on recent testimony from a reliable friend who just left the shop, the proposition is true, and there is no lucky or accidental connection defeating knowledge.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none"", ""brief_explanation"": ""Alfred's belief is based on recent testimony from a reliable friend who just left the shop, the proposition is true, and there is no lucky or accidental connection defeating knowledge.""}","Alfred's belief is based on recent testimony from a reliable friend who just left the shop, the proposition is true, and there is no lucky or accidental connection defeating knowledge.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_002,epistemic_luck,knowledge_control,,easy,claude-opus-4-8,2026-07-08T21:56:45.693702+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none""}",,2.688,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""knows"",
+  ""luck_status"": ""no_epistemic_luck"",
+  ""luck_type"": ""none"",
+  ""brief_explanation"": ""Lea's belief is based on directly observing Luke drive and own the car, a reliable process yielding a true belief with no defeating luck.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none"", ""brief_explanation"": ""Lea's belief is based on directly observing Luke drive and own the car, a reliable process yielding a true belief with no defeating luck.""}","Lea's belief is based on directly observing Luke drive and own the car, a reliable process yielding a true belief with no defeating luck.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_003,epistemic_luck,knowledge_control,,easy,claude-opus-4-8,2026-07-08T21:56:48.381776+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none""}",,2.383,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""knows"",
+  ""luck_status"": ""no_epistemic_luck"",
+  ""luck_type"": ""none"",
+  ""brief_explanation"": ""Nina relies on a reliable, automatically updated scheduling system that correctly shows the room reserved, so her true belief is justified knowledge with no defeating luck.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none"", ""brief_explanation"": ""Nina relies on a reliable, automatically updated scheduling system that correctly shows the room reserved, so her true belief is justified knowledge with no defeating luck.""}","Nina relies on a reliable, automatically updated scheduling system that correctly shows the room reserved, so her true belief is justified knowledge with no defeating luck.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_004,epistemic_luck,knowledge_control,,easy,claude-opus-4-8,2026-07-08T21:56:50.764935+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none""}",,2.424,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""knows"",
+  ""luck_status"": ""no_epistemic_luck"",
+  ""luck_type"": ""none"",
+  ""brief_explanation"": ""Rosa's belief is formed via a normally-functioning scanner and database, corroborated by the label, and is true, constituting knowledge without any knowledge-defeating luck.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none"", ""brief_explanation"": ""Rosa's belief is formed via a normally-functioning scanner and database, corroborated by the label, and is true, constituting knowledge without any knowledge-defeating luck.""}","Rosa's belief is formed via a normally-functioning scanner and database, corroborated by the label, and is true, constituting knowledge without any knowledge-defeating luck.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_005,epistemic_luck,knowledge_control,,easy,claude-opus-4-8,2026-07-08T21:56:53.188761+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none""}",,2.718,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""knows"",
+  ""luck_status"": ""no_epistemic_luck"",
+  ""luck_type"": ""none"",
+  ""brief_explanation"": ""Marcus uses two reliable sources (same-day website and direct confirmation from the front desk) to form a true belief, and the pool is in fact open, so this is ordinary knowledge with no luck.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none"", ""brief_explanation"": ""Marcus uses two reliable sources (same-day website and direct confirmation from the front desk) to form a true belief, and the pool is in fact open, so this is ordinary knowledge with no luck.""}","Marcus uses two reliable sources (same-day website and direct confirmation from the front desk) to form a true belief, and the pool is in fact open, so this is ordinary knowledge with no luck.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_006,epistemic_luck,lucky_guess,,easy,claude-opus-4-8,2026-07-08T21:56:55.907170+00:00,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""lucky_guess""}",,2.256,"{
+  ""justification_status"": ""unjustified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""lucky_guess"",
+  ""brief_explanation"": ""William believes the shop is open based only on hope with no evidence, so his true belief is merely a lucky guess.""
+}",True,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""lucky_guess"", ""brief_explanation"": ""William believes the shop is open based only on hope with no evidence, so his true belief is merely a lucky guess.""}","William believes the shop is open based only on hope with no evidence, so his true belief is merely a lucky guess.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_007,epistemic_luck,lucky_guess,,easy,claude-opus-4-8,2026-07-08T21:56:58.163798+00:00,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""lucky_guess""}",,3.804,"{
+  ""justification_status"": ""unjustified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""lucky_guess"",
+  ""brief_explanation"": ""Michelle's belief is true but formed on a whim with no justification, making it a lucky guess.""
+}",True,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""lucky_guess"", ""brief_explanation"": ""Michelle's belief is true but formed on a whim with no justification, making it a lucky guess.""}","Michelle's belief is true but formed on a whim with no justification, making it a lucky guess.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_008,epistemic_luck,lucky_guess,,easy,claude-opus-4-8,2026-07-08T21:57:01.967736+00:00,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""lucky_guess""}",,2.341,"{
+  ""justification_status"": ""unjustified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""lucky_guess"",
+  ""brief_explanation"": ""Omar randomly decided to believe the package was delivered without any evidence, and it happened to be true, making it a lucky guess.""
+}",True,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""lucky_guess"", ""brief_explanation"": ""Omar randomly decided to believe the package was delivered without any evidence, and it happened to be true, making it a lucky guess.""}","Omar randomly decided to believe the package was delivered without any evidence, and it happened to be true, making it a lucky guess.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_009,epistemic_luck,intervening_luck,,medium,claude-opus-4-8,2026-07-08T21:57:04.309290+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,2.372,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Liam's belief is true only because Priya coincidentally owns a real signed copy, not because of his evidence (a forged signature), making it a Gettier-style intervening luck case.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Liam's belief is true only because Priya coincidentally owns a real signed copy, not because of his evidence (a forged signature), making it a Gettier-style intervening luck case.""}","Liam's belief is true only because Priya coincidentally owns a real signed copy, not because of his evidence (a forged signature), making it a Gettier-style intervening luck case.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_010,epistemic_luck,intervening_luck,,medium,claude-opus-4-8,2026-07-08T21:57:06.681522+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,2.688,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Ava's belief is true only because a real deer happens to be hidden elsewhere, while her evidence tracks a statue, so her true belief rests on a lucky disconnect between her reason and the truth-maker.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Ava's belief is true only because a real deer happens to be hidden elsewhere, while her evidence tracks a statue, so her true belief rests on a lucky disconnect between her reason and the truth-maker.""}","Ava's belief is true only because a real deer happens to be hidden elsewhere, while her evidence tracks a statue, so her true belief rests on a lucky disconnect between her reason and the truth-maker.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_011,epistemic_luck,intervening_luck,,medium,claude-opus-4-8,2026-07-08T21:57:09.369434+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,2.436,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Julian's belief is true only because an unrelated shopper happens to have an apple, not because of the Robert evidence his belief was based on.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Julian's belief is true only because an unrelated shopper happens to have an apple, not because of the Robert evidence his belief was based on.""}","Julian's belief is true only because an unrelated shopper happens to have an apple, not because of the Robert evidence his belief was based on.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_012,epistemic_luck,intervening_luck,,medium,claude-opus-4-8,2026-07-08T21:57:11.805188+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,5.32,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Vicky's belief is true only because a hidden real officer happens to be present, not because of the actor she actually sees, making this a classic Gettier-style intervening luck case.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Vicky's belief is true only because a hidden real officer happens to be present, not because of the actor she actually sees, making this a classic Gettier-style intervening luck case.""}","Vicky's belief is true only because a hidden real officer happens to be present, not because of the actor she actually sees, making this a classic Gettier-style intervening luck case.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_013,epistemic_luck,intervening_luck,,medium,claude-opus-4-8,2026-07-08T21:57:17.125356+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,3.093,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Chris's belief is true because the manager owns a real parrot at home, but his evidence (a mechanical decoy) is disconnected from that truth-maker, making the true belief lucky.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Chris's belief is true because the manager owns a real parrot at home, but his evidence (a mechanical decoy) is disconnected from that truth-maker, making the true belief lucky.""}","Chris's belief is true because the manager owns a real parrot at home, but his evidence (a mechanical decoy) is disconnected from that truth-maker, making the true belief lucky.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_014,epistemic_luck,intervening_luck,,medium,claude-opus-4-8,2026-07-08T21:57:20.218162+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,2.269,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Kimmy's belief is true only because a real beaver happens to be elsewhere in the lake, while her evidence (a decoy) is a wrong truth-maker disconnected from the actual fact.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Kimmy's belief is true only because a real beaver happens to be elsewhere in the lake, while her evidence (a decoy) is a wrong truth-maker disconnected from the actual fact.""}","Kimmy's belief is true only because a real beaver happens to be elsewhere in the lake, while her evidence (a decoy) is a wrong truth-maker disconnected from the actual fact.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_015,epistemic_luck,intervening_luck,,medium,claude-opus-4-8,2026-07-08T21:57:22.486852+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,3.162,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Shaun's belief is true only because a hidden real monkey happens to be present, not because of what he actually saw (a costumed dog), so his correct belief rests on an accidental connection to the truth.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Shaun's belief is true only because a hidden real monkey happens to be present, not because of what he actually saw (a costumed dog), so his correct belief rests on an accidental connection to the truth.""}","Shaun's belief is true only because a hidden real monkey happens to be present, not because of what he actually saw (a costumed dog), so his correct belief rests on an accidental connection to the truth.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_016,epistemic_luck,intervening_luck,,hard,claude-opus-4-8,2026-07-08T21:57:25.648698+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,2.278,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""The timer malfunctioned and only happened to show one minute at that moment, so Justin's true belief is correct by accident rather than through a reliable connection to the truth.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""The timer malfunctioned and only happened to show one minute at that moment, so Justin's true belief is correct by accident rather than through a reliable connection to the truth.""}","The timer malfunctioned and only happened to show one minute at that moment, so Justin's true belief is correct by accident rather than through a reliable connection to the truth.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_017,epistemic_luck,intervening_luck,,medium,claude-opus-4-8,2026-07-08T21:57:27.926744+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,2.192,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Mara's belief is true only by coincidence, since her source (a frozen display) was disconnected from the actual reason the meeting is in 4B today.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Mara's belief is true only by coincidence, since her source (a frozen display) was disconnected from the actual reason the meeting is in 4B today.""}","Mara's belief is true only by coincidence, since her source (a frozen display) was disconnected from the actual reason the meeting is in 4B today.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_018,epistemic_luck,intervening_luck,,medium,claude-opus-4-8,2026-07-08T21:57:30.119250+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,2.402,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Evan's belief is true only because of a hidden correctly-addressed package, not because of the mislabeled package he actually based his belief on, making the truth accidental relative to his reason.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Evan's belief is true only because of a hidden correctly-addressed package, not because of the mislabeled package he actually based his belief on, making the truth accidental relative to his reason.""}","Evan's belief is true only because of a hidden correctly-addressed package, not because of the mislabeled package he actually based his belief on, making the truth accidental relative to his reason.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_019,epistemic_luck,intervening_luck,,medium,claude-opus-4-8,2026-07-08T21:57:32.521242+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,2.273,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Priya's belief is true only because the replacement show was coincidentally canceled, not because the stale poster reliably tracked the truth.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Priya's belief is true only because the replacement show was coincidentally canceled, not because the stale poster reliably tracked the truth.""}","Priya's belief is true only because the replacement show was coincidentally canceled, not because the stale poster reliably tracked the truth.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_020,epistemic_luck,intervening_luck,,medium,claude-opus-4-8,2026-07-08T21:57:34.794770+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,2.74,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Ben's belief is true only by coincidence, since the menu was stale and the actual truth-maker was the chef's independent decision, disconnecting his evidence from the fact.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Ben's belief is true only by coincidence, since the menu was stale and the actual truth-maker was the chef's independent decision, disconnecting his evidence from the fact.""}","Ben's belief is true only by coincidence, since the menu was stale and the actual truth-maker was the chef's independent decision, disconnecting his evidence from the fact.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_021,epistemic_luck,intervening_luck,,medium,claude-opus-4-8,2026-07-08T21:57:37.535105+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,2.606,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""The schedule was outdated so Talia's belief is true only by the lucky coincidence that Chen was reinstated, not because her source tracked the truth.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""The schedule was outdated so Talia's belief is true only by the lucky coincidence that Chen was reinstated, not because her source tracked the truth.""}","The schedule was outdated so Talia's belief is true only by the lucky coincidence that Chen was reinstated, not because her source tracked the truth.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_022,epistemic_luck,intervening_luck,,medium,claude-opus-4-8,2026-07-08T21:57:40.141140+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,2.83,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Diego's belief is true but based on the wrong bicycle; the neighbor's actual bike is coincidentally present, making his correct belief a matter of luck rather than a properly connected truth-maker.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Diego's belief is true but based on the wrong bicycle; the neighbor's actual bike is coincidentally present, making his correct belief a matter of luck rather than a properly connected truth-maker.""}","Diego's belief is true but based on the wrong bicycle; the neighbor's actual bike is coincidentally present, making his correct belief a matter of luck rather than a properly connected truth-maker.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_023,epistemic_luck,environmental_luck,,hard,claude-opus-4-8,2026-07-08T21:57:42.971621+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck""}",,2.403,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""environmental_luck"",
+  ""brief_explanation"": ""Alex's perceptual belief is true and justified, but in an environment full of fake trees he could easily have looked at a fake one, making his true belief unsafe.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck"", ""brief_explanation"": ""Alex's perceptual belief is true and justified, but in an environment full of fake trees he could easily have looked at a fake one, making his true belief unsafe.""}","Alex's perceptual belief is true and justified, but in an environment full of fake trees he could easily have looked at a fake one, making his true belief unsafe.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_024,epistemic_luck,environmental_luck,,hard,claude-opus-4-8,2026-07-08T21:57:45.374675+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck""}",,2.267,"{
+  ""justification_status"": ""unjustified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""environmental_luck"",
+  ""brief_explanation"": ""Micky's belief is true, but in an environment full of replicas his same method would easily have yielded a false belief, making his correct belief unsafe.""
+}",True,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck"", ""brief_explanation"": ""Micky's belief is true, but in an environment full of replicas his same method would easily have yielded a false belief, making his correct belief unsafe.""}","Micky's belief is true, but in an environment full of replicas his same method would easily have yielded a false belief, making his correct belief unsafe.","{""justification_status"": false, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",5.0,6.0,0.8333333333333334
+el_025,epistemic_luck,environmental_luck,,hard,claude-opus-4-8,2026-07-08T21:57:47.641758+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck""}",,2.607,"{
+  ""justification_status"": ""unjustified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""environmental_luck"",
+  ""brief_explanation"": ""Dana's belief is true, but in an environment full of fake props she could easily have grabbed an empty bottle, making her true belief unsafe.""
+}",True,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck"", ""brief_explanation"": ""Dana's belief is true, but in an environment full of fake props she could easily have grabbed an empty bottle, making her true belief unsafe.""}","Dana's belief is true, but in an environment full of fake props she could easily have grabbed an empty bottle, making her true belief unsafe.","{""justification_status"": false, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",5.0,6.0,0.8333333333333334
+el_026,epistemic_luck,environmental_luck,,hard,claude-opus-4-8,2026-07-08T21:57:50.249253+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck""}",,2.246,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""environmental_luck"",
+  ""brief_explanation"": ""Harper's belief is true and justified, but in an environment full of realistic nonworking demos she could easily have picked a fake, making her true belief unsafe.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck"", ""brief_explanation"": ""Harper's belief is true and justified, but in an environment full of realistic nonworking demos she could easily have picked a fake, making her true belief unsafe.""}","Harper's belief is true and justified, but in an environment full of realistic nonworking demos she could easily have picked a fake, making her true belief unsafe.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_027,epistemic_luck,environmental_luck,,hard,claude-opus-4-8,2026-07-08T21:57:52.495489+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck""}",,2.712,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""environmental_luck"",
+  ""brief_explanation"": ""Noah's belief is true and reasonably formed, but the room is full of replicas so he could easily have looked at a fake, making his environment epistemically unsafe.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck"", ""brief_explanation"": ""Noah's belief is true and reasonably formed, but the room is full of replicas so he could easily have looked at a fake, making his environment epistemically unsafe.""}","Noah's belief is true and reasonably formed, but the room is full of replicas so he could easily have looked at a fake, making his environment epistemically unsafe.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_028,epistemic_luck,environmental_luck,,hard,claude-opus-4-8,2026-07-08T21:57:55.208056+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck""}",,2.129,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""environmental_luck"",
+  ""brief_explanation"": ""Sofia's belief is true and reasonably formed, but the environment is full of realistic fakes, so she could easily have pointed to an artificial orchid and been wrong.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck"", ""brief_explanation"": ""Sofia's belief is true and reasonably formed, but the environment is full of realistic fakes, so she could easily have pointed to an artificial orchid and been wrong.""}","Sofia's belief is true and reasonably formed, but the environment is full of realistic fakes, so she could easily have pointed to an artificial orchid and been wrong.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_029,epistemic_luck,environmental_luck,,hard,claude-opus-4-8,2026-07-08T21:57:57.337078+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck""}",,2.33,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""environmental_luck"",
+  ""brief_explanation"": ""Caleb's belief is true and justified by seeing the moving hand, but the tray is full of realistic nonworking displays with decorative moving hands, so he could easily have picked one and been wrong.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck"", ""brief_explanation"": ""Caleb's belief is true and justified by seeing the moving hand, but the tray is full of realistic nonworking displays with decorative moving hands, so he could easily have picked one and been wrong.""}","Caleb's belief is true and justified by seeing the moving hand, but the tray is full of realistic nonworking displays with decorative moving hands, so he could easily have picked one and been wrong.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_030,epistemic_luck,environmental_luck,,hard,claude-opus-4-8,2026-07-08T21:57:59.667486+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck""}",,2.438,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""environmental_luck"",
+  ""brief_explanation"": ""Iris forms a true belief via ordinary perception, but the prop room is full of realistic fakes, so she could easily have grabbed a plastic sword and been wrong.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck"", ""brief_explanation"": ""Iris forms a true belief via ordinary perception, but the prop room is full of realistic fakes, so she could easily have grabbed a plastic sword and been wrong.""}","Iris forms a true belief via ordinary perception, but the prop room is full of realistic fakes, so she could easily have grabbed a plastic sword and been wrong.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_031,epistemic_luck,intervening_luck,,hard,claude-opus-4-8,2026-07-08T21:58:02.105148+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,2.812,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Lauren's belief is true only because of an unseen genuine antique, not because the clock she saw (a fake) is antique, making the truth-maker disconnected from her evidence.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Lauren's belief is true only because of an unseen genuine antique, not because the clock she saw (a fake) is antique, making the truth-maker disconnected from her evidence.""}","Lauren's belief is true only because of an unseen genuine antique, not because the clock she saw (a fake) is antique, making the truth-maker disconnected from her evidence.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_032,epistemic_luck,intervening_luck,,hard,claude-opus-4-8,2026-07-08T21:58:04.917628+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,2.538,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""The box was mislabeled and should have contained chocolate, so Jimbo's justified belief is true only because the one accidentally packed vanilla treat happened to be the one he picked.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""The box was mislabeled and should have contained chocolate, so Jimbo's justified belief is true only because the one accidentally packed vanilla treat happened to be the one he picked.""}","The box was mislabeled and should have contained chocolate, so Jimbo's justified belief is true only because the one accidentally packed vanilla treat happened to be the one he picked.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_033,epistemic_luck,knowledge_control,,medium,claude-opus-4-8,2026-07-08T21:58:07.455951+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none""}",,2.472,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""knows"",
+  ""luck_status"": ""no_epistemic_luck"",
+  ""luck_type"": ""none"",
+  ""brief_explanation"": ""Kyle believes true testimony from a reliable, honest source, and his desire to buy fireworks is irrelevant to the epistemic support, so this is ordinary testimonial knowledge.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none"", ""brief_explanation"": ""Kyle believes true testimony from a reliable, honest source, and his desire to buy fireworks is irrelevant to the epistemic support, so this is ordinary testimonial knowledge.""}","Kyle believes true testimony from a reliable, honest source, and his desire to buy fireworks is irrelevant to the epistemic support, so this is ordinary testimonial knowledge.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_034,epistemic_luck,intervening_luck,,hard,claude-opus-4-8,2026-07-08T21:58:09.928321+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,2.634,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Kyle reasonably trusts Chris, but Chris merely guessed and happened to be right, so Kyle's true belief is accidentally correct rather than knowledge.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Kyle reasonably trusts Chris, but Chris merely guessed and happened to be right, so Kyle's true belief is accidentally correct rather than knowledge.""}","Kyle reasonably trusts Chris, but Chris merely guessed and happened to be right, so Kyle's true belief is accidentally correct rather than knowledge.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_035,epistemic_luck,lucky_guess,,medium,claude-opus-4-8,2026-07-08T21:58:12.562538+00:00,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""lucky_guess""}",,2.768,"{
+  ""justification_status"": ""unjustified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""lucky_guess"",
+  ""brief_explanation"": ""Jen believed her ticket would win based only on wishful thinking against long odds and contrary evidence, so her true belief is a lucky guess rather than knowledge.""
+}",True,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""lucky_guess"", ""brief_explanation"": ""Jen believed her ticket would win based only on wishful thinking against long odds and contrary evidence, so her true belief is a lucky guess rather than knowledge.""}","Jen believed her ticket would win based only on wishful thinking against long odds and contrary evidence, so her true belief is a lucky guess rather than knowledge.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_036,epistemic_luck,knowledge_control,,hard,claude-opus-4-8,2026-07-08T21:58:15.330879+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none""}",,2.348,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""knows"",
+  ""luck_status"": ""no_epistemic_luck"",
+  ""luck_type"": ""none"",
+  ""brief_explanation"": ""Ben's true belief is based on multiple reliable, matching verification indicators from a trusted inspector, so it constitutes knowledge without knowledge-defeating luck.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none"", ""brief_explanation"": ""Ben's true belief is based on multiple reliable, matching verification indicators from a trusted inspector, so it constitutes knowledge without knowledge-defeating luck.""}","Ben's true belief is based on multiple reliable, matching verification indicators from a trusted inspector, so it constitutes knowledge without knowledge-defeating luck.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_037,epistemic_luck,knowledge_control,,medium,claude-opus-4-8,2026-07-08T21:58:17.679182+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none""}",,2.17,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""knows"",
+  ""luck_status"": ""no_epistemic_luck"",
+  ""luck_type"": ""none"",
+  ""brief_explanation"": ""Ari's belief is true and based on three converging reliable sources, so it constitutes knowledge with no knowledge-defeating luck.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none"", ""brief_explanation"": ""Ari's belief is true and based on three converging reliable sources, so it constitutes knowledge with no knowledge-defeating luck.""}","Ari's belief is true and based on three converging reliable sources, so it constitutes knowledge with no knowledge-defeating luck.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_038,epistemic_luck,knowledge_control,,hard,claude-opus-4-8,2026-07-08T21:58:19.849578+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none""}",,2.595,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""knows"",
+  ""luck_status"": ""no_epistemic_luck"",
+  ""luck_type"": ""none"",
+  ""brief_explanation"": ""Mina uses multiple reliable verification methods to confirm a genuine bottle at her own pharmacy, so her true belief constitutes knowledge without knowledge-defeating luck.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none"", ""brief_explanation"": ""Mina uses multiple reliable verification methods to confirm a genuine bottle at her own pharmacy, so her true belief constitutes knowledge without knowledge-defeating luck.""}","Mina uses multiple reliable verification methods to confirm a genuine bottle at her own pharmacy, so her true belief constitutes knowledge without knowledge-defeating luck.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_039,epistemic_luck,knowledge_control,,medium,claude-opus-4-8,2026-07-08T21:58:22.445127+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none""}",,2.715,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""knows"",
+  ""luck_status"": ""no_epistemic_luck"",
+  ""luck_type"": ""none"",
+  ""brief_explanation"": ""Owen has two reliable, converging sources (confirmation number and matching email receipt) for a true belief, and the embarrassment worry does not factor into his reasoning.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none"", ""brief_explanation"": ""Owen has two reliable, converging sources (confirmation number and matching email receipt) for a true belief, and the embarrassment worry does not factor into his reasoning.""}","Owen has two reliable, converging sources (confirmation number and matching email receipt) for a true belief, and the embarrassment worry does not factor into his reasoning.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_040,epistemic_luck,no_knowledge_no_luck_control,,medium,claude-opus-4-8,2026-07-08T21:58:25.160537+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none""}",,2.649,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""no_epistemic_luck"",
+  ""luck_type"": ""none"",
+  ""brief_explanation"": ""Tessa's belief is justified by the usually-reliable website but false because the pool is actually closed, so it is a plain false belief with no lucky true-belief element.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none"", ""brief_explanation"": ""Tessa's belief is justified by the usually-reliable website but false because the pool is actually closed, so it is a plain false belief with no lucky true-belief element.""}","Tessa's belief is justified by the usually-reliable website but false because the pool is actually closed, so it is a plain false belief with no lucky true-belief element.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_041,epistemic_luck,no_knowledge_no_luck_control,,medium,claude-opus-4-8,2026-07-08T21:58:27.809208+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none""}",,2.262,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""no_epistemic_luck"",
+  ""luck_type"": ""none"",
+  ""brief_explanation"": ""The target proposition is false since the package was not actually delivered, so Marco holds a justified but false belief with no lucky true-belief element.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none"", ""brief_explanation"": ""The target proposition is false since the package was not actually delivered, so Marco holds a justified but false belief with no lucky true-belief element.""}","The target proposition is false since the package was not actually delivered, so Marco holds a justified but false belief with no lucky true-belief element.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_042,epistemic_luck,no_knowledge_no_luck_control,,easy,claude-opus-4-8,2026-07-08T21:58:30.071580+00:00,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none""}",,2.158,"{
+  ""justification_status"": ""unjustified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""no_epistemic_luck"",
+  ""luck_type"": ""none"",
+  ""brief_explanation"": ""Nadia believes on wishful thinking with no evidence, and the proposition is false, so it is a plain unjustified false belief with no lucky true-belief element.""
+}",True,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none"", ""brief_explanation"": ""Nadia believes on wishful thinking with no evidence, and the proposition is false, so it is a plain unjustified false belief with no lucky true-belief element.""}","Nadia believes on wishful thinking with no evidence, and the proposition is false, so it is a plain unjustified false belief with no lucky true-belief element.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_043,epistemic_luck,no_knowledge_no_luck_control,,easy,claude-opus-4-8,2026-07-08T21:58:32.230076+00:00,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none""}",,2.365,"{
+  ""justification_status"": ""unjustified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""no_epistemic_luck"",
+  ""luck_type"": ""none"",
+  ""brief_explanation"": ""Sam's belief is based on pragmatic convenience, not evidence, and it is false since it rained, so it is a plain false belief with no lucky true-belief element.""
+}",True,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none"", ""brief_explanation"": ""Sam's belief is based on pragmatic convenience, not evidence, and it is false since it rained, so it is a plain false belief with no lucky true-belief element.""}","Sam's belief is based on pragmatic convenience, not evidence, and it is false since it rained, so it is a plain false belief with no lucky true-belief element.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_044,epistemic_luck,no_knowledge_no_luck_control,,medium,claude-opus-4-8,2026-07-08T21:58:34.594895+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none""}",,2.216,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""no_epistemic_luck"",
+  ""luck_type"": ""none"",
+  ""brief_explanation"": ""The target proposition is false since the museum is closed, so Riley cannot know it, and it is a plain false belief with no lucky true-belief element.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none"", ""brief_explanation"": ""The target proposition is false since the museum is closed, so Riley cannot know it, and it is a plain false belief with no lucky true-belief element.""}","The target proposition is false since the museum is closed, so Riley cannot know it, and it is a plain false belief with no lucky true-belief element.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_045,epistemic_luck,no_knowledge_no_luck_control,,medium,claude-opus-4-8,2026-07-08T21:58:36.811367+00:00,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none""}",,2.029,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none"", ""brief_explanation"": ""The target proposition is false since the bakery sold out this morning, so Dena's stale-evidence belief is a plain false belief with no lucky true-belief element.""}",True,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none"", ""brief_explanation"": ""The target proposition is false since the bakery sold out this morning, so Dena's stale-evidence belief is a plain false belief with no lucky true-belief element.""}","The target proposition is false since the bakery sold out this morning, so Dena's stale-evidence belief is a plain false belief with no lucky true-belief element.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_046,epistemic_luck,lucky_guess,,easy,claude-opus-4-8,2026-07-08T21:58:38.840827+00:00,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""lucky_guess""}",,2.373,"{
+  ""justification_status"": ""unjustified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""lucky_guess"",
+  ""brief_explanation"": ""Victor believes for no reason and happens to be correct, making it a lucky guess without justification or knowledge.""
+}",True,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""lucky_guess"", ""brief_explanation"": ""Victor believes for no reason and happens to be correct, making it a lucky guess without justification or knowledge.""}","Victor believes for no reason and happens to be correct, making it a lucky guess without justification or knowledge.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_047,epistemic_luck,lucky_guess,,easy,claude-opus-4-8,2026-07-08T21:58:41.213622+00:00,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""lucky_guess""}",,2.258,"{
+  ""justification_status"": ""unjustified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""lucky_guess"",
+  ""brief_explanation"": ""Hana has no clue and randomly guessed the code, so her true belief is an unjustified lucky guess rather than knowledge.""
+}",True,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""lucky_guess"", ""brief_explanation"": ""Hana has no clue and randomly guessed the code, so her true belief is an unjustified lucky guess rather than knowledge.""}","Hana has no clue and randomly guessed the code, so her true belief is an unjustified lucky guess rather than knowledge.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_048,epistemic_luck,lucky_guess,,easy,claude-opus-4-8,2026-07-08T21:58:43.471878+00:00,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""lucky_guess""}",,2.311,"{
+  ""justification_status"": ""unjustified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""lucky_guess"",
+  ""brief_explanation"": ""Eli believes based only on hope without checking, so his true belief is a lucky guess lacking justification.""
+}",True,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""lucky_guess"", ""brief_explanation"": ""Eli believes based only on hope without checking, so his true belief is a lucky guess lacking justification.""}","Eli believes based only on hope without checking, so his true belief is a lucky guess lacking justification.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_049,epistemic_luck,intervening_luck,,medium,claude-opus-4-8,2026-07-08T21:58:45.782533+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,2.399,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Priya's belief is true, but only because of an unseen real EpiPen, while her actual evidence (the trainer box) is a wrong truth-maker disconnected from what makes the proposition true.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Priya's belief is true, but only because of an unseen real EpiPen, while her actual evidence (the trainer box) is a wrong truth-maker disconnected from what makes the proposition true.""}","Priya's belief is true, but only because of an unseen real EpiPen, while her actual evidence (the trainer box) is a wrong truth-maker disconnected from what makes the proposition true.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_050,epistemic_luck,intervening_luck,,hard,claude-opus-4-8,2026-07-08T21:58:48.182057+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,2.349,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""The frozen display is disconnected from reality, so Mara's true belief is correct only by the coincidence of the breakdown, a wrong truth-maker rather than a reliable connection.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""The frozen display is disconnected from reality, so Mara's true belief is correct only by the coincidence of the breakdown, a wrong truth-maker rather than a reliable connection.""}","The frozen display is disconnected from reality, so Mara's true belief is correct only by the coincidence of the breakdown, a wrong truth-maker rather than a reliable connection.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_051,epistemic_luck,intervening_luck,,medium,claude-opus-4-8,2026-07-08T21:58:50.531654+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,2.785,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Theo's belief is true only by coincidence, since the app showed stale data and the washer happened to become free, disconnecting his source from the truth-maker.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Theo's belief is true only by coincidence, since the app showed stale data and the washer happened to become free, disconnecting his source from the truth-maker.""}","Theo's belief is true only by coincidence, since the app showed stale data and the washer happened to become free, disconnecting his source from the truth-maker.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_052,epistemic_luck,intervening_luck,,hard,claude-opus-4-8,2026-07-08T21:58:53.317010+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,3.106,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Grace's belief is true but only by coincidence, since the dashboard showed a different client's invoice while the actual invoice 118 happened to be paid separately.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Grace's belief is true but only by coincidence, since the dashboard showed a different client's invoice while the actual invoice 118 happened to be paid separately.""}","Grace's belief is true but only by coincidence, since the dashboard showed a different client's invoice while the actual invoice 118 happened to be paid separately.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_053,epistemic_luck,intervening_luck,,hard,claude-opus-4-8,2026-07-08T21:58:56.422930+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,2.25,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""The receptionist merely guessed, so Nolan's true belief is correct only by lucky accident disconnected from the source's reliability.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""The receptionist merely guessed, so Nolan's true belief is correct only by lucky accident disconnected from the source's reliability.""}","The receptionist merely guessed, so Nolan's true belief is correct only by lucky accident disconnected from the source's reliability.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_054,epistemic_luck,intervening_luck,,medium,claude-opus-4-8,2026-07-08T21:58:58.673420+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,2.79,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Sasha's belief is true only by chance because the outdated map's information happened to coincide with the bridge's fresh reopening, disconnecting her reason from the truth.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Sasha's belief is true only by chance because the outdated map's information happened to coincide with the bridge's fresh reopening, disconnecting her reason from the truth.""}","Sasha's belief is true only by chance because the outdated map's information happened to coincide with the bridge's fresh reopening, disconnecting her reason from the truth.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_055,epistemic_luck,intervening_luck,,hard,claude-opus-4-8,2026-07-08T21:59:01.463705+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,2.85,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Lena's belief is true because Erin actually sent the file via the team drive, but her justification comes from a spoofed email disconnected from that truth-maker, making the true belief a lucky accident.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Lena's belief is true because Erin actually sent the file via the team drive, but her justification comes from a spoofed email disconnected from that truth-maker, making the true belief a lucky accident.""}","Lena's belief is true because Erin actually sent the file via the team drive, but her justification comes from a spoofed email disconnected from that truth-maker, making the true belief a lucky accident.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_056,epistemic_luck,intervening_luck,,hard,claude-opus-4-8,2026-07-08T21:59:04.313515+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,5.809,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Felix's belief is true only by coincidence, since the broken thermometer stuck at 32 happens to match the actual temperature, breaking the connection between his method and the truth.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Felix's belief is true only by coincidence, since the broken thermometer stuck at 32 happens to match the actual temperature, breaking the connection between his method and the truth.""}","Felix's belief is true only by coincidence, since the broken thermometer stuck at 32 happens to match the actual temperature, breaking the connection between his method and the truth.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_057,epistemic_luck,intervening_luck,,medium,claude-opus-4-8,2026-07-08T21:59:10.122678+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,2.428,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Rina's belief is true but only by coincidence, since her evidence was a stale sign disconnected from the actual truth-maker.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Rina's belief is true but only by coincidence, since her evidence was a stale sign disconnected from the actual truth-maker.""}","Rina's belief is true but only by coincidence, since her evidence was a stale sign disconnected from the actual truth-maker.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_058,epistemic_luck,intervening_luck,,medium,claude-opus-4-8,2026-07-08T21:59:12.551055+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,2.664,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Amir's belief is justified by the tablet but that source shows a stale order; his belief is true only by coincidence of a new matching order, so it is intervening luck and not knowledge.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Amir's belief is justified by the tablet but that source shows a stale order; his belief is true only by coincidence of a new matching order, so it is intervening luck and not knowledge.""}","Amir's belief is justified by the tablet but that source shows a stale order; his belief is true only by coincidence of a new matching order, so it is intervening luck and not knowledge.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_059,epistemic_luck,environmental_luck,,hard,claude-opus-4-8,2026-07-08T21:59:15.214742+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck""}",,3.186,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""environmental_luck"",
+  ""brief_explanation"": ""Cass forms a justified true belief, but the room is full of realistic practice charts, so she could easily have picked a fake one, making her environment epistemically unsafe.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck"", ""brief_explanation"": ""Cass forms a justified true belief, but the room is full of realistic practice charts, so she could easily have picked a fake one, making her environment epistemically unsafe.""}","Cass forms a justified true belief, but the room is full of realistic practice charts, so she could easily have picked a fake one, making her environment epistemically unsafe.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_060,epistemic_luck,environmental_luck,,hard,claude-opus-4-8,2026-07-08T21:59:18.401257+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck""}",,2.313,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""environmental_luck"",
+  ""brief_explanation"": ""Jon's belief is true and reasonably formed, but the folder is full of near-identical mock articles, so he could easily have been wrong, making the environment epistemically unsafe.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck"", ""brief_explanation"": ""Jon's belief is true and reasonably formed, but the folder is full of near-identical mock articles, so he could easily have been wrong, making the environment epistemically unsafe.""}","Jon's belief is true and reasonably formed, but the folder is full of near-identical mock articles, so he could easily have been wrong, making the environment epistemically unsafe.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
