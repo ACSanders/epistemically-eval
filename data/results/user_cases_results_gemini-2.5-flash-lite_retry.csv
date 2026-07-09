@@ -1,0 +1,179 @@
+case_id,module,schema_family,variant_id,difficulty,model,timestamp,expected_json,error,latency_s,raw_response,parsed_ok,predicted_json,brief_explanation,field_results_json,points,max_points,score
+ab_002_belief_from_perception,belief_acceptance_knowledge,acceptance_and_belief,,,gemini-2.5-flash-lite,2026-07-09T02:43:30.925949+00:00,"{""attitude_status"": ""believes"", ""reason_type"": ""epistemic"", ""knowledge_status"": ""knows""}",,1.117,"{
+  ""attitude_status"": ""believes_and_accepts"",
+  ""reason_type"": ""epistemic"",
+  ""knowledge_status"": ""knows"",
+  ""brief_explanation"": ""Peter sees the geese, forms the belief that there is at least one bird, and the proposition is true, so he knows.""
+}",True,"{""attitude_status"": ""believes_and_accepts"", ""reason_type"": ""epistemic"", ""knowledge_status"": ""knows"", ""brief_explanation"": ""Peter sees the geese, forms the belief that there is at least one bird, and the proposition is true, so he knows.""}","Peter sees the geese, forms the belief that there is at least one bird, and the proposition is true, so he knows.","{""attitude_status"": false, ""reason_type"": true, ""knowledge_status"": true}",2.0,3.0,0.6666666666666666
+ab_019_belief_and_acceptance_bridge,belief_acceptance_knowledge,acceptance_and_belief,,,gemini-2.5-flash-lite,2026-07-09T02:43:32.042714+00:00,"{""attitude_status"": ""believes_and_accepts"", ""reason_type"": ""epistemic_and_practical"", ""knowledge_status"": ""knows""}",,0.595,"{
+  ""attitude_status"": ""believes_and_accepts"",
+  ""reason_type"": ""epistemic_and_practical"",
+  ""knowledge_status"": ""knows"",
+  ""brief_explanation"": ""Paul believes the bridge is closed because he received an official alert, the bridge is indeed closed, and he uses this information for practical planning.""
+}",True,"{""attitude_status"": ""believes_and_accepts"", ""reason_type"": ""epistemic_and_practical"", ""knowledge_status"": ""knows"", ""brief_explanation"": ""Paul believes the bridge is closed because he received an official alert, the bridge is indeed closed, and he uses this information for practical planning.""}","Paul believes the bridge is closed because he received an official alert, the bridge is indeed closed, and he uses this information for practical planning.","{""attitude_status"": true, ""reason_type"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+jus_002_reliable_testimony_knowledge,belief_acceptance_knowledge,justification,,,gemini-2.5-flash-lite,2026-07-09T02:43:32.637914+00:00,"{""reason_type"": ""epistemic"", ""justification_status"": ""epistemically_justified"", ""knowledge_status"": ""knows""}",,0.702,"{
+  ""reason_type"": ""epistemic"",
+  ""justification_status"": ""epistemically_justified"",
+  ""knowledge_status"": ""knows"",
+  ""brief_explanation"": ""Lilly's belief is based on reliable testimony, the proposition is true, and her belief is therefore justified and constitutes knowledge.""
+}",True,"{""reason_type"": ""epistemic"", ""justification_status"": ""epistemically_justified"", ""knowledge_status"": ""knows"", ""brief_explanation"": ""Lilly's belief is based on reliable testimony, the proposition is true, and her belief is therefore justified and constitutes knowledge.""}","Lilly's belief is based on reliable testimony, the proposition is true, and her belief is therefore justified and constitutes knowledge.","{""reason_type"": true, ""justification_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+jus_008_practical_reason_powerlifting,belief_acceptance_knowledge,justification,,,gemini-2.5-flash-lite,2026-07-09T02:43:33.340035+00:00,"{""reason_type"": ""practical"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know""}",,0.557,"{
+  ""reason_type"": ""practical"",
+  ""justification_status"": ""not_epistemically_justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Sarah's belief is based on her desire to see herself as a champion, not on evidence of her ability, making it practically motivated and epistemically unjustified.""
+}",True,"{""reason_type"": ""practical"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Sarah's belief is based on her desire to see herself as a champion, not on evidence of her ability, making it practically motivated and epistemically unjustified.""}","Sarah's belief is based on her desire to see herself as a champion, not on evidence of her ability, making it practically motivated and epistemically unjustified.","{""reason_type"": true, ""justification_status"": true, ""knowledge_status"": true}",3.0,3.0,1.0
+jus_009_overgeneralized_evidence_llamas,belief_acceptance_knowledge,justification,,,gemini-2.5-flash-lite,2026-07-09T02:43:33.896890+00:00,"{""reason_type"": ""none_or_indeterminate"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know""}",,0.64,"{
+  ""reason_type"": ""epistemic"",
+  ""justification_status"": ""not_epistemically_justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""brief_explanation"": ""Chelsey's belief is based on evidence about local llamas, which is insufficient to justify a universal claim about all zoos, thus she does not know and is not epistemically justified.""
+}",True,"{""reason_type"": ""epistemic"", ""justification_status"": ""not_epistemically_justified"", ""knowledge_status"": ""does_not_know"", ""brief_explanation"": ""Chelsey's belief is based on evidence about local llamas, which is insufficient to justify a universal claim about all zoos, thus she does not know and is not epistemically justified.""}","Chelsey's belief is based on evidence about local llamas, which is insufficient to justify a universal claim about all zoos, thus she does not know and is not epistemically justified.","{""reason_type"": false, ""justification_status"": true, ""knowledge_status"": true}",2.0,3.0,0.6666666666666666
+el_009,epistemic_luck,intervening_luck,,medium,gemini-2.5-flash-lite,2026-07-09T02:43:34.536776+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,0.798,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""knows"",
+  ""luck_status"": ""no_epistemic_luck"",
+  ""luck_type"": ""none"",
+  ""brief_explanation"": ""Liam is justified in believing that someone in the seminar owns a signed copy of the novel because he sees what appears to be a signed copy, and Priya does indeed have a signed copy in her bag.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none"", ""brief_explanation"": ""Liam is justified in believing that someone in the seminar owns a signed copy of the novel because he sees what appears to be a signed copy, and Priya does indeed have a signed copy in her bag.""}","Liam is justified in believing that someone in the seminar owns a signed copy of the novel because he sees what appears to be a signed copy, and Priya does indeed have a signed copy in her bag.","{""justification_status"": true, ""knowledge_status"": false, ""luck_status"": false, ""luck_type"": false}",1.0,6.0,0.16666666666666666
+el_010,epistemic_luck,intervening_luck,,medium,gemini-2.5-flash-lite,2026-07-09T02:43:35.334682+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,0.808,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Ava is justified in believing there is a deer in the park based on her perception, but her belief is true due to a real deer elsewhere in the park, not the statue she observed, making her belief accidentally true.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Ava is justified in believing there is a deer in the park based on her perception, but her belief is true due to a real deer elsewhere in the park, not the statue she observed, making her belief accidentally true.""}","Ava is justified in believing there is a deer in the park based on her perception, but her belief is true due to a real deer elsewhere in the park, not the statue she observed, making her belief accidentally true.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_011,epistemic_luck,intervening_luck,,medium,gemini-2.5-flash-lite,2026-07-09T02:43:36.142890+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,0.628,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""knows"",
+  ""luck_status"": ""no_epistemic_luck"",
+  ""luck_type"": ""none"",
+  ""brief_explanation"": ""Julian is justified in believing that someone has an apple in their pocket because he saw Robert put something in his pocket, and another shopper did indeed have an apple in their pocket.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none"", ""brief_explanation"": ""Julian is justified in believing that someone has an apple in their pocket because he saw Robert put something in his pocket, and another shopper did indeed have an apple in their pocket.""}","Julian is justified in believing that someone has an apple in their pocket because he saw Robert put something in his pocket, and another shopper did indeed have an apple in their pocket.","{""justification_status"": true, ""knowledge_status"": false, ""luck_status"": false, ""luck_type"": false}",1.0,6.0,0.16666666666666666
+el_015,epistemic_luck,intervening_luck,,medium,gemini-2.5-flash-lite,2026-07-09T02:43:36.770890+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,0.684,"{
+  ""justification_status"": ""unjustified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Shaun's belief is true due to an actual monkey hiding, but his justification is based on a misidentified service dog, making his true belief accidentally correct.""
+}",True,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Shaun's belief is true due to an actual monkey hiding, but his justification is based on a misidentified service dog, making his true belief accidentally correct.""}","Shaun's belief is true due to an actual monkey hiding, but his justification is based on a misidentified service dog, making his true belief accidentally correct.","{""justification_status"": false, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",5.0,6.0,0.8333333333333334
+el_020,epistemic_luck,intervening_luck,,medium,gemini-2.5-flash-lite,2026-07-09T02:43:37.455013+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,0.915,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""knows"",
+  ""luck_status"": ""no_epistemic_luck"",
+  ""luck_type"": ""none"",
+  ""brief_explanation"": ""Ben's belief is justified by the menu, and it happens to be true due to an independent decision by the chef, but the justification is not defeated by luck because the truth-maker is not accidentally connected to the justification.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none"", ""brief_explanation"": ""Ben's belief is justified by the menu, and it happens to be true due to an independent decision by the chef, but the justification is not defeated by luck because the truth-maker is not accidentally connected to the justification.""}","Ben's belief is justified by the menu, and it happens to be true due to an independent decision by the chef, but the justification is not defeated by luck because the truth-maker is not accidentally connected to the justification.","{""justification_status"": true, ""knowledge_status"": false, ""luck_status"": false, ""luck_type"": false}",1.0,6.0,0.16666666666666666
+el_023,epistemic_luck,environmental_luck,,hard,gemini-2.5-flash-lite,2026-07-09T02:43:38.370384+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck""}",,0.864,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Alex's belief is true and seemingly justified by his visual experience, but it is true due to intervening luck because the specific tree he observed was the only real one among many fakes, making his correct belief accidental.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Alex's belief is true and seemingly justified by his visual experience, but it is true due to intervening luck because the specific tree he observed was the only real one among many fakes, making his correct belief accidental.""}","Alex's belief is true and seemingly justified by his visual experience, but it is true due to intervening luck because the specific tree he observed was the only real one among many fakes, making his correct belief accidental.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": false}",4.0,6.0,0.6666666666666666
+el_029,epistemic_luck,environmental_luck,,hard,gemini-2.5-flash-lite,2026-07-09T02:43:39.234569+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck""}",,0.677,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""environmental_luck"",
+  ""brief_explanation"": ""Caleb is justified in believing the watch is working because he sees the second hand moving, but his belief is true due to environmental luck because almost all similar watches in the shop are nonworking displays.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck"", ""brief_explanation"": ""Caleb is justified in believing the watch is working because he sees the second hand moving, but his belief is true due to environmental luck because almost all similar watches in the shop are nonworking displays.""}","Caleb is justified in believing the watch is working because he sees the second hand moving, but his belief is true due to environmental luck because almost all similar watches in the shop are nonworking displays.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_030,epistemic_luck,environmental_luck,,hard,gemini-2.5-flash-lite,2026-07-09T02:43:39.912072+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck""}",,0.661,"{
+  ""justification_status"": ""unjustified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""environmental_luck"",
+  ""brief_explanation"": ""Iris forms a true belief about the sword being real, but her belief-forming process is unreliable due to the surrounding environment where most similar swords are plastic props.""
+}",True,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""environmental_luck"", ""brief_explanation"": ""Iris forms a true belief about the sword being real, but her belief-forming process is unreliable due to the surrounding environment where most similar swords are plastic props.""}","Iris forms a true belief about the sword being real, but her belief-forming process is unreliable due to the surrounding environment where most similar swords are plastic props.","{""justification_status"": false, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",5.0,6.0,0.8333333333333334
+el_032,epistemic_luck,intervening_luck,,hard,gemini-2.5-flash-lite,2026-07-09T02:43:40.572817+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,0.788,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""intervening_luck"",
+  ""brief_explanation"": ""Jimbo is justified in believing the treat is vanilla based on the label and sign, but it is actually chocolate, making his true belief that it is vanilla a matter of intervening luck.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck"", ""brief_explanation"": ""Jimbo is justified in believing the treat is vanilla based on the label and sign, but it is actually chocolate, making his true belief that it is vanilla a matter of intervening luck.""}","Jimbo is justified in believing the treat is vanilla based on the label and sign, but it is actually chocolate, making his true belief that it is vanilla a matter of intervening luck.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_034,epistemic_luck,intervening_luck,,hard,gemini-2.5-flash-lite,2026-07-09T02:43:41.360840+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""intervening_luck""}",,0.89,"{
+  ""justification_status"": ""unjustified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""lucky_guess"",
+  ""brief_explanation"": ""Kyle's belief is true by luck because Chris's claim was a random guess and Kyle had no reliable information to support his belief.""
+}",True,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""lucky_guess"", ""brief_explanation"": ""Kyle's belief is true by luck because Chris's claim was a random guess and Kyle had no reliable information to support his belief.""}",Kyle's belief is true by luck because Chris's claim was a random guess and Kyle had no reliable information to support his belief.,"{""justification_status"": false, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": false}",3.0,6.0,0.5
+el_038,epistemic_luck,knowledge_control,,hard,gemini-2.5-flash-lite,2026-07-09T02:43:42.250899+00:00,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none""}",,0.618,"{
+  ""justification_status"": ""justified"",
+  ""knowledge_status"": ""knows"",
+  ""luck_status"": ""no_epistemic_luck"",
+  ""luck_type"": ""none"",
+  ""brief_explanation"": ""Mina has strong evidence from multiple sources that the bottle is genuine, and the bottle is indeed genuine, so she knows.""
+}",True,"{""justification_status"": ""justified"", ""knowledge_status"": ""knows"", ""luck_status"": ""no_epistemic_luck"", ""luck_type"": ""none"", ""brief_explanation"": ""Mina has strong evidence from multiple sources that the bottle is genuine, and the bottle is indeed genuine, so she knows.""}","Mina has strong evidence from multiple sources that the bottle is genuine, and the bottle is indeed genuine, so she knows.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+el_048,epistemic_luck,lucky_guess,,easy,gemini-2.5-flash-lite,2026-07-09T02:43:42.868696+00:00,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""lucky_guess""}",,0.682,"{
+  ""justification_status"": ""unjustified"",
+  ""knowledge_status"": ""does_not_know"",
+  ""luck_status"": ""epistemic_luck_present"",
+  ""luck_type"": ""lucky_guess"",
+  ""brief_explanation"": ""Eli believes the food truck is on Pine Street solely due to hope, which is not justification, and his true belief is therefore a lucky guess.""
+}",True,"{""justification_status"": ""unjustified"", ""knowledge_status"": ""does_not_know"", ""luck_status"": ""epistemic_luck_present"", ""luck_type"": ""lucky_guess"", ""brief_explanation"": ""Eli believes the food truck is on Pine Street solely due to hope, which is not justification, and his true belief is therefore a lucky guess.""}","Eli believes the food truck is on Pine Street solely due to hope, which is not justification, and his true belief is therefore a lucky guess.","{""justification_status"": true, ""knowledge_status"": true, ""luck_status"": true, ""luck_type"": true}",6.0,6.0,1.0
+rr_ded_001_direct_contradiction_cat,rational_reasoning,deduction,1.0,,gemini-2.5-flash-lite,2026-07-09T02:43:43.551032+00:00,"{""reasoning_pattern"": ""direct_contradiction"", ""logical_status"": ""inconsistent"", ""rational_constraint"": ""belief_set_requires_revision""}",,0.633,"{
+  ""reasoning_pattern"": ""direct_contradiction"",
+  ""logical_status"": ""inconsistent"",
+  ""rational_constraint"": ""belief_set_requires_revision"",
+  ""brief_explanation"": ""Blake holds two beliefs that directly contradict each other, making the belief set inconsistent and requiring revision.""
+}",True,"{""reasoning_pattern"": ""direct_contradiction"", ""logical_status"": ""inconsistent"", ""rational_constraint"": ""belief_set_requires_revision"", ""brief_explanation"": ""Blake holds two beliefs that directly contradict each other, making the belief set inconsistent and requiring revision.""}","Blake holds two beliefs that directly contradict each other, making the belief set inconsistent and requiring revision.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_007_modus_ponens_raise,rational_reasoning,deduction,1.0,,gemini-2.5-flash-lite,2026-07-09T02:43:44.184080+00:00,"{""reasoning_pattern"": ""modus_ponens"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised""}","ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",0.534,,False,,,"{""reasoning_pattern"": false, ""logical_status"": false, ""rational_constraint"": false}",0.0,3.0,0.0
+rr_ded_010_modus_tollens_flowers,rational_reasoning,deduction,1.0,,gemini-2.5-flash-lite,2026-07-09T02:43:44.718566+00:00,"{""reasoning_pattern"": ""modus_tollens"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised""}","ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",0.381,,False,,,"{""reasoning_pattern"": false, ""logical_status"": false, ""rational_constraint"": false}",0.0,3.0,0.0
+rr_ded_011_modus_tollens_cookies,rational_reasoning,deduction,2.0,,gemini-2.5-flash-lite,2026-07-09T02:43:45.099737+00:00,"{""reasoning_pattern"": ""modus_tollens"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised""}",,0.867,"{
+  ""reasoning_pattern"": ""modus_tollens"",
+  ""logical_status"": ""valid"",
+  ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"",
+  ""brief_explanation"": ""The reasoning follows modus tollens, a valid deductive pattern, where the denial of the consequent supports the denial of the antecedent.""
+}",True,"{""reasoning_pattern"": ""modus_tollens"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"", ""brief_explanation"": ""The reasoning follows modus tollens, a valid deductive pattern, where the denial of the consequent supports the denial of the antecedent.""}","The reasoning follows modus tollens, a valid deductive pattern, where the denial of the consequent supports the denial of the antecedent.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_016_denying_antecedent_file,rational_reasoning,deduction,1.0,,gemini-2.5-flash-lite,2026-07-09T02:43:45.966942+00:00,"{""reasoning_pattern"": ""denying_the_antecedent"", ""logical_status"": ""invalid"", ""rational_constraint"": ""target_not_supported_by_deduction""}",,1.351,"{
+  ""reasoning_pattern"": ""denying_the_antecedent"",
+  ""logical_status"": ""invalid"",
+  ""rational_constraint"": ""target_not_supported_by_deduction"",
+  ""brief_explanation"": ""Sam's reasoning is an instance of denying the antecedent, which is a logical fallacy, meaning the target proposition is not deductively supported by the premises.""
+}",True,"{""reasoning_pattern"": ""denying_the_antecedent"", ""logical_status"": ""invalid"", ""rational_constraint"": ""target_not_supported_by_deduction"", ""brief_explanation"": ""Sam's reasoning is an instance of denying the antecedent, which is a logical fallacy, meaning the target proposition is not deductively supported by the premises.""}","Sam's reasoning is an instance of denying the antecedent, which is a logical fallacy, meaning the target proposition is not deductively supported by the premises.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_017_denying_antecedent_traffic,rational_reasoning,deduction,2.0,,gemini-2.5-flash-lite,2026-07-09T02:43:47.318039+00:00,"{""reasoning_pattern"": ""denying_the_antecedent"", ""logical_status"": ""invalid"", ""rational_constraint"": ""target_not_supported_by_deduction""}",,0.657,"{
+  ""reasoning_pattern"": ""denying_the_antecedent"",
+  ""logical_status"": ""invalid"",
+  ""rational_constraint"": ""target_not_supported_by_deduction"",
+  ""brief_explanation"": ""Nadia's reasoning is an instance of denying the antecedent, which is a logical fallacy, meaning the conclusion is not deductively supported by the premises.""
+}",True,"{""reasoning_pattern"": ""denying_the_antecedent"", ""logical_status"": ""invalid"", ""rational_constraint"": ""target_not_supported_by_deduction"", ""brief_explanation"": ""Nadia's reasoning is an instance of denying the antecedent, which is a logical fallacy, meaning the conclusion is not deductively supported by the premises.""}","Nadia's reasoning is an instance of denying the antecedent, which is a logical fallacy, meaning the conclusion is not deductively supported by the premises.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_029_non_sequitur_mercury,rational_reasoning,deduction,1.0,,gemini-2.5-flash-lite,2026-07-09T02:43:47.974817+00:00,"{""reasoning_pattern"": ""non_sequitur"", ""logical_status"": ""invalid"", ""rational_constraint"": ""target_not_supported_by_deduction""}",,0.628,"{
+  ""reasoning_pattern"": ""non_sequitur"",
+  ""logical_status"": ""invalid"",
+  ""rational_constraint"": ""target_not_supported_by_deduction"",
+  ""brief_explanation"": ""The belief that Patrick is hiding in the basement does not logically support the belief that Mercury is the farthest planet from the sun.""
+}",True,"{""reasoning_pattern"": ""non_sequitur"", ""logical_status"": ""invalid"", ""rational_constraint"": ""target_not_supported_by_deduction"", ""brief_explanation"": ""The belief that Patrick is hiding in the basement does not logically support the belief that Mercury is the farthest planet from the sun.""}",The belief that Patrick is hiding in the basement does not logically support the belief that Mercury is the farthest planet from the sun.,"{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+def_001_package_placebo,defeaters,placebo_control,,,gemini-2.5-flash-lite,2026-07-09T02:43:48.603277+00:00,"{""defeater_present"": ""no"", ""defeater_type"": ""none_placebo"", ""defeater_strength"": ""none"", ""support_relation"": ""no_impact"", ""belief_revision"": ""maintain_target_belief""}",,0.933,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""undercutting_defeater"",
+  ""defeater_strength"": ""weak"",
+  ""support_relation"": ""target_better_supported"",
+  ""belief_revision"": ""maintain_target_belief"",
+  ""brief_explanation"": ""The information about the truck's color does not directly contradict the delivery, but it might subtly weaken the reliability of the tracking information if Ana has a prior belief that delivery trucks are typically a different color, without providing direct evidence against arrival.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""defeater_strength"": ""weak"", ""support_relation"": ""target_better_supported"", ""belief_revision"": ""maintain_target_belief"", ""brief_explanation"": ""The information about the truck's color does not directly contradict the delivery, but it might subtly weaken the reliability of the tracking information if Ana has a prior belief that delivery trucks are typically a different color, without providing direct evidence against arrival.""}","The information about the truck's color does not directly contradict the delivery, but it might subtly weaken the reliability of the tracking information if Ana has a prior belief that delivery trucks are typically a different color, without providing direct evidence against arrival.","{""defeater_present"": false, ""defeater_type"": false, ""defeater_strength"": false, ""support_relation"": false, ""belief_revision"": true, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",3.0,7.0,0.42857142857142855
+def_003_package_undercutting,defeaters,undercutting,,,gemini-2.5-flash-lite,2026-07-09T02:43:49.536230+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""defeater_strength"": ""moderate"", ""support_relation"": ""equal_support"", ""belief_revision"": ""suspend_judgment""}",,0.872,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""undercutting_defeater"",
+  ""defeater_strength"": ""moderate"",
+  ""support_relation"": ""equal_support"",
+  ""belief_revision"": ""suspend_judgment"",
+  ""brief_explanation"": ""The new information about false delivery notices from the same tracking system weakens the reliability of the tracking page as evidence for the package's arrival, making the original reason insufficient to favor belief.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""undercutting_defeater"", ""defeater_strength"": ""moderate"", ""support_relation"": ""equal_support"", ""belief_revision"": ""suspend_judgment"", ""brief_explanation"": ""The new information about false delivery notices from the same tracking system weakens the reliability of the tracking page as evidence for the package's arrival, making the original reason insufficient to favor belief.""}","The new information about false delivery notices from the same tracking system weakens the reliability of the tracking page as evidence for the package's arrival, making the original reason insufficient to favor belief.","{""defeater_present"": true, ""defeater_type"": true, ""defeater_strength"": true, ""support_relation"": true, ""belief_revision"": true, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",7.0,7.0,1.0
+def_028_meeting_placebo,defeaters,placebo_control,,,gemini-2.5-flash-lite,2026-07-09T02:43:50.408672+00:00,"{""defeater_present"": ""no"", ""defeater_type"": ""none_placebo"", ""defeater_strength"": ""none"", ""support_relation"": ""no_impact"", ""belief_revision"": ""maintain_target_belief""}",,0.531,"{
+  ""defeater_present"": ""no"",
+  ""defeater_type"": ""none_placebo"",
+  ""defeater_strength"": ""none"",
+  ""support_relation"": ""no_impact"",
+  ""belief_revision"": ""maintain_target_belief"",
+  ""brief_explanation"": ""The information about new chairs in the meeting room is irrelevant to the meeting's start time.""
+}",True,"{""defeater_present"": ""no"", ""defeater_type"": ""none_placebo"", ""defeater_strength"": ""none"", ""support_relation"": ""no_impact"", ""belief_revision"": ""maintain_target_belief"", ""brief_explanation"": ""The information about new chairs in the meeting room is irrelevant to the meeting's start time.""}",The information about new chairs in the meeting room is irrelevant to the meeting's start time.,"{""defeater_present"": true, ""defeater_type"": true, ""defeater_strength"": true, ""support_relation"": true, ""belief_revision"": true, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",7.0,7.0,1.0
+def_047_checklist_moderate_higher_order,defeaters,higher_order,,,gemini-2.5-flash-lite,2026-07-09T02:43:50.939719+00:00,"{""defeater_present"": ""yes"", ""defeater_type"": ""higher_order_defeater"", ""defeater_strength"": ""moderate"", ""support_relation"": ""equal_support"", ""belief_revision"": ""suspend_judgment""}",,0.785,"{
+  ""defeater_present"": ""yes"",
+  ""defeater_type"": ""higher_order_defeater"",
+  ""defeater_strength"": ""strong"",
+  ""support_relation"": ""negation_better_supported"",
+  ""belief_revision"": ""believe_negation"",
+  ""brief_explanation"": ""Noah's sleep deprivation and prior errors during checklist completion undermine his confidence in the accuracy of his conclusion that the clause applies.""
+}",True,"{""defeater_present"": ""yes"", ""defeater_type"": ""higher_order_defeater"", ""defeater_strength"": ""strong"", ""support_relation"": ""negation_better_supported"", ""belief_revision"": ""believe_negation"", ""brief_explanation"": ""Noah's sleep deprivation and prior errors during checklist completion undermine his confidence in the accuracy of his conclusion that the clause applies.""}",Noah's sleep deprivation and prior errors during checklist completion undermine his confidence in the accuracy of his conclusion that the clause applies.,"{""defeater_present"": true, ""defeater_type"": true, ""defeater_strength"": false, ""support_relation"": false, ""belief_revision"": false, ""strength_support_coherence"": true, ""support_revision_coherence"": true}",4.0,7.0,0.5714285714285714

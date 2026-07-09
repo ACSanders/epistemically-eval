@@ -1,0 +1,13 @@
+case_id,module,schema_family,variant_id,difficulty,model,timestamp,expected_json,error,latency_s,raw_response,parsed_ok,predicted_json,brief_explanation,field_results_json,points,max_points,score
+rr_ded_007_modus_ponens_raise,rational_reasoning,deduction,1,,gemini-2.5-flash-lite,2026-07-09T02:44:31.248285+00:00,"{""reasoning_pattern"": ""modus_ponens"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised""}",,0.641,"{
+  ""reasoning_pattern"": ""modus_ponens"",
+  ""logical_status"": ""valid"",
+  ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"",
+  ""brief_explanation"": ""The agent uses modus ponens, a valid deductive inference, to conclude the target proposition from her beliefs.""
+}",True,"{""reasoning_pattern"": ""modus_ponens"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"", ""brief_explanation"": ""The agent uses modus ponens, a valid deductive inference, to conclude the target proposition from her beliefs.""}","The agent uses modus ponens, a valid deductive inference, to conclude the target proposition from her beliefs.","{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
+rr_ded_010_modus_tollens_flowers,rational_reasoning,deduction,1,,gemini-2.5-flash-lite,2026-07-09T02:44:31.889989+00:00,"{""reasoning_pattern"": ""modus_tollens"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised""}",,0.73,"{
+  ""reasoning_pattern"": ""modus_tollens"",
+  ""logical_status"": ""valid"",
+  ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"",
+  ""brief_explanation"": ""The agent's beliefs logically entail the target proposition via modus tollens.""
+}",True,"{""reasoning_pattern"": ""modus_tollens"", ""logical_status"": ""valid"", ""rational_constraint"": ""target_must_be_accepted_or_premise_revised"", ""brief_explanation"": ""The agent's beliefs logically entail the target proposition via modus tollens.""}",The agent's beliefs logically entail the target proposition via modus tollens.,"{""reasoning_pattern"": true, ""logical_status"": true, ""rational_constraint"": true}",3.0,3.0,1.0
