@@ -64,6 +64,7 @@ Current evaluated models:
 | Anthropic | `claude-sonnet-5` |
 | Anthropic | `claude-opus-4-8` |
 | Google | `gemini-2.5-pro` |
+| Google | `gemini-2.5-flash-lite` |
 
 Current leaderboard from the committed result files (200 cases, including the defeaters v2 module and the expanded 60-case epistemic luck module):
 
@@ -74,6 +75,7 @@ Current leaderboard from the committed result files (200 cases, including the de
 | `gpt-5-mini` | 0.937 |
 | `gemini-2.5-pro` | 0.937 |
 | `claude-haiku-4-5` | 0.880 |
+| `gemini-2.5-flash-lite` | 0.863 |
 | `gpt-4o-mini` | 0.761 |
 
 These results are useful as a live research prototype and public demo. They should not be treated as final leaderboard claims. The benchmark is still growing, and several modules need more cases, variants, and review.
@@ -327,7 +329,7 @@ Bootstrap confidence intervals are used to summarize uncertainty over the curren
 
 ## Current result highlights
 
-The current six-model comparison already surfaces several useful patterns:
+The current seven-model comparison already surfaces several useful patterns:
 
 - `claude-opus-4-8` currently leads overall (0.963), closely followed by `claude-sonnet-5`, `gpt-5-mini`, and `gemini-2.5-pro`.
 - On the expanded 60-case epistemic luck module, `claude-opus-4-8` (0.994) and `gemini-2.5-pro` (0.986) are near-ceiling with no systematic luck confusions; both sit close enough to the ceiling that harder intervening- and environmental-luck variants are a natural next step.
@@ -336,6 +338,7 @@ The current six-model comparison already surfaces several useful patterns:
 - No model confused lucky guesses with intervening luck, and no model over-detected luck in ordinary knowledge controls.
 - The revised defeaters v2 module is no longer saturated: no model solves it perfectly, and the best scores sit around 0.93. Its computed coherence scoring separates two distinct epistemic failure patterns — `gpt-4o-mini` stays fully coherent while systematically over-revising (jumping to belief in not-p where suspension is warranted), while `gemini-2.5-pro` most often produces strength/support packages that describe incompatible situations.
 - Higher-order defeaters are the hardest defeater family for every evaluated model, typically misread as undercutting defeaters.
+- Adding a lower-tier Gemini (`gemini-2.5-flash-lite`, 0.863) alongside `gemini-2.5-pro` (0.937) gives a within-provider capability-tier comparison. The two Gemini models are essentially tied on belief/knowledge (0.928) and rational reasoning (0.933), and the gap opens almost entirely on the two harder modules: epistemic luck (0.850 vs 0.986) and defeaters (0.760 vs 0.891). Flash-Lite's defeaters weakness is an over-revision fingerprint — it inflates moderate defeaters to strong, flags defeaters in placebo controls, and jumps to believing the negation where suspension is warranted.
 
 These should be treated as diagnostic findings from the current case set, not as final claims about model capability in general.
 
@@ -488,6 +491,7 @@ epistemically-eval/
 │       ├── user_cases_results_claude-sonnet-5.csv
 │       ├── user_cases_results_claude-opus-4-8.csv
 │       ├── user_cases_results_gemini-2.5-pro.csv
+│       ├── user_cases_results_gemini-2.5-flash-lite.csv
 │       └── user_cases_results.csv
 ├── docs/
 │   ├── methodology.md
