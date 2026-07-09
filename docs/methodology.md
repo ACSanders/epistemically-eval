@@ -10,6 +10,13 @@ well when its output labels track the distinctions competent human judges
 draw on the same cases. No claim is made that the model itself believes or
 knows anything.
 
+## Independence
+
+Each case is evaluated independently in a fresh model call. Models do not see
+prior cases, prior answers, expected labels, scoring results, or feedback from
+earlier cases. This preserves a first-look evaluation setting and prevents
+within-run context contamination.
+
 ## Case format
 
 Cases live in JSONL, one object per line, validated by

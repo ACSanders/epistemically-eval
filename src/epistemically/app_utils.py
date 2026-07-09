@@ -95,7 +95,7 @@ div[data-testid="stVerticalBlockBorderWrapper"] { background: #11161f;
 
 .stTabs [data-baseweb="tab-list"] { gap: 0.35rem; border-bottom: 1px solid #232a35; }
 .stTabs [data-baseweb="tab"] { color: #8b96a5; padding: 0.85rem 1.5rem; }
-.stTabs [data-baseweb="tab"] p { font-size: 1.14rem; font-weight: 600; }
+.stTabs [data-baseweb="tab"] p { font-size: 1.15rem; font-weight: 700; }
 .stTabs [aria-selected="true"] { color: #ffa657 !important; }
 
 .footer { color: #8b96a5; font-size: 0.82rem; padding: 0.9rem 0 0.4rem 0;

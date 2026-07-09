@@ -223,19 +223,34 @@ with tab_overview:
 
     acc_all = field_accuracy(combined)
     if not acc_all.empty:
-        acc_fig = px.bar(
-            acc_all,
-            x="field",
-            y="accuracy",
-            color="model",
-            barmode="group",
-            range_y=[0, 1.02],
-            hover_data=["n"],
+        field_heat = acc_all.pivot(index="model", columns="field", values="accuracy")
+        heat_fields = px.imshow(
+            field_heat,
+            zmin=0,
+            zmax=1,
+            text_auto=".2f",
+            color_continuous_scale=HEATMAP_SCALE,
+            aspect="auto",
         )
-        acc_fig.update_traces(marker_line_width=0)
+        heat_fields.update_layout(coloraxis_colorbar=dict(title="accuracy"))
+        heat_fields.update_xaxes(tickangle=-45)
         st.plotly_chart(
-            style_fig(acc_fig, "Field-level accuracy by model", height=380),
+            style_fig(heat_fields, "Field-level accuracy by model", height=360),
             width="stretch",
+        )
+
+        st.markdown("**Lowest field-level scores**")
+        lowest = (
+            acc_all.nsmallest(10, "accuracy")[["model", "field", "accuracy"]]
+            .reset_index(drop=True)
+        )
+        st.dataframe(
+            lowest,
+            width="stretch",
+            hide_index=True,
+            column_config={
+                "accuracy": st.column_config.NumberColumn("accuracy", format="%.3f"),
+            },
         )
 
 # --- Model Profile: deep dive into one model ------------------------------------------
@@ -852,6 +867,8 @@ The flagship direction is epistemic luck. These cases test whether models distin
 ### What Epistemically evaluates
 
 Each case gives a short scenario and a target proposition. The model returns structured labels for that target proposition only.
+
+Each case is evaluated independently in a fresh model call. Models do not see prior cases, prior answers, expected labels, scoring results, or feedback from earlier cases. This preserves a first-look evaluation setting and prevents within-run context contamination.
 
 Epistemically evaluates whether model outputs match operationalized distinctions from epistemology, such as belief vs. acceptance, truth vs. knowledge, justification, defeaters, valid inference, and knowledge-defeating luck. The benchmark does not claim that models literally believe, know, or possess epistemic agency.
 
